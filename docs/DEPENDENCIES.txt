@@ -69,5 +69,8 @@ Darwin compiles a generated NMEA0183Msg.cpp copy enabling its desktop snprintf
 branch for __APPLE__. This narrowly checked CMake adaptation does not modify the
 stage, approved patch or pin manifest. It is separate from upstream patch state.
 
-Ubuntu historical checkout naming and machine-local DEPS_ROOT remain UNRESOLVED;
-their resolution is deferred to installer/deployment environment preparation.
+Active Windows, Ubuntu and native ARM64 development uses separate
+RayNmeaSimulator-Active checkouts with verified clone-local .dependencies stages.
+Qt Creator uses new build/cmake/qtcreator-* directories and an explicit absolute
+DEPS_ROOT pointing at that checkout's .dependencies. Historical checkouts and
+their build environments remain preserved for private Archive reference.

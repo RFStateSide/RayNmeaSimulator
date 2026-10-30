@@ -1068,7 +1068,7 @@
         "source_baseline": "c8f2b5c822050ac875368a02b517e38a14a108b4",
         "original_sha256": "0f593dee3544c4c630a6507944589e6e5885317706f4f0377fc616909e5e11f2",
         "replacement_sha256": "a0e3cbc3466a296ba582463a06540fae427252b47a4acb50226014efed78d56f",
-        "disposition": "Proposed in independent candidate for owner review; original private working source remains unchanged"
+        "disposition": "Accepted for the independent private repository by the M2.56B migration authorization; original preserved in the private Archive and verified backups"
       }
     },
     {

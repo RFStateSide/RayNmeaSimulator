@@ -115,7 +115,8 @@ Sources:
 - [SecItemAdd](https://developer.apple.com/documentation/security/secitemadd(_:_:))
 - [Apple Security StorageManager](https://github.com/apple-oss-distributions/Security/blob/main/OSX/libsecurity_keychain/lib/StorageManager.cpp)
 
-The Ubuntu historical checkout naming and machine-local DEPS_ROOT remain
-unresolved; this work does not address them. Official Qt accessibility maintenance
-adoption remains tracked in private Issue #33; this backend does not qualify the
-remaining Qt Creator or native accessibility behavior.
+Active Windows, Ubuntu and native ARM64 development now uses separate clean
+checkouts and verified clone-local dependency roots; historical checkouts remain
+preserved. Native macOS qualification and official Qt accessibility maintenance
+adoption remain tracked in private [Issue #11](https://github.com/RFStateSide/RayNmeaSimulator/issues/11);
+this backend does not qualify the remaining Qt Creator or native accessibility behavior.

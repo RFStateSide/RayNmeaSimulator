@@ -18,7 +18,7 @@ reports are dated evidence, not competing current audits or blanket acceptance.
 
 | Gate | Current disposition and required closure |
 | --- | --- |
-| Historical artwork and source history | **OPEN.** Current uncertain Icons8/engine bitmaps were retired and replacement controls/logo provenance recorded. Those removals do not clear artwork remaining in Git history. Obtain verified historical permissions or separately owner-approved publication/history remediation. This closeout does not rewrite history. Review historical technical paths, captures and other source-history privacy before publication. |
+| Rights, artwork and source-history screening | **PUBLIC APPROVAL OPEN.** The independent private repository begins with the reviewed 699-file candidate; excluded historical artwork and engineering material remain in the private Archive and verified backups, outside the new history. The owner-authorized privacy-safe route screenshot is included; its original is preserved privately. Complete final public source/artwork/privacy and license review before publication. Private migration is not blanket rights certification or public approval. |
 | Applicable source/license delivery | **OPEN.** Retain AGPL-3.0-or-later project notices and each dependency's terms. Qt Charts uses GPLv3/commercial terms, not LGPL. Before external distribution establish recipient access to the matching corresponding-source, dependency revisions/local patches, build/installation information and applicable notices under the relevant licenses. A private repository URL or license summary alone does not provide that delivery. Check exact shipped/transitive versions against package manifests/SBOMs. |
 | Final distribution decision | **OPEN.** Select a clean reviewed source/candidate, review its content/notices and recipient source-delivery method, then obtain explicit owner publication approval. Private candidates and source push are not a public release. No release tags, GitHub Releases, installer/archive uploads or visibility changes are authorized by this closeout. |
 | Qualification scope | Publish only the scoped support/compatibility actually established. Do not turn software fixtures, optional/skipped checks, private X11 tests or owner acceptance on one device into universal transport, OS, desktop, hardware or endurance qualification. |
@@ -27,6 +27,31 @@ See [provenance](PROVENANCE.md), [third-party notices](THIRD_PARTY_NOTICES.md),
 [security](SECURITY.md), [capabilities/support](docs/capabilities-and-support.md)
 and [distribution obligations](docs/deployment.md#distribution-obligations).
 These retain technical/license detail without creating additional audit documents.
+
+## Private repository migration
+
+The owner authorized an independent private source history on 2026-10-30.
+The historical repository is now **RFStateSide/RayNmeaSimulator-Archive**,
+repository ID **863221938**; it remains private with GitHub's read-only Archive
+feature disabled. Its original master
+`c8f2b5c822050ac875368a02b517e38a14a108b4`, complete history, all 34 original
+Issues and discussions remain preserved. Full Git/ref/object backups were
+independently restored and integrity checked on approved off-host storage.
+
+The new private **RFStateSide/RayNmeaSimulator**, repository ID **1440258051**,
+begins at parentless root `4b49f1f665259cbf49ee104d9af55f14b9f273e8`,
+with the exact reviewed 699-file source tree
+`922a5d9555e13588dd46c54753593a69cfb6d278`. It inherits no historical commits
+or refs. The 12 reviewed actionable Issues were recreated; closed/obsolete
+historical tickets were not copied. Both administrators retain access; the
+owner chose administrators only for the new repository.
+
+Active development uses fresh `RayNmeaSimulator-Active` checkouts on Windows,
+Ubuntu and Rpi5_ssd, new build directories and verified clone-local dependencies.
+Original checkouts/builds remain in place, explicitly reference the private
+Archive and have disabled push URLs to prevent accidental historical pushes.
+The migration does not authorize public visibility, releases, tags, artifact
+uploads or Pages. Preserve the scoped qualification and delivery gates above.
 
 ## Accepted content and deployment disposition
 
@@ -99,7 +124,9 @@ from the current tree. All originals were hash-preserved under ignored
   M2.36A instrument/source-binding/Viewer matrices and repair backlog, and M2.36B
   repair results.
 
-For exact historical detail use `git show <baseline>:<original-path>`. The retained
+For exact historical detail use `git show <baseline>:<original-path>` in a
+preserved historical checkout explicitly pointed at the private Archive. Those
+commits are intentionally absent from the independent active repository. The retained
 provenance inventory marks those paths removed from the current tree while keeping
 their original evidence/hashes. Licensing/provenance documents, notices, technical
 guides and historical implementation reports were not indiscriminately retired.

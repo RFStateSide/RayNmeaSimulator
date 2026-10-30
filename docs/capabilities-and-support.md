@@ -1,6 +1,6 @@
 # Current capabilities and support
 
-Status reviewed **2026-10-30** for accepted M2.53/M2.53A/M2.54 source closeout.
+Status reviewed **2026-10-30** for accepted source content and private migration.
 Earlier platform evidence retains its explicitly dated M2.45 scope below.
 This page is the maintained capability/support summary linked from README.
 Update its date, source baseline and evidence when accepted behavior changes.
@@ -23,7 +23,7 @@ sentence matrix, a certification statement or a promise of future release scope.
   qualified active Axiom route-service workflow feed the existing VesselMovement
   Autopilot route selection. Selection alone never starts Autopilot, movement or
   instrument Sending. Existing XTE and navigation bindings work; additional
-  APB/RMB mappings remain separate work under [#29](https://github.com/RFStateSide/RayNmeaSimulator-Archive/issues/29).
+  APB/RMB mappings remain separate work under [#7](https://github.com/RFStateSide/RayNmeaSimulator/issues/7).
   The [M2.39 instrument/passive-route report](https://github.com/RFStateSide/RayNmeaSimulator-Archive/blob/c8f2b5c822050ac875368a02b517e38a14a108b4/docs/M2.39-Navigation-Route-Protocol-Expansion.txt)
   predates the [active retrieval qualification](https://github.com/RFStateSide/RayNmeaSimulator-Archive/blob/c8f2b5c822050ac875368a02b517e38a14a108b4/docs/M2.39B7-Active-Axiom-Route-Retrieval.txt)
   and [network integration](https://github.com/RFStateSide/RayNmeaSimulator-Archive/blob/c8f2b5c822050ac875368a02b517e38a14a108b4/docs/M2.39B8-Network-NMEA2000-Bridge.txt).
@@ -64,7 +64,7 @@ variant; it is not generic support for every message sharing that PGN.
 These are qualified development combinations, not universal OS/ABI support or
 clean-machine installer qualification. Rpi5_new remains a Debian 12/OpenPlotter
 monitoring computer, excluded from required build qualification; migration is deferred.
-Native macOS build and secure storage qualification remain [#6](https://github.com/RFStateSide/RayNmeaSimulator-Archive/issues/6).
+Native macOS build and secure storage qualification remain [#11](https://github.com/RFStateSide/RayNmeaSimulator/issues/11).
 
 Debug and Release retain the same instrument authorization rules. Debug alone
 exposes bundled Template source authoring and experimental Actisense TX;
@@ -81,7 +81,7 @@ settings/credential behavior; test targets use explicit isolated profiles.
 | Waveshare USB-CAN-A | Windows physical RX/TX qualified; replacement Ubuntu adapter RX/TX owner accepted. Corrected wiring, 2 Mbaud serial and nonblocking 5 ms frame pacing are retained. The same closeout supersedes earlier pending Ubuntu hardware statements; it does not claim a repeated engineering capture or universal adapter compatibility. |
 | Native SocketCAN | Linux implementation with qualified native ARM64 builds and offline driver/session tests. Those wrapped-syscall/fake-backend tests do not qualify a physical HAT/backbone. See [integration and operating boundaries](SOCKETCAN.txt); hardware setup/qualification remains distinct. |
 | Network NMEA2000 / RayNetworkBridge | Implemented RX/TX capability, authenticated sessions and bounded route services. M2.39B.8 Windows owner acceptance passed live boat RX/TX, Axiom retrieval, Autopilot and virtual multi-client checks. Scope is the tested client/bridge/device workflow, not every chartplotter or network; see the [bridge guide](../tools/network-can/README.md). |
-| Actisense NGT-1 | RX supported. Release TX disabled; Debug TX experimental because outbound corruption is unresolved in [#1](https://github.com/RFStateSide/RayNmeaSimulator-Archive/issues/1). No normal RX/TX qualification claim for its outbound path. |
+| Actisense NGT-1 | RX supported. Release TX disabled; Debug TX experimental because outbound corruption is unresolved in [#1](https://github.com/RFStateSide/RayNmeaSimulator/issues/1). No normal RX/TX qualification claim for its outbound path. |
 | Signal K | Publishing implemented with supported mappings; subscription into Viewer is not implemented. It is not raw CAN transport or evidence of physical NMEA2000 delivery. |
 
 Instrument TX requires explicit **Enable Sending**, individual Enable/interval and
@@ -92,7 +92,7 @@ Receive operation is not a claim of electrical silence: controllers can ACK and
 some transports perform protocol management. No software fixture establishes
 physical delivery, firmware compatibility, endurance or queued-frame retraction.
 Serial-port selection/refresh is accepted; extending Diagnostics device discovery
-to serial CAN adapters is separate [#27](https://github.com/RFStateSide/RayNmeaSimulator-Archive/issues/27).
+to serial CAN adapters is separate [#5](https://github.com/RFStateSide/RayNmeaSimulator/issues/5).
 
 ## Test infrastructure and evidence
 
@@ -137,21 +137,22 @@ qualification passes. No aggregate full-suite or all-instrument hardware pass is
 
 ## Outstanding work and maintenance
 
-- The accepted Ubuntu checkout retains its historical name; no relocation or Qt
-  Creator reset is required. Package qualification uses verified native dependency
-  stages. Machine-local overrides outside those qualified build caches retain
-  their own verification boundary.
-- [#18](https://github.com/RFStateSide/RayNmeaSimulator-Archive/issues/18) now has a qualified
+- Active Windows, Ubuntu and native ARM64 development uses separate
+  `RayNmeaSimulator-Active` checkouts, new build directories and verified
+  clone-local `.dependencies` stages. Historical checkouts and builds are
+  preserved for Archive reference; Qt kits are retained.
+- [#3](https://github.com/RFStateSide/RayNmeaSimulator/issues/3) now has a qualified
   private [Deploy workflow](../deployment/README.md), Windows/Linux runtime staging,
   installer preservation and ARM64/Debian 12 compatibility evidence. The original
   ARM64 glibc 2.38 failure and separate Debian 12 success remain distinct. Public
   distribution is still NO-GO; see the sole [public-release audit](../PUBLIC_RELEASE_AUDIT.md).
 - Additional optional VesselMovement navigation mappings in
-  [#29](https://github.com/RFStateSide/RayNmeaSimulator-Archive/issues/29) are explicitly
+  [#7](https://github.com/RFStateSide/RayNmeaSimulator/issues/7) are explicitly
   deferred to v0.2.0. Other enhancements and hardware qualifications retain their
   existing issue scope and version decisions; no new release commitments are made.
-- [#12](https://github.com/RFStateSide/RayNmeaSimulator-Archive/issues/12) tracks focused test
-  discovery and current capability/qualification documentation.
+- Historical [#12](https://github.com/RFStateSide/RayNmeaSimulator-Archive/issues/12)
+  records the completed test-discovery and capability-documentation work; it was
+  not recreated as an active ticket.
 
 Maintain this page when supported behavior, qualification or limitations change;
 link dated evidence and identify which newer acceptance supersedes older wording.
