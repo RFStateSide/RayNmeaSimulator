@@ -1,0 +1,4280 @@
+{
+  "lookups": {
+    "DEVICE_CLASS": {
+      "0": "Reserved for 2000 Use",
+      "10": "System tools",
+      "100": "Deck + cargo + fishing equipment systems",
+      "110": "Human Interface",
+      "120": "Display",
+      "125": "Entertainment",
+      "20": "Safety systems",
+      "25": "Internetwork device",
+      "30": "Electrical Distribution",
+      "35": "Electrical Generation",
+      "40": "Steering and Control surfaces",
+      "50": "Propulsion",
+      "60": "Navigation",
+      "70": "Communication",
+      "75": "Sensor Communication Interface",
+      "80": "Instrumentation/general systems",
+      "85": "External Environment",
+      "90": "Internal Environment"
+    },
+    "DEVICE_FUNCTION": {
+      "100:130": "Scale (Catch)",
+      "10:130": "Diagnostic",
+      "10:140": "Bus Traffic Logger",
+      "110:130": "Button Interface",
+      "110:135": "Switch Interface",
+      "110:140": "Analog Interface",
+      "120:130": "Display",
+      "120:140": "Alarm Enunciator",
+      "125:130": "Multimedia Player",
+      "125:140": "Multimedia Controller",
+      "20:110": "Alarm Enunciator",
+      "20:130": "Emergency Position Indicating Radio Beacon (EPIRB)",
+      "20:135": "Man Overboard",
+      "20:140": "Voyage Data Recorder",
+      "20:150": "Camera",
+      "25:130": "PC Gateway",
+      "25:131": "NMEA 2000 to Analog Gateway",
+      "25:132": "Analog to NMEA 2000 Gateway",
+      "25:133": "NMEA 2000 to Serial Gateway",
+      "25:135": "NMEA 0183 Gateway",
+      "25:136": "NMEA Network Gateway",
+      "25:137": "NMEA 2000 Wireless Gateway",
+      "25:140": "Router",
+      "25:150": "Bridge",
+      "25:160": "Repeater",
+      "30:130": "Binary Event Monitor",
+      "30:140": "Load Controller",
+      "30:141": "AC/DC Input",
+      "30:150": "Function Controller",
+      "35:140": "Engine",
+      "35:141": "DC Generator/Alternator",
+      "35:142": "Solar Panel (Solar Array)",
+      "35:143": "Wind Generator (DC)",
+      "35:144": "Fuel Cell",
+      "35:145": "Network Power Supply",
+      "35:151": "AC Generator",
+      "35:152": "AC Bus",
+      "35:153": "AC Mains (Utility/Shore)",
+      "35:154": "AC Output",
+      "35:160": "Power Converter - Battery Charger",
+      "35:161": "Power Converter - Battery Charger+Inverter",
+      "35:162": "Power Converter - Inverter",
+      "35:163": "Power Converter - DC",
+      "35:170": "Battery",
+      "35:180": "Engine Gateway",
+      "40:130": "Follow-up Controller",
+      "40:140": "Mode Controller",
+      "40:150": "Autopilot",
+      "40:155": "Rudder",
+      "40:160": "Heading Sensors",
+      "40:170": "Trim (Tabs)/Interceptors",
+      "40:180": "Attitude (Pitch, Roll, Yaw) Control",
+      "50:130": "Engineroom Monitoring",
+      "50:140": "Engine",
+      "50:141": "DC Generator/Alternator",
+      "50:150": "Engine Controller",
+      "50:151": "AC Generator",
+      "50:155": "Motor",
+      "50:160": "Engine Gateway",
+      "50:165": "Transmission",
+      "50:170": "Throttle/Shift Control",
+      "50:180": "Actuator",
+      "50:190": "Gauge Interface",
+      "50:200": "Gauge Large",
+      "50:210": "Gauge Small",
+      "60:130": "Bottom Depth",
+      "60:135": "Bottom Depth/Speed",
+      "60:136": "Bottom Depth/Speed/Temperature",
+      "60:140": "Ownship Attitude",
+      "60:145": "Ownship Position (GNSS)",
+      "60:150": "Ownship Position (Loran C)",
+      "60:155": "Speed",
+      "60:160": "Turn Rate Indicator",
+      "60:170": "Integrated Navigation",
+      "60:175": "Integrated Navigation System",
+      "60:190": "Navigation Management",
+      "60:195": "Automatic Identification System (AIS)",
+      "60:200": "Radar",
+      "60:201": "Infrared Imaging",
+      "60:205": "ECDIS",
+      "60:210": "ECS",
+      "60:220": "Direction Finder",
+      "60:230": "Voyage Status",
+      "70:130": "EPIRB",
+      "70:140": "AIS",
+      "70:150": "DSC",
+      "70:160": "Data Receiver/Transceiver",
+      "70:170": "Satellite",
+      "70:180": "Radio-telephone (MF/HF)",
+      "70:190": "Radiotelephone",
+      "75:130": "Temperature",
+      "75:140": "Pressure",
+      "75:150": "Fluid Level",
+      "75:160": "Flow",
+      "75:170": "Humidity",
+      "80:130": "Time/Date Systems",
+      "80:140": "VDR",
+      "80:150": "Integrated Instrumentation",
+      "80:160": "General Purpose Displays",
+      "80:170": "General Sensor Box",
+      "80:180": "Weather Instruments",
+      "80:190": "Transducer/General",
+      "80:200": "NMEA 0183 Converter",
+      "85:130": "Atmospheric",
+      "85:160": "Aquatic",
+      "90:130": "HVAC"
+    },
+    "FUSION_MUTE_COMMAND": {
+      "1": "Mute On",
+      "2": "Mute Off"
+    },
+    "FUSION_POWER_STATE": {
+      "1": "On",
+      "2": "Off"
+    },
+    "INDUSTRY_CODE": {
+      "0": "Global",
+      "1": "Highway",
+      "2": "Agriculture",
+      "3": "Construction",
+      "4": "Marine Industry",
+      "5": "Industrial"
+    },
+    "MANUFACTURER_CODE": {
+      "1004": "Ultraflex",
+      "1008": "Lintest SmartBoat",
+      "1011": "Soundmax",
+      "1020": "Team Italia Marine (Onyx Marine Automation s.r.l)",
+      "1021": "Entratech",
+      "1022": "ITC",
+      "1029": "The Marine Guardian",
+      "1047": "Sonic",
+      "1051": "ProNav",
+      "1053": "Vetus Maxwell INC.",
+      "1056": "Lithium Pros",
+      "1059": "Boatrax",
+      "1062": "Marol Co ltd",
+      "1065": "CALYPSO Instruments",
+      "1066": "Spot Zero Water",
+      "1069": "Lithionics Battery",
+      "1070": "Quick-teck Electronics",
+      "1075": "Uniden America",
+      "1083": "Nauticoncept",
+      "1084": "Shadow-Caster LED lighting",
+      "1085": "Wet Sounds",
+      "1088": "E-T-A Circuit Breakers",
+      "1092": "Scheiber",
+      "1100": "Smart Yachts International Limited",
+      "1109": "Dockmate",
+      "1114": "Bobs Machine",
+      "1118": "L3Harris ASV",
+      "1119": "Balmar",
+      "1120": "Elettromedia",
+      "1127": "Electromaax",
+      "1140": "Across Oceans Systems",
+      "1145": "Kiwi Yachting",
+      "1150": "BSB Artificial Intelligence",
+      "1151": "Orca Technologies",
+      "1154": "TBS Electronics",
+      "1158": "Technoton Electroics",
+      "1160": "MG Energy Systems",
+      "1169": "Sea Machine Robotics",
+      "1171": "Vista Manufacturing",
+      "1183": "Zipwake",
+      "1186": "Sailmon",
+      "1192": "Airmoniq Pro Kft",
+      "1194": "Sierra Marine",
+      "1200": "Xinuo Information Technology (Xiamen)",
+      "1218": "Septentrio",
+      "1233": "NKE Marine Electronics",
+      "1238": "SuperTrack Aps",
+      "1239": "Honda Electronics",
+      "1245": "Raritan Engineering",
+      "1249": "Integrated Power Solutions AG",
+      "1260": "Interactive Technologies",
+      "1283": "LTG-Tech",
+      "1299": "Energy Solutions (UK)",
+      "1300": "WATT Fuel Cell",
+      "1302": "Pro Mainer",
+      "1305": "Dragonfly Energy",
+      "1306": "Koden Electronics",
+      "1311": "Humphree",
+      "1316": "Hinkley Yachts",
+      "1317": "Global Marine Management GmbH (GMM)",
+      "1320": "Triskel Marine",
+      "1330": "Warwick Control Technologies",
+      "1331": "Dolphin Charger",
+      "1337": "Barnacle Systems",
+      "1348": "Radian IoT",
+      "135": "Airmar",
+      "1353": "Ocean LED Marine",
+      "1359": "BluNav",
+      "1361": "OVA (Nantong Saiyang Electronics Co., Ltd)",
+      "1368": "RAD Propulsion",
+      "1369": "Electric Yacht",
+      "137": "Maretron",
+      "1372": "Elco Motor Yachts",
+      "1384": "Tecnoseal Foundry S.r.l",
+      "1385": "Pro Charging Systems",
+      "1389": "EVEX",
+      "1398": "Gobius Sensor Technology",
+      "140": "Lowrance",
+      "1403": "Arco Marine",
+      "1408": "Lenco Marine",
+      "1413": "Naocontrol",
+      "1417": "Revatek",
+      "1438": "Aeolionics",
+      "1439": "PredictWind",
+      "144": "Mercury Marine",
+      "1440": "Egis Mobile Electric",
+      "1445": "Starboard Yacht Group",
+      "1446": "Roswell Marine",
+      "1451": "ePropulsion (Guangdong ePropulsion Technology Ltd.)",
+      "1452": "Micro-Air",
+      "1453": "Vital Battery",
+      "1458": "Ride Controller",
+      "1460": "Tocaro Blue",
+      "1461": "Vanquish Yachts",
+      "147": "Nautibus Electronic",
+      "1471": "FT Technologies",
+      "1478": "Alps Alpine",
+      "148": "Blue Water Data",
+      "1481": "E-Force Marine",
+      "1482": "CMC Marine",
+      "1483": "Nanjing Sandemarine Information Technology",
+      "154": "Westerbeke",
+      "157": "ISSPRO",
+      "161": "Offshore Systems (UK)",
+      "163": "Evinrude/BRP",
+      "165": "CPAC Systems",
+      "168": "Xantrex Technology",
+      "169": "Marlin Technologies",
+      "172": "Yanmar Marine",
+      "174": "Volvo Penta",
+      "176": "Carling Technologies Inc. (Moritz Aerospace)",
+      "185": "Beede Instruments",
+      "1850": "Teleflex Marine (SeaStar Solutions)",
+      "1851": "Raymarine",
+      "1852": "Navionics",
+      "1853": "Japan Radio",
+      "1854": "Northstar Technologies",
+      "1855": "Furuno",
+      "1856": "Trimble",
+      "1857": "Simrad",
+      "1858": "Litton",
+      "1859": "Kvasar",
+      "1860": "MMP",
+      "1861": "Vector Cantech",
+      "1862": "Yamaha Marine",
+      "1863": "Faria Instruments",
+      "192": "Floscan Instrument",
+      "193": "Nobeltec",
+      "198": "Mystic Valley Communications",
+      "199": "Actia",
+      "201": "Disenos Y Technologia",
+      "211": "Digital Switching Systems",
+      "215": "Xintex/Atena",
+      "224": "EMMI NETWORK",
+      "228": "ZF",
+      "229": "Garmin",
+      "233": "Yacht Monitoring Solutions",
+      "235": "Sailormade Marine Telemetry/Tetra Technology",
+      "243": "Eride",
+      "257": "Honda Motor",
+      "272": "Groco",
+      "273": "Actisense",
+      "274": "Amphenol LTW Technology",
+      "275": "Navico",
+      "283": "Hamilton Jet",
+      "285": "Sea Recovery",
+      "286": "Coelmo SRL Italy",
+      "295": "BEP Marine",
+      "304": "Empir Bus",
+      "305": "NovAtel",
+      "306": "Sleipner Motor",
+      "307": "MBW Technologies",
+      "315": "ICOM",
+      "328": "Qwerty",
+      "329": "Dief",
+      "341": "Boening Automationstechnologie",
+      "345": "Korean Maritime University",
+      "351": "Thrane and Thrane",
+      "355": "Mastervolt",
+      "356": "Fischer Panda Generators",
+      "358": "Victron Energy",
+      "370": "Rolls Royce Marine",
+      "373": "Electronic Design",
+      "374": "Northern Lights",
+      "378": "Glendinning",
+      "381": "B & G",
+      "384": "Rose Point Navigation Systems",
+      "385": "Johnson Outdoors Marine Electronics Inc Geonav",
+      "394": "Capi 2",
+      "396": "Beyond Measure",
+      "400": "Livorsi Marine",
+      "404": "ComNav",
+      "409": "Chetco",
+      "419": "Fusion Electronics",
+      "421": "Standard Horizon",
+      "422": "True Heading",
+      "426": "Egersund Marine Electronics",
+      "427": "em-trak Marine Electronics",
+      "431": "Tohatsu Co, JP",
+      "437": "Digital Yacht",
+      "438": "Comar Systems Limited",
+      "440": "Cummins",
+      "443": "VDO (aka Continental-Corporation)",
+      "451": "Parker Hannifin aka Village Marine Tech",
+      "459": "Alltek Marine Electronics",
+      "460": "SAN GIORGIO S.E.I.N",
+      "466": "Veethree Electronics & Marine",
+      "470": "SI-TEX Marine Electronics",
+      "471": "Sea Cross Marine",
+      "475": "GME aka Standard Communications",
+      "476": "Humminbird Marine Electronics",
+      "478": "Ocean Sat",
+      "481": "Chetco Digital Instruments",
+      "493": "Watcheye",
+      "499": "Lcj Capteurs",
+      "502": "Attwood Marine",
+      "503": "Naviop S.R.L.",
+      "504": "Vesper Marine",
+      "510": "Marinesoft",
+      "513": "Simarine",
+      "517": "NoLand Engineering",
+      "518": "Transas USA",
+      "529": "National Instruments Korea",
+      "530": "National Marine Electronics Association",
+      "532": "Onwa Marine",
+      "540": "Webasto",
+      "571": "Marinecraft (South Korea)",
+      "573": "McMurdo Group aka Orolia",
+      "578": "Advansea",
+      "579": "KVH",
+      "580": "San Jose Technology",
+      "583": "Yacht Control",
+      "586": "Suzuki Motor",
+      "591": "US Coast Guard",
+      "595": "Ship Module aka Customware",
+      "600": "Aquatic AV",
+      "605": "Aventics",
+      "606": "Intellian",
+      "612": "SamwonIT",
+      "614": "Arlt Tecnologies",
+      "637": "Bavaria Yachts",
+      "641": "Diverse Yacht Services",
+      "644": "Wema U.S.A dba KUS",
+      "658": "Shenzhen Jiuzhou Himunication",
+      "688": "Rockford",
+      "69": "ARKS Enterprises",
+      "699": "Harman International",
+      "704": "JL Audio",
+      "708": "Lars Thrane",
+      "715": "Autonnic",
+      "717": "Yacht Devices",
+      "734": "REAP Systems",
+      "735": "AEM Performance Electronics",
+      "739": "LxNav",
+      "741": "Littelfuse, Inc (formerly Carling Technologies)",
+      "743": "DaeMyung",
+      "744": "Woosung",
+      "748": "ISOTTA IFRA srl",
+      "773": "Clarion US",
+      "776": "HMI Systems",
+      "777": "Ocean Signal",
+      "778": "Seakeeper",
+      "78": "FW Murphy/Enovation Controls",
+      "781": "Poly Planar",
+      "785": "Fischer Panda DE",
+      "795": "Broyda Industries",
+      "796": "Canadian Automotive",
+      "797": "Tides Marine",
+      "798": "Lumishore",
+      "799": "Still Water Designs and Audio",
+      "80": "Twin Disc",
+      "802": "BJ Technologies (Beneteau)",
+      "803": "Gill Sensors",
+      "811": "Blue Water Desalination",
+      "815": "FLIR",
+      "824": "Undheim Systems",
+      "826": "Lewmar",
+      "838": "TeamSurv",
+      "844": "Fell Marine",
+      "847": "Oceanvolt",
+      "85": "Kohler Power Systems",
+      "862": "Prospec",
+      "868": "Data Panel",
+      "88": "Hemisphere GPS",
+      "890": "L3 Technologies",
+      "894": "Rhodan Marine Systems",
+      "896": "Nexfour Solutions",
+      "905": "ASA Electronics",
+      "909": "Marines Co (South Korea)",
+      "911": "Nautic-on",
+      "917": "Sentinel",
+      "929": "JL Marine Systems",
+      "930": "Ecotronix",
+      "944": "Zontisa Marine",
+      "951": "EXOR International",
+      "962": "Timbolier Industries",
+      "963": "TJC Micro",
+      "968": "Cox Powertrain",
+      "969": "Blue Seas",
+      "981": "Kobelt Manufacturing",
+      "992": "Blue Ocean IOT",
+      "997": "Xenta Systems",
+      "999": "Signal K"
+    },
+    "SEATALK_DEVICE_ID": {
+      "3": "S100",
+      "5": "Course Computer"
+    },
+    "SEATALK_PILOT_MODE": {
+      "64": "Standby",
+      "66": "Auto",
+      "70": "Wind",
+      "74": "Track"
+    },
+    "SEATALK_PILOT_MODE_16": {
+      "0": "Standby",
+      "256": "Vane, Wind Mode",
+      "384": "Track Mode",
+      "385": "No Drift, COG referenced (In track, course changes)",
+      "64": "Auto, compass commanded"
+    }
+  },
+  "names": {
+    "126208": "NMEA - Request group function",
+    "126464": "PGN List (Transmit and Receive)",
+    "126720": "Garmin AHRS ATT: COG Source Valid Flag",
+    "126983": "Alert",
+    "126984": "Alert Response",
+    "126985": "Alert Text",
+    "126986": "Alert Configuration",
+    "126987": "Alert Threshold",
+    "126988": "Alert Value",
+    "126992": "System Time",
+    "126993": "Heartbeat",
+    "126996": "Product Information",
+    "126998": "Configuration Information",
+    "127233": "Man Overboard Notification",
+    "127237": "Heading/Track control",
+    "127245": "Rudder",
+    "127250": "Vessel Heading",
+    "127251": "Rate of Turn",
+    "127252": "Heave",
+    "127257": "Attitude",
+    "127258": "Magnetic Variation",
+    "127488": "Engine Parameters, Rapid Update",
+    "127489": "Engine Parameters, Dynamic",
+    "127490": "Electric Drive Status, Dynamic",
+    "127491": "Electric Energy Storage Status, Dynamic",
+    "127493": "Transmission Parameters, Dynamic",
+    "127494": "Electric Drive Information",
+    "127495": "Electric Energy Storage Information",
+    "127496": "Trip Parameters, Vessel",
+    "127497": "Trip Parameters, Engine",
+    "127498": "Engine Parameters, Static",
+    "127500": "Load Controller Connection State/Control",
+    "127501": "Binary Switch Bank Status",
+    "127502": "Switch Bank Control",
+    "127503": "AC Input Status",
+    "127504": "AC Output Status",
+    "127505": "Fluid Level",
+    "127506": "DC Detailed Status",
+    "127507": "Charger Status",
+    "127508": "Battery Status",
+    "127509": "Inverter Status",
+    "127510": "Charger Configuration Status",
+    "127511": "Inverter Configuration Status",
+    "127512": "AGS Configuration Status",
+    "127513": "Battery Configuration Status",
+    "127514": "AGS Status",
+    "127744": "AC Power / Current - Phase A",
+    "127745": "AC Power / Current - Phase B",
+    "127746": "AC Power / Current - Phase C",
+    "127747": "AC Voltage / Frequency - Phase A",
+    "127748": "AC Voltage / Frequency - Phase B",
+    "127749": "AC Voltage / Frequency - Phase C",
+    "127750": "Converter Status",
+    "127751": "DC Voltage/Current",
+    "128000": "Leeway Angle",
+    "128001": "Vessel Acceleration",
+    "128002": "Electric Drive Status, Rapid Update",
+    "128003": "Electric Energy Storage Status, Rapid Update",
+    "128006": "Thruster Control Status",
+    "128007": "Thruster Information",
+    "128008": "Thruster Motor Status",
+    "128259": "Speed",
+    "128267": "Water Depth",
+    "128275": "Distance Log",
+    "128520": "Tracked Target Data",
+    "128538": "Elevator Car Status",
+    "128768": "Elevator Motor Control",
+    "128769": "Elevator Deck Push Button",
+    "128776": "Windlass Control Status",
+    "128777": "Anchor Windlass Operating Status",
+    "128778": "Anchor Windlass Monitoring Status",
+    "128780": "Linear Actuator Control/Status",
+    "129025": "Position, Rapid Update",
+    "129026": "COG & SOG, Rapid Update",
+    "129027": "Position Delta, Rapid Update",
+    "129028": "Altitude Delta, Rapid Update",
+    "129029": "GNSS Position Data",
+    "129033": "Time & Date",
+    "129038": "AIS Class A Position Report",
+    "129039": "AIS Class B Position Report",
+    "129040": "AIS Class B Extended Position Report",
+    "129041": "AIS Aids to Navigation (AtoN) Report",
+    "129044": "Datum",
+    "129045": "User Datum",
+    "129283": "Cross Track Error",
+    "129284": "Navigation Data",
+    "129285": "Navigation - Route/WP Information",
+    "129291": "Set & Drift, Rapid Update",
+    "129301": "Navigation - Route / Time to+from Mark",
+    "129302": "Bearing and Distance between two Marks",
+    "129538": "GNSS Control Status",
+    "129539": "GNSS DOPs",
+    "129540": "GNSS Sats in View",
+    "129541": "GPS Almanac Data",
+    "129542": "GNSS Pseudorange Noise Statistics",
+    "129545": "GNSS RAIM Output",
+    "129546": "GNSS RAIM Settings",
+    "129547": "GNSS Pseudorange Error Statistics",
+    "129549": "DGNSS Corrections",
+    "129550": "GNSS Differential Correction Receiver Interface",
+    "129551": "GNSS Differential Correction Receiver Signal",
+    "129556": "GLONASS Almanac Data",
+    "129792": "AIS DGNSS Broadcast Binary Message",
+    "129793": "AIS UTC and Date Report",
+    "129794": "AIS Class A Static and Voyage Related Data",
+    "129795": "AIS Addressed Binary Message",
+    "129796": "AIS Acknowledge",
+    "129797": "AIS Binary Broadcast Message",
+    "129798": "AIS SAR Aircraft Position Report",
+    "129799": "Radio Frequency/Mode/Power",
+    "129800": "AIS UTC/Date Inquiry",
+    "129801": "AIS Addressed Safety Related Message",
+    "129802": "AIS Safety Related Broadcast Message",
+    "129803": "AIS Interrogation",
+    "129804": "AIS Assignment Mode Command",
+    "129805": "AIS Data Link Management Message",
+    "129806": "AIS Channel Management",
+    "129807": "AIS Class B Group Assignment",
+    "129808": "DSC Distress Call Information",
+    "129809": "AIS Class B static data (msg 24 Part A)",
+    "129810": "AIS Class B static data (msg 24 Part B)",
+    "129811": "AIS Single Slot Binary Message (Deprecated)",
+    "129812": "AIS Multi Slot Binary Message (Deprecated)",
+    "129813": "AIS Long-Range Broadcast Message",
+    "129814": "AIS Single Slot Binary Message",
+    "129815": "AIS Multi Slot Binary Message",
+    "129816": "AIS Acknowledge (Binary)",
+    "130052": "Loran-C TD Data",
+    "130053": "Loran-C Range Data",
+    "130054": "Loran-C Signal Data",
+    "130060": "Label",
+    "130061": "Channel Source Configuration",
+    "130064": "Route and WP Service - Database List",
+    "130065": "Route and WP Service - Route List",
+    "130066": "Route and WP Service - Route/WP-List Attributes",
+    "130067": "Route and WP Service - Route - WP Name & Position",
+    "130068": "Route and WP Service - Route - WP Name",
+    "130069": "Route and WP Service - XTE Limit & Navigation Method",
+    "130070": "Route and WP Service - WP Comment",
+    "130071": "Route and WP Service - Route Comment",
+    "130072": "Route and WP Service - Database Comment",
+    "130073": "Route and WP Service - Radius of Turn",
+    "130074": "Route and WP Service - WP List - WP Name & Position",
+    "130306": "Wind Data",
+    "130310": "Environmental Parameters (obsolete)",
+    "130311": "Environmental Parameters",
+    "130312": "Temperature",
+    "130313": "Humidity",
+    "130314": "Actual Pressure",
+    "130315": "Set Pressure",
+    "130316": "Temperature Extended Range",
+    "130320": "Tide Station Data",
+    "130321": "Salinity Station Data",
+    "130322": "Current Station Data",
+    "130323": "Meteorological Station Data",
+    "130324": "Moored Buoy Station Data",
+    "130329": "HVAC Status",
+    "130330": "Lighting System Settings",
+    "130560": "Payload Mass",
+    "130561": "Lighting Zone",
+    "130562": "Lighting Scene",
+    "130563": "Lighting Device",
+    "130564": "Lighting Device Enumeration",
+    "130565": "Lighting Color Sequence",
+    "130566": "Lighting Program",
+    "130567": "Watermaker Input Setting and Status",
+    "130568": "Entertainment - Diagnostic Status",
+    "130569": "Current Status and File",
+    "130570": "Library Data File",
+    "130571": "Library Data Group",
+    "130572": "Library Data Search",
+    "130573": "Supported Source Data",
+    "130574": "Supported Zone Data",
+    "130575": "Entertainment - Parental Control Status",
+    "130576": "Small Craft Status",
+    "130577": "Direction Data",
+    "130578": "Vessel Speed Components",
+    "130579": "System Configuration",
+    "130580": "System Configuration (deprecated)",
+    "130581": "Zone Configuration (deprecated)",
+    "130582": "Zone Volume",
+    "130583": "Available Audio EQ presets",
+    "130584": "Available Bluetooth addresses",
+    "130585": "Bluetooth source status",
+    "130586": "Zone Configuration",
+    "130816": "SonicHub: Init #2",
+    "130817": "Navico: Feature Unlock",
+    "130818": "Simnet: Reprogram Data",
+    "130819": "Simnet: Request Reprogram",
+    "130820": "BEP Marine: CZone Alarm String Response",
+    "130821": "Navico: ASCII Data",
+    "130822": "Navico: UDB Database, Object Ping",
+    "130823": "Maretron: Proprietary Temperature High Range",
+    "130824": "B&G: key-value data",
+    "130825": "Maretron: Data Instance Channel Correlation",
+    "130826": "Maretron: Switch Indicator Status",
+    "130827": "Lowrance: unknown",
+    "130828": "Simnet: Set Serial Number",
+    "130829": "Mercury: Engine Status",
+    "130830": "Maretron: Dometic HVAC Status",
+    "130831": "Maretron: Universal Configuration FP",
+    "130832": "Maretron: Vessel Operating Mode",
+    "130833": "Maretron: Vessel Data Recorder Status",
+    "130834": "Maretron: SMS Status",
+    "130835": "Maretron: SMS Text Message",
+    "130836": "Simnet: Fluid Level Sensor Configuration",
+    "130837": "Suzuki: Engine Sensor Data",
+    "130838": "Maretron: BNWAS",
+    "130839": "Simnet: Pressure Sensor Configuration",
+    "130840": "Maretron: Generic Sensor",
+    "130841": "Maretron: CAN Frame Forwarding",
+    "130842": "Maretron: Windlass Operating Status",
+    "130843": "Maretron: Windlass Control Command",
+    "130844": "Carling: Proprietary",
+    "130845": "Maretron: DC Energy",
+    "130846": "Simnet: Key Value - Long",
+    "130847": "Navico: ASCII Identifier",
+    "130848": "SeaTalk: Waypoint Information",
+    "130849": "Navico: Proprietary FP",
+    "130850": "Simnet: Command AP Standby",
+    "130851": "Simnet: AP command Reply: Change Course",
+    "130852": "Navico: Diagnostic Data",
+    "130856": "Simnet: Alarm Message",
+    "130860": "Simnet: AP Unknown 4",
+    "130880": "Airmar: Additional Weather Data",
+    "130881": "Airmar: Heater Control",
+    "130900": "Xantrex: AC Status",
+    "130910": "Xantrex: DC Source Configuration Status",
+    "130911": "Xantrex: AC Output Configuration Status",
+    "130912": "Xantrex: Charger Configuration Status",
+    "130913": "Xantrex: AC Input Configuration Status",
+    "130918": "SeaTalk: Route Information",
+    "130921": "Carling: Breaker Status and Configuration",
+    "130939": "Lumishore: Light Control",
+    "130944": "Airmar: POST",
+    "130945": "Yamaha: Engine Data",
+    "130946": "Yamaha: Engine Data 2",
+    "130947": "Yamaha: Engine Data 3",
+    "130951": "Yamaha: Engine Data 4",
+    "131008": "Yamaha: Engine Data 5",
+    "131011": "Yamaha: Engine Data 6",
+    "131012": "Yamaha: Engine Data 7",
+    "59392": "ISO Acknowledgement",
+    "59904": "ISO Request",
+    "60160": "ISO Transport Protocol, Data Transfer",
+    "60416": "ISO Transport Protocol, Connection Management - Request To Send",
+    "60928": "ISO Address Claim",
+    "61184": "Seatalk: Wireless Keypad Light Control",
+    "65001": "Bus #1 Phase C Basic AC Quantities",
+    "65002": "Bus #1 Phase B Basic AC Quantities",
+    "65003": "Bus #1 Phase A Basic AC Quantities",
+    "65004": "Bus #1 Average Basic AC Quantities",
+    "65005": "Utility Total AC Energy",
+    "65006": "Utility Phase C AC Reactive Power",
+    "65007": "Utility Phase C AC Power",
+    "65008": "Utility Phase C Basic AC Quantities",
+    "65009": "Utility Phase B AC Reactive Power",
+    "65010": "Utility Phase B AC Power",
+    "65011": "Utility Phase B Basic AC Quantities",
+    "65012": "Utility Phase A AC Reactive Power",
+    "65013": "Utility Phase A AC Power",
+    "65014": "Utility Phase A Basic AC Quantities",
+    "65015": "Utility Total AC Reactive Power",
+    "65016": "Utility Total AC Power",
+    "65017": "Utility Average Basic AC Quantities",
+    "65018": "Generator Total AC Energy",
+    "65019": "Generator Phase C AC Reactive Power",
+    "65020": "Generator Phase C AC Power",
+    "65021": "Generator Phase C Basic AC Quantities",
+    "65022": "Generator Phase B AC Reactive Power",
+    "65023": "Generator Phase B AC Power",
+    "65024": "Generator Phase B Basic AC Quantities",
+    "65025": "Generator Phase A AC Reactive Power",
+    "65026": "Generator Phase A AC Power",
+    "65027": "Generator Phase A Basic AC Quantities",
+    "65028": "Generator Total AC Reactive Power",
+    "65029": "Generator Total AC Power",
+    "65030": "Generator Average Basic AC Quantities",
+    "65240": "ISO Commanded Address",
+    "65280": "Furuno: Heave",
+    "65281": "Yanmar: Engine Data B",
+    "65282": "Maretron: Number of Channels",
+    "65283": "BEP Marine: CZone Channel State",
+    "65284": "Maretron: Proprietary DC Breaker Current",
+    "65285": "Airmar: Boot State Acknowledgment",
+    "65286": "Chetco: Dimmer",
+    "65287": "Airmar: Access Level",
+    "65288": "Seatalk: Alarm",
+    "65289": "Simnet: Trim Tab Sensor Calibration",
+    "65290": "Simnet: Paddle Wheel Speed Configuration",
+    "65291": "Maretron: Resistance",
+    "65292": "Simnet: Clear Fluid Level Warnings",
+    "65293": "Simnet: LGC-2000 Configuration",
+    "65294": "BEP Marine: Proprietary PGN 65294",
+    "65295": "BEP Marine: CZone Alarm",
+    "65296": "BEP Marine: Proprietary PGN 65296",
+    "65297": "BEP Marine: Proprietary PGN 65297",
+    "65298": "Suzuki: Engine Data A",
+    "65299": "Suzuki: Engine Data B",
+    "65300": "Suzuki: Engine Data C",
+    "65301": "BEP Marine: CZone 65301",
+    "65302": "Simnet: AP Unknown 1",
+    "65303": "Suzuki: Engine Data D",
+    "65304": "Suzuki: Engine Data E",
+    "65305": "Simnet: Device Status",
+    "65306": "BEP Marine: Proprietary PGN 65306",
+    "65308": "BEP Marine: Proprietary PGN 65308",
+    "65309": "Navico: Wireless Battery Status",
+    "65310": "BEP Marine: Proprietary PGN 65310",
+    "65311": "BEP Marine: Proprietary PGN 65311",
+    "65312": "Navico: Wireless Signal Status",
+    "65313": "Navico: Depth Quality",
+    "65314": "BEP Marine: Proprietary PGN 65314",
+    "65315": "Suzuki: Troll Mode Control",
+    "65316": "BEP Marine: Proprietary PGN 65316",
+    "65317": "Navico: Proprietary 2",
+    "65323": "Simnet: Data Source Selection Request",
+    "65324": "Simnet: Analog Telemetry",
+    "65325": "BEP Marine: Proprietary PGN 65325",
+    "65329": "Yamaha: Engine Data A",
+    "65330": "B&G: Proprietary",
+    "65332": "Simnet: ZC1/OP40 Key",
+    "65340": "Simnet: Autopilot Mode State",
+    "65341": "Simnet: Autopilot Angle",
+    "65344": "Yamaha: Engine Data B",
+    "65345": "Seatalk: Pilot Wind Datum",
+    "65346": "Yanmar: Engine Data D",
+    "65348": "Yanmar: Engine Data E",
+    "65349": "Yanmar: Engine Data F",
+    "65350": "Simnet: Magnetic Field",
+    "65359": "Seatalk: Pilot Heading",
+    "65360": "Seatalk: Pilot Locked Heading",
+    "65361": "Seatalk: Silence Alarm",
+    "65371": "Seatalk: Keypad Message",
+    "65374": "SeaTalk: Keypad Heartbeat",
+    "65379": "Seatalk: Pilot Mode",
+    "65403": "Lumishore: Light Status",
+    "65408": "Airmar: Depth Quality Factor",
+    "65409": "Airmar: Speed Pulse Count",
+    "65410": "Airmar: Device Information",
+    "65420": "Simnet: AP Unknown 3",
+    "65424": "Yamaha: Engine Data C",
+    "65440": "Navico: Naviop Switch Status",
+    "65441": "Navico: Naviop Switch Control",
+    "65472": "Yamaha: Engine Data D",
+    "65480": "Simnet: Autopilot Mode"
+  },
+  "provenance": {
+    "license": "Apache License Version 2.0",
+    "revision": "e3b0e18a3eaa6f24242b49adfd9043767a5dd373",
+    "sha256": "a7cfc2ec5cc282c2ac31cea5ce427afdffc0cdf3cf21a2b73a4738fd1584a283",
+    "url": "https://raw.githubusercontent.com/canboat/canboat/e3b0e18a3eaa6f24242b49adfd9043767a5dd373/docs/canboat.json",
+    "version": "9.0.0"
+  },
+  "variants": [
+    {
+      "id": "bepMarineProprietaryPgn65311",
+      "length": 8,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 295
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        }
+      ],
+      "name": "BEP Marine: Proprietary PGN 65311",
+      "pgn": 65311
+    },
+    {
+      "id": "seatalkPilotHeading",
+      "length": 8,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 1851
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        }
+      ],
+      "name": "Seatalk: Pilot Heading",
+      "pgn": 65359
+    },
+    {
+      "id": "seatalkPilotMode",
+      "length": 8,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 1851
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        }
+      ],
+      "name": "Seatalk: Pilot Mode",
+      "pgn": 65379
+    },
+    {
+      "id": "nmeaRequestGroupFunction",
+      "length": 11,
+      "matches": [
+        {
+          "bits": 8,
+          "offset": 0,
+          "value": 0
+        }
+      ],
+      "name": "NMEA - Request group function",
+      "pgn": 126208
+    },
+    {
+      "id": "nmeaCommandGroupFunction",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 8,
+          "offset": 0,
+          "value": 1
+        }
+      ],
+      "name": "NMEA - Command group function",
+      "pgn": 126208
+    },
+    {
+      "id": "nmeaAcknowledgeGroupFunction",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 8,
+          "offset": 0,
+          "value": 2
+        }
+      ],
+      "name": "NMEA - Acknowledge group function",
+      "pgn": 126208
+    },
+    {
+      "id": "nmeaReadFieldsGroupFunction",
+      "length": 9,
+      "matches": [
+        {
+          "bits": 8,
+          "offset": 0,
+          "value": 3
+        }
+      ],
+      "name": "NMEA - Read Fields group function",
+      "pgn": 126208
+    },
+    {
+      "id": "nmeaReadFieldsReplyGroupFunction",
+      "length": 9,
+      "matches": [
+        {
+          "bits": 8,
+          "offset": 0,
+          "value": 4
+        }
+      ],
+      "name": "NMEA - Read Fields reply group function",
+      "pgn": 126208
+    },
+    {
+      "id": "nmeaWriteFieldsGroupFunction",
+      "length": 9,
+      "matches": [
+        {
+          "bits": 8,
+          "offset": 0,
+          "value": 5
+        }
+      ],
+      "name": "NMEA - Write Fields group function",
+      "pgn": 126208
+    },
+    {
+      "id": "nmeaWriteFieldsReplyGroupFunction",
+      "length": 9,
+      "matches": [
+        {
+          "bits": 8,
+          "offset": 0,
+          "value": 6
+        }
+      ],
+      "name": "NMEA - Write Fields reply group function",
+      "pgn": 126208
+    },
+    {
+      "id": "garminAhrsAttCogSourceValidFlag",
+      "length": 12,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 229
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 1900
+        },
+        {
+          "bits": 8,
+          "offset": 32,
+          "value": 2
+        },
+        {
+          "bits": 8,
+          "offset": 40,
+          "value": 2
+        },
+        {
+          "bits": 16,
+          "offset": 48,
+          "value": 67
+        }
+      ],
+      "name": "Garmin AHRS ATT: COG Source Valid Flag",
+      "pgn": 126720
+    },
+    {
+      "id": "garminAhrsAttDeviceFlags",
+      "length": 12,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 229
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 1900
+        },
+        {
+          "bits": 8,
+          "offset": 32,
+          "value": 2
+        },
+        {
+          "bits": 8,
+          "offset": 40,
+          "value": 2
+        },
+        {
+          "bits": 16,
+          "offset": 48,
+          "value": 65
+        }
+      ],
+      "name": "Garmin AHRS ATT: Device Flags",
+      "pgn": 126720
+    },
+    {
+      "id": "garminAhrsAttNonDefaultCalibrationMatrixPresent",
+      "length": 9,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 229
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 1900
+        },
+        {
+          "bits": 8,
+          "offset": 32,
+          "value": 2
+        },
+        {
+          "bits": 8,
+          "offset": 40,
+          "value": 2
+        },
+        {
+          "bits": 16,
+          "offset": 48,
+          "value": 40
+        }
+      ],
+      "name": "Garmin AHRS ATT: Non-default Calibration Matrix Present",
+      "pgn": 126720
+    },
+    {
+      "id": "garminAhrsAttSetNorthState",
+      "length": 9,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 229
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 1900
+        },
+        {
+          "bits": 8,
+          "offset": 32,
+          "value": 2
+        },
+        {
+          "bits": 8,
+          "offset": 40,
+          "value": 2
+        },
+        {
+          "bits": 16,
+          "offset": 48,
+          "value": 52
+        }
+      ],
+      "name": "Garmin AHRS ATT: Set North State",
+      "pgn": 126720
+    },
+    {
+      "id": "garminAutopilotHeadingToSteer",
+      "length": 13,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 229
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 5904
+        },
+        {
+          "bits": 8,
+          "offset": 32,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 40,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 48,
+          "value": 0
+        },
+        {
+          "bits": 8,
+          "offset": 56,
+          "value": 11
+        }
+      ],
+      "name": "Garmin Autopilot: Heading to Steer",
+      "pgn": 126720
+    },
+    {
+      "id": "garminAutopilotRateOfTurn",
+      "length": 13,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 229
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 5904
+        },
+        {
+          "bits": 8,
+          "offset": 32,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 40,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 48,
+          "value": 0
+        },
+        {
+          "bits": 8,
+          "offset": 56,
+          "value": 114
+        }
+      ],
+      "name": "Garmin Autopilot: Rate of Turn",
+      "pgn": 126720
+    },
+    {
+      "id": "garminAutopilotRateOfTurnOrder",
+      "length": 13,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 229
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 5904
+        },
+        {
+          "bits": 8,
+          "offset": 32,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 40,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 48,
+          "value": 0
+        },
+        {
+          "bits": 8,
+          "offset": 56,
+          "value": 115
+        }
+      ],
+      "name": "Garmin Autopilot: Rate of Turn Order",
+      "pgn": 126720
+    },
+    {
+      "id": "garminAutopilotSpeed",
+      "length": 13,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 229
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 5904
+        },
+        {
+          "bits": 8,
+          "offset": 32,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 40,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 48,
+          "value": 0
+        },
+        {
+          "bits": 8,
+          "offset": 56,
+          "value": 246
+        }
+      ],
+      "name": "Garmin Autopilot: Speed",
+      "pgn": 126720
+    },
+    {
+      "id": "garminAutopilotSystemVoltage",
+      "length": 11,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 229
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 5904
+        },
+        {
+          "bits": 8,
+          "offset": 32,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 40,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 48,
+          "value": 2
+        },
+        {
+          "bits": 8,
+          "offset": 56,
+          "value": 158
+        }
+      ],
+      "name": "Garmin Autopilot: System Voltage",
+      "pgn": 126720
+    },
+    {
+      "id": "garminAutopilotTurnAngleOrder",
+      "length": 11,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 229
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 5904
+        },
+        {
+          "bits": 8,
+          "offset": 32,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 40,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 48,
+          "value": 2
+        },
+        {
+          "bits": 8,
+          "offset": 56,
+          "value": 116
+        }
+      ],
+      "name": "Garmin Autopilot: Turn Angle Order",
+      "pgn": 126720
+    },
+    {
+      "id": "garminAutopilotTurnAngleMeasured",
+      "length": 11,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 229
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 5904
+        },
+        {
+          "bits": 8,
+          "offset": 32,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 40,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 48,
+          "value": 2
+        },
+        {
+          "bits": 8,
+          "offset": 56,
+          "value": 161
+        }
+      ],
+      "name": "Garmin Autopilot: Turn Angle Measured",
+      "pgn": 126720
+    },
+    {
+      "id": "garminAutopilotEngineRpmA",
+      "length": 11,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 229
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 5904
+        },
+        {
+          "bits": 8,
+          "offset": 32,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 40,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 48,
+          "value": 5
+        },
+        {
+          "bits": 8,
+          "offset": 56,
+          "value": 240
+        }
+      ],
+      "name": "Garmin Autopilot: Engine RPM A",
+      "pgn": 126720
+    },
+    {
+      "id": "garminAutopilotEngineRpmB",
+      "length": 11,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 229
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 5904
+        },
+        {
+          "bits": 8,
+          "offset": 32,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 40,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 48,
+          "value": 5
+        },
+        {
+          "bits": 8,
+          "offset": 56,
+          "value": 239
+        }
+      ],
+      "name": "Garmin Autopilot: Engine RPM B",
+      "pgn": 126720
+    },
+    {
+      "id": "garminAutopilotResponseSetting",
+      "length": 10,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 229
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 5904
+        },
+        {
+          "bits": 8,
+          "offset": 32,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 40,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 48,
+          "value": 1
+        },
+        {
+          "bits": 8,
+          "offset": 56,
+          "value": 62
+        }
+      ],
+      "name": "Garmin Autopilot: Response Setting",
+      "pgn": 126720
+    },
+    {
+      "id": "garminAutopilotModeState",
+      "length": 11,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 229
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 5904
+        },
+        {
+          "bits": 8,
+          "offset": 32,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 40,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 48,
+          "value": 5
+        },
+        {
+          "bits": 8,
+          "offset": 56,
+          "value": 10
+        }
+      ],
+      "name": "Garmin Autopilot: Mode State",
+      "pgn": 126720
+    },
+    {
+      "id": "garminAutopilotHeartbeat",
+      "length": 12,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 229
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 5904
+        },
+        {
+          "bits": 8,
+          "offset": 32,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 40,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 48,
+          "value": 21
+        },
+        {
+          "bits": 8,
+          "offset": 56,
+          "value": 3
+        }
+      ],
+      "name": "Garmin Autopilot: Heartbeat",
+      "pgn": 126720
+    },
+    {
+      "id": "garminAutopilotManeuver",
+      "length": 10,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 229
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 5904
+        },
+        {
+          "bits": 8,
+          "offset": 32,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 40,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 48,
+          "value": 38
+        }
+      ],
+      "name": "Garmin Autopilot: Maneuver",
+      "pgn": 126720
+    },
+    {
+      "id": "seatalk1PilotMode",
+      "length": 21,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 1851
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 16,
+          "value": 240
+        },
+        {
+          "bits": 8,
+          "offset": 24,
+          "value": 129
+        },
+        {
+          "bits": 8,
+          "offset": 32,
+          "value": 132
+        }
+      ],
+      "name": "Seatalk1: Pilot Mode",
+      "pgn": 126720
+    },
+    {
+      "id": "seatalk1PilotHullType",
+      "length": 14,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 1851
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 16,
+          "value": 108
+        },
+        {
+          "bits": 8,
+          "offset": 24,
+          "value": 22
+        }
+      ],
+      "name": "Seatalk1: Pilot Hull Type",
+      "pgn": 126720
+    },
+    {
+      "id": "seatalkPilotAutoTurn",
+      "length": 9,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 1851
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 16,
+          "value": 108
+        },
+        {
+          "bits": 8,
+          "offset": 24,
+          "value": 38
+        }
+      ],
+      "name": "Seatalk: Pilot Auto Turn",
+      "pgn": 126720
+    },
+    {
+      "id": "seatalk1DeviceIdentification",
+      "length": 7,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 1851
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 16,
+          "value": 240
+        },
+        {
+          "bits": 8,
+          "offset": 24,
+          "value": 129
+        },
+        {
+          "bits": 8,
+          "offset": 32,
+          "value": 144
+        }
+      ],
+      "name": "Seatalk1: Device Identification",
+      "pgn": 126720
+    },
+    {
+      "id": "seatalk1DisplayBrightness",
+      "length": 9,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 1851
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 16,
+          "value": 140
+        },
+        {
+          "bits": 8,
+          "offset": 24,
+          "value": 12
+        },
+        {
+          "bits": 8,
+          "offset": 48,
+          "value": 0
+        }
+      ],
+      "name": "Seatalk1: Display Brightness",
+      "pgn": 126720
+    },
+    {
+      "id": "seatalk1DisplayColor",
+      "length": 9,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 1851
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 16,
+          "value": 140
+        },
+        {
+          "bits": 8,
+          "offset": 24,
+          "value": 12
+        },
+        {
+          "bits": 8,
+          "offset": 48,
+          "value": 1
+        }
+      ],
+      "name": "Seatalk1: Display Color",
+      "pgn": 126720
+    },
+    {
+      "id": "seatalk1Keystroke",
+      "length": 22,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 1851
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 16,
+          "value": 240
+        },
+        {
+          "bits": 8,
+          "offset": 24,
+          "value": 129
+        },
+        {
+          "bits": 8,
+          "offset": 32,
+          "value": 134
+        }
+      ],
+      "name": "Seatalk1: Keystroke",
+      "pgn": 126720
+    },
+    {
+      "id": "fusionMediaControl",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 3
+        }
+      ],
+      "name": "Fusion: Media Control",
+      "pgn": 126720
+    },
+    {
+      "id": "fusionSiriusControl",
+      "length": 8,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 30
+        }
+      ],
+      "name": "Fusion: Sirius Control",
+      "pgn": 126720
+    },
+    {
+      "id": "fusionRequestStatus",
+      "length": 4,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 1
+        }
+      ],
+      "name": "Fusion: Request Status",
+      "pgn": 126720
+    },
+    {
+      "id": "fusionSetSource",
+      "length": 5,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 2
+        }
+      ],
+      "name": "Fusion: Set Source",
+      "pgn": 126720
+    },
+    {
+      "id": "fusionSetMute",
+      "length": 5,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 17
+        }
+      ],
+      "name": "Fusion: Set Mute",
+      "pgn": 126720
+    },
+    {
+      "id": "fusionSetZoneVolume",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 24
+        }
+      ],
+      "name": "Fusion: Set Zone Volume",
+      "pgn": 126720
+    },
+    {
+      "id": "fusionSetAllVolumes",
+      "length": 8,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 25
+        }
+      ],
+      "name": "Fusion: Set All Volumes",
+      "pgn": 126720
+    },
+    {
+      "id": "fusionSetPower",
+      "length": 5,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 28
+        }
+      ],
+      "name": "Fusion: Set Power ",
+      "pgn": 126720
+    },
+    {
+      "id": "airmarAttitudeOffset",
+      "length": 9,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 135
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 16,
+          "value": 32
+        }
+      ],
+      "name": "Airmar: Attitude Offset",
+      "pgn": 126720
+    },
+    {
+      "id": "airmarCalibrateCompass",
+      "length": 24,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 135
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 16,
+          "value": 33
+        }
+      ],
+      "name": "Airmar: Calibrate Compass",
+      "pgn": 126720
+    },
+    {
+      "id": "airmarTrueWindOptions",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 135
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 16,
+          "value": 34
+        }
+      ],
+      "name": "Airmar: True Wind Options",
+      "pgn": 126720
+    },
+    {
+      "id": "airmarSimulateMode",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 135
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 16,
+          "value": 35
+        }
+      ],
+      "name": "Airmar: Simulate Mode",
+      "pgn": 126720
+    },
+    {
+      "id": "airmarCalibrateDepth",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 135
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 16,
+          "value": 40
+        }
+      ],
+      "name": "Airmar: Calibrate Depth",
+      "pgn": 126720
+    },
+    {
+      "id": "airmarCalibrateSpeed",
+      "length": 4,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 135
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 16,
+          "value": 41
+        }
+      ],
+      "name": "Airmar: Calibrate Speed",
+      "pgn": 126720
+    },
+    {
+      "id": "airmarCalibrateTemperature",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 135
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 16,
+          "value": 42
+        }
+      ],
+      "name": "Airmar: Calibrate Temperature",
+      "pgn": 126720
+    },
+    {
+      "id": "airmarSpeedFilterNone",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 135
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 16,
+          "value": 43
+        },
+        {
+          "bits": 4,
+          "offset": 24,
+          "value": 0
+        }
+      ],
+      "name": "Airmar: Speed Filter None",
+      "pgn": 126720
+    },
+    {
+      "id": "airmarSpeedFilterIir",
+      "length": 8,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 135
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 16,
+          "value": 43
+        },
+        {
+          "bits": 4,
+          "offset": 24,
+          "value": 1
+        }
+      ],
+      "name": "Airmar: Speed Filter IIR",
+      "pgn": 126720
+    },
+    {
+      "id": "airmarTemperatureFilterNone",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 135
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 16,
+          "value": 44
+        },
+        {
+          "bits": 4,
+          "offset": 24,
+          "value": 0
+        }
+      ],
+      "name": "Airmar: Temperature Filter None",
+      "pgn": 126720
+    },
+    {
+      "id": "airmarTemperatureFilterIir",
+      "length": 8,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 135
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 16,
+          "value": 44
+        },
+        {
+          "bits": 4,
+          "offset": 24,
+          "value": 1
+        }
+      ],
+      "name": "Airmar: Temperature Filter IIR",
+      "pgn": 126720
+    },
+    {
+      "id": "airmarMasterReset",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 135
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 16,
+          "value": 1
+        }
+      ],
+      "name": "Airmar: Master Reset",
+      "pgn": 126720
+    },
+    {
+      "id": "airmarNmea2000Options",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 135
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 16,
+          "value": 46
+        }
+      ],
+      "name": "Airmar: NMEA 2000 options",
+      "pgn": 126720
+    },
+    {
+      "id": "airmarResetEeprom",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 135
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 16,
+          "value": 130
+        }
+      ],
+      "name": "Airmar: Reset EEPROM",
+      "pgn": 126720
+    },
+    {
+      "id": "airmarAddressableMultiFrame",
+      "length": 3,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 135
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        }
+      ],
+      "name": "Airmar: Addressable Multi-Frame",
+      "pgn": 126720
+    },
+    {
+      "id": "maretronDeviationCalibrationResponse",
+      "length": 8,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 137
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 32,
+          "value": 1
+        },
+        {
+          "bits": 8,
+          "offset": 48,
+          "value": 80
+        }
+      ],
+      "name": "Maretron: Deviation Calibration Response",
+      "pgn": 126720
+    },
+    {
+      "id": "maretronProprietaryConfiguration",
+      "length": 230,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 137
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        }
+      ],
+      "name": "Maretron: Proprietary Configuration",
+      "pgn": 126720
+    },
+    {
+      "id": "carlingDcConfigurationCommand",
+      "length": 13,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 176
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        }
+      ],
+      "name": "Carling: DC Configuration Command",
+      "pgn": 126720
+    },
+    {
+      "id": "lumishoreProprietary",
+      "length": 225,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 798
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        }
+      ],
+      "name": "Lumishore: Proprietary",
+      "pgn": 126720
+    },
+    {
+      "id": "garminDayMode",
+      "length": 11,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 229
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 16,
+          "value": 222
+        },
+        {
+          "bits": 8,
+          "offset": 24,
+          "value": 5
+        },
+        {
+          "bits": 8,
+          "offset": 32,
+          "value": 5
+        },
+        {
+          "bits": 8,
+          "offset": 40,
+          "value": 5
+        },
+        {
+          "bits": 8,
+          "offset": 64,
+          "value": 0
+        }
+      ],
+      "name": "Garmin: Day Mode",
+      "pgn": 126720
+    },
+    {
+      "id": "garminNightMode",
+      "length": 11,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 229
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 16,
+          "value": 222
+        },
+        {
+          "bits": 8,
+          "offset": 24,
+          "value": 5
+        },
+        {
+          "bits": 8,
+          "offset": 32,
+          "value": 5
+        },
+        {
+          "bits": 8,
+          "offset": 40,
+          "value": 5
+        },
+        {
+          "bits": 8,
+          "offset": 64,
+          "value": 1
+        }
+      ],
+      "name": "Garmin: Night Mode",
+      "pgn": 126720
+    },
+    {
+      "id": "garminColorMode",
+      "length": 11,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 229
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 8,
+          "offset": 16,
+          "value": 222
+        },
+        {
+          "bits": 8,
+          "offset": 24,
+          "value": 5
+        },
+        {
+          "bits": 8,
+          "offset": 32,
+          "value": 5
+        },
+        {
+          "bits": 8,
+          "offset": 40,
+          "value": 5
+        },
+        {
+          "bits": 8,
+          "offset": 64,
+          "value": 13
+        }
+      ],
+      "name": "Garmin: Color mode",
+      "pgn": 126720
+    },
+    {
+      "id": "fusionMenuActionCommand",
+      "length": 11,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 9
+        }
+      ],
+      "name": "Fusion: Menu Action Command",
+      "pgn": 126720
+    },
+    {
+      "id": "fusionRequestMenuCount",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 10
+        }
+      ],
+      "name": "Fusion: Request Menu Count",
+      "pgn": 126720
+    },
+    {
+      "id": "fusionRequestMenuItems",
+      "length": 14,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 11
+        }
+      ],
+      "name": "Fusion: Request Menu Items",
+      "pgn": 126720
+    },
+    {
+      "id": "fusionRequestMenuLockId",
+      "length": 8,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 12
+        }
+      ],
+      "name": "Fusion: Request Menu Lock ID",
+      "pgn": 126720
+    },
+    {
+      "id": "fusionSetSetting",
+      "length": 12,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 15
+        }
+      ],
+      "name": "Fusion: Set Setting",
+      "pgn": 126720
+    },
+    {
+      "id": "fusionTunerCommand",
+      "length": 10,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 5
+        }
+      ],
+      "name": "Fusion: Tuner Command",
+      "pgn": 126720
+    },
+    {
+      "id": "fusionSetAuxGain",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 13
+        }
+      ],
+      "name": "Fusion: Set Aux Gain",
+      "pgn": 126720
+    },
+    {
+      "id": "fusionSetBalance",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 18
+        }
+      ],
+      "name": "Fusion: Set Balance",
+      "pgn": 126720
+    },
+    {
+      "id": "fusionSetLowPassFilter",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 19
+        }
+      ],
+      "name": "Fusion: Set Low Pass Filter",
+      "pgn": 126720
+    },
+    {
+      "id": "fusionSetSublevel",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 20
+        }
+      ],
+      "name": "Fusion: Set Sublevel",
+      "pgn": 126720
+    },
+    {
+      "id": "fusionSetVolumeLimit",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 23
+        }
+      ],
+      "name": "Fusion: Set Volume Limit",
+      "pgn": 126720
+    },
+    {
+      "id": "fusionSetZoneName",
+      "length": 5,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 34
+        }
+      ],
+      "name": "Fusion: Set Zone Name",
+      "pgn": 126720
+    },
+    {
+      "id": "fusionSetEqualizer",
+      "length": 8,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 22
+        }
+      ],
+      "name": "Fusion: Set Equalizer",
+      "pgn": 126720
+    },
+    {
+      "id": "fusionSetAllSublevels",
+      "length": 8,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 21
+        }
+      ],
+      "name": "Fusion: Set All Sublevels",
+      "pgn": 126720
+    },
+    {
+      "id": "fusionSetDeviceName",
+      "length": 4,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 29
+        }
+      ],
+      "name": "Fusion: Set Device Name",
+      "pgn": 126720
+    },
+    {
+      "id": "heartbeat",
+      "length": 8,
+      "matches": [],
+      "name": "Heartbeat",
+      "pgn": 126993
+    },
+    {
+      "id": "datum",
+      "length": 20,
+      "matches": [],
+      "name": "Datum",
+      "pgn": 129044
+    },
+    {
+      "id": "gnssPseudorangeNoiseStatistics",
+      "length": 15,
+      "matches": [],
+      "name": "GNSS Pseudorange Noise Statistics",
+      "pgn": 129542
+    },
+    {
+      "id": "gnssPseudorangeErrorStatistics",
+      "length": 15,
+      "matches": [],
+      "name": "GNSS Pseudorange Error Statistics",
+      "pgn": 129547
+    },
+    {
+      "id": "bepMarineCzoneAlarmStringResponse",
+      "length": 222,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 295
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        }
+      ],
+      "name": "BEP Marine: CZone Alarm String Response",
+      "pgn": 130820
+    },
+    {
+      "id": "simnetReprogramStatus",
+      "length": 7,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 1857
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        }
+      ],
+      "name": "Simnet: Reprogram Status",
+      "pgn": 130820
+    },
+    {
+      "id": "furunoUnknown130820",
+      "length": 7,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 1855
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        }
+      ],
+      "name": "Furuno: Unknown 130820",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionVersions",
+      "length": 11,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32769
+        }
+      ],
+      "name": "Fusion: Versions",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionSource",
+      "length": 8,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32770
+        }
+      ],
+      "name": "Fusion: Source",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionSourceCount",
+      "length": 5,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32771
+        }
+      ],
+      "name": "Fusion: Source Count",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionMedia",
+      "length": 23,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32772
+        }
+      ],
+      "name": "Fusion: Media",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionTrackName",
+      "length": 9,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32773
+        }
+      ],
+      "name": "Fusion: Track Name",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionArtistName",
+      "length": 9,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32774
+        }
+      ],
+      "name": "Fusion: Artist Name",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionAlbumName",
+      "length": 9,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32775
+        }
+      ],
+      "name": "Fusion: Album Name",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionDeviceName",
+      "length": 4,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32801
+        }
+      ],
+      "name": "Fusion: Device Name",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionZoneName",
+      "length": 5,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32813
+        }
+      ],
+      "name": "Fusion: Zone Name",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionSpeedVolumeCurrentSpeed",
+      "length": 8,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32863
+        }
+      ],
+      "name": "Fusion: Speed Volume Current Speed",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionIgnitionSwitchState",
+      "length": 5,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32859
+        }
+      ],
+      "name": "Fusion: Ignition Switch State",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionMenuLockId",
+      "length": 9,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32786
+        }
+      ],
+      "name": "Fusion: Menu Lock ID",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionRdsData",
+      "length": 39,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32850
+        }
+      ],
+      "name": "Fusion: RDS Data",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionMultiroom",
+      "length": 9,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32824
+        }
+      ],
+      "name": "Fusion: Multiroom",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionMultiroomStatus",
+      "length": 5,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32825
+        }
+      ],
+      "name": "Fusion: Multiroom Status",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionProcessingBypass",
+      "length": 5,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32832
+        }
+      ],
+      "name": "Fusion: Processing Bypass",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionMono",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32862
+        }
+      ],
+      "name": "Fusion: Mono",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionTrackPosition",
+      "length": 8,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32777
+        }
+      ],
+      "name": "Fusion: Track Position",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionTuner",
+      "length": 11,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32779
+        }
+      ],
+      "name": "Fusion: Tuner",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionMarineTuner",
+      "length": 7,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32780
+        }
+      ],
+      "name": "Fusion: Marine Tuner",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionMarineSquelch",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32781
+        }
+      ],
+      "name": "Fusion: Marine Squelch",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionMarineScanMode",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32782
+        }
+      ],
+      "name": "Fusion: Marine Scan Mode",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionMenuItem",
+      "length": 11,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32785
+        }
+      ],
+      "name": "Fusion: Menu Item",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionAuxGain",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32787
+        }
+      ],
+      "name": "Fusion: Aux Gain",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionUsbRepeatStatus",
+      "length": 12,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32788
+        },
+        {
+          "bits": 32,
+          "offset": 32,
+          "value": 9
+        }
+      ],
+      "name": "Fusion: USB Repeat Status",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionSetting",
+      "length": 12,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32788
+        }
+      ],
+      "name": "Fusion: Setting",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionSettings",
+      "length": 8,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32789
+        }
+      ],
+      "name": "Fusion: Settings",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionMute",
+      "length": 5,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32791
+        }
+      ],
+      "name": "Fusion: Mute",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionBalance",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32792
+        }
+      ],
+      "name": "Fusion: Balance",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionLowPassFilter",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32793
+        }
+      ],
+      "name": "Fusion: Low Pass Filter",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionSublevels",
+      "length": 8,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32794
+        }
+      ],
+      "name": "Fusion: Sublevels",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionEq",
+      "length": 8,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32795
+        }
+      ],
+      "name": "Fusion: EQ",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionVolumeLimits",
+      "length": 8,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32796
+        }
+      ],
+      "name": "Fusion: Volume Limits",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionVolumes",
+      "length": 8,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32797
+        }
+      ],
+      "name": "Fusion: Volumes",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionCapabilities",
+      "length": 14,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32798
+        }
+      ],
+      "name": "Fusion: Capabilities",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionLineLevelControl",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32799
+        }
+      ],
+      "name": "Fusion: Line Level Control",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionPowerState",
+      "length": 5,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32800
+        }
+      ],
+      "name": "Fusion: Power State",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionSiriusxm",
+      "length": 10,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32802
+        }
+      ],
+      "name": "Fusion: SiriusXM",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionSiriusxmChannel",
+      "length": 7,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32804
+        }
+      ],
+      "name": "Fusion: SiriusXM Channel",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionSiriusxmTitle",
+      "length": 7,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32805
+        }
+      ],
+      "name": "Fusion: SiriusXM Title",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionSiriusxmArtist",
+      "length": 7,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32806
+        }
+      ],
+      "name": "Fusion: SiriusXM Artist",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionSiriusxmContentInfo",
+      "length": 7,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32807
+        }
+      ],
+      "name": "Fusion: SiriusXM Content Info",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionSiriusxmCategory",
+      "length": 7,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32808
+        }
+      ],
+      "name": "Fusion: SiriusXM Category",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionSiriusxmSignal",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32809
+        }
+      ],
+      "name": "Fusion: SiriusXM Signal",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionSiriusxmPresets",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32812
+        }
+      ],
+      "name": "Fusion: SiriusXM Presets",
+      "pgn": 130820
+    },
+    {
+      "id": "maretronAlertResponse",
+      "length": 27,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 137
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        }
+      ],
+      "name": "Maretron: Alert Response",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionMenuActionStatus",
+      "length": 11,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32783
+        }
+      ],
+      "name": "Fusion: Menu Action Status",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionMenuCount",
+      "length": 10,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32784
+        }
+      ],
+      "name": "Fusion: Menu Count",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionLoudness",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32831
+        }
+      ],
+      "name": "Fusion: Loudness",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionZoneCapabilitiesExtended",
+      "length": 44,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32865
+        }
+      ],
+      "name": "Fusion: Zone Capabilities Extended",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionExternalAmpGain",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32860
+        }
+      ],
+      "name": "Fusion: External Amp Gain",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionInternalAmpGain",
+      "length": 6,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32861
+        }
+      ],
+      "name": "Fusion: Internal Amp Gain",
+      "pgn": 130820
+    },
+    {
+      "id": "fusionSystemCapabilities",
+      "length": 12,
+      "matches": [
+        {
+          "bits": 11,
+          "offset": 0,
+          "value": 419
+        },
+        {
+          "bits": 3,
+          "offset": 13,
+          "value": 4
+        },
+        {
+          "bits": 16,
+          "offset": 16,
+          "value": 32829
+        }
+      ],
+      "name": "Fusion: System Capabilities",
+      "pgn": 130820
+    }
+  ]
+}

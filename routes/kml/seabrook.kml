@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns:atom="http://www.w3.org/2005/Atom" xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Seabrook</name>
+    <Placemark>
+      <name>001</name>
+      <description></description>
+      <ExtendedData>
+        <Data name="speed">
+          <value>5.5</value> <!-- Speed in knots -->
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-70.786,42.8813,0.</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>002</name>
+      <description></description>
+      <ExtendedData>
+        <Data name="speed">
+          <value>6.0</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-70.8015,42.8887,0.</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>003</name>
+      <description></description>
+      <ExtendedData>
+        <Data name="speed">
+          <value>6.2</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-70.803,42.8903,0.</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>004</name>
+      <description></description>
+      <ExtendedData>
+        <Data name="speed">
+          <value>5.8</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-70.804,42.8909,0.</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>005</name>
+      <description></description>
+      <ExtendedData>
+        <Data name="speed">
+          <value>6.1</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-70.8061,42.8936,0.</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>006</name>
+      <description></description>
+      <ExtendedData>
+        <Data name="speed">
+          <value>6.5</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-70.8134,42.8954,0.</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>007</name>
+      <description></description>
+      <ExtendedData>
+        <Data name="speed">
+          <value>5.9</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-70.8166,42.8959,0.</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>008</name>
+      <description></description>
+      <ExtendedData>
+        <Data name="speed">
+          <value>6.3</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-70.819,42.8954,0.</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>009</name>
+      <description></description>
+      <ExtendedData>
+        <Data name="speed">
+          <value>6.0</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-70.8199,42.8944,0.</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>010</name>
+      <description></description>
+      <ExtendedData>
+        <Data name="speed">
+          <value>5.7</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-70.8198,42.8923,0.</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>011</name>
+      <description></description>
+      <ExtendedData>
+        <Data name="speed">
+          <value>6.4</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-70.8208,42.8882,0.</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Path</name>
+      <LineString>
+        <coordinates>-70.786,42.8813,0. -70.8015,42.8887,0. -70.803,42.8903,0. -70.804,42.8909,0. -70.8061,42.8936,0. -70.8134,42.8954,0. -70.8166,42.8959,0. -70.819,42.8954,0. -70.8199,42.8944,0. -70.8198,42.8923,0. -70.8208,42.8882,0. </coordinates>
+      </LineString>
+    </Placemark>
+  </Document>
+</kml>

@@ -1,0 +1,18 @@
+<!doctype html>
+<!-- Copyright (C) 2026 RF StateSide LLC. SPDX-License-Identifier: AGPL-3.0-or-later.
+M2.51B original RayNmeaSimulator instructions; actual application source/UI authority.
+BrickSuite internal Help is the instructional presentation reference, not copied product instructions. -->
+<html><head><meta charset="utf-8" /><title>Windlass Simulation</title></head><body>
+<h1 id="top">Windlass Simulation</h1>
+<p>Windlass Operating Status (128777) and Monitoring Status (128778) are ordinary status instruments. They encode/decode supported properties; the UI is not a physical anchor motor-control panel.</p>
+<h2 id="build-a-status-test">Build a status test</h2>
+<ol><li>Add the required windlass status PGN in Generate.</li><li>Set the Windlass Identifier and supported status fields to the scenario you want to simulate.</li><li>Review rode counter/line speed or motor time/voltage/current using the displayed units and canonical properties.</li><li>Choose supported enum/event values rather than guessing bit combinations from a label.</li><li>Configure individual Enable/interval and, only on the intended bench, Enable Sending explicitly.</li></ol>
+<p>Manual property values are sufficient for the supported TX path; no dedicated windlass generator is needed. Status fields do not grant a command/actuation capability.</p>
+<h2 id="inspect-rx">Inspect received status</h2>
+<p>Use Viewer, source/identifier distinctions and Diagnostics to locate the right instrument. Zero, unavailable measurements and enum statuses have different meanings. A zero counter/current can be valid; an unavailable wire field should not become an implausible engineering quantity.</p>
+<h2 id="interpret-results">Interpret results safely</h2>
+<p>These instruments report simulated windlass status; they do not operate the anchor motor or its interlocks. Check the receiving instrument and follow the physical equipment safety procedures. Stop/F12 ends external Sending.</p>
+<h2 id="illustrated-controls">Illustrated controls</h2><p><a href="images/windlass/status-128777.png"><img src="images/windlass/status-128777.png" alt="Windlass operating status and rode measurements (PGN 128777)." /></a><br /><i>Figure 57. Windlass operating status and rode measurements (PGN 128777). Click to enlarge.</i></p><p><a href="images/windlass/status-128778.png"><img src="images/windlass/status-128778.png" alt="Windlass voltage, current, temperature and monitoring status (PGN 128778)." /></a><br /><i>Figure 58. Windlass voltage, current, temperature and monitoring status (PGN 128778). Click to enlarge.</i></p>
+<h2 id="related-topics">Related topics</h2><p><a href="generating-data.html">Generating NMEA Data</a> · <a href="enable-dispatch-sending.html">Enable, Dispatch and Sending</a> · <a href="manual-movement.html">Manual Vessel Movement</a> · <a href="autopilot.html">Autopilot and Route Following</a> · <a href="game-controller.html">Game Controller Mode</a> · <a href="engine-transmission.html">Engine and Transmission Simulation</a> · <a href="weather.html">Weather and Environmental Simulation</a> · <a href="ais.html">AIS Simulation</a> · <a href="connection-troubleshooting.html">Connection Troubleshooting</a> · <a href="route-overview.html">Route Overview</a> · <a href="units.html">Engineering Units</a></p>
+<p><a href="introduction.html">Help Home</a> · <a href="#top">Back to top</a></p>
+</body></html>

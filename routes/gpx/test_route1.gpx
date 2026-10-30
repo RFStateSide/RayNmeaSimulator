@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="RayVessel" xmlns="http://www.topografix.com/GPX/1/1">
+    <metadata>
+        <name>Test Route</name>
+        <desc>A sample route for testing the AutoPilotSimulator</desc>
+    </metadata>
+    <wpt lat="42.8162" lon="-70.8146">
+        <name>Entrance of Merrimack River</name>
+        <desc>Newburyport, MA</desc>
+    </wpt>
+    <wpt lat="42.8126" lon="-70.8554">
+        <name>Near Cashman Park</name>
+        <desc>Newburyport, MA</desc>
+    </wpt>
+    <wpt lat="42.8234" lon="-70.8713">
+        <name>Close to Deer Island</name>
+        <desc>In the river</desc>
+    </wpt>
+    <wpt lat="42.8391" lon="-70.8857">
+        <name>Past Rocks Village Bridge</name>
+        <desc>River bend</desc>
+    </wpt>
+    <wpt lat="42.8557" lon="-70.9115">
+        <name>Near Haverhill</name>
+        <desc>Approaching city</desc>
+    </wpt>
+    <wpt lat="42.8588" lon="-70.9448">
+        <name>Approaching Amesbury</name>
+        <desc>Up the river</desc>
+    </wpt>
+    <wpt lat="42.8544" lon="-70.9643">
+        <name>Downtown Amesbury</name>
+        <desc>Final destination</desc>
+    </wpt>
+    <trk>
+        <name>Merrimack River Test Track</name>
+        <trkseg>
+            <trkpt lat="42.8162" lon="-70.8146">
+                <ele>0</ele>
+                <time>2024-08-11T12:00:00Z</time>
+            </trkpt>
+            <trkpt lat="42.8126" lon="-70.8554">
+                <ele>0</ele>
+                <time>2024-08-11T12:10:00Z</time>
+            </trkpt>
+            <trkpt lat="42.8234" lon="-70.8713">
+                <ele>0</ele>
+                <time>2024-08-11T12:20:00Z</time>
+            </trkpt>
+            <trkpt lat="42.8391" lon="-70.8857">
+                <ele>0</ele>
+                <time>2024-08-11T12:30:00Z</time>
+            </trkpt>
+            <trkpt lat="42.8557" lon="-70.9115">
+                <ele>0</ele>
+                <time>2024-08-11T12:40:00Z</time>
+            </trkpt>
+            <trkpt lat="42.8588" lon="-70.9448">
+                <ele>0</ele>
+                <time>2024-08-11T12:50:00Z</time>
+            </trkpt>
+            <trkpt lat="42.8544" lon="-70.9643">
+                <ele>0</ele>
+                <time>2024-08-11T13:00:00Z</time>
+            </trkpt>
+        </trkseg>
+    </trk>
+</gpx>
+
+<!--
+    This GPX file is for testing purposes only for use in the RayVessel application.
+-->
+

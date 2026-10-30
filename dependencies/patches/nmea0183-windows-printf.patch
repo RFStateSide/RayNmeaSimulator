@@ -1,0 +1,59 @@
+diff --git a/NMEA0183Messages.cpp b/NMEA0183Messages.cpp
+index 60b9fc8..23706ef 100644
+--- a/NMEA0183Messages.cpp
++++ b/NMEA0183Messages.cpp
+@@ -353,8 +353,8 @@ bool NMEA0183ParseRMC_nc(const tNMEA0183Msg &NMEA0183Msg, double &GPSTime, char
+     Status=NMEA0183Msg.Field(1)[0];
+     Latitude=LatLonToDouble(NMEA0183Msg.Field(2),NMEA0183Msg.Field(3)[0]);
+     Longitude=LatLonToDouble(NMEA0183Msg.Field(4),NMEA0183Msg.Field(5)[0]);
+-    SOG=atof(NMEA0183Msg.Field(6))*knToms;
+-    TrueCOG=atof(NMEA0183Msg.Field(7))*degToRad;
++    SOG=NMEA0183GetDouble(NMEA0183Msg.Field(6),knToms);
++    TrueCOG=NMEA0183GetDouble(NMEA0183Msg.Field(7),degToRad);
+ 
+     lDT=NMEA0183GPSDateTimetotime_t(NMEA0183Msg.Field(8),0);
+     if ( !NMEA0183IsTimeNA(lDT) ) {
+@@ -381,10 +381,10 @@ bool NMEA0183SetRMC(tNMEA0183Msg &NMEA0183Msg, double GPSTime, double Latitude,
+ 
+   if ( !NMEA0183Msg.Init("RMC",Src) ) return false;
+   if ( !NMEA0183Msg.AddTimeField(GPSTime) ) return false;
+-  if ( GPSTime!=NMEA0183DoubleNA ) {
+-    NMEA0183Msg.AddStrField("A");
++  if ( GPSTime!=NMEA0183DoubleNA && Latitude!=NMEA0183DoubleNA && Longitude!=NMEA0183DoubleNA ) {
++    if ( !NMEA0183Msg.AddStrField("A") ) return false;
+   } else {
+-    NMEA0183Msg.AddEmptyField();
++    if ( !NMEA0183Msg.AddStrField("V") ) return false;
+   }
+   if ( !NMEA0183Msg.AddLatitudeField(Latitude) ) return false;
+   if ( !NMEA0183Msg.AddLongitudeField(Longitude) ) return false;
+@@ -403,13 +403,13 @@ bool NMEA0183SetRMC(tNMEA0183Msg &NMEA0183Msg, double GPSTime, double Latitude,
+     if ( !NMEA0183Msg.AddStrField("") ) return false;
+   }
+   
+-  if ( !(FAAModeIndicator==0xff || NavStatus==0xff) ) {
+-    if ( FAAModeIndicator!=0xff ) {
++  if ( static_cast<unsigned char>(FAAModeIndicator)!=0xff || static_cast<unsigned char>(NavStatus)!=0xff ) {
++    if ( static_cast<unsigned char>(FAAModeIndicator)!=0xff ) {
+       if ( !NMEA0183Msg.AddStrField(FAAModeIndicator) ) return false;
+     } else {
+       if ( !NMEA0183Msg.AddStrField("") ) return false;
+     }
+-    if ( NavStatus!=0xff ) {
++    if ( static_cast<unsigned char>(NavStatus)!=0xff ) {
+       if ( !NMEA0183Msg.AddStrField(NavStatus) ) return false;
+     }
+   }
+diff --git a/NMEA0183Msg.cpp b/NMEA0183Msg.cpp
+index f6444fc..0c7b8f1 100644
+--- a/NMEA0183Msg.cpp
++++ b/NMEA0183Msg.cpp
+@@ -38,7 +38,7 @@ OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ // Linux
+ #if !( defined(__MK20DX256__)||defined(__ATMEGA32U4__) || defined(__MK64FX512__) || defined (__MK66FX1M0__) \
+        || defined(__SAM3X8E__) \
+-       || defined(__linux__)||defined(__linux)||defined(linux) \
++       || defined(__linux__)||defined(__linux)||defined(linux)||defined(_WIN32) \
+      )
+ #define NO_PRINTF_DOUBLE_SUPPORT
+ #endif

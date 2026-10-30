@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:v="urn:raynmea:fixture">
+  <Document><name>Independent KML 2.3 Track fixture</name><Folder><Placemark>
+    <name>Coastal track</name>
+    <Track>
+      <when>2026-10-18T12:00:00Z</when><when>2026-10-18T12:01:00Z</when>
+      <coord>-70.25 42.125 0</coord><coord>-70.5 42.25 12.5</coord>
+      <v:extra>Unknown optional extension</v:extra>
+    </Track>
+  </Placemark></Folder></Document>
+</kml>

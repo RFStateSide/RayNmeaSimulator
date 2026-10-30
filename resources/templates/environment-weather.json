@@ -1,0 +1,329 @@
+{
+  "formatVersion": 2,
+  "documentType": "template",
+  "numberOfWidgetColumns": 2,
+  "template": {
+    "id": "909e2880-3443-59de-acd1-55ef3c1d2d87",
+    "name": "Environment / Weather",
+    "description": "Manual environmental values and optional weather source. No API provider or automatic retrieval selected."
+  },
+  "setupPolicies": [],
+  "layouts": [
+    {
+      "groupName": "Generate",
+      "widgets": [
+        {
+          "column": 0,
+          "columnSpan": 3,
+          "idX": 6,
+          "interval": 2000,
+          "label": "Weather 1",
+          "parameters": [
+            [
+              "SID",
+              "0",
+              "",
+              "unsigned char"
+            ],
+            [
+              "AirTemperature",
+              "293.15",
+              "K",
+              "double"
+            ],
+            [
+              "SeaTemperature",
+              "285.15",
+              "K",
+              "double"
+            ],
+            [
+              "Humidity",
+              "55",
+              "%",
+              "double"
+            ],
+            [
+              "AtmosphericPressure",
+              "101325",
+              "Pa",
+              "double"
+            ],
+            [
+              "WindSpeed",
+              "3",
+              "m/s",
+              "double"
+            ],
+            [
+              "WindAngle",
+              "0",
+              "rad",
+              "double"
+            ],
+            [
+              "TemperatureSource",
+              "1",
+              "enum",
+              "tN2kTempSource"
+            ],
+            [
+              "HumiditySource",
+              "1",
+              "enum",
+              "tN2kHumiditySource"
+            ],
+            [
+              "Latitude",
+              "0",
+              "deg",
+              "double"
+            ],
+            [
+              "Longitude",
+              "0",
+              "deg",
+              "double"
+            ]
+          ],
+          "pgn": "-130311",
+          "ranges": [
+            [
+              -273.15,
+              100
+            ],
+            [
+              0,
+              100
+            ],
+            [
+              0,
+              2000
+            ],
+            [
+              0,
+              100
+            ],
+            [
+              0,
+              110000
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "row": 0,
+          "rowSpan": 13,
+          "type": "GeneratorWeather",
+          "dispatch": true,
+          "enabled": true,
+          "configuration": {
+            "autoRefresh": false,
+            "refreshMinutes": 30,
+            "retainObservations": false,
+            "apiSource": 0,
+            "origins": {}
+          }
+        }
+      ]
+    },
+    {
+      "groupName": "Environment",
+      "widgets": [
+        {
+          "column": 0,
+          "columnSpan": 3,
+          "idX": 25,
+          "interval": 5000,
+          "label": "Outside environment 1",
+          "parameters": [
+            [
+              "SID",
+              "0",
+              "",
+              "unsigned char"
+            ],
+            [
+              "OutsideAmbientAirTemperature",
+              "293.15",
+              "K",
+              "double"
+            ],
+            [
+              "WaterTemperature",
+              "285.15",
+              "K",
+              "double"
+            ],
+            [
+              "AtmosphericPressure",
+              "101325",
+              "Pa",
+              "double"
+            ]
+          ],
+          "pgn": "130310",
+          "ranges": [
+            [
+              -273.15,
+              1000
+            ],
+            [
+              -273.15,
+              1000
+            ],
+            [
+              800,
+              1100
+            ],
+            [
+              0,
+              110000
+            ]
+          ],
+          "row": 0,
+          "rowSpan": 4,
+          "type": "OutsideEnvironmental130310",
+          "enabled": true
+        },
+        {
+          "column": 3,
+          "columnSpan": 3,
+          "idX": 26,
+          "interval": 5000,
+          "label": "Extended temperature 1",
+          "parameters": [
+            [
+              "SID",
+              "0",
+              "",
+              "unsigned char"
+            ],
+            [
+              "TempInstance",
+              "0",
+              "",
+              "unsigned char"
+            ],
+            [
+              "TempSource",
+              "0",
+              "enum",
+              "tN2kTempSource"
+            ],
+            [
+              "ActualTemperature",
+              "285.15",
+              "K",
+              "double"
+            ],
+            [
+              "SetTemperature",
+              "300",
+              "K",
+              "double"
+            ]
+          ],
+          "pgn": "130316",
+          "ranges": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              1000
+            ],
+            [
+              0,
+              1000
+            ]
+          ],
+          "row": 0,
+          "rowSpan": 2,
+          "type": "TemperatureExtended130316",
+          "enabled": true
+        },
+        {
+          "column": 0,
+          "columnSpan": 3,
+          "idX": 27,
+          "interval": 5000,
+          "label": "Extended temperature 2",
+          "parameters": [
+            [
+              "SID",
+              "0",
+              "",
+              "unsigned char"
+            ],
+            [
+              "TempInstance",
+              "1",
+              "",
+              "unsigned char"
+            ],
+            [
+              "TempSource",
+              "0",
+              "enum",
+              "tN2kTempSource"
+            ],
+            [
+              "ActualTemperature",
+              "285.15",
+              "K",
+              "double"
+            ],
+            [
+              "SetTemperature",
+              "300",
+              "K",
+              "double"
+            ]
+          ],
+          "pgn": "130316",
+          "ranges": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              1000
+            ],
+            [
+              0,
+              1000
+            ]
+          ],
+          "row": 4,
+          "rowSpan": 2,
+          "type": "TemperatureExtended130316",
+          "enabled": true
+        }
+      ]
+    }
+  ]
+}

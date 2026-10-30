@@ -1,0 +1,78 @@
+{
+  "themes": {
+    "Dark": {
+      "window": "#20262e",
+      "base": "#171d24",
+      "alternate": "#29323c",
+      "button": "#303b47",
+      "text": "#edf2f7",
+      "disabled": "#a7b3bf",
+      "accent": "#2168a6",
+      "focus": "#58aaff",
+      "border": "#526273",
+      "hover": "#3b4c5d",
+      "link": "#8fc9ff",
+      "radius": "3px"
+    },
+    "Light": {
+      "window": "#f2f5f8",
+      "base": "#ffffff",
+      "alternate": "#eaf0f5",
+      "button": "#e7edf3",
+      "text": "#182633",
+      "disabled": "#606d7b",
+      "accent": "#2168a6",
+      "focus": "#176ab1",
+      "border": "#a8b6c4",
+      "hover": "#d7e6f3",
+      "link": "#075b9e",
+      "radius": "3px"
+    },
+    "Darkeum": {
+      "window": "#111315",
+      "base": "#34373b",
+      "alternate": "#25282e",
+      "button": "#193950",
+      "text": "#edf0fa",
+      "disabled": "#b0b8cb",
+      "accent": "#103a57",
+      "focus": "#5da9e9",
+      "border": "#535d6b",
+      "hover": "#264b66",
+      "link": "#9bceff",
+      "radius": "2px"
+    },
+    "Teal Dark": {
+      "window": "#2b2b2b",
+      "base": "#1e1e1e",
+      "alternate": "#303a3a",
+      "button": "#006060",
+      "text": "#f4fafa",
+      "disabled": "#a6b4b4",
+      "accent": "#006b6b",
+      "focus": "#00cccc",
+      "border": "#487d7d",
+      "hover": "#007a7a",
+      "link": "#78ded9",
+      "radius": "4px"
+    },
+    "Porcelain": {
+      "window": "#f5f1e9",
+      "base": "#fffdf8",
+      "alternate": "#eee8dd",
+      "button": "#e9e1d4",
+      "text": "#302e29",
+      "disabled": "#716b61",
+      "accent": "#735139",
+      "focus": "#9a623b",
+      "border": "#b7a991",
+      "hover": "#e3d7c4",
+      "link": "#684b35",
+      "radius": "5px"
+    }
+  },
+  "previousSeeds": {
+    "Dark": "b004bbbf2c423c1a61e42792e158db61e70ed2256330ca8b73448f794d3a6da0",
+    "Light": "f839a8db0f863a9e28be9a6adfb419682b577cb36173e7728ebebb89b72c1b7c"
+  }
+}

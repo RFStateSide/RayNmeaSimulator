@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+    <Document>
+        <name>Merrimack River Test Route</name>
+        <description>A sample route for testing the AutoPilotSimulator on the Merrimack River.</description>
+        <Placemark>
+            <name>Merrimack River Route</name>
+            <LineString>
+                <coordinates>
+                    -70.8146,42.8162,0  <!-- Entrance of Merrimack River, Newburyport, MA -->
+                    -70.8554,42.8126,0  <!-- Near Cashman Park, Newburyport, MA -->
+                    -70.8713,42.8234,0  <!-- Close to Deer Island -->
+                    -70.8857,42.8391,0  <!-- Past Rocks Village Bridge -->
+                    -70.9115,42.8557,0  <!-- Near Haverhill, MA -->
+                    -70.9448,42.8588,0  <!-- Further up the river approaching Amesbury -->
+                    -70.9643,42.8544,0  <!-- Downtown Amesbury, MA -->
+                </coordinates>
+            </LineString>
+        </Placemark>
+    </Document>
+</kml>
+
+<!--
+    This KML file is for testing purposes only for use in the RayVessel application.
+    The route simulates a boat traveling up the Merrimack River from Newburyport, MA to Amesbury, MA.
+-->

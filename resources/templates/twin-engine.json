@@ -1,0 +1,946 @@
+{
+  "formatVersion": 2,
+  "documentType": "template",
+  "numberOfWidgetColumns": 2,
+  "template": {
+    "id": "f61e9641-7192-5d7c-bc34-ced107b0b864",
+    "name": "Twin Engine",
+    "description": "Two independent engine/lower-unit source instances and propulsion instruments."
+  },
+  "setupPolicies": [],
+  "layouts": [
+    {
+      "groupName": "Generate",
+      "widgets": [
+        {
+          "column": 0,
+          "columnSpan": 3,
+          "idX": 1,
+          "interval": 1000,
+          "label": "Engine 1",
+          "parameters": [
+            [
+              "EngineInstance",
+              "0",
+              "",
+              "int"
+            ],
+            [
+              "EngineSpeed",
+              "0",
+              "RPM",
+              "double"
+            ],
+            [
+              "EngineBoostPressure",
+              "0",
+              "Pa",
+              "double"
+            ],
+            [
+              "EngineTiltTrim",
+              "90",
+              "%",
+              "int"
+            ],
+            [
+              "EngineOilPress",
+              "0",
+              "Pa",
+              "double"
+            ],
+            [
+              "EngineOilTemp",
+              "295.372",
+              "K",
+              "double"
+            ],
+            [
+              "EngineCoolantTemp",
+              "295.372",
+              "K",
+              "double"
+            ],
+            [
+              "AltenatorVoltage",
+              "0",
+              "V",
+              "double"
+            ],
+            [
+              "FuelRate",
+              "0",
+              "L/h",
+              "double"
+            ],
+            [
+              "EngineHours",
+              "540000",
+              "s",
+              "double"
+            ],
+            [
+              "EngineCoolantPress",
+              "0",
+              "Pa",
+              "double"
+            ],
+            [
+              "EngineFuelPress",
+              "0",
+              "Pa",
+              "double"
+            ],
+            [
+              "EngineLoad",
+              "0",
+              "%",
+              "double"
+            ],
+            [
+              "EngineTorque",
+              "0",
+              "%",
+              "double"
+            ],
+            [
+              "Status1",
+              "0",
+              "enum",
+              "tN2kEngineDiscreteStatus1"
+            ],
+            [
+              "Status2",
+              "0",
+              "enum",
+              "tN2kEngineDiscreteStatus2"
+            ]
+          ],
+          "pgn": "-127489",
+          "ranges": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              65535
+            ],
+            [
+              0,
+              65535
+            ]
+          ],
+          "row": 0,
+          "rowSpan": 9,
+          "type": "GeneratorEngine",
+          "dispatch": true,
+          "enabled": true,
+          "engineProfile": "MerCruiser 7.4 MPI"
+        },
+        {
+          "column": 3,
+          "columnSpan": 3,
+          "idX": 2,
+          "interval": 1000,
+          "label": "Engine 2",
+          "parameters": [
+            [
+              "EngineInstance",
+              "1",
+              "",
+              "int"
+            ],
+            [
+              "EngineSpeed",
+              "0",
+              "RPM",
+              "double"
+            ],
+            [
+              "EngineBoostPressure",
+              "0",
+              "Pa",
+              "double"
+            ],
+            [
+              "EngineTiltTrim",
+              "90",
+              "%",
+              "int"
+            ],
+            [
+              "EngineOilPress",
+              "0",
+              "Pa",
+              "double"
+            ],
+            [
+              "EngineOilTemp",
+              "295.372",
+              "K",
+              "double"
+            ],
+            [
+              "EngineCoolantTemp",
+              "295.372",
+              "K",
+              "double"
+            ],
+            [
+              "AltenatorVoltage",
+              "0",
+              "V",
+              "double"
+            ],
+            [
+              "FuelRate",
+              "0",
+              "L/h",
+              "double"
+            ],
+            [
+              "EngineHours",
+              "540000",
+              "s",
+              "double"
+            ],
+            [
+              "EngineCoolantPress",
+              "0",
+              "Pa",
+              "double"
+            ],
+            [
+              "EngineFuelPress",
+              "0",
+              "Pa",
+              "double"
+            ],
+            [
+              "EngineLoad",
+              "0",
+              "%",
+              "double"
+            ],
+            [
+              "EngineTorque",
+              "0",
+              "%",
+              "double"
+            ],
+            [
+              "Status1",
+              "0",
+              "enum",
+              "tN2kEngineDiscreteStatus1"
+            ],
+            [
+              "Status2",
+              "0",
+              "enum",
+              "tN2kEngineDiscreteStatus2"
+            ]
+          ],
+          "pgn": "-127489",
+          "ranges": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              65535
+            ],
+            [
+              0,
+              65535
+            ]
+          ],
+          "row": 0,
+          "rowSpan": 9,
+          "type": "GeneratorEngine",
+          "dispatch": true,
+          "enabled": true,
+          "engineProfile": "MerCruiser 7.4 MPI"
+        },
+        {
+          "column": 0,
+          "columnSpan": 3,
+          "idX": 3,
+          "interval": 1000,
+          "label": "Transmission 1",
+          "parameters": [
+            [
+              "EngineInstance",
+              "0",
+              "",
+              "int"
+            ],
+            [
+              "TransmissionGear",
+              "1",
+              "enum",
+              "tN2kTransmissionGear"
+            ],
+            [
+              "OilPressure",
+              "0",
+              "Pa",
+              "double"
+            ],
+            [
+              "OilTemperature",
+              "295.372",
+              "K",
+              "double"
+            ],
+            [
+              "DiscreteStatus1",
+              "0",
+              "",
+              "unsigned char"
+            ]
+          ],
+          "pgn": "-127493",
+          "ranges": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              65535
+            ],
+            [
+              0,
+              65535
+            ]
+          ],
+          "row": 9,
+          "rowSpan": 6,
+          "type": "GeneratorTransLowerUnit",
+          "dispatch": true,
+          "enabled": true
+        },
+        {
+          "column": 3,
+          "columnSpan": 3,
+          "idX": 4,
+          "interval": 1000,
+          "label": "Transmission 2",
+          "parameters": [
+            [
+              "EngineInstance",
+              "1",
+              "",
+              "int"
+            ],
+            [
+              "TransmissionGear",
+              "1",
+              "enum",
+              "tN2kTransmissionGear"
+            ],
+            [
+              "OilPressure",
+              "0",
+              "Pa",
+              "double"
+            ],
+            [
+              "OilTemperature",
+              "295.372",
+              "K",
+              "double"
+            ],
+            [
+              "DiscreteStatus1",
+              "0",
+              "",
+              "unsigned char"
+            ]
+          ],
+          "pgn": "-127493",
+          "ranges": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              65535
+            ],
+            [
+              0,
+              65535
+            ]
+          ],
+          "row": 9,
+          "rowSpan": 6,
+          "type": "GeneratorTransLowerUnit",
+          "dispatch": true,
+          "enabled": true
+        },
+        {
+          "column": 0,
+          "columnSpan": 3,
+          "idX": 7,
+          "interval": 1000,
+          "label": "Date and time 1",
+          "parameters": [
+            [
+              "SID",
+              "0",
+              "",
+              "unsigned char"
+            ],
+            [
+              "DaysSince1970",
+              "20000",
+              "day",
+              "uint16_t"
+            ],
+            [
+              "SecondsSinceMidnight",
+              "0",
+              "s",
+              "double"
+            ],
+            [
+              "LocalOffset",
+              "0",
+              "min",
+              "int16_t"
+            ]
+          ],
+          "pgn": "-129033",
+          "ranges": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              65535
+            ],
+            [
+              0,
+              65535
+            ]
+          ],
+          "row": 15,
+          "rowSpan": 4,
+          "type": "GeneratorDateTime",
+          "dispatch": true,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "groupName": "Propulsion",
+      "widgets": [
+        {
+          "column": 0,
+          "columnSpan": 3,
+          "idX": 18,
+          "interval": 250,
+          "label": "Engine rapid 1",
+          "parameters": [
+            [
+              "EngineInstance",
+              "0",
+              "",
+              "unsigned char"
+            ],
+            [
+              "EngineSpeed",
+              "0",
+              "RPM",
+              "double"
+            ],
+            [
+              "EngineBoostPressure",
+              "0",
+              "Pa",
+              "double"
+            ],
+            [
+              "EngineTiltTrim",
+              "0",
+              "deg",
+              "char"
+            ]
+          ],
+          "pgn": "127488",
+          "ranges": [
+            [
+              0,
+              16383.25
+            ],
+            [
+              0,
+              6553300
+            ],
+            [
+              0,
+              100
+            ]
+          ],
+          "row": 0,
+          "rowSpan": 4,
+          "type": "EngineRapid127488",
+          "enabled": true
+        },
+        {
+          "column": 3,
+          "columnSpan": 3,
+          "idX": 19,
+          "interval": 250,
+          "label": "Engine rapid 2",
+          "parameters": [
+            [
+              "EngineInstance",
+              "1",
+              "",
+              "unsigned char"
+            ],
+            [
+              "EngineSpeed",
+              "0",
+              "RPM",
+              "double"
+            ],
+            [
+              "EngineBoostPressure",
+              "0",
+              "Pa",
+              "double"
+            ],
+            [
+              "EngineTiltTrim",
+              "0",
+              "deg",
+              "char"
+            ]
+          ],
+          "pgn": "127488",
+          "ranges": [
+            [
+              0,
+              16383.25
+            ],
+            [
+              0,
+              6553300
+            ],
+            [
+              0,
+              100
+            ]
+          ],
+          "row": 0,
+          "rowSpan": 4,
+          "type": "EngineRapid127488",
+          "enabled": true
+        },
+        {
+          "column": 0,
+          "columnSpan": 3,
+          "idX": 20,
+          "interval": 1000,
+          "label": "Engine dynamic 1",
+          "parameters": [
+            [
+              "EngineInstance",
+              "0",
+              "",
+              "unsigned char"
+            ],
+            [
+              "EngineOilPress",
+              "0",
+              "Pa",
+              "double"
+            ],
+            [
+              "EngineOilTemp",
+              "0",
+              "K",
+              "double"
+            ],
+            [
+              "EngineCoolantTemp",
+              "0",
+              "K",
+              "double"
+            ],
+            [
+              "AltenatorVoltage",
+              "0",
+              "V",
+              "double"
+            ],
+            [
+              "FuelRate",
+              "0",
+              "L/h",
+              "double"
+            ],
+            [
+              "EngineHours",
+              "0",
+              "hr",
+              "double"
+            ],
+            [
+              "EngineCoolantPress",
+              "0",
+              "Pa",
+              "double"
+            ],
+            [
+              "EngineFuelPress",
+              "0",
+              "Pa",
+              "double"
+            ],
+            [
+              "EngineLoad",
+              "0",
+              "%",
+              "char"
+            ],
+            [
+              "EngineTorque",
+              "0",
+              "%",
+              "char"
+            ],
+            [
+              "Status1",
+              "0",
+              "enum",
+              "tN2kEngineDiscreteStatus1"
+            ],
+            [
+              "Status2",
+              "0",
+              "enum",
+              "tN2kEngineDiscreteStatus2"
+            ]
+          ],
+          "pgn": "127489",
+          "ranges": [
+            [
+              0,
+              16383.25
+            ],
+            [
+              0,
+              6553300
+            ],
+            [
+              0,
+              100
+            ]
+          ],
+          "row": 4,
+          "rowSpan": 12,
+          "type": "EngineDynamic127489",
+          "enabled": true
+        },
+        {
+          "column": 3,
+          "columnSpan": 3,
+          "idX": 21,
+          "interval": 1000,
+          "label": "Engine dynamic 2",
+          "parameters": [
+            [
+              "EngineInstance",
+              "1",
+              "",
+              "unsigned char"
+            ],
+            [
+              "EngineOilPress",
+              "0",
+              "Pa",
+              "double"
+            ],
+            [
+              "EngineOilTemp",
+              "0",
+              "K",
+              "double"
+            ],
+            [
+              "EngineCoolantTemp",
+              "0",
+              "K",
+              "double"
+            ],
+            [
+              "AltenatorVoltage",
+              "0",
+              "V",
+              "double"
+            ],
+            [
+              "FuelRate",
+              "0",
+              "L/h",
+              "double"
+            ],
+            [
+              "EngineHours",
+              "0",
+              "hr",
+              "double"
+            ],
+            [
+              "EngineCoolantPress",
+              "0",
+              "Pa",
+              "double"
+            ],
+            [
+              "EngineFuelPress",
+              "0",
+              "Pa",
+              "double"
+            ],
+            [
+              "EngineLoad",
+              "0",
+              "%",
+              "char"
+            ],
+            [
+              "EngineTorque",
+              "0",
+              "%",
+              "char"
+            ],
+            [
+              "Status1",
+              "0",
+              "enum",
+              "tN2kEngineDiscreteStatus1"
+            ],
+            [
+              "Status2",
+              "0",
+              "enum",
+              "tN2kEngineDiscreteStatus2"
+            ]
+          ],
+          "pgn": "127489",
+          "ranges": [
+            [
+              0,
+              16383.25
+            ],
+            [
+              0,
+              6553300
+            ],
+            [
+              0,
+              100
+            ]
+          ],
+          "row": 4,
+          "rowSpan": 12,
+          "type": "EngineDynamic127489",
+          "enabled": true
+        },
+        {
+          "column": 0,
+          "columnSpan": 3,
+          "idX": 22,
+          "interval": 500,
+          "label": "Transmission dynamic 1",
+          "parameters": [
+            [
+              "EngineInstance",
+              "0",
+              "",
+              "unsigned char"
+            ],
+            [
+              "TransmissionGear",
+              "1",
+              "enum",
+              "tN2kTransmissionGear"
+            ],
+            [
+              "OilPressure",
+              "0",
+              "Pa",
+              "double"
+            ],
+            [
+              "OilTemperature",
+              "295.372",
+              "K",
+              "double"
+            ],
+            [
+              "DiscreteStatus1",
+              "0",
+              "enum",
+              "unsigned char"
+            ]
+          ],
+          "pgn": "127493",
+          "ranges": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              1000
+            ],
+            [
+              0,
+              1000
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "row": 16,
+          "rowSpan": 7,
+          "type": "TransmissionDynamic127493",
+          "enabled": true
+        },
+        {
+          "column": 3,
+          "columnSpan": 3,
+          "idX": 23,
+          "interval": 500,
+          "label": "Transmission dynamic 2",
+          "parameters": [
+            [
+              "EngineInstance",
+              "1",
+              "",
+              "unsigned char"
+            ],
+            [
+              "TransmissionGear",
+              "1",
+              "enum",
+              "tN2kTransmissionGear"
+            ],
+            [
+              "OilPressure",
+              "0",
+              "Pa",
+              "double"
+            ],
+            [
+              "OilTemperature",
+              "295.372",
+              "K",
+              "double"
+            ],
+            [
+              "DiscreteStatus1",
+              "0",
+              "enum",
+              "unsigned char"
+            ]
+          ],
+          "pgn": "127493",
+          "ranges": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              1000
+            ],
+            [
+              0,
+              1000
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "row": 16,
+          "rowSpan": 7,
+          "type": "TransmissionDynamic127493",
+          "enabled": true
+        },
+        {
+          "column": 0,
+          "columnSpan": 3,
+          "idX": 24,
+          "interval": 500,
+          "label": "Rudder 1",
+          "parameters": [
+            [
+              "RudderPosition",
+              "0",
+              "rad",
+              "double"
+            ],
+            [
+              "Instance",
+              "0",
+              "",
+              "unsigned char"
+            ],
+            [
+              "RudderDirectionOrder",
+              "0",
+              "enum",
+              "tN2kRudderDirectionOrder"
+            ],
+            [
+              "AngleOrder",
+              "0",
+              "rad",
+              "double"
+            ]
+          ],
+          "pgn": "127245",
+          "ranges": [
+            [
+              0,
+              255
+            ],
+            [
+              -3.14159,
+              3.14159
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              -3.14159,
+              3.14159
+            ]
+          ],
+          "row": 23,
+          "rowSpan": 2,
+          "type": "Rudder127245",
+          "enabled": true
+        }
+      ]
+    }
+  ]
+}

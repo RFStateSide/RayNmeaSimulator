@@ -1,0 +1,8 @@
+{
+  "version": "2.30.9",
+  "url": "https://www.libsdl.org/release/SDL2-2.30.9.tar.gz",
+  "archive": "SDL2-2.30.9.tar.gz",
+  "sha256": "24b574f71c87a763f50704bbb630cbe38298d544a1f890f099a4696b1d6beba4",
+  "directory": "SDL2-2.30.9",
+  "architecture": "arm64"
+}

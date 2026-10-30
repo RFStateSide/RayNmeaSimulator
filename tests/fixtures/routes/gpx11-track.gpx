@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<g:gpx xmlns:g="http://www.topografix.com/GPX/1/1" xmlns:v="urn:raynmea:fixture" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:raynmea:fixture https://invalid.example/not-downloaded.xsd" version="1.1" creator="RayNmeaSimulator standards fixture">
+  <g:metadata><g:name>Independent GPX 1.1 fixture</g:name></g:metadata>
+  <g:wpt lat="0" lon="0"><g:name>Unrelated annotation</g:name></g:wpt>
+  <g:trk>
+    <g:name>Coastal track</g:name>
+    <g:trkseg>
+      <g:trkpt lat="42.125" lon="-70.25"><g:name>Start</g:name><g:extensions><v:extra><v:trkpt lat="95" lon="bad"/></v:extra></g:extensions></g:trkpt>
+      <g:trkpt lat="42.25" lon="-70.5"><g:name>Finish</g:name></g:trkpt>
+    </g:trkseg>
+  </g:trk>
+</g:gpx>

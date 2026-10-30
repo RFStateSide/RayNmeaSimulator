@@ -1,0 +1,30 @@
+<!-- Copyright (C) 2024-2026 RF StateSide LLC; SPDX-License-Identifier: AGPL-3.0-or-later -->
+<RCC>
+    <qresource prefix="/">
+        <file>resources/ABOUT-NOTICES.txt</file>
+        <file>stylesheets/Common.qss</file>
+        <file>stylesheets/palettes.json</file>
+        <file>stylesheets/Darkeum-Refined/Darkeum-Refined.qss</file>
+        <file>stylesheets/Teal Dark/Teal Dark.qss</file>
+        <file>stylesheets/Porcelain/Porcelain.qss</file>
+
+        <file>stylesheets/Dark/Dark.qss</file>
+        <file>stylesheets/Light/Light.qss</file>
+        <file>images/RayNmeaSimulator_1024.png</file>
+        <file>Data/engine_profiles.json</file>
+        <file>routes/gpx/test_route1.gpx</file>
+        <file>routes/kml/test_route1.kml</file>
+        <file>routes/kml/seabrook.kml</file>
+        <file>routes/kml/mr_haverhill.kml</file>
+        <file>routes/kml/merrimack_route.kml</file>
+        <file alias="tree-closed.png">icons/controls/arrow-right.png</file>
+        <file alias="tree-open.png">icons/controls/arrow-down.png</file>
+        <file alias="Icons/resources/icons/downarrow.png">icons/controls/arrow-down.png</file>
+        <file alias="arrow-down.png">icons/controls/arrow-down.png</file>
+        <file alias="arrow-up.png">icons/controls/arrow-up.png</file>
+        <file alias="arrow-left.png">icons/controls/arrow-left.png</file>
+        <file alias="arrow-right.png">icons/controls/arrow-right.png</file>
+        <file alias="checkbox.png">icons/controls/check.png</file>
+        <file>icons/controls/LICENSE.txt</file>
+    </qresource>
+</RCC>

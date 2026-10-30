@@ -1,0 +1,88 @@
+SocketCAN integration
+=====================
+
+Pinned driver and build
+-----------------------
+NMEA2000_socketCAN is pinned to:
+  224375e0e0c73a1fdf5256df73a4bcbd3b4db6f1
+  https://github.com/RayJr2/NMEA2000_socketCAN
+This revision adds transport lifetime cleanup and focused regression tests.
+The NMEA2000 core and NMEA0183 revisions are unchanged.
+
+From the application checkout, acquire into an unused stage:
+  python3 scripts/dependencies.py acquire --root build/deps-socketcan
+  python3 scripts/dependencies.py verify --root build/deps-socketcan
+Then, using a separate CMake build directory:
+  cmake -S . -B build/socketcan-debug -G Ninja -DCMAKE_BUILD_TYPE=Debug \
+    -DCMAKE_PREFIX_PATH=/path/to/Qt -DDEPS_ROOT=/path/to/app/build/deps-socketcan
+  cmake --build build/socketcan-debug --target RayNmeaSimulator --parallel 2
+
+The default stage remains .dependencies. Existing stages are verified, never
+updated in place; preserve an older stage and select a fresh one with DEPS_ROOT.
+Normal revision and patch verification covers the corrected driver. No
+SOCKETCAN_DEVELOPMENT_ROOT or development source-hash override is required.
+Windows verifies the dependency pin but does not compile the SocketCAN backend.
+
+Linux runtime requires the ip utility from iproute2 on PATH. If missing,
+initialization fails with an explicit iproute2/PATH status message before any
+CAN socket is opened. Link inspection is read-only; provision the utility and
+configure the interface separately. The application does not install packages,
+raise interfaces or choose bitrate. Hardware configuration and physical tests
+require their own validation; successful software tests do not prove delivery.
+
+Lifetime and operating policy
+----------------------------
+One core/driver allocation is retained for the process lifetime. Configure
+once; ParseMessages advances staged initialization and normal protocol work.
+A GUI-thread 1 ms PreciseTimer runs in both Generate and Viewer. Reentrant
+servicing is suppressed. Ready means the core reports IsOpen; it does not
+promise that address arbitration has settled or that a receiver is present.
+Open failures report errno and retain the core's staged retry behavior.
+
+Before any simulation submission, Generate/Viewer switching keeps protocol
+service running. After ANY simulation submission attempt, including a failed
+or not-yet-ready attempt, Stop Sending or entry into Viewer terminally stops
+the session. Settings reload also stops application sending. Terminal closure
+stops the timer, suppresses callbacks, detaches handlers and closes the driver.
+A close requested inside a callback waits for ParseMessages to return.
+No later core servicing, submission, or reopening is permitted. The status bar
+reports restart required. Frames already accepted by the OS cannot be recalled.
+Viewer is not electrically passive: address claims, requests and heartbeats
+can produce protocol traffic.
+
+Interface, identity and diagnostics
+-----------------------------------
+Setup exposes interface name (default can0) and a persistent unique device
+number in 1..2097151. Choose different numbers for simultaneous nodes;
+random initial assignment is not a uniqueness guarantee, especially when
+copying settings. Invalid persisted numbers prevent initialization.
+Interface/identity changes after configuration close the session and require
+restart. Linux link inspection uses structured ip JSON; the application never
+changes interface state or bitrate. Certification level is zero.
+Shutdown logs service call count and maximum inter-service gap in nanoseconds.
+The accepted earlier ARM64 timing measurements are references, not guarantees.
+
+Deterministic tests
+-------------------
+The socketcan_session_tests CMake target exercises the production session state
+machine using a fake backend. Run with isolated RAYNMEA_TEST_HOME like the
+existing application tests. Tests include retries, repeated transitions,
+failed attempts, deferred close, destruction, validation and identity reload.
+
+The socketcan_native_tests CMake target links the actual production Linux backend,
+unchanged pinned core and corrected driver. GNU linker wrappers replace all
+CAN socket operations with controlled fixtures and /dev/null descriptors.
+Build on Linux with the standard DEPS_ROOT option and CONFIG+=sanitize for
+AddressSanitizer/UndefinedBehaviorSanitizer. Run one fresh process per scenario:
+  protocol cancel cancel-pending failure1 failure2 failure3 failure4 failure5
+  config stop queued fast
+Set ASAN_OPTIONS=detect_leaks=1 and UBSAN_OPTIONS=halt_on_error=1.
+These tests must never be rewritten to fall through to physical CAN sockets.
+They do not qualify physical bus interoperability or live reset/reopen.
+
+The pinned driver also supplies its independent lifetime test:
+  bash /path/to/deps/NMEA2000_socketCAN/tests/run.sh \
+    /path/to/deps/NMEA2000 /path/to/disposable/lifetime-output
+Run tests in disposable output directories; leave dependency stages unchanged.
+Complete live core reset/reopen, physical interoperability, native Wayland and
+binary deployment remain outside this software-only validation.

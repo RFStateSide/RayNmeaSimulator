@@ -1,0 +1,25 @@
+/* Copyright (C) 2026 RF StateSide LLC; SPDX-License-Identifier: AGPL-3.0-or-later */
+/* Shared control geometry and states; colors supplied by the selected palette. */
+QToolTip { padding: 4px; border: 1px solid @border@; }
+QGroupBox { border: 1px solid @border@; border-radius: @radius@; margin-top: 0.8em; padding-top: 0.5em; }
+QGroupBox::title { subcontrol-origin: margin; left: 8px; padding: 0 4px; }
+QMenu { border: 1px solid @border@; padding: 3px; }
+QMenu::item { padding: 5px 24px; }
+QMenu::item:selected:enabled, QMenuBar::item:selected:enabled { background: @accent@; color: white; }
+QMenu::separator { height: 1px; background: @border@; margin: 4px; }
+QLineEdit, QAbstractSpinBox, QComboBox { min-height: 1.5em; }
+QLineEdit:read-only { background: @alternate@; }
+QPushButton { min-height: 1.5em; padding: 3px 8px; }
+QPushButton:hover:enabled { background: @hover@; }
+QPushButton:pressed:enabled { background: @accent@; color: white; }
+QPushButton:focus, QLineEdit:focus, QAbstractSpinBox:focus, QComboBox:focus { border: 1px solid @focus@; }
+QAbstractItemView { selection-background-color: @accent@; selection-color: white; }
+QAbstractItemView::item:selected { background: @accent@; color: white; }
+QAbstractItemView::item:selected:disabled { background: @button@; color: @disabled@; }
+QHeaderView::section { padding: 4px; }
+QTabWidget::pane { border: 1px solid @border@; background: @window@; }
+QTabBar::tab { padding: 6px 10px; }
+QTabBar::tab:selected { background: @accent@; color: white; }
+QTabBar::tab:!selected:hover { background: @hover@; }
+QDockWidget::title { padding: 5px; }
+QStatusBar::item { border: none; }

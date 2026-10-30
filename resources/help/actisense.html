@@ -1,0 +1,18 @@
+<!doctype html>
+<!-- Copyright (C) 2026 RF StateSide LLC. SPDX-License-Identifier: AGPL-3.0-or-later.
+M2.51B original RayNmeaSimulator instructions; actual application source/UI authority.
+BrickSuite internal Help is the instructional presentation reference, not copied product instructions. -->
+<html><head><meta charset="utf-8" /><title>Actisense NGT-1</title></head><body>
+<h1 id="top">Actisense NGT-1</h1>
+<p>Actisense NGT-1 reception is supported. Outbound behavior has an unresolved corruption issue, so the application intentionally distinguishes Release from Debug.</p>
+<table border="1" cellpadding="6"><tr><th>Build</th><th>Policy</th></tr><tr><td>Release</td><td>RX-only; ordinary TX disabled</td></tr><tr><td>Debug</td><td>Ordinary TX experimental; isolated test network only</td></tr><tr><td>Both</td><td>Active chartplotter route service excluded</td></tr></table>
+<h2 id="configure-reception">Configure reception</h2>
+<ol><li>Stop Sending and choose Actisense in Setup → NMEA2000.</li><li>Select the intended serial port, baud and supported preamble setting for the actual adapter.</li><li>Save and inspect the connection/status and capability notice.</li><li>Use Viewer and Diagnostics for supported incoming data.</li></ol>
+<p>Release builds receive only; selecting Actisense does not enable Sending. Debug transmission is experimental because outgoing data can be corrupted. Active chartplotter route requests are disabled in both builds.</p>
+<h2 id="avoid-unsafe-workarounds">Avoid unsafe workarounds</h2>
+<p>For ordinary transmission, choose another supported output. Do not change baud, framing or instrument values to work around corrupted Actisense output.</p>
+
+<h2 id="illustrated-controls">Illustrated controls</h2><p><a href="images/actisense/setup-interface.png"><img src="images/actisense/setup-interface.png" alt="Actisense serial and framing settings in Setup." /></a><br /><i>Figure 70. Actisense serial and framing settings in Setup. Click to enlarge.</i></p>
+<h2 id="related-topics">Related topics</h2><p><a href="nmea2000.html">NMEA2000 Overview</a> · <a href="nmea0183.html">NMEA0183 Overview</a> · <a href="network-nmea2000.html">Network NMEA2000</a> · <a href="socketcan.html">SocketCAN</a> · <a href="canable.html">CANable SLCAN</a> · <a href="waveshare.html">Waveshare USB-CAN-A</a> · <a href="signal-k.html">Signal K</a> · <a href="device-diagnostics.html">Device Discovery and Diagnostics</a> · <a href="connection-troubleshooting.html">Connection Troubleshooting</a> · <a href="enable-dispatch-sending.html">Enable, Dispatch and Sending</a> · <a href="route-overview.html">Route Overview</a> · <a href="units.html">Engineering Units</a></p>
+<p><a href="introduction.html">Help Home</a> · <a href="#top">Back to top</a></p>
+</body></html>

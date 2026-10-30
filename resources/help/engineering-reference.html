@@ -1,0 +1,17 @@
+<!doctype html>
+<!-- Copyright (C) 2026 RF StateSide LLC. SPDX-License-Identifier: AGPL-3.0-or-later.
+M2.51B original RayNmeaSimulator instructions; actual application source/UI authority.
+BrickSuite internal Help is the instructional presentation reference, not copied product instructions. -->
+<html><head><meta charset="utf-8" /><title>Using RayNmeaSimulator Safely</title></head><body>
+<h1 id="top">Using RayNmeaSimulator Safely</h1>
+<p>RayNmeaSimulator provides NMEA2000/NMEA0183 reception, instrument simulation and route following for controlled, isolated work. It is not a certified navigation or vessel-control system.</p>
+<h2 id="engineering-method">Prepare a session</h2>
+<ol><li>Choose Viewer to inspect incoming data or Generate to configure outgoing instrument values.</li><li>Confirm source/instance identity, units and valid or unavailable fields.</li><li>Start with manual values; add generators when you need changing data.</li><li>Check the interface and receiving equipment before explicitly enabling Sending.</li><li>Keep an independent copy of important Layouts, Templates and routes.</li></ol><p>Loading a Layout, choosing a route, fetching weather or changing modes does not enable external Sending. Generator Enable and Dispatch control local operation and instrument updates; global Sending authorizes external output separately.</p>
+<h2 id="manual-evidence">Find instructions and application details</h2>
+<p>Use Contents or Search Help to find a task or message number. Press F1 for context-sensitive Help. Select an illustration to enlarge it and use Fit or 100% to read detailed controls.</p><p>Help → About RayNmeaSimulator provides the version, publisher and license notices. Include the version, platform, connection type and status in a support request. Review shared screenshots and logs for private vessel information.</p>
+<h2 id="limits">Operational judgment</h2>
+<p>Keep a known-good copy of important data, isolate tests from production navigation and stop unexpected output with Stop/F12. Already transmitted frames cannot be recalled. Follow the connected device's safety procedures; simulator output, routes and environmental effects do not constitute navigation advice or a model of all real vessel dynamics.</p>
+<h2 id="illustrated-controls">Illustrated controls</h2><p><a href="images/engineering-reference/about-status.png"><img src="images/engineering-reference/about-status.png" alt="About RayNmeaSimulator shows the version, publisher, license and acknowledgments." /></a><br /><i>Figure 108. About RayNmeaSimulator shows the version, publisher, license and acknowledgments. Click to enlarge.</i></p>
+<h2 id="related-topics">Related topics</h2><p><a href="units.html">Engineering Units</a> · <a href="messages.html">NMEA PGNs and Sentences</a> · <a href="security-privacy.html">Security and Privacy</a> · <a href="licensing.html">Licensing and Credits</a> · <a href="connection-troubleshooting.html">Connection Troubleshooting</a> · <a href="enable-dispatch-sending.html">Enable, Dispatch and Sending</a> · <a href="route-overview.html">Route Overview</a></p>
+<p><a href="introduction.html">Help Home</a> · <a href="#top">Back to top</a></p>
+</body></html>

@@ -1,0 +1,16 @@
+{
+  "NMEA2000": {
+    "url": "https://github.com/ttlappalainen/NMEA2000.git",
+    "revision": "5b7b9fc3ccc18e30ebfba92da6486cffc6251595"
+  },
+  "NMEA0183": {
+    "url": "https://github.com/ttlappalainen/NMEA0183.git",
+    "revision": "b2fee7dd878682030e344d3abd86f6fba2aab658",
+    "patch": "patches/nmea0183-windows-printf.patch",
+    "patch_sha256": "6a66a16b9d380013cc131fd17e9675d72cf88b5010b069836c405df3c03369f0"
+  },
+  "NMEA2000_socketCAN": {
+    "url": "https://github.com/RayJr2/NMEA2000_socketCAN.git",
+    "revision": "224375e0e0c73a1fdf5256df73a4bcbd3b4db6f1"
+  }
+}

@@ -1,0 +1,11 @@
+Offline NMEA2000 diagnostic lookup data derives from CANboat.
+Copyright (C) 2009-2026 Kees Verruijt and CANboat contributors.
+Licensed under the Apache License, Version 2.0; see LICENSE-canboat.txt.
+https://github.com/canboat/canboat
+
+The generated resource records source URL, revision, version and SHA-256.
+Reproduce using scripts/generate_nmea_lookups.py with the reviewed input.
+CANboat definitions are reverse-engineered interpretations, not certification.
+No website access or definition download occurs in an application build/run.
+The same reviewed source also supplies the selected SeaTalk pilot/device and
+Fusion power/mute enumeration names used by qualified passive diagnostics.

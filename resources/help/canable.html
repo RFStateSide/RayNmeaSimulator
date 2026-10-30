@@ -1,0 +1,19 @@
+<!doctype html>
+<!-- Copyright (C) 2026 RF StateSide LLC. SPDX-License-Identifier: AGPL-3.0-or-later.
+M2.51B original RayNmeaSimulator instructions; actual application source/UI authority.
+BrickSuite internal Help is the instructional presentation reference, not copied product instructions. -->
+<html><head><meta charset="utf-8" /><title>CANable SLCAN</title></head><body>
+<h1 id="top">CANable SLCAN</h1>
+<p>CANable SLCAN connects compatible SLCAN adapters on Windows and Linux for NMEA2000 reception and transmission. It uses serial framing for 29-bit CAN, not NMEA0183 sentences.</p>
+<h2 id="select-the-adapter">Select and save the adapter</h2>
+<ol><li>Stop Sending and select CANable SLCAN in Setup → NMEA2000.</li><li>Use Refresh ports after attaching the device. The selector prioritizes detected USB serial devices and displays available description/manufacturer/VID:PID information.</li><li>Select the actual COM/device path. If discovery is insufficient, enter the usable path manually; descriptive text is not the device path.</li><li>Review Unique CAN device number and Preferred CAN source address. Keep simultaneous node identities distinct.</li><li>Save, then use Connect Selected Device for RX/standby.</li></ol>
+<p>The established configuration uses 115200 baud SLCAN serial, 8N1, and 250 kbit/s extended CAN. Adapter firmware must implement the expected SLCAN behavior. Do not substitute a binary USB-CAN protocol merely because it uses a serial USB chip.</p>
+<h2 id="receive-or-transmit">Receive or transmit deliberately</h2>
+<p>Connection alone does not authorize instrument Sending. Use Viewer for supported reception; in Generate review instruments and explicitly Enable Sending. Stop/F12 and mode/transport changes revoke output/service permission. Reconnect explicitly after an abort/fault when status requires it.</p>
+<p>The chartplotter route dialog provides its own discovery and retrieval controls. General device discovery in Diagnostics is not available for serial CAN adapters.</p>
+<h2 id="recover-access">Recover access problems</h2>
+<p>Missing/disconnected device: check the cable, refresh and reselect. Access denied/busy: close another serial application and verify OS permissions. On Linux, membership/permissions for the serial device may require an administrator-managed change and a fresh login session; this Help does not modify groups or udev rules. Do not repeatedly Save a stale port to conceal a physical disconnect.</p>
+<h2 id="illustrated-controls">Illustrated controls</h2><p><a href="images/canable/setup-interface.png"><img src="images/canable/setup-interface.png" alt="CANable SLCAN port and device identity settings in Setup." /></a><br /><i>Figure 68. CANable SLCAN port and device identity settings in Setup. Click to enlarge.</i></p>
+<h2 id="related-topics">Related topics</h2><p><a href="nmea2000.html">NMEA2000 Overview</a> · <a href="nmea0183.html">NMEA0183 Overview</a> · <a href="network-nmea2000.html">Network NMEA2000</a> · <a href="socketcan.html">SocketCAN</a> · <a href="waveshare.html">Waveshare USB-CAN-A</a> · <a href="actisense.html">Actisense NGT-1</a> · <a href="signal-k.html">Signal K</a> · <a href="device-diagnostics.html">Device Discovery and Diagnostics</a> · <a href="connection-troubleshooting.html">Connection Troubleshooting</a> · <a href="enable-dispatch-sending.html">Enable, Dispatch and Sending</a> · <a href="route-overview.html">Route Overview</a> · <a href="units.html">Engineering Units</a></p>
+<p><a href="introduction.html">Help Home</a> · <a href="#top">Back to top</a></p>
+</body></html>

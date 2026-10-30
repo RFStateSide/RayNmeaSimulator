@@ -1,0 +1,19 @@
+<!doctype html>
+<!-- Copyright (C) 2026 RF StateSide LLC. SPDX-License-Identifier: AGPL-3.0-or-later.
+M2.51B original RayNmeaSimulator instructions; actual application source/UI authority.
+BrickSuite internal Help is the instructional presentation reference, not copied product instructions. -->
+<html><head><meta charset="utf-8" /><title>Loading the Default Layout</title></head><body>
+<h1 id="top">Loading the Default Layout</h1>
+<p>The Default Layout is a starting snapshot, not a subscription or a global start command. The application uses the saved user Default when present and otherwise the bundled Default.</p>
+<h2 id="load-default">Load the Default</h2>
+<ol><li>Stop external Sending and review unsaved workspace changes.</li><li>Choose Layout → Load Default Layout.</li><li>Respond to replacement/unsaved-change confirmation rather than assuming opening a menu has loaded anything.</li><li>Inspect Navigation, Propulsion, Environment and Generate. Review individual Enable and generator Dispatch states before allowing dynamic sources to update values.</li></ol>
+<p>Loading a Layout revokes Sending. Enabled generators may still operate locally according to the document; this is separate from external instrument transmission. Representative values in a bundled Layout are not observations from your attached vessel.</p>
+<h2 id="replace-user-default">Choose your own Default</h2>
+<ol><li>Construct and validate the desired workspace, including instrument intervals and generator states.</li><li>Choose Layout → Save Layout as Default.</li><li>Confirm replacement only after checking the current workspace. A failed validation/save must not be treated as successful replacement.</li><li>Reload Default later to verify it is the intended snapshot. Keep a separately named Layout if you want an easy recovery point.</li></ol>
+<h2 id="choose-startup">Choose a startup workspace</h2>
+<p>Layout → Startup Workspace offers Empty workspace, Load a selected Layout or Apply a selected Template. Browse for a valid document, then Save; Cancel preserves the prior startup choice. The path must remain available on that computer. A missing or invalid startup document produces feedback and an empty workspace rather than silently authorizing output.</p>
+<p>Startup never enables global Sending. It can restore locally enabled generators and their Dispatch configuration. On a shared bench, Empty workspace is a useful deliberate starting choice. Changing the Default and changing startup selection are different operations: choose each setting separately.</p>
+<h2 id="illustrated-controls">Illustrated controls</h2><p><a href="images/default-layout/startup-workspace.png"><img src="images/default-layout/startup-workspace.png" alt="Startup Workspace chooses Empty, a Layout or a Template. Startup never authorizes Sending." /></a><br /><i>Figure 8. Startup Workspace chooses Empty, a Layout or a Template. Startup never authorizes Sending. Click to enlarge.</i></p><p><a href="images/main-window/workspace-overview.png"><img src="images/main-window/workspace-overview.png" alt="Category tabs, Sending controls, Property Editor and Object Tree in the main window." /></a><br /><i>Figure 9. Category tabs, Sending controls, Property Editor and Object Tree in the main window. Click to enlarge.</i></p>
+<h2 id="related-topics">Related topics</h2><p><a href="introduction.html">Introduction</a> · <a href="system-requirements.html">System Requirements</a> · <a href="first-launch.html">Installation and First Launch</a> · <a href="viewer-generate.html">Viewer vs Generate</a> · <a href="quick-start.html">Quick Start</a> · <a href="connection-troubleshooting.html">Connection Troubleshooting</a> · <a href="enable-dispatch-sending.html">Enable, Dispatch and Sending</a> · <a href="route-overview.html">Route Overview</a> · <a href="units.html">Engineering Units</a></p>
+<p><a href="introduction.html">Help Home</a> · <a href="#top">Back to top</a></p>
+</body></html>

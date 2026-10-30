@@ -1,0 +1,204 @@
+{
+  "formatVersion": 2,
+  "documentType": "template",
+  "numberOfWidgetColumns": 2,
+  "template": {
+    "id": "b12fd517-15c7-5659-9a26-a009c778a843",
+    "name": "Synthetic AIS Demonstration",
+    "description": "Two synthetic static AIS identities. Disabled initially; never use these identities on an operational vessel network. Manual values remain independent of own-vessel Setup."
+  },
+  "setupPolicies": [],
+  "layouts": [
+    {
+      "groupName": "Communication",
+      "widgets": [
+        {
+          "idX": 1,
+          "type": "AisClassBStatic129810",
+          "label": "Synthetic AIS target 1",
+          "pgn": "129810",
+          "interval": 5000,
+          "enabled": false,
+          "parameters": [
+            [
+              "MessageID",
+              "24",
+              "",
+              "uint8_t"
+            ],
+            [
+              "Repeat",
+              "0",
+              "",
+              "tN2kAISRepeat"
+            ],
+            [
+              "UserID",
+              "999000001",
+              "MMSI",
+              "uint32_t"
+            ],
+            [
+              "VesselType",
+              "37",
+              "",
+              "uint8_t"
+            ],
+            [
+              "Vendor",
+              "",
+              "",
+              "QString"
+            ],
+            [
+              "Callsign",
+              "TEST001",
+              "",
+              "QString"
+            ],
+            [
+              "Length",
+              "10.668",
+              "m",
+              "double"
+            ],
+            [
+              "Beam",
+              "3.6576",
+              "m",
+              "double"
+            ],
+            [
+              "PosRefStbd",
+              "1.8288",
+              "m",
+              "double"
+            ],
+            [
+              "PosRefBow",
+              "5.334",
+              "m",
+              "double"
+            ],
+            [
+              "MothershipID",
+              "0",
+              "MMSI",
+              "uint32_t"
+            ],
+            [
+              "AISInfo",
+              "4",
+              "",
+              "tN2kAISTransceiverInformation"
+            ],
+            [
+              "SID",
+              "255",
+              "",
+              "uint8_t"
+            ]
+          ],
+          "ranges": [],
+          "rowSpan": 5,
+          "columnSpan": 3,
+          "row": 0,
+          "column": 0
+        },
+        {
+          "idX": 2,
+          "type": "AisClassBStatic129810",
+          "label": "Synthetic AIS target 2",
+          "pgn": "129810",
+          "interval": 5000,
+          "enabled": false,
+          "parameters": [
+            [
+              "MessageID",
+              "24",
+              "",
+              "uint8_t"
+            ],
+            [
+              "Repeat",
+              "0",
+              "",
+              "tN2kAISRepeat"
+            ],
+            [
+              "UserID",
+              "999000002",
+              "MMSI",
+              "uint32_t"
+            ],
+            [
+              "VesselType",
+              "37",
+              "",
+              "uint8_t"
+            ],
+            [
+              "Vendor",
+              "",
+              "",
+              "QString"
+            ],
+            [
+              "Callsign",
+              "TEST002",
+              "",
+              "QString"
+            ],
+            [
+              "Length",
+              "10.668",
+              "m",
+              "double"
+            ],
+            [
+              "Beam",
+              "3.6576",
+              "m",
+              "double"
+            ],
+            [
+              "PosRefStbd",
+              "1.8288",
+              "m",
+              "double"
+            ],
+            [
+              "PosRefBow",
+              "5.334",
+              "m",
+              "double"
+            ],
+            [
+              "MothershipID",
+              "0",
+              "MMSI",
+              "uint32_t"
+            ],
+            [
+              "AISInfo",
+              "4",
+              "",
+              "tN2kAISTransceiverInformation"
+            ],
+            [
+              "SID",
+              "255",
+              "",
+              "uint8_t"
+            ]
+          ],
+          "ranges": [],
+          "rowSpan": 5,
+          "columnSpan": 3,
+          "row": 0,
+          "column": 3
+        }
+      ]
+    }
+  ]
+}

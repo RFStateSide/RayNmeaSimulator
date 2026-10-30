@@ -1,0 +1,852 @@
+{
+  "formatVersion": 2,
+  "documentType": "template",
+  "numberOfWidgetColumns": 2,
+  "template": {
+    "id": "5d19c776-8966-579d-922b-9e86db932f6a",
+    "name": "Navigation / Autopilot",
+    "description": "Navigation instruments and local clock. Select your own route and explicitly enable movement."
+  },
+  "setupPolicies": [],
+  "layouts": [
+    {
+      "groupName": "Generate",
+      "widgets": [
+        {
+          "column": 0,
+          "columnSpan": 3,
+          "idX": 5,
+          "interval": 1000,
+          "label": "Vessel movement 1",
+          "parameters": [
+            [
+              "SID",
+              "0",
+              "",
+              "unsigned char"
+            ],
+            [
+              "Latitude",
+              "0",
+              "deg",
+              "double"
+            ],
+            [
+              "Longitude",
+              "0",
+              "deg",
+              "double"
+            ],
+            [
+              "Altitude",
+              "0",
+              "m",
+              "double"
+            ],
+            [
+              "HeadingReference",
+              "1",
+              "enum",
+              "tN2kHeadingReference"
+            ],
+            [
+              "Heading",
+              "0",
+              "rad",
+              "double"
+            ],
+            [
+              "Deviation",
+              "0",
+              "rad",
+              "double"
+            ],
+            [
+              "Variation",
+              "-0.147",
+              "rad",
+              "double"
+            ],
+            [
+              "COG",
+              "0",
+              "rad",
+              "double"
+            ],
+            [
+              "SOG",
+              "12.5171",
+              "m/s",
+              "double"
+            ],
+            [
+              "RateOfTurn",
+              "0",
+              "deg/s",
+              "double"
+            ],
+            [
+              "Yaw",
+              "0",
+              "rad",
+              "double"
+            ],
+            [
+              "Pitch",
+              "0",
+              "rad",
+              "double"
+            ],
+            [
+              "Roll",
+              "0",
+              "rad",
+              "double"
+            ],
+            [
+              "Heave",
+              "0",
+              "m",
+              "double"
+            ],
+            [
+              "RudderPosition",
+              "0",
+              "rad",
+              "double"
+            ]
+          ],
+          "pgn": "-129025",
+          "ranges": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              65535
+            ],
+            [
+              0,
+              65535
+            ]
+          ],
+          "row": 0,
+          "rowSpan": 17,
+          "type": "GeneratorVesselMovement",
+          "dispatch": true,
+          "enabled": true,
+          "configuration": {
+            "route": "",
+            "reverse": false,
+            "speedSource": 0,
+            "speed": 5.0,
+            "autopilotMultiplier": 1
+          }
+        },
+        {
+          "column": 3,
+          "columnSpan": 3,
+          "idX": 7,
+          "interval": 1000,
+          "label": "Date and time 1",
+          "parameters": [
+            [
+              "SID",
+              "0",
+              "",
+              "unsigned char"
+            ],
+            [
+              "DaysSince1970",
+              "20000",
+              "day",
+              "uint16_t"
+            ],
+            [
+              "SecondsSinceMidnight",
+              "0",
+              "s",
+              "double"
+            ],
+            [
+              "LocalOffset",
+              "0",
+              "min",
+              "int16_t"
+            ]
+          ],
+          "pgn": "-129033",
+          "ranges": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              65535
+            ],
+            [
+              0,
+              65535
+            ]
+          ],
+          "row": 0,
+          "rowSpan": 4,
+          "type": "GeneratorDateTime",
+          "dispatch": true,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "groupName": "Navigation",
+      "widgets": [
+        {
+          "column": 0,
+          "columnSpan": 3,
+          "idX": 8,
+          "interval": 1000,
+          "label": "GNSS 1",
+          "parameters": [
+            [
+              "SID",
+              "0",
+              "",
+              "unsigned char"
+            ],
+            [
+              "DaysSince1970",
+              "20000",
+              "day",
+              "uint16_t"
+            ],
+            [
+              "SecondsSinceMidnight",
+              "0",
+              "s",
+              "double"
+            ],
+            [
+              "Latitude",
+              "0",
+              "deg",
+              "double"
+            ],
+            [
+              "Longitude",
+              "0",
+              "deg",
+              "double"
+            ],
+            [
+              "Altitude",
+              "3.2",
+              "m",
+              "double"
+            ],
+            [
+              "GNSStype",
+              "0",
+              "enum",
+              "tN2kGNSStype"
+            ],
+            [
+              "GNSSmethod",
+              "1",
+              "enum",
+              "tN2kGNSSmethod"
+            ],
+            [
+              "nSatellites",
+              "11",
+              "",
+              "unsigned char"
+            ],
+            [
+              "HDOP",
+              "1.3",
+              "",
+              "double"
+            ],
+            [
+              "PDOP",
+              "1.3",
+              "",
+              "double"
+            ],
+            [
+              "GeoidalSeparation",
+              "15.5",
+              "m",
+              "double"
+            ],
+            [
+              "nReferenceStations",
+              "2",
+              "",
+              "unsigned char"
+            ],
+            [
+              "ReferenceStationType",
+              "0",
+              "enum",
+              "tN2kGNSStype"
+            ],
+            [
+              "ReferenceSationID",
+              "123",
+              "",
+              "uint16_t"
+            ],
+            [
+              "AgeOfCorrection",
+              "0.5",
+              "s",
+              "double"
+            ]
+          ],
+          "pgn": "129029",
+          "ranges": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              65535
+            ],
+            [
+              0,
+              65535
+            ],
+            [
+              -3.14159,
+              3.14159
+            ],
+            [
+              -3.14159,
+              3.14159
+            ],
+            [
+              0,
+              65535
+            ]
+          ],
+          "row": 0,
+          "rowSpan": 4,
+          "type": "GnssPositionData129029",
+          "enabled": true
+        },
+        {
+          "column": 3,
+          "columnSpan": 3,
+          "idX": 9,
+          "interval": 250,
+          "label": "Position 1",
+          "parameters": [
+            [
+              "Latitude",
+              "0",
+              "degrees",
+              "double"
+            ],
+            [
+              "Longitude",
+              "0",
+              "degrees",
+              "double"
+            ]
+          ],
+          "pgn": "129025",
+          "ranges": [
+            [
+              -3.14159,
+              3.14159
+            ],
+            [
+              -3.14159,
+              3.14159
+            ]
+          ],
+          "row": 0,
+          "rowSpan": 3,
+          "type": "LatLong129025",
+          "enabled": true
+        },
+        {
+          "column": 0,
+          "columnSpan": 3,
+          "idX": 10,
+          "interval": 250,
+          "label": "COG and SOG 1",
+          "parameters": [
+            [
+              "SID",
+              "0",
+              "",
+              "unsigned char"
+            ],
+            [
+              "HeadingReference",
+              "0",
+              "enum",
+              "tN2kHeadingReference"
+            ],
+            [
+              "COG",
+              "0",
+              "rad",
+              "double"
+            ],
+            [
+              "SOG",
+              "0",
+              "m/s",
+              "double"
+            ]
+          ],
+          "pgn": "129026",
+          "ranges": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              360
+            ],
+            [
+              0,
+              65535
+            ],
+            [
+              0,
+              65535
+            ]
+          ],
+          "row": 4,
+          "rowSpan": 3,
+          "type": "CogSog129026",
+          "enabled": true
+        },
+        {
+          "column": 3,
+          "columnSpan": 3,
+          "idX": 11,
+          "interval": 1000,
+          "label": "Speed 1",
+          "parameters": [
+            [
+              "SID",
+              "0",
+              "",
+              "unsigned char"
+            ],
+            [
+              "WaterReferenced",
+              "0",
+              "m/s",
+              "double"
+            ],
+            [
+              "GroundReferenced",
+              "0",
+              "m/s",
+              "double"
+            ],
+            [
+              "SWRT",
+              "0",
+              "enum",
+              "tN2kSpeedWaterReferencedType"
+            ]
+          ],
+          "pgn": "128259",
+          "ranges": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              65535
+            ],
+            [
+              0,
+              65535
+            ]
+          ],
+          "row": 4,
+          "rowSpan": 3,
+          "type": "Speed128259",
+          "enabled": true
+        },
+        {
+          "column": 0,
+          "columnSpan": 3,
+          "idX": 12,
+          "interval": 1000,
+          "label": "Depth 1",
+          "parameters": [
+            [
+              "SID",
+              "0",
+              "",
+              "unsigned char"
+            ],
+            [
+              "DepthBelowTransducer",
+              "0",
+              "dm",
+              "double"
+            ],
+            [
+              "Offset",
+              "0",
+              "m",
+              "double"
+            ],
+            [
+              "Range",
+              "0",
+              "m",
+              "double"
+            ]
+          ],
+          "pgn": "128267",
+          "ranges": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              65535
+            ],
+            [
+              0,
+              65535
+            ],
+            [
+              0,
+              65535
+            ]
+          ],
+          "row": 7,
+          "rowSpan": 2,
+          "type": "Depth128267",
+          "enabled": true
+        },
+        {
+          "column": 3,
+          "columnSpan": 3,
+          "idX": 13,
+          "interval": 1000,
+          "label": "Navigation 1",
+          "parameters": [
+            [
+              "SID",
+              "0",
+              "",
+              "unsigned char"
+            ],
+            [
+              "DistanceToWaypoint",
+              "0",
+              "m",
+              "double"
+            ],
+            [
+              "BearingReference",
+              "0",
+              "enum",
+              "tN2kHeadingReference"
+            ],
+            [
+              "PerpendicularCrossed",
+              "0",
+              "",
+              "bool"
+            ],
+            [
+              "ArrivalCircleEntered",
+              "false",
+              "",
+              "bool"
+            ],
+            [
+              "CalculationType",
+              "0",
+              "enum",
+              "tN2kDistanceCalculationType"
+            ],
+            [
+              "ETATime",
+              "0",
+              "s",
+              "double"
+            ],
+            [
+              "ETADate",
+              "0",
+              "day",
+              "int16_t"
+            ],
+            [
+              "BearingOriginToDestinationWaypoint",
+              "0",
+              "rad",
+              "double"
+            ],
+            [
+              "BearingPositionToDestinationWaypoint",
+              "0",
+              "rad",
+              "double"
+            ],
+            [
+              "OriginWaypointNumber",
+              "0",
+              "",
+              "uint32_t"
+            ],
+            [
+              "DestinationWaypointNumber",
+              "0",
+              "",
+              "uint32_t"
+            ],
+            [
+              "DestinationLatitude",
+              "0",
+              "deg",
+              "double"
+            ],
+            [
+              "DestinationLongitude",
+              "0",
+              "deg",
+              "double"
+            ],
+            [
+              "WaypointClosingVelocity",
+              "0",
+              "m/s",
+              "double"
+            ]
+          ],
+          "pgn": "129284",
+          "ranges": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              65535
+            ],
+            [
+              0,
+              65535
+            ]
+          ],
+          "row": 7,
+          "rowSpan": 4,
+          "type": "Navigation129284",
+          "enabled": true
+        },
+        {
+          "column": 0,
+          "columnSpan": 3,
+          "idX": 14,
+          "interval": 500,
+          "label": "Rate of turn 1",
+          "parameters": [
+            [
+              "SID",
+              "0",
+              "",
+              "unsigned char"
+            ],
+            [
+              "RateOfTurn",
+              "0",
+              "radians/s",
+              "double"
+            ]
+          ],
+          "pgn": "127251",
+          "ranges": [
+            [
+              0,
+              255
+            ],
+            [
+              -3.14159,
+              3.14159
+            ]
+          ],
+          "row": 11,
+          "rowSpan": 2,
+          "type": "RateOfTurn127251",
+          "enabled": true
+        },
+        {
+          "column": 3,
+          "columnSpan": 3,
+          "idX": 15,
+          "interval": 1000,
+          "label": "Attitude 1",
+          "parameters": [
+            [
+              "SID",
+              "0",
+              "",
+              "unsigned char"
+            ],
+            [
+              "Yaw",
+              "0",
+              "rad",
+              "double"
+            ],
+            [
+              "Pitch",
+              "0",
+              "rad",
+              "double"
+            ],
+            [
+              "Roll",
+              "0",
+              "rad",
+              "double"
+            ]
+          ],
+          "pgn": "127257",
+          "ranges": [
+            [
+              0,
+              255
+            ],
+            [
+              -3.14159,
+              3.14159
+            ],
+            [
+              -3.14159,
+              3.14159
+            ],
+            [
+              -3.14159,
+              3.14159
+            ]
+          ],
+          "row": 11,
+          "rowSpan": 4,
+          "type": "Attitude127257",
+          "enabled": true
+        },
+        {
+          "column": 0,
+          "columnSpan": 3,
+          "idX": 16,
+          "interval": 1000,
+          "label": "Heave 1",
+          "parameters": [
+            [
+              "SID",
+              "0",
+              "",
+              "unsigned char"
+            ],
+            [
+              "Heave",
+              "0",
+              "m",
+              "double"
+            ],
+            [
+              "Delay",
+              "0",
+              "s",
+              "double"
+            ],
+            [
+              "DelaySource",
+              "0",
+              "",
+              "tN2kDelaySource"
+            ]
+          ],
+          "pgn": "127252",
+          "ranges": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              65535
+            ],
+            [
+              0,
+              65535
+            ]
+          ],
+          "row": 15,
+          "rowSpan": 2,
+          "type": "Heave127252",
+          "enabled": true
+        },
+        {
+          "column": 3,
+          "columnSpan": 3,
+          "idX": 17,
+          "interval": 1000,
+          "label": "Local date and time 1",
+          "parameters": [
+            [
+              "DaysSince1970",
+              "20000",
+              "day",
+              "uint16_t"
+            ],
+            [
+              "SecondsSinceMidnight",
+              "0",
+              "s",
+              "double"
+            ],
+            [
+              "LocalOffset",
+              "0",
+              "min",
+              "int16_t"
+            ]
+          ],
+          "pgn": "129033",
+          "ranges": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              65535
+            ],
+            [
+              0,
+              65535
+            ]
+          ],
+          "row": 15,
+          "rowSpan": 3,
+          "type": "DateTime129033",
+          "enabled": true
+        }
+      ]
+    }
+  ]
+}

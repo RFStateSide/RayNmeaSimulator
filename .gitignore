@@ -1,0 +1,96 @@
+# Ignore executable and make file
+RayVessel
+RayNmeaSimulator
+Makefile
+Makefile.*
+
+# Ignore build directories
+build/
+Build/
+debug/
+Debug/
+release/
+Release/
+bin/
+Bin/
+obj/
+Obj/
+temp/
+Temp/
+tmp/
+Tmp/
+
+# Ignore generated files
+# Ignore other directories
+platforms/
+
+# Ignore object files
+*.o
+*.so
+*.o
+*.obj
+*.a
+*.exe
+*.dll
+
+# Ignore Qt Creator files
+*.user
+*.pro.user
+*.pro.user.*
+
+# Ignore backup files
+*~
+
+# Ignore generated files
+moc_*.cpp
+moc_*.h
+mocinclude.opt
+ui_*.h
+qrc_*.cpp
+
+# Ignore Qt Creator project files
+.qmake.stash
+.qmake.cache
+.qmake.conf
+
+# Ignore other unwanted files
+*.log
+*.tmp
+*.bak
+*.autosave
+*.debug
+*.lock
+.qtc*
+
+
+# Ignore other IDE-specific files (e.g., Visual Studio Code)
+.vscode/
+.idea/
+
+# Ignore proprietary files
+mefi3.adx
+MEFI3 Notes.docx
+MEFI-3.xml
+
+# Ignore script files
+deploy.sh
+
+
+# Reproducible dependency staging (never historical sibling checkouts).
+.dependencies/
+# Deploy outputs from Qt Creator shadow builds (source deployment/ stays tracked).
+deploy/
+/deployment/build/
+/deployment/deploy.log
+/deployment/.deploy.lock
+__pycache__/
+*.py[cod]
+CMakeUserPresets.json
+
+# Local credentials and private capture workspaces (never public fixtures).
+.env
+.env.*
+access.key
+bridge-key-private.txt
+private-captures/
+private-profiles/

@@ -1,0 +1,18 @@
+<!doctype html>
+<!-- Copyright (C) 2026 RF StateSide LLC. SPDX-License-Identifier: AGPL-3.0-or-later.
+M2.51B original RayNmeaSimulator instructions; actual application source/UI authority.
+BrickSuite internal Help is the instructional presentation reference, not copied product instructions. -->
+<html><head><meta charset="utf-8" /><title>Object Tree</title></head><body>
+<h1 id="top">Object Tree</h1>
+<p>Object Tree is a read-only navigation and display view of the live workspace. It is useful when several widgets look alike or a source is updating a property too quickly to inspect on its face.</p>
+<h2 id="locate-a-widget">Locate and inspect</h2>
+<ol><li>Expand a category, then the desired instrument or generator.</li><li>Use labels, IDs, receive source and instance information to distinguish entries.</li><li>Select a widget/property to locate the corresponding workspace object and Property Editor values.</li><li>Compare the value and Last Updated information while testing a source or changing units.</li></ol>
+<p>Tree formatting follows field-specific display precision and preferred units. Engine load and torque show field-specific precision; temperatures, depths, headings and distances have their own rules. This does not change canonical values, serialized Layouts, encoders or Signal K publication.</p>
+<h2 id="interpret-validity">Interpret validity and time</h2>
+<p>Unavailable time and distance display as Unavailable; valid zero remains a measurement. Last Updated shows the latest recorded property change. If it is old, inspect connection status and Diagnostics to check whether data is still arriving.</p>
+<p>Multiple widgets with the same message title can be correct when source or instance differs. Do not merge them merely to make the tree shorter. Saved RX Layouts preserve representative values and identity context for simulation; they do not maintain a remote subscription after loading.</p>
+<p>If tree and instrument disagree in meaning after a change, inspect canonical Property Editor data and the active source. A few fewer decimal places are expected; a different unit or a numeric unavailable sentinel is not ordinary rounding.</p>
+<h2 id="illustrated-controls">Illustrated controls</h2><p><a href="images/object-tree/expanded-properties.png"><img src="images/object-tree/expanded-properties.png" alt="Expanded Object Tree properties show formatted values and source/instance distinctions." /></a><br /><i>Figure 25. Expanded Object Tree properties show formatted values and source/instance distinctions. Click to enlarge.</i></p>
+<h2 id="related-topics">Related topics</h2><p><a href="main-window.html">Main Window</a> · <a href="instruments-generators.html">Instruments and Generators</a> · <a href="layouts.html">Layout Management</a> · <a href="templates.html">Templates</a> · <a href="property-editor.html">Property Editor</a> · <a href="themes.html">Themes and Appearance</a> · <a href="keyboard-shortcuts.html">Keyboard Shortcuts</a> · <a href="connection-troubleshooting.html">Connection Troubleshooting</a> · <a href="enable-dispatch-sending.html">Enable, Dispatch and Sending</a> · <a href="route-overview.html">Route Overview</a> · <a href="units.html">Engineering Units</a></p>
+<p><a href="introduction.html">Help Home</a> · <a href="#top">Back to top</a></p>
+</body></html>

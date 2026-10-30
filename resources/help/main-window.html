@@ -1,0 +1,19 @@
+<!doctype html>
+<!-- Copyright (C) 2026 RF StateSide LLC. SPDX-License-Identifier: AGPL-3.0-or-later.
+M2.51B original RayNmeaSimulator instructions; actual application source/UI authority.
+BrickSuite internal Help is the instructional presentation reference, not copied product instructions. -->
+<html><head><meta charset="utf-8" /><title>Main Window</title></head><body>
+<h1 id="top">Main Window</h1>
+<p>The Main Window is organized around category tabs, a Sending toolbar/status, instrument work areas and two property/navigation docks. Treat the status as state feedback, not as a decoration.</p>
+<h2 id="orient-yourself">Orient yourself</h2>
+<ul><li>The category tabs group Navigation, Propulsion, Environment, Tanks, Electrical, Communication, Other and Generate.</li><li>Each category selector adds supported instruments/sources. NMEA2000 entries sort numerically by PGN before alphabetically displayed NMEA0183 entries.</li><li>Property Editor exposes the selected widget's canonical model fields.</li><li>Object Tree locates widgets, instances, sources and formatted properties.</li><li>The Sending toolbar distinguishes stopped, connecting/ready, active and fault states. Read the selected transport's status.</li></ul>
+<h2 id="arrange-your-workspace">Arrange and inspect</h2>
+<ol><li>Select the category you need, then select a widget or its Object Tree entry.</li><li>Expand a tree item to locate a particular property; inspect its value and update time.</li><li>Use View to show or hide the Property Editor and Object Tree docks. The Sending toolbar remains available for external-output control.</li><li>Resize panes to make labels and units legible. Use a larger window for dense multi-field instruments.</li></ol>
+<p>Darkeum is the manual's screenshot theme. Existing installations retain their selected theme; six built-ins and external QSS remain available through Setup. A different font, DPI scale or theme can change spacing without changing canonical values.</p>
+<h2 id="use-menus">Use the menus by task</h2>
+<p>File contains Setup and Exit; Mode selects Viewer or Generate; Layout manages Layouts and Templates. Transmission contains Sending controls. Tools provides logs and Diagnostics. Help opens the manual, About and voluntary Support. The Debug/Test menu is available only in Debug builds.</p>
+<p>F1 and F12 remain useful when a window covers the toolbar. Help is modeless; confirmations that can replace data remain explicit. Keep the title/status and current Layout identity visible before destructive operations.</p>
+<h2 id="illustrated-controls">Illustrated controls</h2><p><a href="images/main-window/workspace-overview.png"><img src="images/main-window/workspace-overview.png" alt="Category tabs, Sending controls, Property Editor and Object Tree in the main window." /></a><br /><i>Figure 10. Category tabs, Sending controls, Property Editor and Object Tree in the main window. Click to enlarge.</i></p>
+<h2 id="related-topics">Related topics</h2><p><a href="instruments-generators.html">Instruments and Generators</a> · <a href="layouts.html">Layout Management</a> · <a href="templates.html">Templates</a> · <a href="property-editor.html">Property Editor</a> · <a href="object-tree.html">Object Tree</a> · <a href="themes.html">Themes and Appearance</a> · <a href="keyboard-shortcuts.html">Keyboard Shortcuts</a> · <a href="connection-troubleshooting.html">Connection Troubleshooting</a> · <a href="enable-dispatch-sending.html">Enable, Dispatch and Sending</a> · <a href="route-overview.html">Route Overview</a> · <a href="units.html">Engineering Units</a></p>
+<p><a href="introduction.html">Help Home</a> · <a href="#top">Back to top</a></p>
+</body></html>

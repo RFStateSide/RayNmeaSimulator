@@ -1,0 +1,20 @@
+<!doctype html>
+<!-- Copyright (C) 2026 RF StateSide LLC. SPDX-License-Identifier: AGPL-3.0-or-later.
+M2.51B original RayNmeaSimulator instructions; actual application source/UI authority.
+BrickSuite internal Help is the instructional presentation reference, not copied product instructions. -->
+<html><head><meta charset="utf-8" /><title>SocketCAN</title></head><body>
+<h1 id="top">SocketCAN</h1>
+<p>Native SocketCAN connects to a Linux CAN interface, including Raspberry Pi CAN hardware. Configure the operating system, controller and interface before using it in RayNmeaSimulator.</p>
+<h2 id="check-prerequisites">Check before opening the application</h2>
+<ol><li>Confirm the intended CAN interface exists and is healthy at the required NMEA2000 bitrate, normally 250000 bit/s.</li><li>Confirm the correct driver/overlay, oscillator/interrupt configuration, physical wiring, termination and power for the actual hardware.</li><li>Provide the ip utility from iproute2 on PATH. The application uses read-only interface inspection; it does not install packages or change bitrate/link state.</li><li>If BUS-OFF or hardware errors occur, stop the bench operation and investigate the physical/configuration cause. Do not repeatedly reset a live vessel bus from this UI.</li></ol>
+<h2 id="select-native-can">Select Native SocketCAN</h2>
+<ol><li>Stop Sending and open Setup → NMEA2000 → SocketCan on Linux.</li><li>Enter the intended interface name, such as your configured can0, and persistent unique device number.</li><li>Save and inspect initialization/readiness feedback.</li><li>Receive supported data or separately authorize the intended output/service operation.</li></ol>
+<p>A ready software core does not prove address arbitration has settled, a receiving device is present or a particular PGN is displayed. Normal protocol servicing remains active in Viewer; this is not electrically silent listen-only capture.</p>
+<h2 id="respect-terminal-stop">Respect terminal stop behavior</h2>
+<p>After a transmission attempt or an authorized service request, Stop/F12 can close the native session for the remainder of the application run. Entering Viewer after transmission can also close it. If the status says a restart is required, restart RayNmeaSimulator before receiving or sending again.</p>
+<p>Already queued OS frames cannot be recalled. Settings reload also stops application output. Preserve this safety policy when planning repeated tests.</p>
+<p>For chartplotter retrieval, confirm that the target supports the requested route service and follow <a href="chartplotter-routes.html">Selecting Chartplotter Routes</a>.</p>
+<h2 id="illustrated-controls">Illustrated controls</h2><p><a href="images/socketcan/linux-interface.png"><img src="images/socketcan/linux-interface.png" alt="Select SocketCan and enter the name of the configured Linux CAN interface." /></a><br /><i>Figure 67. Select SocketCan and enter the name of the configured Linux CAN interface. Click to enlarge.</i></p>
+<h2 id="related-topics">Related topics</h2><p><a href="nmea2000.html">NMEA2000 Overview</a> · <a href="nmea0183.html">NMEA0183 Overview</a> · <a href="network-nmea2000.html">Network NMEA2000</a> · <a href="canable.html">CANable SLCAN</a> · <a href="waveshare.html">Waveshare USB-CAN-A</a> · <a href="actisense.html">Actisense NGT-1</a> · <a href="signal-k.html">Signal K</a> · <a href="device-diagnostics.html">Device Discovery and Diagnostics</a> · <a href="connection-troubleshooting.html">Connection Troubleshooting</a> · <a href="enable-dispatch-sending.html">Enable, Dispatch and Sending</a> · <a href="route-overview.html">Route Overview</a> · <a href="units.html">Engineering Units</a></p>
+<p><a href="introduction.html">Help Home</a> · <a href="#top">Back to top</a></p>
+</body></html>

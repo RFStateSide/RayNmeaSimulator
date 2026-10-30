@@ -1,0 +1,8 @@
+{
+  "version": "2.30.9",
+  "url": "https://github.com/libsdl-org/SDL/releases/download/release-2.30.9/SDL2-devel-2.30.9-mingw.tar.gz",
+  "archive": "SDL2-devel-2.30.9-mingw.tar.gz",
+  "sha256": "b188d165dc4a0372042bff3d0c18e9bb90772581e92a7b8b47b521b47714f75c",
+  "directory": "SDL2-2.30.9",
+  "sdk": "x86_64-w64-mingw32"
+}

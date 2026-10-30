@@ -1,0 +1,2974 @@
+{
+    "documentType": "template",
+    "formatVersion": 2,
+    "layouts": [
+        {
+            "groupName": "Generate",
+            "widgets": [
+                {
+                    "column": 0,
+                    "columnSpan": 3,
+                    "dispatch": true,
+                    "enabled": true,
+                    "engineProfile": "Mercury Verado 400 hp",
+                    "idX": 1,
+                    "interval": 1000,
+                    "label": "Engine / Outboard",
+                    "parameters": [
+                        [
+                            "EngineInstance",
+                            "0",
+                            "",
+                            "int"
+                        ],
+                        [
+                            "EngineSpeed",
+                            "0.0",
+                            "RPM",
+                            "double"
+                        ],
+                        [
+                            "EngineBoostPressure",
+                            "0.0",
+                            "Pa",
+                            "double"
+                        ],
+                        [
+                            "EngineTiltTrim",
+                            "90",
+                            "%",
+                            "int"
+                        ],
+                        [
+                            "EngineOilPress",
+                            "0.0",
+                            "Pa",
+                            "double"
+                        ],
+                        [
+                            "EngineOilTemp",
+                            "295.372",
+                            "K",
+                            "double"
+                        ],
+                        [
+                            "EngineCoolantTemp",
+                            "295.372",
+                            "K",
+                            "double"
+                        ],
+                        [
+                            "AltenatorVoltage",
+                            "0.0",
+                            "V",
+                            "double"
+                        ],
+                        [
+                            "FuelRate",
+                            "0.0",
+                            "L/h",
+                            "double"
+                        ],
+                        [
+                            "EngineHours",
+                            "540000",
+                            "s",
+                            "double"
+                        ],
+                        [
+                            "EngineCoolantPress",
+                            "0.0",
+                            "Pa",
+                            "double"
+                        ],
+                        [
+                            "EngineFuelPress",
+                            "0.0",
+                            "Pa",
+                            "double"
+                        ],
+                        [
+                            "EngineLoad",
+                            "0.0",
+                            "%",
+                            "double"
+                        ],
+                        [
+                            "EngineTorque",
+                            "0.0",
+                            "%",
+                            "double"
+                        ],
+                        [
+                            "Status1",
+                            "0",
+                            "enum",
+                            "tN2kEngineDiscreteStatus1"
+                        ],
+                        [
+                            "Status2",
+                            "0",
+                            "enum",
+                            "tN2kEngineDiscreteStatus2"
+                        ]
+                    ],
+                    "pgn": "-127489",
+                    "ranges": [
+                        [
+                            0,
+                            255
+                        ],
+                        [
+                            0,
+                            65535
+                        ],
+                        [
+                            0,
+                            65535
+                        ]
+                    ],
+                    "row": 1,
+                    "rowSpan": 9,
+                    "type": "GeneratorEngine"
+                },
+                {
+                    "column": 3,
+                    "columnSpan": 3,
+                    "dispatch": true,
+                    "enabled": true,
+                    "engineProfile": "Mercury Verado 400 hp",
+                    "idX": 2,
+                    "interval": 1000,
+                    "label": "Engine / Outboard",
+                    "parameters": [
+                        [
+                            "EngineInstance",
+                            "1",
+                            "",
+                            "int"
+                        ],
+                        [
+                            "EngineSpeed",
+                            "0.0",
+                            "RPM",
+                            "double"
+                        ],
+                        [
+                            "EngineBoostPressure",
+                            "0.0",
+                            "Pa",
+                            "double"
+                        ],
+                        [
+                            "EngineTiltTrim",
+                            "90",
+                            "%",
+                            "int"
+                        ],
+                        [
+                            "EngineOilPress",
+                            "0.0",
+                            "Pa",
+                            "double"
+                        ],
+                        [
+                            "EngineOilTemp",
+                            "295.372",
+                            "K",
+                            "double"
+                        ],
+                        [
+                            "EngineCoolantTemp",
+                            "295.372",
+                            "K",
+                            "double"
+                        ],
+                        [
+                            "AltenatorVoltage",
+                            "0.0",
+                            "V",
+                            "double"
+                        ],
+                        [
+                            "FuelRate",
+                            "0.0",
+                            "L/h",
+                            "double"
+                        ],
+                        [
+                            "EngineHours",
+                            "540000",
+                            "s",
+                            "double"
+                        ],
+                        [
+                            "EngineCoolantPress",
+                            "0.0",
+                            "Pa",
+                            "double"
+                        ],
+                        [
+                            "EngineFuelPress",
+                            "0.0",
+                            "Pa",
+                            "double"
+                        ],
+                        [
+                            "EngineLoad",
+                            "0.0",
+                            "%",
+                            "double"
+                        ],
+                        [
+                            "EngineTorque",
+                            "0.0",
+                            "%",
+                            "double"
+                        ],
+                        [
+                            "Status1",
+                            "0",
+                            "enum",
+                            "tN2kEngineDiscreteStatus1"
+                        ],
+                        [
+                            "Status2",
+                            "0",
+                            "enum",
+                            "tN2kEngineDiscreteStatus2"
+                        ]
+                    ],
+                    "pgn": "-127489",
+                    "ranges": [
+                        [
+                            0,
+                            255
+                        ],
+                        [
+                            0,
+                            65535
+                        ],
+                        [
+                            0,
+                            65535
+                        ]
+                    ],
+                    "row": 1,
+                    "rowSpan": 9,
+                    "type": "GeneratorEngine"
+                },
+                {
+                    "column": 0,
+                    "columnSpan": 3,
+                    "dispatch": true,
+                    "enabled": true,
+                    "idX": 3,
+                    "interval": 1000,
+                    "label": "Trans / Lower Unit",
+                    "parameters": [
+                        [
+                            "EngineInstance",
+                            "0",
+                            "",
+                            "int"
+                        ],
+                        [
+                            "TransmissionGear",
+                            "1",
+                            "enum",
+                            "tN2kTransmissionGear"
+                        ],
+                        [
+                            "OilPressure",
+                            "0.0",
+                            "Pa",
+                            "double"
+                        ],
+                        [
+                            "OilTemperature",
+                            "295.372",
+                            "K",
+                            "double"
+                        ],
+                        [
+                            "DiscreteStatus1",
+                            "0",
+                            "",
+                            "unsigned char"
+                        ]
+                    ],
+                    "pgn": "-127493",
+                    "ranges": [
+                        [
+                            0,
+                            255
+                        ],
+                        [
+                            0,
+                            65535
+                        ],
+                        [
+                            0,
+                            65535
+                        ]
+                    ],
+                    "row": 10,
+                    "rowSpan": 6,
+                    "type": "GeneratorTransLowerUnit"
+                },
+                {
+                    "column": 3,
+                    "columnSpan": 3,
+                    "dispatch": true,
+                    "enabled": true,
+                    "idX": 4,
+                    "interval": 1000,
+                    "label": "Trans / Lower Unit",
+                    "parameters": [
+                        [
+                            "EngineInstance",
+                            "1",
+                            "",
+                            "int"
+                        ],
+                        [
+                            "TransmissionGear",
+                            "1",
+                            "enum",
+                            "tN2kTransmissionGear"
+                        ],
+                        [
+                            "OilPressure",
+                            "0.0",
+                            "Pa",
+                            "double"
+                        ],
+                        [
+                            "OilTemperature",
+                            "295.372",
+                            "K",
+                            "double"
+                        ],
+                        [
+                            "DiscreteStatus1",
+                            "0",
+                            "",
+                            "unsigned char"
+                        ]
+                    ],
+                    "pgn": "-127493",
+                    "ranges": [
+                        [
+                            0,
+                            255
+                        ],
+                        [
+                            0,
+                            65535
+                        ],
+                        [
+                            0,
+                            65535
+                        ]
+                    ],
+                    "row": 10,
+                    "rowSpan": 6,
+                    "type": "GeneratorTransLowerUnit"
+                },
+                {
+                    "column": 0,
+                    "columnSpan": 3,
+                    "configuration": {
+                        "autopilotMultiplier": 1,
+                        "reverse": false,
+                        "route": "",
+                        "speed": 11.1804704,
+                        "speedSource": 0
+                    },
+                    "dispatch": true,
+                    "enabled": true,
+                    "idX": 5,
+                    "interval": 1000,
+                    "label": "Vessel Movement",
+                    "parameters": [
+                        [
+                            "SID",
+                            "28",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "Latitude",
+                            "42.813900",
+                            "deg",
+                            "double"
+                        ],
+                        [
+                            "Longitude",
+                            "-70.867983",
+                            "deg",
+                            "double"
+                        ],
+                        [
+                            "Altitude",
+                            "0",
+                            "m",
+                            "double"
+                        ],
+                        [
+                            "HeadingReference",
+                            "1",
+                            "enum",
+                            "tN2kHeadingReference"
+                        ],
+                        [
+                            "Heading",
+                            "0",
+                            "rad",
+                            "double"
+                        ],
+                        [
+                            "Deviation",
+                            "0",
+                            "rad",
+                            "double"
+                        ],
+                        [
+                            "Variation",
+                            "-0.147",
+                            "rad",
+                            "double"
+                        ],
+                        [
+                            "COG",
+                            "0",
+                            "rad",
+                            "double"
+                        ],
+                        [
+                            "SOG",
+                            "0",
+                            "m/s",
+                            "double"
+                        ],
+                        [
+                            "RateOfTurn",
+                            "0",
+                            "rad/s",
+                            "double"
+                        ],
+                        [
+                            "Yaw",
+                            "0",
+                            "rad",
+                            "double"
+                        ],
+                        [
+                            "Pitch",
+                            "0",
+                            "rad",
+                            "double"
+                        ],
+                        [
+                            "Roll",
+                            "0",
+                            "rad",
+                            "double"
+                        ],
+                        [
+                            "Heave",
+                            "0",
+                            "m",
+                            "double"
+                        ],
+                        [
+                            "RudderPosition",
+                            "0",
+                            "rad",
+                            "double"
+                        ]
+                    ],
+                    "pgn": "-129025",
+                    "ranges": [
+                        [
+                            0,
+                            255
+                        ],
+                        [
+                            0,
+                            65535
+                        ],
+                        [
+                            0,
+                            65535
+                        ]
+                    ],
+                    "row": 16,
+                    "rowSpan": 17,
+                    "type": "GeneratorVesselMovement"
+                },
+                {
+                    "column": 3,
+                    "columnSpan": 3,
+                    "configuration": {
+                        "apiSource": 2,
+                        "autoRefresh": false,
+                        "refreshMinutes": 15,
+                        "retainObservations": true
+                    },
+                    "dispatch": true,
+                    "enabled": true,
+                    "idX": 6,
+                    "interval": 2000,
+                    "label": "Weather",
+                    "parameters": [
+                        [
+                            "SID",
+                            "5",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "AirTemperature",
+                            "283.85",
+                            "K",
+                            "double"
+                        ],
+                        [
+                            "SeaTemperature",
+                            "286.45",
+                            "K",
+                            "double"
+                        ],
+                        [
+                            "Humidity",
+                            "50",
+                            "%",
+                            "double"
+                        ],
+                        [
+                            "AtmosphericPressure",
+                            "103200",
+                            "Pa",
+                            "double"
+                        ],
+                        [
+                            "WindSpeed",
+                            "1.34",
+                            "m/s",
+                            "double"
+                        ],
+                        [
+                            "WindAngle",
+                            "3.47320521146872",
+                            "rad",
+                            "double"
+                        ],
+                        [
+                            "TemperatureSource",
+                            "1",
+                            "enum",
+                            "tN2kTempSource"
+                        ],
+                        [
+                            "HumiditySource",
+                            "1",
+                            "enum",
+                            "tN2kHumiditySource"
+                        ],
+                        [
+                            "Latitude",
+                            "42.813900",
+                            "deg",
+                            "double"
+                        ],
+                        [
+                            "Longitude",
+                            "-70.867983",
+                            "deg",
+                            "double"
+                        ],
+                        [
+                            "WaveHeight",
+                            "1.5",
+                            "m",
+                            "double"
+                        ],
+                        [
+                            "DominantWavePeriod",
+                            "12",
+                            "s",
+                            "double"
+                        ],
+                        [
+                            "AverageWavePeriod",
+                            "7.5999999999999996",
+                            "s",
+                            "double"
+                        ],
+                        [
+                            "MeanWaveDirection",
+                            "1.7627825445142729",
+                            "rad",
+                            "double"
+                        ],
+                        [
+                            "WindGust",
+                            "3.1299999999999999",
+                            "m/s",
+                            "double"
+                        ],
+                        [
+                            "DewPoint",
+                            "-1000000000",
+                            "K",
+                            "double"
+                        ],
+                        [
+                            "Visibility",
+                            "10000",
+                            "m",
+                            "double"
+                        ],
+                        [
+                            "PressureTendency",
+                            "-1000000000",
+                            "Pa",
+                            "double"
+                        ],
+                        [
+                            "Tide",
+                            "-1000000000",
+                            "m",
+                            "double"
+                        ]
+                    ],
+                    "pgn": "-130311",
+                    "ranges": [
+                        [
+                            -273.15,
+                            100
+                        ],
+                        [
+                            0,
+                            100
+                        ],
+                        [
+                            0,
+                            2000
+                        ],
+                        [
+                            0,
+                            100
+                        ],
+                        [
+                            0,
+                            110000
+                        ],
+                        [
+                            0,
+                            1
+                        ],
+                        [
+                            0,
+                            1
+                        ],
+                        [
+                            -1000000000,
+                            1000000000000
+                        ],
+                        [
+                            -1000000000,
+                            1000000000000
+                        ],
+                        [
+                            -1000000000,
+                            1000000000000
+                        ],
+                        [
+                            -1000000000,
+                            1000000000000
+                        ],
+                        [
+                            -1000000000,
+                            1000000000000
+                        ],
+                        [
+                            -1000000000,
+                            1000000000000
+                        ],
+                        [
+                            -1000000000,
+                            1000000000000
+                        ],
+                        [
+                            -1000000000,
+                            1000000000000
+                        ],
+                        [
+                            -1000000000,
+                            1000000000000
+                        ],
+                        [
+                            -1000000000,
+                            1000000000000
+                        ],
+                        [
+                            -1000000000,
+                            1000000000000
+                        ],
+                        [
+                            -1000000000,
+                            1000000000000
+                        ],
+                        [
+                            -1000000000,
+                            1000000000000
+                        ]
+                    ],
+                    "row": 16,
+                    "rowSpan": 13,
+                    "type": "GeneratorWeather"
+                },
+                {
+                    "column": 3,
+                    "columnSpan": 3,
+                    "dispatch": true,
+                    "enabled": true,
+                    "idX": 7,
+                    "interval": 1000,
+                    "label": "Date Time",
+                    "parameters": [
+                        [
+                            "SID",
+                            "14",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "DaysSince1970",
+                            "20756",
+                            "day",
+                            "uint16_t"
+                        ],
+                        [
+                            "SecondsSinceMidnight",
+                            "32526.023",
+                            "s",
+                            "double"
+                        ],
+                        [
+                            "LocalOffset",
+                            "0",
+                            "min",
+                            "int16_t"
+                        ]
+                    ],
+                    "pgn": "-129033",
+                    "ranges": [
+                        [
+                            0,
+                            255
+                        ],
+                        [
+                            0,
+                            65535
+                        ],
+                        [
+                            0,
+                            65535
+                        ]
+                    ],
+                    "row": 29,
+                    "rowSpan": 4,
+                    "type": "GeneratorDateTime"
+                }
+            ]
+        },
+        {
+            "groupName": "Communication",
+            "widgets": [
+                {
+                    "column": 0,
+                    "columnSpan": 3,
+                    "enabled": false,
+                    "idX": 34,
+                    "interval": 1000,
+                    "label": "AIS Class B Position",
+                    "parameters": [
+                        [
+                            "MessageID",
+                            "18",
+                            "",
+                            "uint8_t"
+                        ],
+                        [
+                            "Repeat",
+                            "0",
+                            "",
+                            "tN2kAISRepeat"
+                        ],
+                        [
+                            "UserID",
+                            "366567890",
+                            "MMSI",
+                            "uint32_t"
+                        ],
+                        [
+                            "Latitude",
+                            "42.813899999999997",
+                            "degrees",
+                            "double"
+                        ],
+                        [
+                            "Longitude",
+                            "-70.867983333333328",
+                            "degrees",
+                            "double"
+                        ],
+                        [
+                            "Accuracy",
+                            "false",
+                            "",
+                            "bool"
+                        ],
+                        [
+                            "RAIM",
+                            "false",
+                            "",
+                            "bool"
+                        ],
+                        [
+                            "Seconds",
+                            "60",
+                            "UTC second",
+                            "uint8_t"
+                        ],
+                        [
+                            "COG",
+                            "-1000000000",
+                            "rad",
+                            "double"
+                        ],
+                        [
+                            "SOG",
+                            "-1000000000",
+                            "m/s",
+                            "double"
+                        ],
+                        [
+                            "AISInfo",
+                            "4",
+                            "",
+                            "tN2kAISTransceiverInformation"
+                        ],
+                        [
+                            "Heading",
+                            "-1000000000",
+                            "rad",
+                            "double"
+                        ],
+                        [
+                            "Unit",
+                            "1",
+                            "",
+                            "tN2kAISUnit"
+                        ],
+                        [
+                            "Display",
+                            "false",
+                            "",
+                            "bool"
+                        ],
+                        [
+                            "DSC",
+                            "false",
+                            "",
+                            "bool"
+                        ],
+                        [
+                            "Band",
+                            "false",
+                            "",
+                            "bool"
+                        ],
+                        [
+                            "Msg22",
+                            "false",
+                            "",
+                            "bool"
+                        ],
+                        [
+                            "Mode",
+                            "0",
+                            "",
+                            "tN2kAISMode"
+                        ],
+                        [
+                            "State",
+                            "true",
+                            "",
+                            "bool"
+                        ],
+                        [
+                            "SID",
+                            "255",
+                            "",
+                            "uint8_t"
+                        ]
+                    ],
+                    "pgn": "129039",
+                    "ranges": [
+                        [
+                            -1000000000,
+                            4294967295
+                        ],
+                        [
+                            -1000000000,
+                            4294967295
+                        ],
+                        [
+                            -1000000000,
+                            4294967295
+                        ],
+                        [
+                            -1000000000,
+                            4294967295
+                        ],
+                        [
+                            -1000000000,
+                            4294967295
+                        ],
+                        [
+                            -1000000000,
+                            4294967295
+                        ],
+                        [
+                            -1000000000,
+                            4294967295
+                        ],
+                        [
+                            -1000000000,
+                            4294967295
+                        ],
+                        [
+                            -1000000000,
+                            4294967295
+                        ],
+                        [
+                            -1000000000,
+                            4294967295
+                        ],
+                        [
+                            -1000000000,
+                            4294967295
+                        ],
+                        [
+                            -1000000000,
+                            4294967295
+                        ],
+                        [
+                            -1000000000,
+                            4294967295
+                        ],
+                        [
+                            -1000000000,
+                            4294967295
+                        ],
+                        [
+                            -1000000000,
+                            4294967295
+                        ],
+                        [
+                            -1000000000,
+                            4294967295
+                        ],
+                        [
+                            -1000000000,
+                            4294967295
+                        ],
+                        [
+                            -1000000000,
+                            4294967295
+                        ],
+                        [
+                            -1000000000,
+                            4294967295
+                        ],
+                        [
+                            -1000000000,
+                            4294967295
+                        ]
+                    ],
+                    "row": 1,
+                    "rowSpan": 9,
+                    "type": "AisClassBPosition129039"
+                },
+                {
+                    "column": 3,
+                    "columnSpan": 3,
+                    "enabled": false,
+                    "idX": 35,
+                    "interval": 30000,
+                    "label": "AIS Class B Static Part A",
+                    "parameters": [
+                        [
+                            "MessageID",
+                            "24",
+                            "",
+                            "uint8_t"
+                        ],
+                        [
+                            "Repeat",
+                            "0",
+                            "",
+                            "tN2kAISRepeat"
+                        ],
+                        [
+                            "UserID",
+                            "366567890",
+                            "MMSI",
+                            "uint32_t"
+                        ],
+                        [
+                            "Name",
+                            "SIMULATED VESSEL",
+                            "",
+                            "QString"
+                        ],
+                        [
+                            "AISInfo",
+                            "4",
+                            "",
+                            "tN2kAISTransceiverInformation"
+                        ],
+                        [
+                            "SID",
+                            "255",
+                            "",
+                            "uint8_t"
+                        ]
+                    ],
+                    "pgn": "129809",
+                    "ranges": [
+                        [
+                            24,
+                            24
+                        ],
+                        [
+                            0,
+                            3
+                        ],
+                        [
+                            0,
+                            4294967295
+                        ],
+                        [
+                            0,
+                            20
+                        ],
+                        [
+                            0,
+                            31
+                        ],
+                        [
+                            0,
+                            255
+                        ]
+                    ],
+                    "row": 1,
+                    "rowSpan": 5,
+                    "type": "AisClassBStatic129809"
+                },
+                {
+                    "column": 3,
+                    "columnSpan": 3,
+                    "enabled": false,
+                    "idX": 36,
+                    "interval": 30000,
+                    "label": "AIS Class B Static Part B",
+                    "parameters": [
+                        [
+                            "MessageID",
+                            "24",
+                            "",
+                            "uint8_t"
+                        ],
+                        [
+                            "Repeat",
+                            "0",
+                            "",
+                            "tN2kAISRepeat"
+                        ],
+                        [
+                            "UserID",
+                            "366567890",
+                            "MMSI",
+                            "uint32_t"
+                        ],
+                        [
+                            "VesselType",
+                            "37",
+                            "",
+                            "uint8_t"
+                        ],
+                        [
+                            "Vendor",
+                            "",
+                            "",
+                            "QString"
+                        ],
+                        [
+                            "Callsign",
+                            "AB12CD",
+                            "",
+                            "QString"
+                        ],
+                        [
+                            "Length",
+                            "10.48512",
+                            "m",
+                            "double"
+                        ],
+                        [
+                            "Beam",
+                            "3.6576",
+                            "m",
+                            "double"
+                        ],
+                        [
+                            "PosRefStbd",
+                            "-1000000000",
+                            "m",
+                            "double"
+                        ],
+                        [
+                            "PosRefBow",
+                            "-1000000000",
+                            "m",
+                            "double"
+                        ],
+                        [
+                            "MothershipID",
+                            "0",
+                            "MMSI",
+                            "uint32_t"
+                        ],
+                        [
+                            "AISInfo",
+                            "4",
+                            "",
+                            "tN2kAISTransceiverInformation"
+                        ],
+                        [
+                            "SID",
+                            "255",
+                            "",
+                            "uint8_t"
+                        ]
+                    ],
+                    "pgn": "129810",
+                    "ranges": [
+                        [
+                            0,
+                            4294967295
+                        ],
+                        [
+                            0,
+                            4294967295
+                        ],
+                        [
+                            0,
+                            4294967295
+                        ],
+                        [
+                            0,
+                            4294967295
+                        ],
+                        [
+                            0,
+                            4294967295
+                        ],
+                        [
+                            0,
+                            4294967295
+                        ],
+                        [
+                            -1000000000,
+                            6553.3
+                        ],
+                        [
+                            -1000000000,
+                            6553.3
+                        ],
+                        [
+                            -1000000000,
+                            6553.3
+                        ],
+                        [
+                            -1000000000,
+                            6553.3
+                        ],
+                        [
+                            0,
+                            4294967295
+                        ],
+                        [
+                            0,
+                            4294967295
+                        ],
+                        [
+                            0,
+                            4294967295
+                        ]
+                    ],
+                    "row": 6,
+                    "rowSpan": 9,
+                    "type": "AisClassBStatic129810"
+                }
+            ]
+        },
+        {
+            "groupName": "Electrical",
+            "widgets": [
+                {
+                    "column": 0,
+                    "columnSpan": 3,
+                    "electricalSimulation": true,
+                    "enabled": true,
+                    "idX": 24,
+                    "interval": 2000,
+                    "label": "DC Status",
+                    "parameters": [
+                        [
+                            "SID",
+                            "0",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "DCInstance",
+                            "0",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "DCType",
+                            "0",
+                            "enum",
+                            "tN2kDCType"
+                        ],
+                        [
+                            "StateOfCharge",
+                            "88",
+                            "%",
+                            "uint8_t"
+                        ],
+                        [
+                            "StateOfHealth",
+                            "100",
+                            "%",
+                            "uint8_t"
+                        ],
+                        [
+                            "TimeRemaining",
+                            "-1e+09",
+                            "s",
+                            "double"
+                        ],
+                        [
+                            "RippleVoltage",
+                            "0.0",
+                            "V",
+                            "double"
+                        ],
+                        [
+                            "Capacity",
+                            "349200",
+                            "C",
+                            "double"
+                        ]
+                    ],
+                    "pgn": "127506",
+                    "ranges": [
+                        [
+                            0,
+                            255
+                        ],
+                        [
+                            0,
+                            65535
+                        ],
+                        [
+                            0,
+                            65535
+                        ]
+                    ],
+                    "row": 1,
+                    "rowSpan": 2,
+                    "type": "DcStatus127506"
+                },
+                {
+                    "column": 3,
+                    "columnSpan": 3,
+                    "electricalSimulation": true,
+                    "enabled": true,
+                    "idX": 28,
+                    "interval": 2000,
+                    "label": "DC Status",
+                    "parameters": [
+                        [
+                            "SID",
+                            "0",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "DCInstance",
+                            "1",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "DCType",
+                            "0",
+                            "enum",
+                            "tN2kDCType"
+                        ],
+                        [
+                            "StateOfCharge",
+                            "88",
+                            "%",
+                            "uint8_t"
+                        ],
+                        [
+                            "StateOfHealth",
+                            "100",
+                            "%",
+                            "uint8_t"
+                        ],
+                        [
+                            "TimeRemaining",
+                            "-1e+09",
+                            "s",
+                            "double"
+                        ],
+                        [
+                            "RippleVoltage",
+                            "0.0",
+                            "V",
+                            "double"
+                        ],
+                        [
+                            "Capacity",
+                            "349200",
+                            "C",
+                            "double"
+                        ]
+                    ],
+                    "pgn": "127506",
+                    "ranges": [
+                        [
+                            0,
+                            255
+                        ],
+                        [
+                            0,
+                            65535
+                        ],
+                        [
+                            0,
+                            65535
+                        ]
+                    ],
+                    "row": 1,
+                    "rowSpan": 2,
+                    "type": "DcStatus127506"
+                },
+                {
+                    "column": 0,
+                    "columnSpan": 3,
+                    "electricalSimulation": true,
+                    "enabled": true,
+                    "idX": 29,
+                    "interval": 2000,
+                    "label": "Charger Status",
+                    "parameters": [
+                        [
+                            "Instance",
+                            "0",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "BatteryInstance",
+                            "0",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "ChargeState",
+                            "0",
+                            "enum",
+                            "tN2kChargeState"
+                        ],
+                        [
+                            "ChargerMode",
+                            "0",
+                            "enum",
+                            "tN2kChargerMode"
+                        ],
+                        [
+                            "Enabled",
+                            "0",
+                            "enum",
+                            "tN2kOnOff"
+                        ],
+                        [
+                            "EqualizationPending",
+                            "0",
+                            "enum",
+                            "tN2kOnOff"
+                        ],
+                        [
+                            "EqualizationTimeRemaining",
+                            "0.0",
+                            "s",
+                            "double"
+                        ]
+                    ],
+                    "pgn": "127507",
+                    "ranges": [
+                        [
+                            0,
+                            255
+                        ],
+                        [
+                            0,
+                            65535
+                        ],
+                        [
+                            0,
+                            65535
+                        ]
+                    ],
+                    "row": 3,
+                    "rowSpan": 3,
+                    "type": "ChargerStatus127507"
+                },
+                {
+                    "column": 3,
+                    "columnSpan": 3,
+                    "electricalSimulation": true,
+                    "enabled": true,
+                    "idX": 30,
+                    "interval": 2000,
+                    "label": "Charger Status",
+                    "parameters": [
+                        [
+                            "Instance",
+                            "1",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "BatteryInstance",
+                            "1",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "ChargeState",
+                            "0",
+                            "enum",
+                            "tN2kChargeState"
+                        ],
+                        [
+                            "ChargerMode",
+                            "0",
+                            "enum",
+                            "tN2kChargerMode"
+                        ],
+                        [
+                            "Enabled",
+                            "0",
+                            "enum",
+                            "tN2kOnOff"
+                        ],
+                        [
+                            "EqualizationPending",
+                            "0",
+                            "enum",
+                            "tN2kOnOff"
+                        ],
+                        [
+                            "EqualizationTimeRemaining",
+                            "0.0",
+                            "s",
+                            "double"
+                        ]
+                    ],
+                    "pgn": "127507",
+                    "ranges": [
+                        [
+                            0,
+                            255
+                        ],
+                        [
+                            0,
+                            65535
+                        ],
+                        [
+                            0,
+                            65535
+                        ]
+                    ],
+                    "row": 3,
+                    "rowSpan": 3,
+                    "type": "ChargerStatus127507"
+                },
+                {
+                    "column": 0,
+                    "columnSpan": 3,
+                    "electricalSimulation": true,
+                    "enabled": true,
+                    "idX": 31,
+                    "interval": 2000,
+                    "label": "Battery Status",
+                    "parameters": [
+                        [
+                            "BatteryInstance",
+                            "0",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "BatteryVoltage",
+                            "10.6",
+                            "V",
+                            "double"
+                        ],
+                        [
+                            "BatteryCurrent",
+                            "0.0",
+                            "A",
+                            "double"
+                        ],
+                        [
+                            "BatteryTemperature",
+                            "293.15",
+                            "K",
+                            "double"
+                        ],
+                        [
+                            "SID",
+                            "0",
+                            "",
+                            "unsigned char"
+                        ]
+                    ],
+                    "pgn": "127508",
+                    "ranges": [
+                        [
+                            0,
+                            255
+                        ],
+                        [
+                            0,
+                            65535
+                        ],
+                        [
+                            0,
+                            65535
+                        ]
+                    ],
+                    "row": 6,
+                    "rowSpan": 4,
+                    "type": "BatteryStatus127508"
+                },
+                {
+                    "column": 3,
+                    "columnSpan": 3,
+                    "electricalSimulation": true,
+                    "enabled": true,
+                    "idX": 32,
+                    "interval": 2000,
+                    "label": "Battery Status",
+                    "parameters": [
+                        [
+                            "BatteryInstance",
+                            "1",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "BatteryVoltage",
+                            "10.6",
+                            "V",
+                            "double"
+                        ],
+                        [
+                            "BatteryCurrent",
+                            "0.0",
+                            "A",
+                            "double"
+                        ],
+                        [
+                            "BatteryTemperature",
+                            "293.15",
+                            "K",
+                            "double"
+                        ],
+                        [
+                            "SID",
+                            "0",
+                            "",
+                            "unsigned char"
+                        ]
+                    ],
+                    "pgn": "127508",
+                    "ranges": [
+                        [
+                            0,
+                            255
+                        ],
+                        [
+                            0,
+                            65535
+                        ],
+                        [
+                            0,
+                            65535
+                        ]
+                    ],
+                    "row": 6,
+                    "rowSpan": 4,
+                    "type": "BatteryStatus127508"
+                },
+                {
+                    "column": 0,
+                    "columnSpan": 3,
+                    "enabled": true,
+                    "idX": 33,
+                    "interval": 1000,
+                    "label": "Inverter Status",
+                    "parameters": [
+                        [
+                            "Instance",
+                            "0",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "ACInstance",
+                            "0",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "DCInstance",
+                            "0",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "OperatingState",
+                            "15",
+                            "",
+                            "InverterState (4 bit)"
+                        ],
+                        [
+                            "InverterEnable",
+                            "3",
+                            "",
+                            "OffOn (2 bit)"
+                        ]
+                    ],
+                    "pgn": "127509",
+                    "ranges": [
+                        [
+                            0,
+                            255
+                        ],
+                        [
+                            0,
+                            255
+                        ],
+                        [
+                            0,
+                            255
+                        ],
+                        [
+                            0,
+                            15
+                        ],
+                        [
+                            0,
+                            3
+                        ]
+                    ],
+                    "row": 10,
+                    "rowSpan": 7,
+                    "type": "InverterStatus127509"
+                }
+            ]
+        },
+        {
+            "groupName": "Environment",
+            "widgets": [
+                {
+                    "column": 0,
+                    "columnSpan": 3,
+                    "enabled": true,
+                    "idX": 19,
+                    "interval": 5000,
+                    "label": "Temperature",
+                    "parameters": [
+                        [
+                            "SID",
+                            "0",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "TemperatureInstance",
+                            "0",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "TemperatureSource",
+                            "1",
+                            "enum",
+                            "tN2kTempSource"
+                        ],
+                        [
+                            "ActualTemperature",
+                            "283.85",
+                            "K",
+                            "double"
+                        ],
+                        [
+                            "SetTemperature",
+                            "300.0",
+                            "K",
+                            "double"
+                        ]
+                    ],
+                    "pgn": "130312",
+                    "ranges": [
+                        [
+                            0,
+                            255
+                        ],
+                        [
+                            0,
+                            255
+                        ],
+                        [
+                            0,
+                            255
+                        ],
+                        [
+                            0,
+                            1000
+                        ],
+                        [
+                            0,
+                            1000
+                        ]
+                    ],
+                    "row": 1,
+                    "rowSpan": 2,
+                    "type": "TemperatureWidget130312"
+                },
+                {
+                    "column": 3,
+                    "columnSpan": 3,
+                    "enabled": true,
+                    "idX": 20,
+                    "interval": 5000,
+                    "label": "Temperature",
+                    "parameters": [
+                        [
+                            "SID",
+                            "0",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "TemperatureInstance",
+                            "0",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "TemperatureSource",
+                            "0",
+                            "enum",
+                            "tN2kTempSource"
+                        ],
+                        [
+                            "ActualTemperature",
+                            "286.45",
+                            "K",
+                            "double"
+                        ],
+                        [
+                            "SetTemperature",
+                            "300.0",
+                            "K",
+                            "double"
+                        ]
+                    ],
+                    "pgn": "130312",
+                    "ranges": [
+                        [
+                            0,
+                            255
+                        ],
+                        [
+                            0,
+                            255
+                        ],
+                        [
+                            0,
+                            255
+                        ],
+                        [
+                            0,
+                            1000
+                        ],
+                        [
+                            0,
+                            1000
+                        ]
+                    ],
+                    "row": 1,
+                    "rowSpan": 2,
+                    "type": "TemperatureWidget130312"
+                },
+                {
+                    "column": 0,
+                    "columnSpan": 3,
+                    "enabled": true,
+                    "idX": 21,
+                    "interval": 5000,
+                    "label": "Atmospheric Pressure",
+                    "parameters": [
+                        [
+                            "SID",
+                            "0",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "OutsideAmbientAirTemperature",
+                            "283.85",
+                            "K",
+                            "double"
+                        ],
+                        [
+                            "WaterTemperature",
+                            "286.45",
+                            "K",
+                            "double"
+                        ],
+                        [
+                            "AtmosphericPressure",
+                            "103200",
+                            "Pa",
+                            "double"
+                        ]
+                    ],
+                    "pgn": "130310",
+                    "ranges": [
+                        [
+                            -273.15,
+                            1000
+                        ],
+                        [
+                            -273.15,
+                            1000
+                        ],
+                        [
+                            800,
+                            1100
+                        ],
+                        [
+                            0,
+                            110000
+                        ]
+                    ],
+                    "row": 3,
+                    "rowSpan": 4,
+                    "type": "OutsideEnvironmental130310"
+                }
+            ]
+        },
+        {
+            "groupName": "Navigation",
+            "widgets": [
+                {
+                    "column": 0,
+                    "columnSpan": 3,
+                    "enabled": true,
+                    "idX": 8,
+                    "interval": 1000,
+                    "label": "GNSS Position",
+                    "parameters": [
+                        [
+                            "SID",
+                            "14",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "DaysSince1970",
+                            "20756",
+                            "day",
+                            "uint16_t"
+                        ],
+                        [
+                            "SecondsSinceMidnight",
+                            "32526.023",
+                            "s",
+                            "double"
+                        ],
+                        [
+                            "Latitude",
+                            "42.813900",
+                            "deg",
+                            "double"
+                        ],
+                        [
+                            "Longitude",
+                            "-70.867983",
+                            "deg",
+                            "double"
+                        ],
+                        [
+                            "Altitude",
+                            "3.2",
+                            "m",
+                            "double"
+                        ],
+                        [
+                            "GNSStype",
+                            "0",
+                            "enum",
+                            "tN2kGNSStype"
+                        ],
+                        [
+                            "GNSSmethod",
+                            "1",
+                            "enum",
+                            "tN2kGNSSmethod"
+                        ],
+                        [
+                            "nSatellites",
+                            "11",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "HDOP",
+                            "1.3",
+                            "",
+                            "double"
+                        ],
+                        [
+                            "PDOP",
+                            "1.3",
+                            "",
+                            "double"
+                        ],
+                        [
+                            "GeoidalSeparation",
+                            "15.5",
+                            "m",
+                            "double"
+                        ],
+                        [
+                            "nReferenceStations",
+                            "2",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "ReferenceStationType",
+                            "0",
+                            "enum",
+                            "tN2kGNSStype"
+                        ],
+                        [
+                            "ReferenceSationID",
+                            "123",
+                            "",
+                            "uint16_t"
+                        ],
+                        [
+                            "AgeOfCorrection",
+                            "0.50",
+                            "s",
+                            "double"
+                        ]
+                    ],
+                    "pgn": "129029",
+                    "ranges": [
+                        [
+                            0,
+                            255
+                        ],
+                        [
+                            0,
+                            65535
+                        ],
+                        [
+                            0,
+                            65535
+                        ],
+                        [
+                            -3.14159,
+                            3.14159
+                        ],
+                        [
+                            -3.14159,
+                            3.14159
+                        ],
+                        [
+                            0,
+                            65535
+                        ]
+                    ],
+                    "row": 1,
+                    "rowSpan": 4,
+                    "type": "GnssPositionData129029"
+                },
+                {
+                    "column": 3,
+                    "columnSpan": 3,
+                    "enabled": true,
+                    "idX": 9,
+                    "interval": 1000,
+                    "label": "Attitude",
+                    "parameters": [
+                        [
+                            "SID",
+                            "0",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "Yaw",
+                            "0.0",
+                            "rad",
+                            "double"
+                        ],
+                        [
+                            "Pitch",
+                            "0.0",
+                            "rad",
+                            "double"
+                        ],
+                        [
+                            "Roll",
+                            "0.0",
+                            "rad",
+                            "double"
+                        ]
+                    ],
+                    "pgn": "127257",
+                    "ranges": [
+                        [
+                            0,
+                            255
+                        ],
+                        [
+                            -3.14159,
+                            3.14159
+                        ],
+                        [
+                            -3.14159,
+                            3.14159
+                        ],
+                        [
+                            -3.14159,
+                            3.14159
+                        ]
+                    ],
+                    "row": 1,
+                    "rowSpan": 4,
+                    "type": "Attitude127257"
+                },
+                {
+                    "column": 0,
+                    "columnSpan": 3,
+                    "enabled": true,
+                    "idX": 10,
+                    "interval": 250,
+                    "label": "Lat Long",
+                    "parameters": [
+                        [
+                            "Latitude",
+                            "42.813900",
+                            "degrees",
+                            "double"
+                        ],
+                        [
+                            "Longitude",
+                            "-70.867983",
+                            "degrees",
+                            "double"
+                        ]
+                    ],
+                    "pgn": "129025",
+                    "ranges": [
+                        [
+                            -3.14159,
+                            3.14159
+                        ],
+                        [
+                            -3.14159,
+                            3.14159
+                        ]
+                    ],
+                    "row": 5,
+                    "rowSpan": 3,
+                    "type": "LatLong129025"
+                },
+                {
+                    "column": 3,
+                    "columnSpan": 3,
+                    "enabled": true,
+                    "idX": 11,
+                    "interval": 250,
+                    "label": "SOG COG",
+                    "parameters": [
+                        [
+                            "SID",
+                            "0",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "HeadingReference",
+                            "1",
+                            "enum",
+                            "tN2kHeadingReference"
+                        ],
+                        [
+                            "COG",
+                            "0.0",
+                            "rad",
+                            "double"
+                        ],
+                        [
+                            "SOG",
+                            "0.0",
+                            "m/s",
+                            "double"
+                        ]
+                    ],
+                    "pgn": "129026",
+                    "ranges": [
+                        [
+                            0,
+                            255
+                        ],
+                        [
+                            0,
+                            360
+                        ],
+                        [
+                            0,
+                            65535
+                        ],
+                        [
+                            0,
+                            65535
+                        ]
+                    ],
+                    "row": 5,
+                    "rowSpan": 3,
+                    "type": "CogSog129026"
+                }
+            ]
+        },
+        {
+            "groupName": "Other",
+            "widgets": [
+                {
+                    "column": 0,
+                    "columnSpan": 3,
+                    "enabled": false,
+                    "idX": 37,
+                    "interval": 1000,
+                    "label": "Windlass Operating Status",
+                    "parameters": [
+                        [
+                            "SID",
+                            "255",
+                            "",
+                            "uint8_t"
+                        ],
+                        [
+                            "WindlassIdentifier",
+                            "0",
+                            "",
+                            "uint8_t"
+                        ],
+                        [
+                            "RodeCounterValue",
+                            "-1000000000",
+                            "m",
+                            "double"
+                        ],
+                        [
+                            "WindlassLineSpeed",
+                            "-1000000000",
+                            "m/min",
+                            "double"
+                        ],
+                        [
+                            "WindlassMotionStatus",
+                            "0",
+                            "",
+                            "tN2kWindlassMotionStates"
+                        ],
+                        [
+                            "RodeTypeStatus",
+                            "0",
+                            "",
+                            "tN2kRodeTypeStates"
+                        ],
+                        [
+                            "AnchorDockingStatus",
+                            "1",
+                            "",
+                            "tN2kAnchorDockingStates"
+                        ],
+                        [
+                            "OperatingEvents",
+                            "0",
+                            "",
+                            "tN2kWindlassOperatingEvents"
+                        ]
+                    ],
+                    "pgn": "128777",
+                    "ranges": [
+                        [
+                            -1000000000,
+                            3931980
+                        ],
+                        [
+                            -1000000000,
+                            3931980
+                        ],
+                        [
+                            -1000000000,
+                            3931980
+                        ],
+                        [
+                            -1000000000,
+                            3931980
+                        ],
+                        [
+                            -1000000000,
+                            3931980
+                        ],
+                        [
+                            -1000000000,
+                            3931980
+                        ],
+                        [
+                            -1000000000,
+                            3931980
+                        ],
+                        [
+                            -1000000000,
+                            3931980
+                        ]
+                    ],
+                    "row": 1,
+                    "rowSpan": 5,
+                    "type": "WindlassOperating128777"
+                },
+                {
+                    "column": 3,
+                    "columnSpan": 3,
+                    "enabled": false,
+                    "idX": 38,
+                    "interval": 1000,
+                    "label": "Windlass Monitoring Status",
+                    "parameters": [
+                        [
+                            "SID",
+                            "255",
+                            "",
+                            "uint8_t"
+                        ],
+                        [
+                            "WindlassIdentifier",
+                            "0",
+                            "",
+                            "uint8_t"
+                        ],
+                        [
+                            "TotalMotorTime",
+                            "-1000000000",
+                            "s",
+                            "double"
+                        ],
+                        [
+                            "ControllerVoltage",
+                            "-1000000000",
+                            "V",
+                            "double"
+                        ],
+                        [
+                            "MotorCurrent",
+                            "-1000000000",
+                            "A",
+                            "double"
+                        ],
+                        [
+                            "MonitoringEvents",
+                            "0",
+                            "",
+                            "tN2kWindlassMonitoringEvents"
+                        ]
+                    ],
+                    "pgn": "128778",
+                    "ranges": [
+                        [
+                            -1000000000,
+                            3931980
+                        ],
+                        [
+                            -1000000000,
+                            3931980
+                        ],
+                        [
+                            -1000000000,
+                            3931980
+                        ],
+                        [
+                            -1000000000,
+                            3931980
+                        ],
+                        [
+                            -1000000000,
+                            3931980
+                        ],
+                        [
+                            -1000000000,
+                            3931980
+                        ]
+                    ],
+                    "row": 1,
+                    "rowSpan": 5,
+                    "type": "WindlassMonitoring128778"
+                }
+            ]
+        },
+        {
+            "groupName": "Propulsion",
+            "widgets": [
+                {
+                    "column": 0,
+                    "columnSpan": 3,
+                    "enabled": true,
+                    "idX": 12,
+                    "interval": 250,
+                    "label": "Engine Rapid",
+                    "parameters": [
+                        [
+                            "EngineInstance",
+                            "0",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "EngineSpeed",
+                            "0.0",
+                            "RPM",
+                            "double"
+                        ],
+                        [
+                            "EngineBoostPressure",
+                            "0.0",
+                            "Pa",
+                            "double"
+                        ],
+                        [
+                            "EngineTiltTrim",
+                            "0",
+                            "deg",
+                            "char"
+                        ]
+                    ],
+                    "pgn": "127488",
+                    "ranges": [
+                        [
+                            0,
+                            16383.25
+                        ],
+                        [
+                            0,
+                            6553300
+                        ],
+                        [
+                            0,
+                            100
+                        ]
+                    ],
+                    "row": 1,
+                    "rowSpan": 4,
+                    "type": "EngineRapid127488"
+                },
+                {
+                    "column": 3,
+                    "columnSpan": 3,
+                    "enabled": true,
+                    "idX": 13,
+                    "interval": 250,
+                    "label": "Engine Rapid",
+                    "parameters": [
+                        [
+                            "EngineInstance",
+                            "1",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "EngineSpeed",
+                            "0.0",
+                            "RPM",
+                            "double"
+                        ],
+                        [
+                            "EngineBoostPressure",
+                            "0.0",
+                            "Pa",
+                            "double"
+                        ],
+                        [
+                            "EngineTiltTrim",
+                            "0",
+                            "deg",
+                            "char"
+                        ]
+                    ],
+                    "pgn": "127488",
+                    "ranges": [
+                        [
+                            0,
+                            16383.25
+                        ],
+                        [
+                            0,
+                            6553300
+                        ],
+                        [
+                            0,
+                            100
+                        ]
+                    ],
+                    "row": 1,
+                    "rowSpan": 4,
+                    "type": "EngineRapid127488"
+                },
+                {
+                    "column": 0,
+                    "columnSpan": 3,
+                    "enabled": true,
+                    "idX": 14,
+                    "interval": 1000,
+                    "label": "Engine Dynamic",
+                    "parameters": [
+                        [
+                            "EngineInstance",
+                            "0",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "EngineOilPress",
+                            "0.0",
+                            "Pa",
+                            "double"
+                        ],
+                        [
+                            "EngineOilTemp",
+                            "0.0",
+                            "K",
+                            "double"
+                        ],
+                        [
+                            "EngineCoolantTemp",
+                            "0.0",
+                            "K",
+                            "double"
+                        ],
+                        [
+                            "AltenatorVoltage",
+                            "0.0",
+                            "V",
+                            "double"
+                        ],
+                        [
+                            "FuelRate",
+                            "0.0",
+                            "L/h",
+                            "double"
+                        ],
+                        [
+                            "EngineHours",
+                            "0.0",
+                            "s",
+                            "double"
+                        ],
+                        [
+                            "EngineCoolantPress",
+                            "0.0",
+                            "Pa",
+                            "double"
+                        ],
+                        [
+                            "EngineFuelPress",
+                            "0.0",
+                            "Pa",
+                            "double"
+                        ],
+                        [
+                            "EngineLoad",
+                            "0",
+                            "%",
+                            "char"
+                        ],
+                        [
+                            "EngineTorque",
+                            "0",
+                            "%",
+                            "char"
+                        ],
+                        [
+                            "Status1",
+                            "0",
+                            "enum",
+                            "tN2kEngineDiscreteStatus1"
+                        ],
+                        [
+                            "Status2",
+                            "0",
+                            "enum",
+                            "tN2kEngineDiscreteStatus2"
+                        ]
+                    ],
+                    "pgn": "127489",
+                    "ranges": [
+                        [
+                            0,
+                            16383.25
+                        ],
+                        [
+                            0,
+                            6553300
+                        ],
+                        [
+                            0,
+                            100
+                        ]
+                    ],
+                    "row": 5,
+                    "rowSpan": 12,
+                    "type": "EngineDynamic127489"
+                },
+                {
+                    "column": 3,
+                    "columnSpan": 3,
+                    "enabled": true,
+                    "idX": 15,
+                    "interval": 1000,
+                    "label": "Engine Dynamic",
+                    "parameters": [
+                        [
+                            "EngineInstance",
+                            "1",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "EngineOilPress",
+                            "0.0",
+                            "Pa",
+                            "double"
+                        ],
+                        [
+                            "EngineOilTemp",
+                            "0.0",
+                            "K",
+                            "double"
+                        ],
+                        [
+                            "EngineCoolantTemp",
+                            "0.0",
+                            "K",
+                            "double"
+                        ],
+                        [
+                            "AltenatorVoltage",
+                            "0.0",
+                            "V",
+                            "double"
+                        ],
+                        [
+                            "FuelRate",
+                            "0.0",
+                            "L/h",
+                            "double"
+                        ],
+                        [
+                            "EngineHours",
+                            "0.0",
+                            "s",
+                            "double"
+                        ],
+                        [
+                            "EngineCoolantPress",
+                            "0.0",
+                            "Pa",
+                            "double"
+                        ],
+                        [
+                            "EngineFuelPress",
+                            "0.0",
+                            "Pa",
+                            "double"
+                        ],
+                        [
+                            "EngineLoad",
+                            "0",
+                            "%",
+                            "char"
+                        ],
+                        [
+                            "EngineTorque",
+                            "0",
+                            "%",
+                            "char"
+                        ],
+                        [
+                            "Status1",
+                            "0",
+                            "enum",
+                            "tN2kEngineDiscreteStatus1"
+                        ],
+                        [
+                            "Status2",
+                            "0",
+                            "enum",
+                            "tN2kEngineDiscreteStatus2"
+                        ]
+                    ],
+                    "pgn": "127489",
+                    "ranges": [
+                        [
+                            0,
+                            16383.25
+                        ],
+                        [
+                            0,
+                            6553300
+                        ],
+                        [
+                            0,
+                            100
+                        ]
+                    ],
+                    "row": 5,
+                    "rowSpan": 12,
+                    "type": "EngineDynamic127489"
+                },
+                {
+                    "column": 0,
+                    "columnSpan": 3,
+                    "enabled": true,
+                    "idX": 16,
+                    "interval": 500,
+                    "label": "Transmission Dynamic",
+                    "parameters": [
+                        [
+                            "EngineInstance",
+                            "0",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "TransmissionGear",
+                            "1",
+                            "enum",
+                            "tN2kTransmissionGear"
+                        ],
+                        [
+                            "OilPressure",
+                            "0.0",
+                            "Pa",
+                            "double"
+                        ],
+                        [
+                            "OilTemperature",
+                            "295.372",
+                            "K",
+                            "double"
+                        ],
+                        [
+                            "DiscreteStatus1",
+                            "0",
+                            "enum",
+                            "unsigned char"
+                        ]
+                    ],
+                    "pgn": "127493",
+                    "ranges": [
+                        [
+                            0,
+                            255
+                        ],
+                        [
+                            0,
+                            1000
+                        ],
+                        [
+                            0,
+                            1000
+                        ],
+                        [
+                            0,
+                            255
+                        ]
+                    ],
+                    "row": 17,
+                    "rowSpan": 7,
+                    "type": "TransmissionDynamic127493"
+                },
+                {
+                    "column": 3,
+                    "columnSpan": 3,
+                    "enabled": true,
+                    "idX": 17,
+                    "interval": 500,
+                    "label": "Transmission Dynamic",
+                    "parameters": [
+                        [
+                            "EngineInstance",
+                            "1",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "TransmissionGear",
+                            "1",
+                            "enum",
+                            "tN2kTransmissionGear"
+                        ],
+                        [
+                            "OilPressure",
+                            "0.0",
+                            "Pa",
+                            "double"
+                        ],
+                        [
+                            "OilTemperature",
+                            "295.372",
+                            "K",
+                            "double"
+                        ],
+                        [
+                            "DiscreteStatus1",
+                            "0",
+                            "enum",
+                            "unsigned char"
+                        ]
+                    ],
+                    "pgn": "127493",
+                    "ranges": [
+                        [
+                            0,
+                            255
+                        ],
+                        [
+                            0,
+                            1000
+                        ],
+                        [
+                            0,
+                            1000
+                        ],
+                        [
+                            0,
+                            255
+                        ]
+                    ],
+                    "row": 17,
+                    "rowSpan": 7,
+                    "type": "TransmissionDynamic127493"
+                },
+                {
+                    "column": 0,
+                    "columnSpan": 3,
+                    "enabled": true,
+                    "idX": 18,
+                    "interval": 500,
+                    "label": "Trim Tab",
+                    "parameters": [
+                        [
+                            "PortTrimTab",
+                            "0",
+                            "%",
+                            "char"
+                        ],
+                        [
+                            "StbdTrimTab",
+                            "0",
+                            "%",
+                            "char"
+                        ]
+                    ],
+                    "pgn": "130576",
+                    "ranges": [
+                        [
+                            0,
+                            100
+                        ],
+                        [
+                            0,
+                            100
+                        ]
+                    ],
+                    "row": 24,
+                    "rowSpan": 3,
+                    "type": "TrimTab130576"
+                }
+            ]
+        },
+        {
+            "groupName": "Tanks",
+            "widgets": [
+                {
+                    "column": 0,
+                    "columnSpan": 3,
+                    "enabled": true,
+                    "idX": 22,
+                    "interval": 5000,
+                    "label": "Fluid Level",
+                    "parameters": [
+                        [
+                            "Instance",
+                            "0",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "FluidType",
+                            "0",
+                            "enum",
+                            "tN2kFluidType"
+                        ],
+                        [
+                            "Level",
+                            "84.000039587785722",
+                            "%",
+                            "double"
+                        ],
+                        [
+                            "Capacity",
+                            "378.541",
+                            "L",
+                            "double"
+                        ]
+                    ],
+                    "pgn": "127505",
+                    "ranges": [
+                        [
+                            0,
+                            255
+                        ],
+                        [
+                            0,
+                            100
+                        ],
+                        [
+                            0,
+                            65535
+                        ]
+                    ],
+                    "row": 1,
+                    "rowSpan": 3,
+                    "type": "FluidLevel127505"
+                },
+                {
+                    "column": 3,
+                    "columnSpan": 3,
+                    "enabled": true,
+                    "idX": 23,
+                    "interval": 5000,
+                    "label": "Fluid Level",
+                    "parameters": [
+                        [
+                            "Instance",
+                            "1",
+                            "",
+                            "unsigned char"
+                        ],
+                        [
+                            "FluidType",
+                            "0",
+                            "enum",
+                            "tN2kFluidType"
+                        ],
+                        [
+                            "Level",
+                            "92.783506507029912",
+                            "%",
+                            "double"
+                        ],
+                        [
+                            "Capacity",
+                            "367.18476464800051",
+                            "L",
+                            "double"
+                        ]
+                    ],
+                    "pgn": "127505",
+                    "ranges": [
+                        [
+                            0,
+                            255
+                        ],
+                        [
+                            0,
+                            100
+                        ],
+                        [
+                            0,
+                            65535
+                        ]
+                    ],
+                    "row": 1,
+                    "rowSpan": 3,
+                    "type": "FluidLevel127505"
+                }
+            ]
+        }
+    ],
+    "numberOfWidgetColumns": 2,
+    "setupPolicies": [
+    ],
+    "template": {
+        "description": "Default dual-engine vessel configuration featuring source generators and commonly used NMEA 2000 PGN instruments organized across functional tabs. Includes engine, transmission, navigation, environmental, tank, and electrical monitoring widgets for simulation, testing, and demonstration.",
+        "id": "788770ae-ddfb-4221-9f3b-fdeb3dc3c7ae",
+        "name": "Default"
+    }
+}

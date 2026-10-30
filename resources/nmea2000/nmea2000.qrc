@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="/nmea2000">
+    <file>lookups.json</file>
+    <file>NOTICE.txt</file>
+    <file>LICENSE-canboat.txt</file>
+  </qresource>
+</RCC>

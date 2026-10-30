@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:v="urn:raynmea:fixture">
+  <Document>
+    <name>Independent KML 2.2 fixture</name>
+    <Style id="route"><LineStyle><color>ffff0000</color></LineStyle></Style>
+    <Folder>
+      <Placemark><name>Unrelated map pin</name><Point><coordinates>0,0</coordinates></Point></Placemark>
+      <Placemark>
+        <name>Coastal route</name><styleUrl>#route</styleUrl>
+        <ExtendedData><v:extra><v:LineString>not geometry</v:LineString></v:extra></ExtendedData>
+        <MultiGeometry><LineString><tessellate>1</tessellate><coordinates>
+          -70.25,42.125,0
+          -70.5,42.25,12.5
+        </coordinates></LineString></MultiGeometry>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

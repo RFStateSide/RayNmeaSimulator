@@ -1,0 +1,8 @@
+# Dependency patch hashes must survive Windows checkouts unchanged.
+dependencies/patches/*.patch text eol=lf whitespace=-blank-at-eol
+
+# Desktop launchers must retain POSIX line endings on Windows checkouts.
+packaging/*.desktop text eol=lf
+
+# Reproducible generated CANboat lookup bytes on every development platform.
+resources/nmea2000/lookups.json text eol=lf

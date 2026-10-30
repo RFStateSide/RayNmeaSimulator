@@ -1,0 +1,20 @@
+<!doctype html>
+<!-- Copyright (C) 2026 RF StateSide LLC. SPDX-License-Identifier: AGPL-3.0-or-later.
+M2.51B original RayNmeaSimulator instructions; actual application source/UI authority.
+BrickSuite internal Help is the instructional presentation reference, not copied product instructions. -->
+<html><head><meta charset="utf-8" /><title>Waveshare USB-CAN-A</title></head><body>
+<h1 id="top">Waveshare USB-CAN-A</h1>
+<p>Waveshare USB-CAN-A connects the supported serial USB-CAN adapter on Windows and Linux. Select this protocol only for compatible USB-CAN-A hardware.</p>
+<h2 id="configure-usb-can-a">Configure USB-CAN-A</h2>
+<ol><li>Stop Sending and choose Waveshare USB-CAN-A in Setup → NMEA2000.</li><li>Refresh ports and select the attached adapter's actual path. Descriptions/manufacturer/USB VID:PID help identify it; no fixed ttyUSB number is assumed.</li><li>Review unique device number and preferred source address.</li><li>Save while stopped, then use Connect Selected Device.</li><li>Inspect connection/status and supported incoming messages before authorizing output.</li></ol>
+<p>Use 2,000,000 baud serial and 250 kbit/s extended CAN. Receive/standby uses the established mode 02; mode 00 requires explicit instrument Sending or separately authorized route requests. The application paces outgoing frames automatically.</p>
+<h2 id="verify-wiring-and-access">Verify wiring and access separately</h2>
+<p>Follow the adapter wiring documentation for CAN H/L/reference, power and termination. A USB serial connection alone does not establish CAN communication. Check the backbone and traffic if the port opens but no messages arrive.</p>
+<p>On Ubuntu, access-denied/busy errors may reflect serial permissions or another process owning the port. Use administrator-approved permission/group recovery and a fresh session where needed; do not modify drivers or udev rules merely because the dropdown was empty. Saved/manual paths remain usable when discovery cannot identify the device.</p>
+<h2 id="respect-authorization">Authorize output separately</h2>
+<p>Connection opens RX/standby, not automatic instrument TX. Enable Sending applies only in Generate with supported instruments. Discover/Refresh/Retrieve separately authorize bounded route requests; Cancel/Stop/F12 revokes that permission. Save changed transport settings before reconnecting, and reconnect explicitly after an abort/fault as status requires.</p>
+<p>For chartplotter routes, check service compatibility and use the route dialog. A bidirectional adapter alone does not provide a compatible route service.</p>
+<h2 id="illustrated-controls">Illustrated controls</h2><p><a href="images/waveshare/setup-interface.png"><img src="images/waveshare/setup-interface.png" alt="Waveshare USB-CAN-A port and device identity settings in Setup." /></a><br /><i>Figure 69. Waveshare USB-CAN-A port and device identity settings in Setup. Click to enlarge.</i></p>
+<h2 id="related-topics">Related topics</h2><p><a href="nmea2000.html">NMEA2000 Overview</a> · <a href="nmea0183.html">NMEA0183 Overview</a> · <a href="network-nmea2000.html">Network NMEA2000</a> · <a href="socketcan.html">SocketCAN</a> · <a href="canable.html">CANable SLCAN</a> · <a href="actisense.html">Actisense NGT-1</a> · <a href="signal-k.html">Signal K</a> · <a href="device-diagnostics.html">Device Discovery and Diagnostics</a> · <a href="connection-troubleshooting.html">Connection Troubleshooting</a> · <a href="enable-dispatch-sending.html">Enable, Dispatch and Sending</a> · <a href="route-overview.html">Route Overview</a> · <a href="units.html">Engineering Units</a></p>
+<p><a href="introduction.html">Help Home</a> · <a href="#top">Back to top</a></p>
+</body></html>

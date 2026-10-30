@@ -1,0 +1,20 @@
+<!doctype html>
+<!-- Copyright (C) 2026 RF StateSide LLC. SPDX-License-Identifier: AGPL-3.0-or-later.
+M2.51B original RayNmeaSimulator instructions; actual application source/UI authority.
+BrickSuite internal Help is the instructional presentation reference, not copied product instructions. -->
+<html><head><meta charset="utf-8" /><title>Signal K</title></head><body>
+<h1 id="top">Signal K</h1>
+<p>Signal K output publishes supported measurements as deltas through the configured server. It is not raw CAN transport, a general PGN tunnel or a subscription input into Viewer.</p>
+<h2 id="prepare-server-access">Prepare server access</h2>
+<ol><li>Stop Sending and choose SignalK in Setup → NMEA2000.</li><li>Enter the HTTP/HTTPS server endpoint. New configurations default to localhost; existing explicitly saved endpoints are retained.</li><li>Choose a distinct publisher source label for simultaneous publishers.</li><li>Use Request Access where appropriate. The Signal K administrator must approve the device before the returned write token can be used.</li><li>Use Test Connection to check readiness without authorizing measurement Sending. Cancel Request/Test stops the pending setup operation.</li><li>Save the approved configuration/token through secure storage; then authorize publication deliberately with Enable Sending in Generate.</li></ol>
+<p>Use an appropriate read/write device token approved by the server administrator. A saved token is not proof that access is still valid. Do not embed credentials in the URL or paste them into a Layout, screenshot or log. Use HTTPS outside a trusted laboratory network.</p>
+<h2 id="inspect-publishing">Inspect publication</h2>
+<p>The publisher maps supported NMEA/instrument fields to Signal K measurements. Not every message or property has a mapping. Self measurements and explicitly identified supported AIS target deltas have different identity handling; this is not arbitrary received-data forwarding, PUT support or subscription.</p>
+<p>Read authorization/connection/retry status. The server's own data browser or another permitted client is the independent check of received values. Correct local widgets plus a healthy WebSocket are not proof every field was published.</p>
+<h2 id="recover-authorization">Recover failures deliberately</h2>
+<ul><li>Endpoint unreachable: verify scheme, host/port, server availability and trusted network/tunnel.</li><li>Authorization failure: check administrator approval, token scope and whether it was revoked.</li><li>Missing values: check supported mapping, valid/unavailable input, instrument Enable/interval and global Sending.</li><li>Setup storage error: inspect the OS credential backend; do not expect a plaintext fallback.</li></ul>
+<p>Stop/F12 ends publication authorization and pending lifecycle activity. A reconnect/readiness transition must not be confused with a new user's grant. The application does not implement Signal K subscription into Viewer.</p>
+<h2 id="illustrated-controls">Illustrated controls</h2><p><a href="images/signal-k/setup-interface.png"><img src="images/signal-k/setup-interface.png" alt="Signal K endpoint and access settings in Setup." /></a><br /><i>Figure 71. Signal K endpoint and access settings in Setup. Click to enlarge.</i></p>
+<h2 id="related-topics">Related topics</h2><p><a href="nmea2000.html">NMEA2000 Overview</a> · <a href="nmea0183.html">NMEA0183 Overview</a> · <a href="network-nmea2000.html">Network NMEA2000</a> · <a href="socketcan.html">SocketCAN</a> · <a href="canable.html">CANable SLCAN</a> · <a href="waveshare.html">Waveshare USB-CAN-A</a> · <a href="actisense.html">Actisense NGT-1</a> · <a href="device-diagnostics.html">Device Discovery and Diagnostics</a> · <a href="connection-troubleshooting.html">Connection Troubleshooting</a> · <a href="enable-dispatch-sending.html">Enable, Dispatch and Sending</a> · <a href="route-overview.html">Route Overview</a> · <a href="units.html">Engineering Units</a></p>
+<p><a href="introduction.html">Help Home</a> · <a href="#top">Back to top</a></p>
+</body></html>

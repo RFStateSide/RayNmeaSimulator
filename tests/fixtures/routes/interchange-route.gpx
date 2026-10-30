@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1" creator="RayNmeaSimulator synthetic interchange fixture">
+  <rte>
+    <name>航路 café &amp; &lt;Harbor&gt; "A"</name>
+    <rtept lat="42.123456789012344" lon="179.99999999999997"><name>灯台 &amp; &lt;入港&gt;</name></rtept>
+    <rtept lat="-0.000000000000123456" lon="-179.99999999999997"><name>duplicate</name></rtept>
+    <rtept lat="90" lon="-180"><name>duplicate</name></rtept>
+  </rte>
+</gpx>

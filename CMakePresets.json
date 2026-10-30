@@ -1,0 +1,22 @@
+{
+  "version": 5,
+  "cmakeMinimumRequired": {"major": 3, "minor": 24, "patch": 0},
+  "configurePresets": [
+    {"name": "dev-debug", "generator": "Ninja", "binaryDir": "${sourceDir}/build/cmake/${presetName}", "cacheVariables": {"CMAKE_BUILD_TYPE": "Debug", "BUILD_TESTING": "OFF"}},
+    {"name": "dev-release", "inherits": "dev-debug", "cacheVariables": {"CMAKE_BUILD_TYPE": "Release", "CMAKE_CXX_FLAGS_RELEASE": "-O2 -DNDEBUG"}},
+    {"name": "deployment-release", "inherits": "dev-release", "cacheVariables": {"RAYNMEA_DEPLOYMENT": "ON", "BUILD_TESTING": "OFF"}},
+    {"name": "tests-debug", "inherits": "dev-debug", "cacheVariables": {"BUILD_TESTING": "ON"}},
+    {"name": "tests-release", "inherits": "dev-release", "cacheVariables": {"BUILD_TESTING": "ON"}}
+  ],
+  "buildPresets": [
+    {"name": "dev-debug", "configurePreset": "dev-debug"},
+    {"name": "dev-release", "configurePreset": "dev-release"},
+    {"name": "deployment-release", "configurePreset": "deployment-release", "targets": ["Deploy"]},
+    {"name": "tests-debug", "configurePreset": "tests-debug"},
+    {"name": "tests-release", "configurePreset": "tests-release"}
+  ],
+  "testPresets": [
+    {"name": "tests-debug", "configurePreset": "tests-debug", "output": {"outputOnFailure": true}, "execution": {"noTestsAction": "error"}},
+    {"name": "tests-release", "configurePreset": "tests-release", "output": {"outputOnFailure": true}, "execution": {"noTestsAction": "error"}}
+  ]
+}

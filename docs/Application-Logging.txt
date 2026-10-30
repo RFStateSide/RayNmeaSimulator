@@ -1,0 +1,88 @@
+RayNmeaSimulator - Application and NMEA traffic logging
+
+Open Tools > Application Log in Debug or Release. The non-modal viewer shows
+Application Log and NMEA Traffic Log separately. Opening or closing this window
+does not change recording, transports, generator Dispatch, or Sending permission.
+
+Defaults and storage
+--------------------
+The Application Log starts at Information level. Widget connection diagnostics
+are OFF. NMEA Traffic Recording is OFF on EVERY application launch, even if it was
+running when the previous application exited. Capture filters are preferences;
+they never start recording.
+
+Files are application.jsonl and traffic.jsonl in the existing per-user
+AppLocalDataLocation/logs directory. The viewer shows the actual path. Each file
+has four rotated archives (.1 newest through .4 oldest). Defaults are 2 MiB per
+Application file (10 MiB total) and 8 MiB per Traffic file (40 MiB total).
+Logging Settings allows 1-16 MiB/Application file and 1-64 MiB/Traffic file.
+Smaller limits can remove oversized archives. These are bounded diagnostic files,
+not a permanent voyage recorder.
+
+Preferences
+-----------
+Use Logging Settings in the viewer, or Setup > Logging. Save applies preferences;
+Cancel discards edits. Setup retains its established stopped/setup lifecycle.
+The viewer's Logging Settings changes logging only, without reconnecting transport.
+Choose verbosity, optional quiet category prefixes, widget binding diagnostics,
+RX/TX/protocol filters, available raw CAN RX, and per-file retention.
+Critical/fatal errors are not suppressed by quiet categories.
+
+Show Widget Signal Connections/Disconnections works independently of ordinary
+Debug verbosity. Enabling it snapshots existing central generator bindings;
+it does not reconnect them. Events identify source/destination widget and engine
+instances, signal, property/slot, connection identifier, epoch and lifecycle.
+Dispatch disabled is distinct from a Qt disconnection. Signal emissions are not
+recorded individually. Raw JSON exposes the complete diagnostic descriptors.
+
+Recording and privacy
+---------------------
+Start Traffic Recording requires an explicit privacy confirmation. It records
+existing activity only; it does not connect interfaces, enable Sending, start
+movement, or authorize chartplotter service requests. Stop stops accepting new
+records immediately; queued records can be discarded at the boundary. An in-flight
+write may finish. Closing the viewer leaves a running recording active.
+
+Traffic contains private vessel identities, positions and routes. Export current
+asks again before exporting Traffic. Review files before sharing. Application
+logs redact configured credentials, credential-labelled text and URLs, and omit
+known payload-bearing error strings. Never deliberately put secrets in diagnostics.
+
+Coverage
+--------
+NMEA2000 logical RX and instrument/service TX attempts have PGN, header identities,
+priority, payload hex, direction, transport, timestamp and software acceptance
+stage. NMEA0183 serial records include original sentence bytes/checksum status on
+RX and Qt buffer acceptance on TX. RX recording is independent of Viewer display.
+Raw validated 29-bit CAN RX is available for Waveshare, CANable SLCAN, Network
+NMEA2000 and Linux SocketCAN. Actisense exposes logical messages only. Raw CAN TX
+is not captured. Automatic protocol-management TX is not a complete wire trace.
+Software acceptance does not prove physical CAN transmission or receiver delivery.
+
+Files use UTF-8 JSON Lines, schema=1; each record has UTC milliseconds, session,
+monotonic time and sequence. Traffic also has capture_generation. Logical messages,
+raw fragments and sentences are separate record kinds: do not count them as
+independent application messages. The same received message can appear at both
+raw and logical layers.
+
+Viewer and failures
+-------------------
+The viewer refreshes once per second, reading at most 256 KiB / displaying 2000
+lines. Filters affect display only. Pause suspends automatic text updates, not
+recording. Explicit Refresh still works. Confirmed Clear immediately empties the
+display without changing Pause; later records stay hidden until Refresh/unpause.
+Health and recording controls continue to update. Follow scrolls
+to the latest displayed record. Raw JSON switches from readable lines to records.
+Clear Log confirms before clearing the selected CURRENT file; archives remain.
+Export current makes a bounded snapshot; archives can be copied separately after
+recording stops. Open Log Folder uses the platform file manager.
+
+Health and written/dropped counts are shown for each channel. Bounded queues can
+drop records during overload or Stop/Clear; these logs are not lossless captures.
+Storage/rotation/lock failure stops the affected channel, not the application.
+Free storage/release conflicting handles, then Retry Application Log or explicitly
+restart Traffic. A second application instance cannot write the same log files.
+The viewer remains usable while a writer is busy and coordinates its reads with
+rotation. External programs holding file handles may still block Windows rotation.
+Normal shutdown flushes; crashes/power loss and fatal process termination can lose
+the last queued records. No crash-durability or forensic completeness is promised.

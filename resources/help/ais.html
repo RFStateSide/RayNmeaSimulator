@@ -1,0 +1,20 @@
+<!doctype html>
+<!-- Copyright (C) 2026 RF StateSide LLC. SPDX-License-Identifier: AGPL-3.0-or-later.
+M2.51B original RayNmeaSimulator instructions; actual application source/UI authority.
+BrickSuite internal Help is the instructional presentation reference, not copied product instructions. -->
+<html><head><meta charset="utf-8" /><title>AIS Simulation</title></head><body>
+<h1 id="top">AIS Simulation</h1>
+<p>AIS instruments simulate supported Class B identity and position messages. They do not operate an AIS radio transponder. Use a designated test identity on an isolated network.</p>
+<h2 id="set-identity-defaults">Set defaults for new AIS instruments</h2>
+<ol><li>Open Setup → Vessel Identity — Defaults for New AIS Instruments.</li><li>Review simulated MMSI, vessel type, radio callsign and dimensions. Use designated test data on an isolated network; do not transmit another vessel's identity.</li><li>Save deliberately, then create the appropriate supported AIS instrument.</li><li>Inspect its actual property values. Existing widgets and saved Layouts retain their own values; changing Setup is not a bulk rewrite of them.</li></ol>
+<p>The simulated MMSI is not the CAN source address or NMEA2000 device NAME. New Part B instruments use supported type/callsign/length/beam defaults; wire-format dimension rounding and canonical configuration precision are separate.</p>
+<h2 id="prepare-ais-output">Prepare a supported AIS test</h2>
+<ol><li>Select the exact supported message/direction from the capability reference.</li><li>Populate static identity and dynamic position/course/speed/status fields as applicable.</li><li>If Vessel Movement supplies a field, inspect its status and readonly controls; do not treat that as a manual editor failure.</li><li>Review individual Enable/interval and explicit Sending authorization only on a controlled bench.</li></ol>
+<p>Supported Class B messages carry different identity/position fields. See the <a href="nmea2000-pgns.html">PGN reference</a>. Class A, DSC and NMEA0183 VDM/VDO sentence instruments are not available.</p>
+<h2 id="receive-and-publish">Receive and publish carefully</h2>
+<p>Viewer updates supported AIS instruments by source and target identity. Signal K publishes supported target mappings; this does not transmit an AIS radio signal. Check the receiving application for the fields it uses.</p>
+<p>Review MMSI, callsign, vessel names and coordinates before sharing screenshots, logs or Layouts. Use example identities and positions in support requests.</p>
+<h2 id="illustrated-controls">Illustrated controls</h2><p><a href="images/ais/setup-tab.png"><img src="images/ais/setup-tab.png" alt="Set defaults for new AIS instruments in Setup; existing instruments keep their saved values." /></a><br /><i>Figure 56. Set defaults for new AIS instruments in Setup; existing instruments keep their saved values. Click to enlarge.</i></p>
+<h2 id="related-topics">Related topics</h2><p><a href="generating-data.html">Generating NMEA Data</a> · <a href="enable-dispatch-sending.html">Enable, Dispatch and Sending</a> · <a href="manual-movement.html">Manual Vessel Movement</a> · <a href="autopilot.html">Autopilot and Route Following</a> · <a href="game-controller.html">Game Controller Mode</a> · <a href="engine-transmission.html">Engine and Transmission Simulation</a> · <a href="weather.html">Weather and Environmental Simulation</a> · <a href="windlass.html">Windlass Simulation</a> · <a href="connection-troubleshooting.html">Connection Troubleshooting</a> · <a href="route-overview.html">Route Overview</a> · <a href="units.html">Engineering Units</a></p>
+<p><a href="introduction.html">Help Home</a> · <a href="#top">Back to top</a></p>
+</body></html>

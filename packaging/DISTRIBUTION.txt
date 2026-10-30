@@ -1,0 +1,30 @@
+RayNmeaSimulator 0.1.0 - PRIVATE ACCEPTANCE CANDIDATE - PUBLIC RELEASE NO-GO
+Copyright RF StateSide LLC. Application: AGPL-3.0-or-later (LICENSE).
+Public Engineering Reference - AS-IS is a designation, not a license exception.
+
+This package uses Qt, including Qt Charts (GPL-3.0-only or commercial;
+the open-source option is used here). Other Qt modules have individual
+LGPL/GPL options. Full module license texts and third-party attributions are
+under licenses/Qt. Qt and its third-party code are not relicensed by this app.
+Qt source: https://download.qt.io/official_releases/qt/
+Qt source module versions must match build-metadata.json. Do not substitute
+an LGPL-only summary for Charts' GPL terms. AGPLv3 section 13 permits a GPLv3
+combination; both licenses retain their respective requirements.
+
+SDL2: zlib; NMEA2000, NMEA0183 and SocketCAN: MIT; CANboat data: Apache-2.0.
+See THIRD_PARTY_NOTICES.md and licenses/ for copyright and permission notices.
+MinGW GCC runtime uses GPL with the GCC Runtime Library Exception; mingw-w64
+and winpthreads have separate permissive notices. Linux system prerequisites
+are recorded separately from the private runtime in system-runtime.json.
+
+Recipients must receive complete corresponding source and build/installation
+information through a license-compliant distribution method before any external
+distribution. Repository privacy is not an exception. This installer is not a
+source offer and a link to a private repository is not sufficient. The current
+private review does not resolve historic artwork/source-history publication
+rights, complete transitive-source delivery, or final distribution obligations.
+Do not forward this candidate outside authorized RF StateSide acceptance.
+
+Deployment architecture adapted from RF StateSide BrickSuite (read-only reference
+1e2b8f870200b634806ac37dc3629049162a7915). Internal reuse authorized by owner.
+No BrickSuite product identity, application settings or application code is shipped.

@@ -1,0 +1,2 @@
+RayNmeaSimulator bundled Template catalog.
+This marker keeps rcc/relink dependencies active when the JSON catalog is empty.

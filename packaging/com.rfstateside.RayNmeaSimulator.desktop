@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=RayNmeaSimulator
+Comment=Vessel instrument and navigation simulator
+Exec=/opt/RayNmeaSimulator/bin/RayNmeaSimulator
+TryExec=/opt/RayNmeaSimulator/bin/RayNmeaSimulator
+Icon=/usr/share/pixmaps/RayNmeaSimulator_1024.png
+Terminal=false
+Categories=Science;
+StartupWMClass=RayNmeaSimulator

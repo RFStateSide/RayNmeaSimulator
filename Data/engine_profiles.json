@@ -1,0 +1,481 @@
+{
+  "engines": [
+    {
+      "name": "Honda BF 135 – 144 cid",
+      "horsepower": 135,
+      "fuelType": "Gasoline",	  
+	  "fuelInjected": true,
+	  "forcedInduction": false,
+	  "alternatorVoltage": 12,
+      "rpm_gph_pairs": [
+        { "rpm": 800, "gph": 0.5 },
+        { "rpm": 1000, "gph": 0.7 },
+        { "rpm": 1500, "gph": 1.1 },
+        { "rpm": 2000, "gph": 1.6 },
+        { "rpm": 2500, "gph": 2.4 },
+        { "rpm": 3000, "gph": 2.9 },
+        { "rpm": 3500, "gph": 3.8 },
+        { "rpm": 4000, "gph": 4.9 },
+        { "rpm": 4500, "gph": 6.5 },
+        { "rpm": 5000, "gph": 8.1 },
+        { "rpm": 5500, "gph": 9.9 }
+      ]
+    },
+    {
+      "name": "Honda BF 150 – 144 cid",
+      "horsepower": 135,
+      "fuelType": "Gasoline",	  
+	  "fuelInjected": true,
+	  "forcedInduction": false,
+	  "alternatorVoltage": 12,
+      "rpm_gph_pairs": [
+        { "rpm": 800, "gph": 0.5 },
+        { "rpm": 1000, "gph": 0.6 },
+        { "rpm": 1500, "gph": 0.9 },
+        { "rpm": 2000, "gph": 1.2 },
+        { "rpm": 2500, "gph": 1.9 },
+        { "rpm": 3000, "gph": 2.6 },
+        { "rpm": 3500, "gph": 3.7 },
+        { "rpm": 4000, "gph": 4.9 },
+        { "rpm": 4500, "gph": 6.3 },
+        { "rpm": 5000, "gph": 8.1 },
+        { "rpm": 5500, "gph": 10.8 }
+      ]
+    },
+	{
+      "name": "MerCruiser 3.0 MPI/TKS – 181 cid",
+      "horsepower": 135,
+      "fuelType": "Gasoline",	  
+	  "fuelInjected": false,
+	  "forcedInduction": false,
+	  "alternatorVoltage": 12,
+      "rpm_gph_pairs": [
+        { "rpm": 600, "gph": 0.5 },
+        { "rpm": 1000, "gph": 1.0 },
+        { "rpm": 1500, "gph": 1.5 },
+        { "rpm": 2000, "gph": 2.9 },
+        { "rpm": 2500, "gph": 3.8 },
+        { "rpm": 3000, "gph": 4.8 },
+        { "rpm": 3500, "gph": 6.2 },
+        { "rpm": 4000, "gph": 7.4 },
+        { "rpm": 4500, "gph": 9.3 },
+        { "rpm": 4800, "gph": 10.5 }
+      ]
+    },
+    {
+      "name": "MerCruiser 4.3 MPI – 262 cid",
+      "horsepower": 220,
+      "fuelType": "Gasoline",	  
+	  "fuelInjected": true,
+	  "forcedInduction": false,
+	  "alternatorVoltage": 12,
+      "rpm_gph_pairs": [
+        { "rpm": 600, "gph": 0.6 },
+        { "rpm": 1000, "gph": 1.2 },
+        { "rpm": 1500, "gph": 2.5 },
+        { "rpm": 2000, "gph": 4.0 },
+        { "rpm": 2500, "gph": 4.5 },
+        { "rpm": 3000, "gph": 6.0 },
+        { "rpm": 3500, "gph": 8.5 },
+        { "rpm": 4000, "gph": 12.0 },
+        { "rpm": 4500, "gph": 16.0 },
+        { "rpm": 4800, "gph": 18.0 }
+      ]
+    },
+    {
+      "name": "MerCruiser 5.0 MPI",
+      "horsepower": 260,
+      "fuelType": "Gasoline",	  
+	  "fuelInjected": true,
+	  "forcedInduction": false,
+	  "alternatorVoltage": 12,
+      "rpm_gph_pairs": [
+        { "rpm": 600, "gph": 0.9 },
+        { "rpm": 1000, "gph": 1.4 },
+        { "rpm": 1500, "gph": 2.5 },
+        { "rpm": 2000, "gph": 4.5 },
+        { "rpm": 2500, "gph": 6.0 },
+        { "rpm": 3000, "gph": 9.9 },
+        { "rpm": 3500, "gph": 10.0 },
+        { "rpm": 4000, "gph": 12.5 },
+        { "rpm": 4500, "gph": 16.0 }
+      ]
+    },
+    {
+      "name": "MerCruiser 5.7 MAG – 350 cid",
+      "horsepower": 300,
+      "fuelType": "Gasoline",	  
+	  "forcedInduction": false,
+	  "alternatorVoltage": 12,
+      "rpm_gph_pairs": [
+        { "rpm": 600, "gph": 1.0 },
+        { "rpm": 1000, "gph": 1.5 },
+        { "rpm": 1500, "gph": 2.5 },
+        { "rpm": 2000, "gph": 4.5 },
+        { "rpm": 2500, "gph": 6.0 },
+        { "rpm": 3000, "gph": 7.5 },
+        { "rpm": 3500, "gph": 10.0 },
+        { "rpm": 4000, "gph": 12.5 },
+        { "rpm": 4500, "gph": 16.5 },
+        { "rpm": 4800, "gph": 23.0 }
+      ]
+    },
+    {
+      "name": "MerCruiser 350 MAG MPI",
+      "horsepower": 300,
+      "fuelType": "Gasoline",	  
+	  "fuelInjected": true,
+	  "forcedInduction": false,
+	  "alternatorVoltage": 12,
+      "rpm_gph_pairs": [
+        { "rpm": 1000, "gph": 2.0 },
+        { "rpm": 1500, "gph": 4.5 },
+        { "rpm": 2000, "gph": 7.0 },
+        { "rpm": 2500, "gph": 12.5 },
+        { "rpm": 3000, "gph": 18.0 },
+        { "rpm": 3500, "gph": 24.0 },
+        { "rpm": 4000, "gph": 30.0 },
+        { "rpm": 4600, "gph": 37.5 }
+      ]
+    },
+    {
+      "name": "MerCruiser 7.4 MPI",
+      "horsepower": 310,
+      "fuelType": "Gasoline",	  
+	  "fuelInjected": true,
+	  "forcedInduction": false,
+	  "alternatorVoltage": 12,
+      "rpm_gph_pairs": [
+        { "rpm": 650, "gph": 1.3 },
+        { "rpm": 1000, "gph": 2.5 },
+        { "rpm": 1500, "gph": 3.5 },
+        { "rpm": 2000, "gph": 6.10 },
+        { "rpm": 2500, "gph": 9.9 },
+        { "rpm": 3000, "gph": 12.5 },
+        { "rpm": 3500, "gph": 17.4 },
+        { "rpm": 4000, "gph": 22.5 },
+        { "rpm": 4600, "gph": 28.5 }
+      ]
+    },
+    {
+      "name": "MerCruiser 8.1 MAG",
+      "horsepower": 375,
+      "fuelType": "Gasoline",	  
+	  "forcedInduction": false,
+	  "alternatorVoltage": 12,
+      "rpm_gph_pairs": [
+        { "rpm": 650, "gph": 1.2 },
+        { "rpm": 1000, "gph": 2.3 },
+        { "rpm": 1500, "gph": 3.5 },
+        { "rpm": 2000, "gph": 5.5 },
+        { "rpm": 2500, "gph": 8.0 },
+        { "rpm": 3000, "gph": 11.5 },
+        { "rpm": 3500, "gph": 15.0 },
+        { "rpm": 4000, "gph": 20.0 },
+        { "rpm": 4500, "gph": 27.5 }
+      ]
+    },
+    {
+      "name": "Mercury 9.9 HP FourStroke",
+      "horsepower": 9.9,
+      "fuelType": "Gasoline",	  
+	  "fuelInjected": true,
+	  "forcedInduction": false,
+	  "alternatorVoltage": 12,
+      "rpm_gph_pairs": [
+        { "rpm": 1000, "gph": 0.2 },
+        { "rpm": 1500, "gph": 0.3 },
+        { "rpm": 2000, "gph": 0.4 },
+        { "rpm": 2500, "gph": 0.5 },
+        { "rpm": 3000, "gph": 0.6 },
+        { "rpm": 3500, "gph": 0.7 },
+        { "rpm": 4000, "gph": 0.9 },
+        { "rpm": 4500, "gph": 1.1 },
+        { "rpm": 5000, "gph": 1.4 }
+      ]
+    },
+    {
+      "name": "Mercury 25 HP FourStroke",
+      "horsepower": 25,
+	  "fuelInjected": true,
+	  "forcedInduction": false,
+	  "alternatorVoltage": 12,
+      "rpm_gph_pairs": [
+        { "rpm": 1000, "gph": 0.4 },
+        { "rpm": 1500, "gph": 0.6 },
+        { "rpm": 2000, "gph": 0.8 },
+        { "rpm": 2500, "gph": 1.0 },
+        { "rpm": 3000, "gph": 1.3 },
+        { "rpm": 3500, "gph": 1.6 },
+        { "rpm": 4000, "gph": 2.0 },
+        { "rpm": 4500, "gph": 2.4 },
+        { "rpm": 5000, "gph": 2.8 }
+      ]
+    },
+    {
+      "name": "Mercury 50 HP FourStroke",
+      "horsepower": 50,
+      "fuelType": "Gasoline",	  
+	  "fuelInjected": true,
+	  "forcedInduction": false,
+	  "alternatorVoltage": 12,
+      "rpm_gph_pairs": [
+        { "rpm": 1000, "gph": 0.6 },
+        { "rpm": 1500, "gph": 1.0 },
+        { "rpm": 2000, "gph": 1.3 },
+        { "rpm": 2500, "gph": 1.8 },
+        { "rpm": 3000, "gph": 2.2 },
+        { "rpm": 3500, "gph": 2.7 },
+        { "rpm": 4000, "gph": 3.3 },
+        { "rpm": 4500, "gph": 4.0 },
+        { "rpm": 5000, "gph": 4.5 }
+      ]
+    },
+    {
+      "name": "Mercury 90 HP FourStroke",
+      "horsepower": 90,
+      "fuelType": "Gasoline",	  
+	  "fuelInjected": true,
+	  "forcedInduction": false,
+	  "alternatorVoltage": 12,
+      "rpm_gph_pairs": [
+        { "rpm": 1000, "gph": 0.8 },
+        { "rpm": 1500, "gph": 1.3 },
+        { "rpm": 2000, "gph": 1.8 },
+        { "rpm": 2500, "gph": 2.5 },
+        { "rpm": 3000, "gph": 3.2 },
+        { "rpm": 3500, "gph": 3.9 },
+        { "rpm": 4000, "gph": 4.8 },
+        { "rpm": 4500, "gph": 5.6 },
+        { "rpm": 5000, "gph": 6.5 }
+      ]
+    },
+    {
+      "name": "Mercury 115 HP FourStroke",
+      "horsepower": 115,
+      "fuelType": "Gasoline",	  
+	  "fuelInjected": true,
+	  "forcedInduction": false,
+	  "alternatorVoltage": 12,
+      "rpm_gph_pairs": [
+        { "rpm": 1000, "gph": 0.9 },
+        { "rpm": 1500, "gph": 1.5 },
+        { "rpm": 2000, "gph": 2.2 },
+        { "rpm": 2500, "gph": 2.9 },
+        { "rpm": 3000, "gph": 3.7 },
+        { "rpm": 3500, "gph": 4.5 },
+        { "rpm": 4000, "gph": 5.5 },
+        { "rpm": 4500, "gph": 6.5 },
+        { "rpm": 5000, "gph": 7.5 }
+      ]
+    },
+    {
+      "name": "Mercury 175 hp EFI",
+      "horsepower": 175,
+      "fuelType": "Gasoline",	  
+	  "fuelInjected": true,
+	  "forcedInduction": false,
+	  "alternatorVoltage": 12,
+      "rpm_gph_pairs": [
+        { "rpm": 1000, "gph": 1.5 },
+        { "rpm": 1500, "gph": 2.8 },
+        { "rpm": 2000, "gph": 4.7 },
+        { "rpm": 2500, "gph": 6.3 },
+        { "rpm": 3000, "gph": 9.0 },
+        { "rpm": 3500, "gph": 12.1 },
+        { "rpm": 4000, "gph": 15.6 },
+        { "rpm": 4500, "gph": 19.9 },
+        { "rpm": 5000, "gph": 25.5 }
+      ]
+    },
+    {
+      "name": "Mercury Verado 250 hp",
+      "horsepower": 250,
+	  "fuelInjected": true,
+      "fuelType": "Gasoline",	  
+	  "forcedInduction": false,
+	  "alternatorVoltage": 12,
+      "rpm_gph_pairs": [
+        { "rpm": 1000, "gph": 2.0 },
+        { "rpm": 1500, "gph": 3.2 },
+        { "rpm": 2000, "gph": 5.0 },
+        { "rpm": 2500, "gph": 7.8 },
+        { "rpm": 3000, "gph": 10.5 },
+        { "rpm": 3500, "gph": 15.0 },
+        { "rpm": 4000, "gph": 20.0 },
+        { "rpm": 4500, "gph": 26.5 },
+        { "rpm": 5000, "gph": 35.0 }
+      ]
+    },
+    {
+      "name": "Mercury Verado 300 hp",
+      "horsepower": 300,
+      "fuelType": "Gasoline",	  
+	  "fuelInjected": true,
+	  "forcedInduction": true,
+	  "alternatorVoltage": 12,
+      "rpm_gph_pairs": [
+        { "rpm": 1000, "gph": 2.5 },
+        { "rpm": 1500, "gph": 4.0 },
+        { "rpm": 2000, "gph": 6.5 },
+        { "rpm": 2500, "gph": 9.8 },
+        { "rpm": 3000, "gph": 14.5 },
+        { "rpm": 3500, "gph": 20.5 },
+        { "rpm": 4000, "gph": 28.0 },
+        { "rpm": 4500, "gph": 35.5 },
+        { "rpm": 5000, "gph": 45.0 }
+      ]
+    },
+    {
+      "name": "Mercury Verado 350 hp",
+      "horsepower": 350,
+      "fuelType": "Gasoline",	  
+	  "fuelInjected": true,
+	  "forcedInduction": true,
+	  "alternatorVoltage": 12,
+      "rpm_gph_pairs": [
+        { "rpm": 1000, "gph": 3.0 },
+        { "rpm": 1500, "gph": 4.5 },
+        { "rpm": 2000, "gph": 7.0 },
+        { "rpm": 2500, "gph": 10.0 },
+        { "rpm": 3000, "gph": 15.5 },
+        { "rpm": 3500, "gph": 22.0 },
+        { "rpm": 4000, "gph": 30.5 },
+        { "rpm": 4500, "gph": 40.0 },
+        { "rpm": 5000, "gph": 52.5 }
+      ]
+    },
+    {
+      "name": "Mercury Verado 400 hp",
+      "horsepower": 400,
+      "fuelType": "Gasoline",	  
+	  "fuelInjected": true,
+	  "forcedInduction": true,
+	  "alternatorVoltage": 12,
+      "rpm_gph_pairs": [
+        { "rpm": 1000, "gph": 3.2 },
+        { "rpm": 1500, "gph": 5.0 },
+        { "rpm": 2000, "gph": 8.0 },
+        { "rpm": 2500, "gph": 12.0 },
+        { "rpm": 3000, "gph": 18.0 },
+        { "rpm": 3500, "gph": 25.0 },
+        { "rpm": 4000, "gph": 34.0 },
+        { "rpm": 4500, "gph": 45.5 },
+        { "rpm": 5000, "gph": 60.0 }
+      ]
+    },
+    {
+      "name": "Suzuki DF 90 hp - 57 cid",
+      "horsepower": 90,
+      "fuelType": "Gasoline",	  
+	  "fuelInjected": true,
+	  "forcedInduction": false,
+	  "alternatorVoltage": 12,
+      "rpm_gph_pairs": [
+        { "rpm": 800, "gph": 0.24 },
+        { "rpm": 1000, "gph": 0.3 },
+        { "rpm": 1500, "gph": 0.55 },
+        { "rpm": 2000, "gph": 0.8 },
+        { "rpm": 2500, "gph": 1.5 },
+        { "rpm": 3000, "gph": 1.9 },
+        { "rpm": 3500, "gph": 2.3 },
+        { "rpm": 4000, "gph": 2.9 },
+        { "rpm": 4500, "gph": 3.7 },
+        { "rpm": 5000, "gph": 5.1 },
+        { "rpm": 5500, "gph": 6.8 }
+      ]
+    },
+    {
+      "name": "Volvo Penta 3.0 GL – 181 cid",
+      "horsepower": 135,
+      "fuelType": "Gasoline",	  
+	  "fuelInjected": true,
+	  "forcedInduction": false,
+	  "alternatorVoltage": 12,
+      "rpm_gph_pairs": [
+        { "rpm": 600, "gph": 0.5 },
+        { "rpm": 1000, "gph": 1.0 },
+        { "rpm": 1500, "gph": 1.5 },
+        { "rpm": 2000, "gph": 2.9 },
+        { "rpm": 2500, "gph": 3.8 },
+        { "rpm": 3000, "gph": 4.8 },
+        { "rpm": 3500, "gph": 6.2 },
+        { "rpm": 4000, "gph": 7.4 },
+        { "rpm": 4500, "gph": 9.3 },
+        { "rpm": 4800, "gph": 10.5 }
+      ]
+    },
+    {
+      "name": "Volvo Penta 4.3 GXi – 262 cid",
+      "horsepower": 225,
+      "fuelType": "Gasoline",	  
+	  "fuelInjected": true,
+	  "forcedInduction": false,
+	  "alternatorVoltage": 12,
+      "rpm_gph_pairs": [
+        { "rpm": 600, "gph": 0.6 },
+        { "rpm": 1000, "gph": 1.2 },
+        { "rpm": 1500, "gph": 2.5 },
+        { "rpm": 2000, "gph": 4.0 },
+        { "rpm": 2500, "gph": 5.0 },
+        { "rpm": 3000, "gph": 6.5 },
+        { "rpm": 3500, "gph": 8.5 },
+        { "rpm": 4000, "gph": 10.5 },
+        { "rpm": 4500, "gph": 12.0 }
+      ]
+    },
+    {
+      "name": "Volvo Penta 5.7 GXi – 350 cid",
+      "horsepower": 320,
+      "fuelType": "Gasoline",	  
+	  "fuelInjected": true,
+	  "forcedInduction": false,
+	  "alternatorVoltage": 12,
+      "rpm_gph_pairs": [
+        { "rpm": 600, "gph": 1.0 },
+        { "rpm": 1000, "gph": 1.5 },
+        { "rpm": 1500, "gph": 2.5 },
+        { "rpm": 2000, "gph": 4.0 },
+        { "rpm": 2500, "gph": 6.0 },
+        { "rpm": 3000, "gph": 8.0 },
+        { "rpm": 3500, "gph": 10.5 },
+        { "rpm": 4000, "gph": 13.0 },
+        { "rpm": 4500, "gph": 16.0 },
+        { "rpm": 4800, "gph": 18.5 }
+      ]
+    },
+    {
+      "name": "Volvo Penta D4 300 Diesel",
+      "horsepower": 300,
+      "fuelType": "Diesel",	  
+	  "fuelInjected": true,
+	  "forcedInduction": true,
+	  "alternatorVoltage": 24,
+      "rpm_gph_pairs": [
+        { "rpm": 600, "gph": 1.2 },
+        { "rpm": 1000, "gph": 2.4 },
+        { "rpm": 1500, "gph": 3.8 },
+        { "rpm": 2000, "gph": 5.5 },
+        { "rpm": 2500, "gph": 7.5 },
+        { "rpm": 3000, "gph": 9.0 },
+        { "rpm": 3500, "gph": 12.0 }
+      ]
+    },
+    {
+      "name": "Volvo Penta D6 370 Diesel",
+      "horsepower": 370,
+      "fuelType": "Diesel",	  
+	  "fuelInjected": true,
+	  "forcedInduction": true,
+	  "alternatorVoltage": 24,
+      "rpm_gph_pairs": [
+        { "rpm": 600, "gph": 1.4 },
+        { "rpm": 1000, "gph": 3.0 },
+        { "rpm": 1500, "gph": 4.8 },
+        { "rpm": 2000, "gph": 7.0 },
+        { "rpm": 2500, "gph": 10.0 },
+        { "rpm": 3000, "gph": 13.5 }
+      ]
+    }	
+  ]
+}

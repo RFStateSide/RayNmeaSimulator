@@ -1,0 +1,22 @@
+/* Copyright (C) 2026 RF StateSide LLC; SPDX-License-Identifier: AGPL-3.0-or-later */
+/* RF StateSide curated Dark theme. Fusion paints native indicators/arrows.
+   isDarkTheme=true */
+QToolTip { padding: 4px; border: 1px solid #526273; }
+QGroupBox { border: 1px solid #526273; border-radius: 4px; margin-top: 0.8em; padding-top: 0.5em; }
+QGroupBox::title { subcontrol-origin: margin; left: 8px; padding: 0 4px; }
+QMenu { border: 1px solid #526273; padding: 3px; }
+QMenu::item { padding: 5px 24px; }
+QMenu::item:selected:enabled, QMenuBar::item:selected:enabled { background: #2168a6; color: white; }
+QMenu::separator { height: 1px; background: #526273; margin: 4px; }
+QLineEdit, QAbstractSpinBox, QComboBox { min-height: 1.5em; }
+QPushButton { min-height: 1.5em; padding: 3px 8px; }
+QPushButton:hover:enabled { background: #3b4c5d; }
+QPushButton:focus, QLineEdit:focus, QAbstractSpinBox:focus, QComboBox:focus { border: 1px solid #3988c9; }
+QAbstractItemView { selection-background-color: #2168a6; selection-color: white; }
+QAbstractItemView::item:selected { background: #2168a6; color: white; }
+QHeaderView::section { padding: 4px; }
+QTabBar::tab { padding: 6px 10px; }
+QTabBar::tab:selected { background: #2168a6; color: white; }
+QTabBar::tab:!selected:hover { background: #3b4c5d; }
+QDockWidget::title { padding: 5px; }
+QStatusBar::item { border: none; }

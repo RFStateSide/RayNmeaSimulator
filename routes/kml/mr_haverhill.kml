@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns:atom="http://www.w3.org/2005/Atom" xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>MR-Haverhill</name>
+    <Placemark>
+      <name>004</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.812,42.8209,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>002</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.8137,42.8213,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>003</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.821,42.8185,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>004</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.8293,42.8191,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>005</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.8293,42.8191,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>006</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.8392,42.8181,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>007</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.8522,42.8139,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>008</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.8544,42.8134,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>009</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.8636,42.8129,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>010</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.8659,42.8134,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>011</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.8718,42.8151,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>012</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.874,42.8171,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>013</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.8801,42.8227,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>014</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.8869,42.825,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>015</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.8903,42.8267,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>016</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.8925,42.8304,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>017</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.8988,42.8328,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>018</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.9037,42.8337,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>019</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.9061,42.8337,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>020</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.9107,42.8336,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>021</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.9142,42.8349,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>022</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.9143,42.8404,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>023</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.9158,42.8419,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>024</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.9184,42.8422,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>025</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.9251,42.8384,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>026</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.9321,42.8313,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>027</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.9337,42.8281,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>028</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.9383,42.8233,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>029</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.9459,42.8201,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>030</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.9596,42.8199,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>031</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.971,42.8239,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>032</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.9786,42.8245,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>033</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.9831,42.8242,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>034</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.9908,42.8223,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>035</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.9939,42.8232,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>036</name>
+      <description></description>
+      <Point>
+        <coordinates>-71.0019,42.8191,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>037</name>
+      <description></description>
+      <Point>
+        <coordinates>-71.0021,42.8159,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>038</name>
+      <description></description>
+      <Point>
+        <coordinates>-71.0011,42.8143,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>039</name>
+      <description></description>
+      <Point>
+        <coordinates>-71.001,42.8119,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>040</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.9996,42.8102,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>041</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.998,42.8061,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>042</name>
+      <description></description>
+      <Point>
+        <coordinates>-70.9994,42.8031,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>043</name>
+      <description></description>
+      <Point>
+        <coordinates>-71.01,42.7991,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>044</name>
+      <description></description>
+      <Point>
+        <coordinates>-71.013,42.7963,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>045</name>
+      <description></description>
+      <Point>
+        <coordinates>-71.0198,42.7922,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>046</name>
+      <description></description>
+      <Point>
+        <coordinates>-71.021,42.7881,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>047</name>
+      <description></description>
+      <Point>
+        <coordinates>-71.0212,42.7846,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>048</name>
+      <description></description>
+      <Point>
+        <coordinates>-71.0224,42.7817,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>049</name>
+      <description></description>
+      <Point>
+        <coordinates>-71.0264,42.7738,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>050</name>
+      <description></description>
+      <Point>
+        <coordinates>-71.03,42.7706,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>051</name>
+      <description></description>
+      <Point>
+        <coordinates>-71.0337,42.7639,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>052</name>
+      <description></description>
+      <Point>
+        <coordinates>-71.0343,42.7634,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>053</name>
+      <description></description>
+      <Point>
+        <coordinates>-71.0377,42.7599,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>054</name>
+      <description></description>
+      <Point>
+        <coordinates>-71.0398,42.7572,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>055</name>
+      <description></description>
+      <Point>
+        <coordinates>-71.0433,42.7565,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>056</name>
+      <description></description>
+      <Point>
+        <coordinates>-71.0491,42.7597,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>057</name>
+      <description></description>
+      <Point>
+        <coordinates>-71.0586,42.767,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>058</name>
+      <description></description>
+      <Point>
+        <coordinates>-71.0648,42.7698,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>059</name>
+      <description></description>
+      <Point>
+        <coordinates>-71.0721,42.7739,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>060</name>
+      <description></description>
+      <Point>
+        <coordinates>-71.076,42.7739,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>061</name>
+      <description></description>
+      <Point>
+        <coordinates>-71.0801,42.7733,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>062</name>
+      <description></description>
+      <Point>
+        <coordinates>-71.0816,42.7725,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>063</name>
+      <description>Downtown Haverhill</description>
+      <Point>
+        <coordinates>-71.084,42.7721,0. </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Path</name>
+      <LineString>
+        <coordinates>-70.812,42.8209,0. -70.8137,42.8213,0. -70.821,42.8185,0. -70.8293,42.8191,0. -70.8293,42.8191,0. -70.8392,42.8181,0. -70.8522,42.8139,0. -70.8544,42.8134,0. -70.8636,42.8129,0. -70.8659,42.8134,0. -70.8718,42.8151,0. -70.874,42.8171,0. -70.8801,42.8227,0. -70.8869,42.825,0. -70.8903,42.8267,0. -70.8925,42.8304,0. -70.8988,42.8328,0. -70.9037,42.8337,0. -70.9061,42.8337,0. -70.9107,42.8336,0. -70.9142,42.8349,0. -70.9143,42.8404,0. -70.9158,42.8419,0. -70.9184,42.8422,0. -70.9251,42.8384,0. -70.9321,42.8313,0. -70.9337,42.8281,0. -70.9383,42.8233,0. -70.9459,42.8201,0. -70.9596,42.8199,0. -70.971,42.8239,0. -70.9786,42.8245,0. -70.9831,42.8242,0. -70.9908,42.8223,0. -70.9939,42.8232,0. -71.0019,42.8191,0. -71.0021,42.8159,0. -71.0011,42.8143,0. -71.001,42.8119,0. -70.9996,42.8102,0. -70.998,42.8061,0. -70.9994,42.8031,0. -71.01,42.7991,0. -71.013,42.7963,0. -71.0198,42.7922,0. -71.021,42.7881,0. -71.0212,42.7846,0. -71.0224,42.7817,0. -71.0264,42.7738,0. -71.03,42.7706,0. -71.0337,42.7639,0. -71.0343,42.7634,0. -71.0377,42.7599,0. -71.0398,42.7572,0. -71.0433,42.7565,0. -71.0491,42.7597,0. -71.0586,42.767,0. -71.0648,42.7698,0. -71.0721,42.7739,0. -71.076,42.7739,0. -71.0801,42.7733,0. -71.0816,42.7725,0. -71.084,42.7721,0. </coordinates>
+      </LineString>
+    </Placemark>
+  </Document>
+</kml>
+

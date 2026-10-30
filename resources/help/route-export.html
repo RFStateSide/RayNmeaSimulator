@@ -1,0 +1,19 @@
+<!doctype html>
+<!-- Copyright (C) 2026 RF StateSide LLC. SPDX-License-Identifier: AGPL-3.0-or-later.
+M2.51B original RayNmeaSimulator instructions; actual application source/UI authority.
+BrickSuite internal Help is the instructional presentation reference, not copied product instructions. -->
+<html><head><meta charset="utf-8" /><title>GPX/KML Export</title></head><body>
+<h1 id="top">GPX/KML Export</h1>
+<p>Export Route… writes an operator-selected validated snapshot to GPX or KML. It is available for a valid selected file or complete chartplotter route. It is independent of Sending and does not activate Autopilot.</p>
+<h2 id="export-steps">Export safely</h2>
+<ol><li>Select the intended route in Vessel Movement → Autopilot. Verify the displayed name and status.</li><li>Choose Export Route… from the widget's available route actions.</li><li>Select GPX or KML in the save dialog and enter a new destination filename. The matching extension is supplied where needed.</li><li>If replacing an existing destination, review the explicit overwrite confirmation.</li><li>Read the success/error status. Re-import the exported file into a separate/disposable session when checking interchange.</li></ol>
+<p>The selected source file cannot be overwritten by its own export. Symlink/canonical-path checks and destination-change checks protect the inspected destination; failed atomic replacement leaves the previous destination in place. Cancel makes no file or route-state change. A non-writable directory is an error, not permission to save elsewhere silently.</p>
+<h2 id="format-contract">What each format carries</h2>
+<table border="1" cellpadding="6"><tr><th>Data</th><th>Export contract</th></tr><tr><td>Route/waypoint names</td><td>UTF-8 and XML escaping; duplicate names remain allowed</td></tr><tr><td>Waypoint order</td><td>GPX ordered rtept elements; KML ordered geometry with matching named waypoint points</td></tr><tr><td>Coordinates</td><td>Validated geographic bounds and practical maximum numeric precision; KML uses longitude before latitude</td></tr><tr><td>Service identity</td><td>NMEA2000 NAME, source address, database and sparse waypoint identifiers do not become portable service identity</td></tr><tr><td>Absent metadata</td><td>No invented altitude, arrival radius, speed profile or proprietary extensions</td></tr></table>
+<p>Keep the original route. After importing the exported file into another application, compare waypoint order and geometry before using it.</p>
+<h2 id="dialog-recovery">If the save dialog looks wrong</h2>
+<p>If the save dialog is hard to use, check the folder, file type and destination permissions. Keep your preferences; report the version, platform and steps that led to the problem.</p>
+<h2 id="illustrated-controls">Illustrated controls</h2><p><a href="images/route-export/export-gpx-file.png"><img src="images/route-export/export-gpx-file.png" alt="Choose a destination name and GPX or KML format for the exported route." /></a><br /><i>Figure 78. Choose a destination name and GPX or KML format for the exported route. Click to enlarge.</i></p>
+<h2 id="related-topics">Related topics</h2><p><a href="route-overview.html">Route Overview</a> · <a href="route-import.html">GPX/KML Import</a> · <a href="chartplotter-routes.html">Selecting Chartplotter Routes</a> · <a href="route-authorization.html">Route Requests and Authorization</a> · <a href="navigation-measurements.html">Navigation Measurements</a> · <a href="connection-troubleshooting.html">Connection Troubleshooting</a> · <a href="enable-dispatch-sending.html">Enable, Dispatch and Sending</a> · <a href="units.html">Engineering Units</a></p>
+<p><a href="introduction.html">Help Home</a> · <a href="#top">Back to top</a></p>
+</body></html>

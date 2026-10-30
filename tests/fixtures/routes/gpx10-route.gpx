@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/0" xmlns:v="urn:raynmea:fixture" version="1.0" creator="RayNmeaSimulator standards fixture">
+  <name>Independent GPX 1.0 fixture</name>
+  <rte>
+    <name>Coastal route</name>
+    <v:color>blue</v:color>
+    <rtept lat="42.125" lon="-70.25"><name>Start</name><v:extra>ignored metadata</v:extra></rtept>
+    <rtept lat="42.25" lon="-70.5"><name>Finish</name></rtept>
+  </rte>
+</gpx>

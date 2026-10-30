@@ -1,0 +1,19 @@
+<!doctype html>
+<!-- Copyright (C) 2026 RF StateSide LLC. SPDX-License-Identifier: AGPL-3.0-or-later.
+M2.51B original RayNmeaSimulator instructions; actual application source/UI authority.
+BrickSuite internal Help is the instructional presentation reference, not copied product instructions. -->
+<html><head><meta charset="utf-8" /><title>Security and Privacy</title></head><body>
+<h1 id="top">Security and Privacy</h1>
+<p>Use RayNmeaSimulator on trusted engineering systems and networks. Simulation traffic can resemble real vessel data. Keep explicit external authorization and review files/logs before sharing.</p>
+<h2 id="safe-session">Prepare a safe session</h2>
+<ol><li>Confirm Viewer/Generate and selected transport before connecting.</li><li>Use RX-only configuration when output is unnecessary. Normal CAN controllers may still acknowledge frames or signal errors; RX-only application behavior is not electrical silence.</li><li>Keep instrument Sending off until the specific external test is intended. Route requests require their own explicit bounded authority.</li><li>Keep Traffic Recording off unless needed, then review vessel identities, coordinates and routes in the captured files.</li><li>Use trusted Layouts/Templates/custom QSS and review external file paths/assets. These are application inputs, not certified safe documents.</li></ol>
+<h2 id="credentials">Credentials and endpoints</h2>
+<p>Provider keys, Signal K tokens and network bridge access keys use the operating system credential store. Check Save/status messages for storage errors. Keep credentials out of Layouts, screenshots, logs and shared files; do not use a masked field alone to confirm that a key was saved.</p>
+<p>Signal K uses the configured endpoint; the default localhost avoids unsolicited remote publication and saved endpoints are preserved. Request Access, Test Connection and actual publishing are separate actions. Use trusted HTTPS where appropriate. RN2K bridge authentication does not encrypt traffic; use a trusted LAN or secured tunnel and a restrictive client allowlist. Do not expose a raw listener to the public Internet.</p>
+<h2 id="sharing">Before sharing files</h2>
+<p>Inspect screenshots, logs, Layouts, routes and diagnostic exports for vessel NAME/MMSI, device serials, private endpoints, file paths and navigation information. Automatic redaction cannot recognize every secret a user types into an arbitrary name. Keep access keys and credential exports out of issues and public repositories.</p>
+<p>Support links open the default browser only on explicit activation; contributions are voluntary and do not unlock features, support, warranties or services. Help's local images/content operate offline; explicit approved HTTPS links may leave the application. Refer to SECURITY.md for reporting policy and current boundaries.</p>
+<h2 id="illustrated-controls">Illustrated controls</h2><p><a href="images/traffic-recording/recording-off.png"><img src="images/traffic-recording/recording-off.png" alt="Traffic Recording is Off by default and is independent of the on-screen NMEA viewer." /></a><br /><i>Figure 106. Traffic Recording is Off by default and is independent of the on-screen NMEA viewer. Click to enlarge.</i></p>
+<h2 id="related-topics">Related topics</h2><p><a href="units.html">Engineering Units</a> · <a href="messages.html">NMEA PGNs and Sentences</a> · <a href="licensing.html">Licensing and Credits</a> · <a href="engineering-reference.html">Using RayNmeaSimulator Safely</a> · <a href="connection-troubleshooting.html">Connection Troubleshooting</a> · <a href="enable-dispatch-sending.html">Enable, Dispatch and Sending</a> · <a href="route-overview.html">Route Overview</a></p>
+<p><a href="introduction.html">Help Home</a> · <a href="#top">Back to top</a></p>
+</body></html>

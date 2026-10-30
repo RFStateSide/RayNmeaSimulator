@@ -1,0 +1,406 @@
+{
+  "version": 1,
+  "images": [
+    "images/boat.png",
+    "images/actisense/setup-interface.png",
+    "images/ais/setup-tab.png",
+    "images/application-log/application-viewer.png",
+    "images/application-log/logging-preferences.png",
+    "images/application-log/paused-display.png",
+    "images/autopilot/autopilot-controls.png",
+    "images/autopilot/speed-source-choices.png",
+    "images/canable/setup-interface.png",
+    "images/chartplotter-routes/route-catalogue.png",
+    "images/chartplotter-routes/selected-snapshot.png",
+    "images/connection-troubleshooting/synthetic-port-list.png",
+    "images/default-layout/startup-workspace.png",
+    "images/device-diagnostics/passive-diagnostics.png",
+    "images/device-diagnostics/paused-diagnostics.png",
+    "images/enable-dispatch-sending/active-toolbar.png",
+    "images/enable-dispatch-sending/ready-toolbar.png",
+    "images/enable-dispatch-sending/stopped-after-stop.png",
+    "images/enable-dispatch-sending/stopped-toolbar.png",
+    "images/engine-transmission/engine-main.png",
+    "images/engine-transmission/engine-profile-editor.png",
+    "images/engine-transmission/transmission-main.png",
+    "images/engine-transmission/transmission-status.png",
+    "images/engineering-reference/about-status.png",
+    "images/error-messages/unavailable-temperature.png",
+    "images/first-launch/empty-workspace.png",
+    "images/game-controller/game-controller-controls.png",
+    "images/generating-data/date-time-generator.png",
+    "images/instruments-generators/category-electrical.png",
+    "images/instruments-generators/category-environment.png",
+    "images/instruments-generators/category-generate.png",
+    "images/instruments-generators/category-propulsion.png",
+    "images/instruments-generators/category-tanks.png",
+    "images/keyboard-shortcuts/help-menu.png",
+    "images/keyboard-shortcuts/layout-menu.png",
+    "images/keyboard-shortcuts/mode-menu.png",
+    "images/keyboard-shortcuts/tools-menu.png",
+    "images/keyboard-shortcuts/transmission-menu.png",
+    "images/keyboard-shortcuts/view-menu.png",
+    "images/layouts/clear-all-confirmation.png",
+    "images/layouts/clear-group.png",
+    "images/layouts/save-layout.png",
+    "images/main-window/workspace-overview.png",
+    "images/manual-movement/manual-controls.png",
+    "images/manual-movement/manual-enabled.png",
+    "images/messages/instrument-128275.png",
+    "images/messages/instrument-129044.png",
+    "images/messages/instrument-129285.png",
+    "images/messages/instrument-129539.png",
+    "images/messages/instrument-129540.png",
+    "images/messages/instrument-130074.png",
+    "images/messages/instrument-130314.png",
+    "images/navigation-measurements/navigation-data.png",
+    "images/navigation-measurements/position-precision.png",
+    "images/navigation-measurements/xte-negative.png",
+    "images/navigation-measurements/xte-unavailable.png",
+    "images/navigation-measurements/xte-zero.png",
+    "images/network-nmea2000/setup-interface.png",
+    "images/network-nmea2000/tx-capable-draft.png",
+    "images/nmea0183/instrument-APB.png",
+    "images/nmea0183/instrument-DPT.png",
+    "images/nmea0183/instrument-MWV.png",
+    "images/nmea0183/instrument-RMB.png",
+    "images/nmea0183/setup-tab.png",
+    "images/nmea2000/setup-interface.png",
+    "images/object-tree/expanded-properties.png",
+    "images/property-editor/canonical-values.png",
+    "images/property-editor/records-129540.png",
+    "images/property-editor/records-130074.png",
+    "images/property-editor/rejected-input-restored.png",
+    "images/route-authorization/snapshot-selection.png",
+    "images/route-export/export-gpx-file.png",
+    "images/route-import/file-route-selected.png",
+    "images/route-import/select-gpx-file.png",
+    "images/route-overview/route-source-choice.png",
+    "images/signal-k/setup-interface.png",
+    "images/socketcan/linux-interface.png",
+    "images/templates/detailed-template-editor.png",
+    "images/templates/template-manager.png",
+    "images/themes/setup-tab.png",
+    "images/themes/theme-choices.png",
+    "images/traffic-recording/recording-off.png",
+    "images/traffic-recording/synthetic-recording.png",
+    "images/units/temperature-display.png",
+    "images/units/temperature-unit-0.png",
+    "images/units/temperature-unit-1.png",
+    "images/units/temperature-unit-2.png",
+    "images/viewer-generate/generate-stopped.png",
+    "images/viewer-generate/viewer-entry.png",
+    "images/viewer-generate/viewer-stopped.png",
+    "images/waveshare/setup-interface.png",
+    "images/weather/atmosphere.png",
+    "images/weather/description.png",
+    "images/weather/marine.png",
+    "images/weather/more.png",
+    "images/weather/provider-1.png",
+    "images/weather/provider-2.png",
+    "images/weather/refresh.png",
+    "images/windlass/status-128777.png",
+    "images/windlass/status-128778.png",
+    "images/viewer-generate/viewer-empty.png",
+    "images/viewer-generate/viewer-received.png"
+  ],
+  "groups": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "topics": [
+        {
+          "id": "introduction",
+          "title": "Introduction",
+          "file": "introduction.html"
+        },
+        {
+          "id": "system-requirements",
+          "title": "System Requirements",
+          "file": "system-requirements.html"
+        },
+        {
+          "id": "first-launch",
+          "title": "Installation and First Launch",
+          "file": "first-launch.html"
+        },
+        {
+          "id": "viewer-generate",
+          "title": "Viewer vs Generate",
+          "file": "viewer-generate.html"
+        },
+        {
+          "id": "quick-start",
+          "title": "Quick Start",
+          "file": "quick-start.html"
+        },
+        {
+          "id": "default-layout",
+          "title": "Loading the Default Layout",
+          "file": "default-layout.html"
+        }
+      ]
+    },
+    {
+      "id": "workspace",
+      "title": "Application Workspace",
+      "topics": [
+        {
+          "id": "main-window",
+          "title": "Main Window",
+          "file": "main-window.html"
+        },
+        {
+          "id": "instruments-generators",
+          "title": "Instruments and Generators",
+          "file": "instruments-generators.html"
+        },
+        {
+          "id": "layouts",
+          "title": "Layout Management",
+          "file": "layouts.html"
+        },
+        {
+          "id": "templates",
+          "title": "Templates",
+          "file": "templates.html"
+        },
+        {
+          "id": "property-editor",
+          "title": "Property Editor",
+          "file": "property-editor.html"
+        },
+        {
+          "id": "object-tree",
+          "title": "Object Tree",
+          "file": "object-tree.html"
+        },
+        {
+          "id": "themes",
+          "title": "Themes and Appearance",
+          "file": "themes.html"
+        },
+        {
+          "id": "keyboard-shortcuts",
+          "title": "Keyboard Shortcuts",
+          "file": "keyboard-shortcuts.html"
+        }
+      ]
+    },
+    {
+      "id": "simulation",
+      "title": "Simulation",
+      "topics": [
+        {
+          "id": "generating-data",
+          "title": "Generating NMEA Data",
+          "file": "generating-data.html"
+        },
+        {
+          "id": "enable-dispatch-sending",
+          "title": "Enable, Dispatch and Sending",
+          "file": "enable-dispatch-sending.html"
+        },
+        {
+          "id": "manual-movement",
+          "title": "Manual Vessel Movement",
+          "file": "manual-movement.html"
+        },
+        {
+          "id": "autopilot",
+          "title": "Autopilot and Route Following",
+          "file": "autopilot.html"
+        },
+        {
+          "id": "game-controller",
+          "title": "Game Controller Mode",
+          "file": "game-controller.html"
+        },
+        {
+          "id": "engine-transmission",
+          "title": "Engine and Transmission Simulation",
+          "file": "engine-transmission.html"
+        },
+        {
+          "id": "weather",
+          "title": "Weather and Environmental Simulation",
+          "file": "weather.html"
+        },
+        {
+          "id": "ais",
+          "title": "AIS Simulation",
+          "file": "ais.html"
+        },
+        {
+          "id": "windlass",
+          "title": "Windlass Simulation",
+          "file": "windlass.html"
+        }
+      ]
+    },
+    {
+      "id": "connections",
+      "title": "Connections",
+      "topics": [
+        {
+          "id": "nmea2000",
+          "title": "NMEA2000 Overview",
+          "file": "nmea2000.html"
+        },
+        {
+          "id": "nmea0183",
+          "title": "NMEA0183 Overview",
+          "file": "nmea0183.html"
+        },
+        {
+          "id": "network-nmea2000",
+          "title": "Network NMEA2000",
+          "file": "network-nmea2000.html"
+        },
+        {
+          "id": "socketcan",
+          "title": "SocketCAN",
+          "file": "socketcan.html"
+        },
+        {
+          "id": "canable",
+          "title": "CANable SLCAN",
+          "file": "canable.html"
+        },
+        {
+          "id": "waveshare",
+          "title": "Waveshare USB-CAN-A",
+          "file": "waveshare.html"
+        },
+        {
+          "id": "actisense",
+          "title": "Actisense NGT-1",
+          "file": "actisense.html"
+        },
+        {
+          "id": "signal-k",
+          "title": "Signal K",
+          "file": "signal-k.html"
+        },
+        {
+          "id": "device-diagnostics",
+          "title": "Device Discovery and Diagnostics",
+          "file": "device-diagnostics.html"
+        },
+        {
+          "id": "connection-troubleshooting",
+          "title": "Connection Troubleshooting",
+          "file": "connection-troubleshooting.html"
+        }
+      ]
+    },
+    {
+      "id": "routes",
+      "title": "Routes and Navigation",
+      "topics": [
+        {
+          "id": "route-overview",
+          "title": "Route Overview",
+          "file": "route-overview.html"
+        },
+        {
+          "id": "route-import",
+          "title": "GPX/KML Import",
+          "file": "route-import.html"
+        },
+        {
+          "id": "route-export",
+          "title": "GPX/KML Export",
+          "file": "route-export.html"
+        },
+        {
+          "id": "chartplotter-routes",
+          "title": "Selecting Chartplotter Routes",
+          "file": "chartplotter-routes.html"
+        },
+        {
+          "id": "route-authorization",
+          "title": "Route Requests and Authorization",
+          "file": "route-authorization.html"
+        },
+        {
+          "id": "navigation-measurements",
+          "title": "Navigation Measurements",
+          "file": "navigation-measurements.html"
+        }
+      ]
+    },
+    {
+      "id": "troubleshooting",
+      "title": "Logging and Troubleshooting",
+      "topics": [
+        {
+          "id": "application-log",
+          "title": "Application Log",
+          "file": "application-log.html"
+        },
+        {
+          "id": "traffic-recording",
+          "title": "NMEA Traffic Recording",
+          "file": "traffic-recording.html"
+        },
+        {
+          "id": "error-messages",
+          "title": "Error Messages",
+          "file": "error-messages.html"
+        },
+        {
+          "id": "troubleshooting",
+          "title": "Troubleshooting",
+          "file": "troubleshooting.html"
+        },
+        {
+          "id": "known-limitations",
+          "title": "Known Limitations",
+          "file": "known-limitations.html"
+        }
+      ]
+    },
+    {
+      "id": "reference",
+      "title": "Reference",
+      "topics": [
+        {
+          "id": "units",
+          "title": "Engineering Units",
+          "file": "units.html"
+        },
+        {
+          "id": "messages",
+          "title": "NMEA PGNs and Sentences",
+          "file": "messages.html"
+        },
+        {
+          "id": "nmea2000-pgns",
+          "title": "Supported NMEA2000 PGNs",
+          "file": "nmea2000-pgns.html"
+        },
+        {
+          "id": "nmea0183-sentences",
+          "title": "Supported NMEA0183 Sentences",
+          "file": "nmea0183-sentences.html"
+        },
+        {
+          "id": "security-privacy",
+          "title": "Security and Privacy",
+          "file": "security-privacy.html"
+        },
+        {
+          "id": "licensing",
+          "title": "Licensing and Credits",
+          "file": "licensing.html"
+        },
+        {
+          "id": "engineering-reference",
+          "title": "Using RayNmeaSimulator Safely",
+          "file": "engineering-reference.html"
+        }
+      ]
+    }
+  ]
+}

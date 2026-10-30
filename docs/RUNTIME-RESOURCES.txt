@@ -1,0 +1,28 @@
+RayNmeaSimulator runtime resources
+
+Runtime behavior is unchanged by CMake adoption. RayNmeaSimulator.qrc embeds engine
+profiles, theme files/images/licenses, sanitized default Layout and public example
+routes. resources/nmea2000/nmea2000.qrc embeds CANboat catalogs/notices. CMake also
+embeds curated Templates plus catalog.txt. No manual Data/stylesheets copy is needed
+for development. Source fixtures remain required build inputs, not loose runtime
+files that must be copied beside the executable.
+
+Production Templates follow authored source JSON enumeration; isolated tests include
+only five curated examples. Running compiled snapshots are immutable. Debug source
+authoring edits source with validation/confirmation/backups; reconfigure CMake,
+rebuild and restart. Release exposes read-only bundled Templates and editable User
+Templates. User Layouts/Templates and credentials are never packaging inputs.
+
+Existing application-relative overrides, malformed engine-profile handling, user
+default precedence, copy-if-missing editable assets/routes and legacy lookup remain
+implemented by the same AppPaths/RuntimeResources/application code. Build/install
+does not merge or overwrite owner preferences, edited files or saved Layouts.
+
+Use docs/build-cmake.md and docs/development-validation.md for isolated startup and
+resource checks. Ordinary production settings are not redirected by --no-nmea.
+Qt/SDL/platform libraries/plugins remain runtime dependencies. CMake's minimal
+Linux DESTDIR rules stage executable/desktop/icon only. Installers/runtime bundling,
+upgrade behavior and clean-machine qualification remain Issue #18.
+
+Historical resource qualification claims/instructions remain verbatim under
+docs/history and original milestone reports; they are not current full-suite claims.

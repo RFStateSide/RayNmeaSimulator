@@ -1,0 +1,113 @@
+LAYOUT TEMPLATES AND GENERATOR DISPATCH
+
+Layouts are concrete snapshots of widgets, values, instances, Enable/Dispatch
+states, intervals and placement. Templates are reusable starting documents.
+Both use format 2 with an explicit documentType. Earlier development Layouts
+must be recreated; loading them reports that requirement and leaves work intact.
+Historical files are never automatically deleted or rewritten.
+
+Layout -> Save As offers Save Type: Layout or Template. Layout -> Save as Template
+exports the current workspace directly. The Template editor permits saved-value
+and Enable/Dispatch edits and explicit per-parameter Setup-default choices. Only
+supported AIS fields offer Setup defaults: own-vessel MMSI, vessel type, callsign,
+length and beam. Length/beam remain canonical metres at full precision.
+
+Setup values are read once when creating a Layout. A requested missing, malformed
+or incompatible value prevents replacement and identifies the setting. Valid
+unconfigured values (MMSI 0, empty callsign) and supported unavailable sentinels
+remain unconfigured/unavailable; they are not invented valid identities. Do not
+map independent AIS demonstration targets to the own-vessel MMSI.
+
+Layout -> Templates provides preview, Create Layout, Edit, Duplicate, Rename,
+Delete, Import and Export. Bundled templates are read-only; Duplicate makes a
+user copy. User templates live in the Qt application-data templates directory,
+separate from layouts. Import opens the editor before saving a user copy. Export
+writes the selected Template as JSON. Bundled updates never overwrite user copies.
+The editor changes values/policies/states; use the existing workspace to change
+widget composition or placement, then export a Template with the desired policies.
+
+Creating a Layout from a Template leaves the original untouched and creates an
+independent, unnamed workspace. Its first ordinary save requires a Layout name.
+Exporting a Template does not save or mark the working Layout as saved. A Save
+prompt protecting replacement or shutdown always saves a Layout, not a Template.
+Later Setup or Template edits do not alter saved concrete Layouts.
+
+Layout -> Startup Workspace offers Empty workspace, Load a selected Layout,
+or Apply a selected Template. Empty is the default. Missing/incompatible targets
+leave an empty workspace with a status message. Save as Default remains an ordinary
+Layout operation and does not itself change the startup preference.
+
+Enable controls local generator activity. Dispatch controls delivery from that
+source to dependent widgets. Newly created generators default to Dispatch checked;
+Layout/Template restoration uses the document's Dispatch state. Switching Dispatch
+off leaves local updates running; switching it on waits for the next normal sample.
+Queued data from before an off/on cycle is discarded. Disabled generators hold
+their periodic local updates. Engine start, Manual movement and Autopilot retain
+their existing explicit controls and prerequisites. Viewer suspends generators.
+
+For a boat-GPS clock: leave Generate Date/Time enabled and uncheck its Dispatch.
+Its local clock continues changing while received instrument time is no longer
+overwritten by that generator. Other generator families follow the same rule.
+
+Enable Sending is separate. Only its explicit user action authorizes external
+NMEA transmission, subject to transport readiness/policy. Loading, startup, Enable,
+Dispatch, mode changes and reconnection never grant that authorization. Stop/F12
+still revokes it. Use synthetic AIS identities only in a suitable bench setup.
+
+The initial bundled examples are Single Engine, Twin Engine, Navigation / Autopilot,
+Synthetic AIS Demonstration, and Environment / Weather. Engine examples still need
+explicit engine start; Navigation has no private route; Weather has no selected
+provider or automatic fetch; AIS targets are disabled synthetic examples.
+Templates never contain transport credentials, CAN identity or bridge endpoints.
+Weather observations/provenance are removed on Template export. External route
+files and custom engine profiles are not bundled by export: supply those assets
+on the destination machine and use the existing route/profile selection controls.
+
+DEBUG BUNDLED TEMPLATE AUTHORING (M2.41C)
+
+New exports, imports and duplicates still default to User Template. In a Debug
+build, Save as Template also offers Bundled Template source. Choose it explicitly
+and verify the project folder before confirming the source write. The normal
+Debug build suggests its source project; Choose project supports another updated
+checkout. Only resources/templates/*.json in that project is editable as bundled
+source. The project must include resources/templates/templates.cmake and catalog.txt.
+
+Layout -> Templates -> Show editable bundled source files (Debug only) displays
+source entries alongside separately labelled compiled snapshots and User files.
+Choose source project changes the authoring checkout. Edit details, Rename and
+Delete operate on the selected source file after confirmation. Overwrites, renames
+and deletions first save the original bytes under that project's ignored
+build/template-authoring-backups directory. A failed backup prevents the mutation.
+The running binary's compiled snapshot is never rewritten. Use source entries to
+preview/create a Layout before rebuilding if desired; this still requires an
+explicit Create Layout action and never enables Sending.
+
+The resource catalog is derived by CMake from JSON basenames. After authoring,
+reconfigure CMake, rebuild the required Debug or Release configuration, and restart the
+application to use its new compiled snapshots. New, renamed and deleted filenames
+require CMake reconfiguration. Renaming/deleting changes resource paths; update startup selections
+that reference old paths. Existing user copies and concrete Layouts are independent.
+An always-present catalog.txt keeps resource relinking correct even when no JSON
+sources remain. Authoring does not invoke the compiler or edit the CMake catalog.
+External route/profile files are still external; exporting does not package them.
+
+Release contains compiled snapshots only: View details is read-only; Duplicate
+creates an editable User copy. No bundled-source authoring controls or backend
+are compiled into Release. User Template management remains available.
+
+DETAILED TEMPLATE EDITING
+
+Select Edit details for User/source files or View details for compiled snapshots.
+Click a saved-value cell, double-click, press F2, or use Edit selected value.
+Boolean and recognized enum fields have dropdowns; unrecognized saved enum codes
+remain visible and preserved. Numeric entries retain canonical full precision,
+including scientific notation for floating-point values; they are not rounded to
+instrument display precision. Units are canonical, not current display preferences.
+
+Every row explicitly shows Use Saved Value or an available Use Setup Default
+mapping. A Setup-default row retains its saved fallback (muted/italic) but does
+not apply that fallback while the policy is selected. Resolution still occurs
+once when creating a Layout. Only existing supported mappings are offered.
+Save checks syntax and the existing field/document ranges; errors remain in the
+editor. Cancel discards the document edits and leaves the working Layout intact.
+To change widget composition or placement, edit the workspace then export again.

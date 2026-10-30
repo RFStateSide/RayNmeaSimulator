@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>航路 café &amp; &lt;Harbor&gt; "A"</name>
+    <Placemark>
+      <name>航路 café &amp; &lt;Harbor&gt; "A"</name>
+      <LineString>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates>179.99999999999997,42.123456789012344 -179.99999999999997,-0.000000000000123456 -180,90</coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark><name>灯台 &amp; &lt;入港&gt;</name><Point><coordinates>179.99999999999997,42.123456789012344</coordinates></Point></Placemark>
+    <Placemark><name>duplicate</name><Point><coordinates>-179.99999999999997,-0.000000000000123456</coordinates></Point></Placemark>
+    <Placemark><name>duplicate</name><Point><coordinates>-180,90</coordinates></Point></Placemark>
+  </Document>
+</kml>

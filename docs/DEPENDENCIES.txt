@@ -1,0 +1,73 @@
+RayNmeaSimulator pinned dependency workflow (CMake)
+
+Authoritative inputs: dependencies/pins.json, patches/nmea0183-windows-printf.patch,
+dependencies/sdl2-mingw.json and dependencies/sdl2-macos.json. Existing approved
+marine revisions, patch checksum and Windows SDL checksum are unchanged.
+Qt6.10, native C++17/compiler tools, CMake3.24+, Ninja, Python3 and Git are developer
+prerequisites. Linux also needs native SDL2 development/pkg-config. Python/Git are
+not application runtime dependencies. No package manager/framework was introduced.
+
+Windows explicit provisioning:
+  python scripts/dependencies.py acquire --with-sdl2
+  python scripts/dependencies.py verify --with-sdl2
+Linux:
+  python3 scripts/dependencies.py acquire
+  python3 scripts/dependencies.py verify
+
+The ignored clone-local .dependencies stage contains exact detached marine Git
+revisions. Only a new NMEA0183 checkout receives the approved checksummed patch.
+Verification checks HEAD, complete tracked diff and unexpected files. SocketCAN
+is acquired/verified on all three platforms, compiled only on native Linux.
+Windows --with-sdl2 obtains the approved SDL2 2.30.9 x64 MinGW archive, verifies
+SHA256, bounded safe extraction and all SDK bytes against that archive. Keep the
+managed receipt/archive under .dependencies/.downloads for configure/pre-build
+verification. Existing stages are verified, never reset/overwritten/upgraded.
+
+CMake configure/build only verifies and fails closed; it never downloads. Managed
+SDL stages require their verified archive. Legacy external SDL SDKs retain exact
+package checks; SDL2_ARCHIVE enables complete archive/SDK verification for them.
+On Linux SDL2 remains native pkg-config. Do not silently substitute revisions.
+
+New/dedicated recovery stage, leaving the old one intact:
+  python scripts/dependencies.py acquire --root build/deps-new --with-sdl2
+  python scripts/dependencies.py verify --root build/deps-new --with-sdl2
+Use python3 and omit --with-sdl2 on Linux. Inspect wrong revision/patch/unexpected
+files instead of resetting historical repositories. Unmarked nonempty stages,
+unsafe/corrupt archives and conflicting receipts are rejected with data retained.
+
+CMake roots: DEPS_ROOT (defaults source/.dependencies), optional NMEA2000_ROOT,
+NMEA0183_ROOT, SOCKETCAN_ROOT, Windows SDL2_ROOT and SDL2_ARCHIVE. Individual old
+cache overrides remain explicit; use a new build directory or inspect them before
+changing roots. Keep paths in local cache/ignored CMakeUserPresets.json/IDE settings.
+Preserve accepted Ubuntu checkout/DEPS_ROOT and historical dependency installations.
+
+See docs/build-cmake.md and platform guides for configure/build/test commands.
+scripts/cmake-dev.py supplies explicit focused selection and isolated helper launch
+using CTest's existing inventory, not an independent suite list. No physical CAN
+or live-provider connection is required. Tests/fixtures and helper targets remain.
+Do not uninstall SDK tools as part of retiring project recipes. Installer/runtime
+bundling and clean-machine package qualification are separate Issue #18 work.
+Historical dependency instructions are preserved under docs/history.
+
+macOS ARM64 explicit provisioning (M2.46B build enablement only):
+  python3 -B scripts/dependencies.py acquire
+  python3 -B scripts/dependencies.py verify
+  python3 -B scripts/sdl2-macos.py acquire
+  python3 -B scripts/sdl2-macos.py verify
+
+Native SDL2 2.30.9 source: https://www.libsdl.org/release/SDL2-2.30.9.tar.gz
+SHA256: 24b574f71c87a763f50704bbb630cbe38298d544a1f890f099a4696b1d6beba4
+Source checksum corroboration:
+https://lists.buildroot.org/pipermail/buildroot/2025-January/770032.html
+The script builds a Release ARM64 static SDK in a private local stage, retaining
+the verified archive, exact source inventory and installed-file checksum receipt.
+It checks actual library architecture with lipo. No package manager or system-wide
+installation. Configure/build only verifies. SDL2_ROOT selects the install child
+of this stage. See build-cmake.md for tool paths and dedicated build examples.
+
+Darwin compiles a generated NMEA0183Msg.cpp copy enabling its desktop snprintf
+branch for __APPLE__. This narrowly checked CMake adaptation does not modify the
+stage, approved patch or pin manifest. It is separate from upstream patch state.
+
+Ubuntu historical checkout naming and machine-local DEPS_ROOT remain UNRESOLVED;
+their resolution is deferred to installer/deployment environment preparation.
