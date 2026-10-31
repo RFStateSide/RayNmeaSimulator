@@ -85,8 +85,8 @@ def load_catalog(root):
                 raise ValueError('Executable article markup is unsupported')
             articles[topic['id']] = (body, Article(body))
             topics.append(topic)
-    if len(topics) != 51:
-        raise ValueError('Expected the accepted 51-topic manual')
+    if len(topics) != 52:
+        raise ValueError('Expected the accepted 52-topic manual')
     images = set(catalog['images'])
     registered = image_paths(root)
     for image in images:
@@ -143,7 +143,7 @@ def build(root, output):
 <nav aria-label="Project"><a href="https://www.rfstateside.com/">RF StateSide</a><a href="https://github.com/RFStateSide/RayNmeaSimulator">Source code</a></nav>
 <button id="contents-toggle" aria-controls="site-contents" aria-expanded="false" hidden>Contents</button></header>
 <div class="shell"><aside id="site-contents" aria-label="User Guide contents"><a class="guide-home" href="index.html">Guide home</a>
-<form role="search" id="search-form"><label for="site-search">Search all 51 topics</label><div class="search-input"><input id="site-search" type="search" placeholder="Try Autopilot or PGN…" autocomplete="off" aria-controls="site-results"><button type="submit" aria-label="Search">↵</button></div><small>Full text search · Ctrl/Cmd+K</small></form>
+<form role="search" id="search-form"><label for="site-search">Search all 52 topics</label><div class="search-input"><input id="site-search" type="search" placeholder="Try Autopilot or PGN…" autocomplete="off" aria-controls="site-results"><button type="submit" aria-label="Search">↵</button></div><small>Full text search · Ctrl/Cmd+K</small></form>
 <p id="search-status" role="status" aria-live="polite" hidden></p><div id="site-results" hidden></div><nav id="topic-navigation" aria-label="Topics">{nav(current)}</nav></aside>
 <main id="main" tabindex="-1">{body}<footer>Copyright © 2024–2026 RF StateSide LLC · <a href="https://github.com/RFStateSide/RayNmeaSimulator/blob/master/LICENSE">AGPL-3.0-or-later</a><br>Public Engineering Reference — AS-IS. The same manual is included in the application.</footer></main></div>
 <dialog id="manual-image-dialog" aria-labelledby="image-title"><div class="image-toolbar"><strong id="image-title">Image</strong><button data-zoom="fit">Fit</button><button data-zoom="actual">100%</button><button data-zoom="out" aria-label="Zoom out">−</button><button data-zoom="in" aria-label="Zoom in">+</button><button id="image-close" aria-label="Close image">Close · Esc</button></div><div id="image-viewport" tabindex="0"><img id="large-image" alt=""></div><p id="image-caption"></p></dialog></body></html>
@@ -152,7 +152,7 @@ def build(root, output):
     for group in catalog['groups']:
         links = ''.join('<li><a href="'+t['file']+'">'+esc(t['title'])+'</a></li>' for t in group['topics'])
         cards.append('<section class="topic-card"><h2>'+esc(group['title'])+'</h2><ul>'+links+'</ul></section>')
-    home = '''<div class="eyebrow">SIMULATE · INSPECT · UNDERSTAND</div><h1>Put your virtual vessel<br>to work.</h1><p class="lead">The RayNmeaSimulator User Guide. Explore marine data in Viewer RX, create repeatable simulations in Generate, and connect deliberately when your test setup is ready.</p><div class="hero-actions"><a class="primary" href="quick-start.html">Start with Quick Start →</a><a href="viewer-generate.html">Viewer or Generate?</a></div><a class="hero-image" href="images/main-window/workspace-overview.png"><img src="images/main-window/workspace-overview.png" alt="Navigation instruments, Property Editor and Object Tree in the Darkeum workspace."></a><p class="image-note">Darkeum workspace · Select any screenshot to enlarge it.</p><section class="guide-intro"><h2>One manual. Every workflow.</h2><p>Browse 51 topics, search the complete text, or open a reference directly. Start locally with Sending stopped; loading a Template or Default Layout never authorizes external output.</p><div class="reference-links"><a href="nmea2000-pgns.html">48 NMEA2000 PGNs ↗</a><a href="nmea0183-sentences.html">18 NMEA0183 formatters ↗</a><a href="enable-dispatch-sending.html">Sending controls ↗</a></div></section><div class="topic-grid">''' + ''.join(cards) + '</div>'
+    home = '''<div class="eyebrow">SIMULATE · INSPECT · UNDERSTAND</div><h1>Put your virtual vessel<br>to work.</h1><p class="lead">The RayNmeaSimulator User Guide. Explore marine data in Viewer RX, create repeatable simulations in Generate, and connect deliberately when your test setup is ready.</p><div class="hero-actions"><a class="primary" href="quick-start.html">Start with Quick Start →</a><a href="viewer-generate.html">Viewer or Generate?</a></div><a class="hero-image" href="images/main-window/workspace-overview.png"><img src="images/main-window/workspace-overview.png" alt="Navigation instruments, Property Editor and Object Tree in the Darkeum workspace."></a><p class="image-note">Darkeum workspace · Select any screenshot to enlarge it.</p><section class="guide-intro"><h2>One manual. Every workflow.</h2><p>Browse 52 topics, search the complete text, or open a reference directly. Start locally with Sending stopped; loading a Template or Default Layout never authorizes external output.</p><div class="reference-links"><a href="nmea2000-pgns.html">48 NMEA2000 PGNs ↗</a><a href="nmea0183-sentences.html">18 NMEA0183 formatters ↗</a><a href="enable-dispatch-sending.html">Sending controls ↗</a></div></section><div class="topic-grid">''' + ''.join(cards) + '</div>'
     (output/'index.html').write_text(page('Home', 'index.html', None, home), encoding='utf-8', newline='\n')
     for i, topic in enumerate(topics):
         body, parsed = articles[topic['id']]

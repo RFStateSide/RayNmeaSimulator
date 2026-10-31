@@ -68,7 +68,7 @@ class HelpTests:public QObject {
 private slots:
     void captureUrl(const QUrl &url){opened.append(url);}
     void catalogAndContent() {
-        QCOMPARE(HelpCatalog::topics().size(),51);QSet<QString> ids,groups;
+        QCOMPARE(HelpCatalog::topics().size(),52);QSet<QString> ids,groups;
         for(const auto &info:HelpCatalog::topics()) {
             QVERIFY(!ids.contains(info.id));ids.insert(info.id);groups.insert(info.group);
             QVERIFY(QFile::exists(info.resource));const auto html=HelpCatalog::article(info.id);

@@ -50,6 +50,7 @@ ray_test(public_release_tests widgets)
 add_test(NAME online_help_tests COMMAND "${Python3_EXECUTABLE}" -B
     "${PROJECT_SOURCE_DIR}/tests/online_help_tests.py")
 set_tests_properties(online_help_tests PROPERTIES LABELS "documentation;help" TIMEOUT 90)
+ray_test(update_tests widgets)
 ray_test(about_tests widgets)
 ray_test(help_tests help)
 ray_test(cmake_parity_tests cmake APPLICATION_RESOURCES)
@@ -287,3 +288,6 @@ add_test(NAME theme_catalog_tests COMMAND "${Python3_EXECUTABLE}"
 set_tests_properties(theme_catalog_tests PROPERTIES LABELS "widgets;themes;synthetic"
     TIMEOUT 90 REQUIRED_FILES "$<TARGET_FILE:theme_catalog_tests>")
 add_dependencies(ray_tests_themes theme_catalog_tests)
+
+add_test(NAME update_metadata_tests COMMAND "${Python3_EXECUTABLE}" -B "${PROJECT_SOURCE_DIR}/tests/update_metadata_tests.py")
+set_tests_properties(update_metadata_tests PROPERTIES LABELS "deployment;updates" TIMEOUT 60)

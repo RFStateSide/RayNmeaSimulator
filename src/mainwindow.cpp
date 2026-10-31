@@ -23,6 +23,7 @@
  */
 
 #include "aboutdialog.h"
+#include "updatedialog.h"
 #include "helpdialog.h"
 #include "aboutlinks.h"
 #include "applicationlog.h"
@@ -180,6 +181,13 @@ MainWindow::MainWindow(QWidget *parent, QSerialPort *actisensePort, QSerialPort 
     helpAction->setStatusTip(tr("Open the offline Help manual. F1 follows the current workspace context."));
     connect(helpAction, &QAction::triggered, this, [this] { showContextHelp(); });
     helpMenu->addSeparator();
+    auto *updatesAction = helpMenu->addAction(tr("Check for Updates..."));
+    updatesAction->setObjectName("actionCheckForUpdates");
+    connect(updatesAction, &QAction::triggered, this, [this] {
+        auto *dialog=findChild<UpdateDialog*>();
+        if(!dialog) { dialog=new UpdateDialog(this); dialog->setAttribute(Qt::WA_DeleteOnClose); dialog->show(); dialog->startCheck(); }
+        else { dialog->show(); dialog->raise(); dialog->activateWindow(); }
+    });
     auto *aboutAction = helpMenu->addAction(tr("&About…"));
     aboutAction->setObjectName("actionAbout");
     connect(aboutAction, &QAction::triggered, this, [this] {

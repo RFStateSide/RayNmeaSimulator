@@ -85,7 +85,7 @@ class Attempt:
     def publish(self, output, artifact):
         installer = self.generation / 'installer'
         installer.mkdir()
-        for p in (artifact, Path(str(artifact) + '.sha256'), output / 'RayNmeaSimulator/build-metadata.json'):
+        for p in (artifact, Path(str(artifact) + '.sha256'), output / 'RayNmeaSimulator/build-metadata.json', output / 'update-package.json'):
             shutil.copy2(p, installer / p.name)
         audit = output / 'loader-audit.json'
         if audit.exists(): shutil.copy2(audit, installer / audit.name)

@@ -399,6 +399,11 @@
           "id": "engineering-reference",
           "title": "Using RayNmeaSimulator Safely",
           "file": "engineering-reference.html"
+        },
+        {
+          "id": "check-for-updates",
+          "title": "Check for Updates",
+          "file": "check-for-updates.html"
         }
       ]
     }

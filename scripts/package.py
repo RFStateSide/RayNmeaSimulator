@@ -314,7 +314,7 @@ def main():
     snapshot = ROOT / '.raynmea-source.json'
     source_record = json.loads(snapshot.read_text()) if snapshot.exists() else {
         'source_sha': run('git', '-C', ROOT, 'rev-parse', 'HEAD').strip(),
-        'source_diff_sha256': hashlib.sha256(run('git', '-C', ROOT, 'diff', 'HEAD').encode()).hexdigest()}
+        'source_diff_sha256': hashlib.sha256(subprocess.check_output(['git', '-C', str(ROOT), 'diff', 'HEAD'])).hexdigest()}
     linux_metadata = {}
     if platform.system() == 'Linux':
         symbols = ''.join(run('objdump', '-T', p) for p in stage.rglob('*')
@@ -398,6 +398,12 @@ def main():
         with tarfile.open(artifact, 'w:gz') as archive:
             archive.add(stage, arcname='RayNmeaSimulator')
     (output / (artifact.name + '.sha256')).write_text(digest(artifact) + '  ' + artifact.name + '\n')
+    # Packaging-only receipt; never fetched by clients until a separately approved
+    # release publishes the explicitly assembled metadata asset.
+    import importlib.util
+    spec = importlib.util.spec_from_file_location('ray_update_metadata', ROOT / 'deployment/update/metadata.py')
+    update_metadata = importlib.util.module_from_spec(spec); spec.loader.exec_module(update_metadata)
+    write(output / 'update-package.json', update_metadata.record(json.loads((stage / 'build-metadata.json').read_text()), artifact))
     print('Private candidate:', artifact, '\nSHA256:', digest(artifact))
 
 

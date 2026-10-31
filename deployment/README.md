@@ -138,3 +138,10 @@ batch entry point and Linux Qt Creator custom target provided the organizational
 reference. RayNmeaSimulator adds a common Windows/Linux `Deploy` target, an
 isolated curated compilation and explicit current-attempt status/history. It
 retains its own installer identity, data-preservation policy and ABI baselines.
+
+## Update information
+
+Explicit Deploy also writes `deploy/installer/update-package.json`, a measured
+package receipt for future official release metadata. Normal builds do not generate
+or publish update information. See [release metadata](update/README.md) for the
+separate local assembly and owner-authorized publication procedure.

@@ -137,9 +137,20 @@ gates above remain for owner review.
 ## User documentation and local online Help
 
 The user-facing README and About presentation are prepared for v0.1.0. The
-51-topic offline manual is also the source for the static online User Guide;
+52-topic offline manual is also the source for the static online User Guide;
 article prose, anchors and registered images remain shared. Local output is
 ignored and the validation workflow has no Pages permissions or deployment.
 The intended URL is https://rfstateside.github.io/RayNmeaSimulator/; it has not
 been published. Owner acceptance, final rights/privacy/source-delivery review
 and separate publication authorization remain required under the gates above.
+
+## Manual release checking
+
+Help → Check for Updates is an explicit, unauthenticated information check against
+the Active repository's official stable GitHub Releases. A private/no-release
+response is expected. It never installs, restarts or authorizes Sending. Future
+publication must attach measured per-platform packages and the explicitly assembled
+`RayNmeaSimulator-update.json` to the same stable Release. Metadata/ABI filtering
+does not replace platform qualification, corresponding-source delivery or owner
+publication approval. No release, tag, upload or Pages publication is authorized
+by private updater qualification.

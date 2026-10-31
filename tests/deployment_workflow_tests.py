@@ -29,6 +29,7 @@ class WorkflowTests(unittest.TestCase):
         artifact = output / ('test-Setup.exe' if sys.platform == 'win32' else 'test.tar.gz')
         artifact.write_bytes(b'synthetic private package')
         Path(str(artifact) + '.sha256').write_text(deploy.package.digest(artifact) + '  ' + artifact.name)
+        (output / 'update-package.json').write_text('{"schema":1,"private_fixture":true}')
         attempt.publish(output, artifact)
 
     def test_stable_outputs_and_matching_hash(self):
@@ -39,6 +40,7 @@ class WorkflowTests(unittest.TestCase):
         self.assertEqual(Path(state['artifact']).parent, self.build / 'deploy/installer')
         self.assertEqual(state['sha256'], deploy.package.digest(Path(state['artifact'])))
         self.assertTrue((self.build / 'deploy/RayNmeaSimulator/application').exists())
+        self.assertTrue((self.build / 'deploy/installer/update-package.json').is_file())
 
     def test_failed_replacement_hides_old_success_and_retains_evidence(self):
         first = deploy.Attempt(self.build); self.complete(first)

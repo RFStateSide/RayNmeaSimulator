@@ -154,5 +154,6 @@
 <file>nmea0183-sentences.html</file>
 <file>images/viewer-generate/viewer-empty.png</file>
 <file>images/viewer-generate/viewer-received.png</file>
+    <file>check-for-updates.html</file>
 </qresource>
 </RCC>

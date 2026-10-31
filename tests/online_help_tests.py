@@ -1,5 +1,5 @@
 # Copyright (C) 2026 RF StateSide LLC; SPDX-License-Identifier: AGPL-3.0-or-later
-"""Actual 51-topic manual regressions; no owner settings, Templates or Layouts."""
+"""Actual 52-topic manual regressions; no owner settings, Templates or Layouts."""
 import hashlib
 from html.parser import HTMLParser
 import importlib.util
@@ -35,7 +35,7 @@ class OnlineHelpTests(unittest.TestCase):
     def tearDownClass(cls):
         assert cls.base.is_relative_to(ROOT/'build');cls.temp.cleanup()
     def test_actual_inventory_and_shared_article_text(self):
-        self.assertEqual(len(self.topics),51);self.assertEqual(len(self.catalog['groups']),7)
+        self.assertEqual(len(self.topics),52);self.assertEqual(len(self.catalog['groups']),7)
         for t in self.topics:
             text=(self.output/t['file']).read_text(encoding='utf-8')
             body=re.search(r'<article>(.*?)</article>',text,re.S)[1]
@@ -43,7 +43,7 @@ class OnlineHelpTests(unittest.TestCase):
             self.assertIn('aria-current="page"',text)
     def test_every_local_link_asset_and_anchor_resolves(self):
         pages={p.name:Links(p.read_text(encoding='utf-8')) for p in self.output.glob('*.html')}
-        self.assertEqual(len(pages),52)
+        self.assertEqual(len(pages),53)
         for name,page in pages.items():
             for link in page.links:
                 u=urlsplit(link)
@@ -60,7 +60,7 @@ class OnlineHelpTests(unittest.TestCase):
     def test_search_index_uses_all_actual_article_text(self):
         s=(self.output/'search-index.js').read_text(encoding='utf-8')
         index=json.loads(s.removeprefix('window.RAYNMEA_HELP_INDEX = ').strip().removesuffix(';'))
-        self.assertEqual(len(index),51)
+        self.assertEqual(len(index),52)
         for topic in index:self.assertEqual(topic['text'],self.articles[topic['id']][1].plain())
         self.assertTrue(any('OpenCPN' in t['text'] for t in index));self.assertTrue(any('APB' in t['text'] for t in index))
     def test_deterministic_hash_manifest(self):

@@ -126,3 +126,16 @@ The accepted 51 HTML articles, topic inventory and Qt image resource aliases are
 shared with offline Help. Generated pages are not separately maintained source.
 The revised About illustration is an actual native Darkeum QWidget capture from
 the isolated About regression, recorded in the screenshot provenance manifest.
+
+## Check for Updates
+
+The on-demand update dialog, bounded release client, controlled network fixtures
+and packaging receipt/metadata tools are original RF StateSide implementation.
+The primary engineering reference was BrickSuite's `src/services/Updater`, Help
+menu, `UpdaterTest` and `deployment/update` contract in the local reference checkout
+at revision `1e2b8f870200b634806ac37dc3629049162a7915`. Its check/notify/browser
+conventions and exact-platform policy informed this implementation; no BrickSuite
+product content or separately licensed implementation was copied or relicensed.
+The new Check for Updates instructions extend the shared offline/online manual to
+52 topics while retaining the accepted 51 original articles and screenshots.
+Original project additions retain AGPL-3.0-or-later notices.

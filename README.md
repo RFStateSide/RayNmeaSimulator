@@ -120,7 +120,7 @@ and protocol management may still occur. Use an appropriate isolated test networ
 ## Help
 
 Open **Help → RayNmeaSimulator Help**, or press **F1**, for the complete
-**51-topic offline User Guide**. Search covers article text and captions;
+**52-topic offline User Guide**. Search covers article text and captions;
 contextual F1 opens related guidance. Select screenshots to enlarge them.
 
 The matching online edition is prepared for
@@ -128,6 +128,8 @@ The matching online edition is prepared for
 **That site has not been published yet.** Both editions use the same manual
 sources. [Local preview instructions](docs/online-help/README.md) are available
 for reviewing the website before publication.
+
+Use **Help → Check for Updates...** to check official stable release information without installing anything. Package selection follows your platform and runtime; private/no-release availability is reported clearly.
 
 ## Known limitations
 

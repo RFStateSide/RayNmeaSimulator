@@ -1,7 +1,7 @@
 # Online User Guide
 
 The accepted manual in `resources/help/` is the common source for Qt's offline
-Help and the static online edition. `topics.json` supplies all 51 topics and
+Help and the static online edition. `topics.json` supplies all 52 topics and
 seven groups. `help.qrc` supplies physical image paths, including aliases;
 the generator copies the same 102 registered image resources. Article prose,
 anchors, captions and screenshots are not independently maintained here.
