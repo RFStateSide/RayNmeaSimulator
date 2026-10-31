@@ -1,5 +1,7 @@
 # Public-release audit
 
+The active repository remains **PRIVATE**. Public publication is **NO-GO** until separately authorized and public recipient access is verified.
+
 **2026-10-31 — Owner accepted all four M2.60 packages after installing and running
 Windows x64, Linux x86_64, native ARM64 and Debian12 ARM64. M2.61 authorizes
 private ZIP compatibility corrections, source closeout, the exact v0.1.0 tag
