@@ -58,5 +58,10 @@ write permission, site artifact upload or deployment action is included.
 User Guide address: <https://rfstateside.github.io/RayNmeaSimulator/>.
 Publish the generator's output as a static GitHub Pages site under this project
 URL prefix. Keep the manual in `resources/help/`; do not maintain a second copy.
-The validation workflow builds/tests locally and does not deploy. Website deployment
-is a separate operation; see [distribution requirements](../source-delivery.md).
+The validation workflow builds/tests only and does not deploy. The separate
+`Publish User Guide` workflow (`.github/workflows/publish-help.yml`) generates the
+same static output and deploys it through GitHub Pages. It runs on relevant
+`master` pushes or manual dispatch. Only its deploy job receives `pages: write`
+and `id-token: write`; other jobs retain read-only repository access. Official
+actions are pinned to release commit SHAs. Changes to the shared manual therefore
+remain the single documentation source. See [distribution requirements](../source-delivery.md).
