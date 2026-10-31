@@ -1,12 +1,11 @@
 # Public-release audit
 
-The active repository remains **PRIVATE**. Public publication is **NO-GO** until separately authorized and public recipient access is verified.
-
-**2026-10-31 — Owner accepted all four M2.60 packages after installing and running
-Windows x64, Linux x86_64, native ARM64 and Debian12 ARM64. M2.61 authorizes
-private ZIP compatibility corrections, source closeout, the exact v0.1.0 tag
-and a GitHub DRAFT with matching assets. Public visibility, release publication,
-Pages and announcements remain unauthorized.**
+**2026-10-31 — PUBLIC RELEASE PASS: RayNmeaSimulator v0.1.0.** The owner authorized
+public publication in M2.62. The active repository is PUBLIC, the approved stable
+Release is published, and the common-source Online Help is live. Anonymous source,
+complete binary/source downloads and live update discovery have been verified.
+The historical Archive remains **PRIVATE**. Unqualified future distributions remain
+**NO-GO** until their applicable rights, matching-source and runtime gates are met.
 
 ## Authoritative audit policy
 
@@ -17,20 +16,19 @@ or separate `PUBLIC_RELEASE_*` documents. Normal build/deployment, Help, provena
 licensing, security and test documentation remains valid. Historical implementation
 reports are dated evidence, not competing current audits or blanket acceptance.
 
-## Outstanding publication gates
+## Publication verification and continuing obligations
 
-| Gate | Current disposition and required closure |
+| Gate | Verified disposition on 2026-10-31 |
 | --- | --- |
-| Historical artwork, rights and source-history screening | **ENGINEERING REVIEW COMPLETE at `0b2801587ddc737faaa78d102f9d1f7945a8c0c8`.** All five reachable commits, 747 distinct blobs and 714 paths were checked against the 679 excluded paths and historical artwork hashes: no excluded content was found. High-confidence private-key/token patterns were absent; this is a scoped screen, not a guarantee against every possible secret. All 101 physical Help screenshots were visually reviewed; the owner approved Ray usernames in paths on 2026-10-31. Approved generic routes, Default and artwork/provenance remain intact. Owner-directed AI artwork use is attested; no exclusive copyright or trademark clearance is invented. The private Archive is unchanged. |
-| Applicable source/license delivery | **IMPLEMENTED; FINAL ARTIFACT QUALIFICATION REQUIRED.** Package-derived Qt module coverage now includes GPLv3 Qt Virtual Keyboard when shipped, alongside Qt Charts. Complete source acquisition (including native/Debian12 ARM64 runtime inputs) and per-platform source sealing bind application files/modes, dependency pins/patches, exact Qt source identities, distro source descriptors/patches, notices, actual installer hashes and update receipts. GPL/AGPL 6(d) same-release source delivery is documented; no unimplemented written offer is used. GCC exception/system-library scope is explicit. Qualification results and any unavailable exact source inputs must be resolved before releasing the affected platform. |
-| Final distribution decision | **OPEN FOR PUBLICATION.** The owner accepted M2.59, including the unchanged Ray-path screenshots/provenance, and authorized private commit/fast-forward synchronization in M2.59A. Construct final platform packages/source kits and matching update metadata separately from the resulting clean approved commit; the earlier working-tree qualification artifacts are not final release sets. The source sealer refuses a modified tree by default; its local qualification override records modified state. Separate explicit authorization is required for visibility, Pages, public releases/assets and announcements. |
-| Recipient access | **EXTERNAL PUBLICATION DEPENDENCY.** Verify anonymous binary, full matching source, notices, update-metadata and online Help access after the separately authorized publication operations; private/local previews cannot prove public delivery. Retain equivalent source access while conveying the binaries and meet the chosen distribution method's duration requirements. |
-| Qualification scope | Retain scoped Windows/Linux/native ARM64/Debian12 evidence and measured ABI requirements. Final ARM64 source/package receipts must be produced from the accepted release revision and actual matching build environments; old accepted runtime packages are dependency/ABI evidence, not regenerated v0.1.0 release artifacts. Do not turn representative fixtures or one device's owner acceptance into universal transport/OS/hardware/endurance certification. |
+| Historical artwork, rights and source-history screening | **PASS for the approved release.** The eight reachable release commits, 800 unique blobs and 807 object paths were screened against 679 excluded paths and historical artwork hashes: no excluded content or high-confidence private-key/token pattern was found. The earlier visual review of all 101 physical Help screenshots and owner approval of Ray-path screenshots remain applicable. The 102 registered image resources include aliases. Post-tag Pages/documentation additions were reviewed separately. This scoped screen is not a guarantee against every possible secret or exclusive artwork/trademark rights. |
+| Applicable source/license delivery | **PASS for these four approved desktop packages.** Matching complete platform Source kits, notices, receipts and checksums provide corresponding-source delivery beside their binaries. Exact upstream inputs and source-restore checks from M2.61 were retained; all 26 public assets match the accepted bytes. Qt Charts and Virtual Keyboard coverage, distro source/patches, compiler/runtime and installer-source obligations remain documented. Continue equivalent GPL/AGPL 6(d) source access while conveying binaries and meet the chosen delivery method's duration requirements. No unimplemented written offer or blanket legal certification is asserted. |
+| Distribution decision | **AUTHORIZED AND COMPLETED.** The existing approved Release ID 430092960 was published unchanged, not recreated. Tag v0.1.0 remains on the clean approved application revision below. No binary, Source kit, receipt or update metadata was rebuilt or substituted for publication. |
+| Recipient access | **PASS.** An unauthenticated fresh clone recovered all 718 approved release files. Anonymous clients retrieved all 26 assets and verified every SHA-256/size; aggregate SHA256SUMS covers the other 25 assets. README, license, tag, release page and public HTTPS Help resolve without authentication. |
+| Qualification scope | Owner acceptance of all four installed M2.60 platforms and clean M2.61 Windows/Linux/native ARM64/Debian12 source/package qualification are retained. Publication checks add recipient delivery and real update discovery; they do not claim universal device, transport, OS, endurance or safety certification. |
 
 See [provenance](PROVENANCE.md), [third-party notices](THIRD_PARTY_NOTICES.md),
 [security](SECURITY.md), [capabilities/support](docs/capabilities-and-support.md)
 and [distribution obligations](docs/deployment.md#distribution-obligations).
-These retain technical/license detail without creating additional audit documents.
 
 ## Private repository migration
 
@@ -42,7 +40,7 @@ feature disabled. Its original master
 Issues and discussions remain preserved. Full Git/ref/object backups were
 independently restored and integrity checked on approved off-host storage.
 
-The new private **RFStateSide/RayNmeaSimulator**, repository ID **1440258051**,
+The new independent **RFStateSide/RayNmeaSimulator**, repository ID **1440258051**,
 begins at parentless root `4b49f1f665259cbf49ee104d9af55f14b9f273e8`,
 with the exact reviewed 699-file source tree
 `922a5d9555e13588dd46c54753593a69cfb6d278`. It inherits no historical commits
@@ -54,8 +52,9 @@ Active development uses fresh `RayNmeaSimulator-Active` checkouts on Windows,
 Ubuntu and Rpi5_ssd, new build directories and verified clone-local dependencies.
 Original checkouts/builds remain in place, explicitly reference the private
 Archive and have disabled push URLs to prevent accidental historical pushes.
-The migration does not authorize public visibility, releases, tags, artifact
-uploads or Pages. Preserve the scoped qualification and delivery gates above.
+The migration itself did not authorize publication. M2.62 separately authorized
+the active repository, existing v0.1.0 Release and Online Help publication now
+verified above; it did not authorize historical Archive publication or a website announcement.
 
 ## Accepted content and deployment disposition
 
@@ -135,30 +134,42 @@ provenance inventory marks those paths removed from the current tree while keepi
 their original evidence/hashes. Licensing/provenance documents, notices, technical
 guides and historical implementation reports were not indiscriminately retired.
 No historical audit or old pending-acceptance label overrides later scoped evidence
-or the owner's current acceptance. Further release polish and the open publication
-gates above remain for owner review.
+or the owner's current acceptance. Current publication status and continuing
+source-delivery obligations above govern this release.
 
-## User documentation and local online Help
+## Published Online Help
 
-The user-facing README and About presentation are prepared for v0.1.0. The
-52-topic offline manual is also the source for the static online User Guide;
-article prose, anchors and registered images remain shared. Local output is
-ignored and the validation workflow has no Pages permissions or deployment.
-The intended URL is https://rfstateside.github.io/RayNmeaSimulator/; it has not
-been published. The owner accepted the M2.59 preparation and scoped
-rights/privacy/source-delivery review. Final clean-revision release qualification
-and separate publication authorization remain required under the gates above.
+The shared 52-topic offline manual is published at
+<https://rfstateside.github.io/RayNmeaSimulator/>. All 52 topic pages and 102
+registered images, local styles/scripts and generated manifest passed anonymous
+HTTPS resource/hash checks against the accepted generator. Desktop/mobile browser
+checks covered Contents, topic/home navigation, full-text search with Arrow/Enter
+and Escape, image enlargement/100%/Escape, and responsive layout without horizontal
+overflow. The build-only `.nojekyll` marker is not served as a public resource by
+GitHub Pages; it is not a broken user link. Offline Help and its resources are unchanged.
+
+The separate Publish User Guide workflow builds the same manual and uses pinned
+official actions. Only its deploy job receives Pages/OIDC write permissions;
+the job and github-pages environment permit master deployment only. The existing
+validation workflow remains read-only. The first Pages deployment completed
+successfully; generated output remains ignored locally and is not source content.
 
 ## Manual release checking
 
-Help → Check for Updates is an explicit, unauthenticated information check against
-the Active repository's official stable GitHub Releases. A private/no-release
-response is expected. It never installs, restarts or authorizes Sending. Future
-publication must attach measured per-platform packages and the explicitly assembled
-`RayNmeaSimulator-update.json` to the same stable Release. Metadata/ABI filtering
-does not replace platform qualification, corresponding-source delivery or owner
-publication approval. No release, tag, upload or Pages publication is authorized
-by private updater qualification.
+Help → Check for Updates performs an explicit, unauthenticated check of the official
+stable GitHub Release. The unchanged approved Windows Release GUI displayed
+installed/latest 0.1.0 and “You have the latest published stable version.” in an
+isolated --no-nmea profile. The actual checker, compiled as a private controlled
+0.0.9 test client, retrieved the live Release and update metadata, identified
+v0.1.0 and selected the exact Windows ZIP and checksum. Controlled Linux host/ABI
+cases against that published metadata accepted appropriate native/Debian12 packages
+and rejected an incompatible native ARM64 fallback for Debian12.
+
+Recorded requests retrieved release information/metadata only, never an installer
+or binary archive. Existing isolated memory-transport and movement-preservation
+regressions passed. No owner Sending, movement, settings or marine session was
+used, reconfigured or interrupted. Runtime no-release/unavailable results remain
+conditional endpoint outcomes, not permanent product descriptions.
 
 ## Release source preparation
 
@@ -167,8 +178,9 @@ inventing a publication event. Conditional runtime no-release/unavailable respon
 remain valid results of the actual endpoint. The shared 52-topic Help source, six
 bundled Templates and approved Default remain authoritative.
 
-Private source-kit qualification uses exact dependency inputs and records a modified
-source fingerprint; it cannot stand in for a final approved clean commit. The Linux
+Initial private source-kit qualification recorded a modified source fingerprint;
+it was superseded by M2.61 clean-revision sealing and independent restore checks
+for all four approved Source kits. The Linux
 Qt Declarative supplier identifies commit `3a714efe0672ae1ba06f09864f64957560c69b91`,
 whereas the standard 6.10.3 archive identifies `490e85145b57254624cbcbfd9ca6d1c846a2a474`.
 The exact supplier commit and pinned public test-suite submodule were acquired.
@@ -178,31 +190,87 @@ an archive merely because its release version is the same. Windows installer
 engine/version/hashes/license and matching Inno Setup/Pascal Script source are
 also included in the inventory and source-delivery gate.
 
-Detailed source/artifact inventories, checksums, upstream acquisition identities,
-source-restore checks, history/privacy screening and preservation evidence remain
-under ignored `build/m259/`. M2.59A authorizes private source commit/push and fast-forward synchronization.
-No visibility, publication, tag, release or artifact upload is authorized. A later hosted service, hardware/User Product,
+Detailed source/artifact inventories, upstream identities, independent source-restore
+checks and preservation evidence remain under ignored build directories. M2.59A
+source preparation, M2.60/M2.61 release-set qualification and M2.62 publication are
+distinct accepted stages. A later hosted service, hardware/User Product,
 proprietary dependency or materially different toolchain requires a scoped license/
 installation-information review; this assessment covers the documented desktop packages.
 
-## Private v0.1.0 draft preparation
+## Published v0.1.0 release set
 
-The official Windows delivery container is `RayNmeaSimulator-0.1.0-Windows-x64.zip`.
-It holds one root-level installer EXE without changing its bytes. Deploy, package
-receipts, runtime filename matching and source sealing identify the outer ZIP;
-a measured container receipt separately binds the embedded EXE. Existing official
-URL, same-release asset/digest/size, platform and Linux ABI checks remain required.
-The original accepted M2.60 EXE and all prior evidence remain preserved. Because
-runtime ZIP selection required a source correction, final draft assets must be
-rebuilt/sealed from the resulting clean source commit; no M2.60 binary is silently
-relabeled. The tag must target that exact commit. The owner authorizes a private
-draft and its assets, not a published Release or an immutable/public release state.
+- Public repository: <https://github.com/RFStateSide/RayNmeaSimulator>, ID **1440258051**.
+- Stable Release: <https://github.com/RFStateSide/RayNmeaSimulator/releases/tag/v0.1.0>,
+  ID **430092960**, published **2026-10-31 18:45:06 UTC**; neither draft nor prerelease.
+- Approved application/source revision: `87cd0912b3e10777e610a82a78156484f66a2c12`.
+- Annotated tag object: `daab0924a934c976a1145da2a9e557465e4a1356`; peels to that revision.
+- Canonical release-file manifest: `d02266900f852e2117547b3337951bdbe8a3007768fe28dab1c450bcd9168b71`.
+- Application source fingerprint: `efe39d514940ef43aa19d9939b42785846db697384e5bbcb54043ba97664e733`.
 
-Owner-specified repository description, website and 15 relevant Topics may be
-updated while preserving the private repository ID. The existing official project
-page is a website link, not authorization to publish an announcement or edit it.
-Current artifact hashes, clean source/restore checks, test results and actual
-GitHub draft/asset verification belong under ignored `build/m261/`. Verify all
-public binary/source/metadata/Help recipient access only after separate publication
-authorization. No unconditional legal, interoperability or hardware certification
-is introduced by this private preparation.
+All 26 accepted asset names, sizes and hashes were preserved. Downloads use
+`https://github.com/RFStateSide/RayNmeaSimulator/releases/download/v0.1.0/`.
+The official Windows ZIP contains the unchanged approved installer; its contents
+receipt binds the inner EXE. The original M2.60 EXE and previous evidence remain
+preserved privately. Each platform Source kit restores the 718 approved application
+files/modes and complete matching upstream inputs; GitHub's automatic source ZIPs
+are not substitutes for these complete kits. Post-tag Pages configuration and this
+publication record do not move the accepted tag or change published package bytes.
+
+| Published asset | SHA-256 |
+| --- | --- |
+| `RayNmeaSimulator-0.1.0-Linux-aarch64-Debian12.tar.gz` | `8b77face77692334a59ceacdc1fd384e1abf2a9df8eef79fe4ccf983bd08ba76` |
+| `RayNmeaSimulator-0.1.0-Linux-aarch64-Debian12.tar.gz.sha256` | `1d61fba595bb9cf4f490e16e713ae814861f01e6318d0ac7e8340cc871a05f91` |
+| `RayNmeaSimulator-0.1.0-Linux-aarch64.tar.gz` | `9bcf0c7ba35dc80519374ad1da79c2d13883a79cf0d90d86c108ba74dc1895f5` |
+| `RayNmeaSimulator-0.1.0-Linux-aarch64.tar.gz.sha256` | `c7a22bd750ce4ef76ecbaa2a3e253084d9775ae7569464d62ba791eed6c673e8` |
+| `RayNmeaSimulator-0.1.0-linux-arm64-debian12-release-set.json` | `ac71321ae624249a81e5aadad8385f7b859e767a7982a8f19a79fcc060ab5db5` |
+| `RayNmeaSimulator-0.1.0-linux-arm64-debian12-Source.tar.gz` | `bca7232eb4968434aa6ff9fe795ab85836d54d24fc3948a7ea355783d1e899cb` |
+| `RayNmeaSimulator-0.1.0-linux-arm64-debian12-Source.tar.gz.sha256` | `462297dcb4809817c7c8753c2c589baaf693e9306846d33974126fab3e0f7b34` |
+| `RayNmeaSimulator-0.1.0-linux-arm64-release-set.json` | `a7669afcd1d3b3668b24136b678b5f8bec061876977eb358dd8fb3837de52569` |
+| `RayNmeaSimulator-0.1.0-linux-arm64-Source.tar.gz` | `d0b9d174343a7b7462aee90ecef179d267e9318d70e5434634b1a586e778d682` |
+| `RayNmeaSimulator-0.1.0-linux-arm64-Source.tar.gz.sha256` | `6c132d8bc6902ea6b4d2158d400ee690e689086de17285f1e5d91509a22e1af2` |
+| `RayNmeaSimulator-0.1.0-linux-x86_64-release-set.json` | `abfc57fde62c3c2e49e41efc1ffe5abb368d73d8d5c38c387513911da7abd857` |
+| `RayNmeaSimulator-0.1.0-linux-x86_64-Source.tar.gz` | `977a9d7cc135853b34810416aa3164d621a9cdb92a036482e341a20420a952a1` |
+| `RayNmeaSimulator-0.1.0-linux-x86_64-Source.tar.gz.sha256` | `f3bc4e0014fb74e58e1276d9636138d9c1ae1b5e43c8fdfdfe48dd9c96ef82dd` |
+| `RayNmeaSimulator-0.1.0-Linux-x86_64.tar.gz` | `d509864d9867da871bfd789a6b05d97e1ddf06677ab123f5a35cbdb5230bd26c` |
+| `RayNmeaSimulator-0.1.0-Linux-x86_64.tar.gz.sha256` | `42d83ad9b56d2a6c4abc5c7bf87f90de1410d45312d9b6bce15c93ecc9159df5` |
+| `RayNmeaSimulator-0.1.0-Notices.tar.gz` | `1691399a43e3739beff7d714ae66d2720e64371eca4d80c7d98bbb69443615ed` |
+| `RayNmeaSimulator-0.1.0-Notices.tar.gz.sha256` | `58b00618a08e6c74e0afdf9179fbc59e64c933f7731fa4ed63a15880ca465706` |
+| `RayNmeaSimulator-0.1.0-Windows-x64.zip` | `f61e071f1108859b7c3f28c6e21797bb454efaa5084f40499987a7d0d07b387f` |
+| `RayNmeaSimulator-0.1.0-Windows-x64.zip.contents.json` | `084f819e17987bb9138f6d1f6bae3902b48acf3ac81517935b4a0f1fff819e41` |
+| `RayNmeaSimulator-0.1.0-Windows-x64.zip.sha256` | `077fa55191ed799947a12525d0c739d836b6a398cc1e9fd057467519e81d15ae` |
+| `RayNmeaSimulator-0.1.0-windows-x86_64-release-set.json` | `c9dd58d259429cbf706607052face95c25561163eb3bd66b483fccc5c382fc0f` |
+| `RayNmeaSimulator-0.1.0-windows-x86_64-Source.tar.gz` | `6f726da39134f245d535aecf5fe834392af4a03962346baa4bc947051af7c0cc` |
+| `RayNmeaSimulator-0.1.0-windows-x86_64-Source.tar.gz.sha256` | `c5e4da3de562f497ebc1b39602cd2b991fb5dac13f5d1addc83b1cdefd301ad3` |
+| `RayNmeaSimulator-update.json` | `6ffcf9b0e0041308d366052ec3d1791245db5c613750a091998e608afbd10dab` |
+| `RayNmeaSimulator-update.json.sha256` | `5956a729a065a0b3586f7bbfbf393a25ec345c54eea28c6058b29a7c8d452900` |
+| `SHA256SUMS.txt` | `4b5d8724395b0c92e1e4a217deafd88d0d076bf2038033eefda2ac0a16556a19` |
+
+## Access, protection and website follow-up
+
+RFStateSide organization ownership is unchanged. The two expected organization
+administrators retain admin access; no additional direct write collaborators,
+repository teams, deploy keys or installed organization GitHub Apps were found.
+Actions default token permissions remain read-only with pull-request approval
+permission disabled. Pages publishing rights are limited to the dedicated deploy
+job and master environment policy; no organization-wide security policy changed.
+
+Public clone, source/read routes and pull-request entry routes resolve, and public
+forking is enabled. No dummy fork or pull request was created; normal GitHub
+account/authentication requirements still apply to contributions. **master has no
+branch protection and no repository rulesets.** This limitation was reported, not
+silently changed. Consider owner-approved protection against force pushes/deletion
+and required checks for future development.
+
+The official project page <https://rfstateside.com/projects/raynmeasimulator>
+returns HTTP 200. It still contains pre-release download/audit wording and lacks
+release/source/Online Help links. A separate owner-approved website edit should
+link this Release, repository and Help, replace obsolete pending-publication text,
+and align feature claims with the accepted capability guide (including Viewer RX,
+manual authorization of Sending and supported protocol/platform limits). No website
+content or announcement was changed in this assignment.
+
+These verified publication results are **PUBLIC RELEASE PASS** for the exact
+approved v0.1.0 distribution. Continuing source availability, documented operating
+limitations and future scoped qualification remain obligations, not promises of
+navigation, safety, hardware or legal certification. Detailed evidence remains
+under ignored `build/m262/`; this remains the sole maintained tracked audit.

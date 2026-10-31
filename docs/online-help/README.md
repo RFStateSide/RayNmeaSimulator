@@ -17,7 +17,7 @@ python -m http.server 8765 --bind 127.0.0.1 --directory build/online-help
 
 Open `http://127.0.0.1:8765/`. Stop the server with Ctrl+C.
 The generated `build/online-help/` directory is ignored. To exercise the exact
-future project URL prefix instead:
+project URL prefix instead:
 
 ```sh
 python -B scripts/build-online-help.py --output build/preview/RayNmeaSimulator
