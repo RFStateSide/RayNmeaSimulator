@@ -260,6 +260,10 @@ account/authentication requirements still apply to contributions. **master has n
 branch protection and no repository rulesets.** This limitation was reported, not
 silently changed. Consider owner-approved protection against force pushes/deletion
 and required checks for future development.
+The repository API also reports secret scanning, secret-scanning push protection
+and Dependabot security updates disabled. These settings were not changed; consider
+owner-reviewed repository protections separately from the completed scoped history
+screen, without silently changing organization policy.
 
 The official project page <https://rfstateside.com/projects/raynmeasimulator>
 returns HTTP 200. It still contains pre-release download/audit wording and lacks
