@@ -56,7 +56,21 @@ private slots:
         QVERIFY(d.findChild<QLabel*>("aboutVersion")->text().contains(APP_VERSION));
         QFile f(":/resources/ABOUT-NOTICES.txt");QVERIFY(f.open(QIODevice::ReadOnly));
         const auto text=f.readAll();QVERIFY(text.contains("AGPL-3.0-or-later"));QVERIFY(text.contains("Timo Lappalainen"));QVERIFY(text.contains("Al Thomason"));QVERIFY(text.contains("SDL2"));QVERIFY(text.contains("CANboat"));
+        QVERIFY(text.contains("Qt Charts has GPLv3/commercial"));
+        QVERIFY(!text.contains("Historical Git rights"));QVERIFY(!text.contains("reviewed before shipping"));
         QVERIFY(d.findChild<QLabel*>("aboutSupport")->isEnabled());
+    }
+    void userFacingDescription() {
+        AboutDialog d;
+        const auto summary=d.findChild<QLabel*>("aboutSummary")->text();
+        QVERIFY(summary.contains("Viewer RX"));QVERIFY(summary.contains("Autopilot"));
+        QVERIFY(d.findChild<QLabel*>("aboutGuide")->text().contains("offline"));
+        QVERIFY(d.findChild<QLabel*>("aboutDesignation")->text().contains("AS-IS"));
+        QVERIFY(d.findChild<QLabel*>("aboutDesignation")->text().contains("explicit authorization"));
+        for(auto *label:d.findChildren<QLabel*>()) {
+            QVERIFY(!label->text().contains("engineering/test workflows"));
+            QVERIFY(!label->text().contains("currently private"));
+        }
     }
     void explicitLinksOnly() {
         QDesktopServices::setUrlHandler("https",this,"captureUrl");

@@ -1,0 +1,22 @@
+# Copyright (C) 2026 RF StateSide LLC; SPDX-License-Identifier: AGPL-3.0-or-later
+name: Check User Guide
+on:
+  push:
+    paths: ["resources/help/**", "docs/online-help/**", "scripts/build-online-help.py", "tests/online_help_tests.py", "README.md", ".github/workflows/check-help.yml"]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test the shared manual and README
+        run: python -B tests/online_help_tests.py
+      - name: Build static preview only
+        run: python -B scripts/build-online-help.py
+# Deliberately no Pages permissions, configure/upload/deploy actions or environment.

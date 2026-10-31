@@ -133,3 +133,13 @@ guides and historical implementation reports were not indiscriminately retired.
 No historical audit or old pending-acceptance label overrides later scoped evidence
 or the owner's current acceptance. Further release polish and the open publication
 gates above remain for owner review.
+
+## User documentation and local online Help
+
+The user-facing README and About presentation are prepared for v0.1.0. The
+51-topic offline manual is also the source for the static online User Guide;
+article prose, anchors and registered images remain shared. Local output is
+ignored and the validation workflow has no Pages permissions or deployment.
+The intended URL is https://rfstateside.github.io/RayNmeaSimulator/; it has not
+been published. Owner acceptance, final rights/privacy/source-delivery review
+and separate publication authorization remain required under the gates above.

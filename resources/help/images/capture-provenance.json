@@ -1419,9 +1419,9 @@
     },
     {
       "caption": "The approved About dialog identifies version, publisher, license and AS-IS engineering-reference status.",
-      "capture": "Native Qt QWidget::grab; no AI or pixel replacement",
+      "capture": "M2.57 native about_tests QWidget::grab in Darkeum; disposable settings; no live transport; no pixel replacement",
       "file": "images/engineering-reference/about-status.png",
-      "height": 617,
+      "height": 609,
       "name": "about-status",
       "synthetic": true,
       "theme": "Darkeum",
@@ -1429,7 +1429,7 @@
       "widget": "AboutDialog",
       "width": 600,
       "window": "About RayNmeaSimulator",
-      "sha256": "571ccedc39f9ebe58b4aa2d179a4e5d867caf2c92abefb731cf62f3d4fdc79a0",
+      "sha256": "4f807079f1b80992e774a47c19d1ef6512e2482118e6cf6be2df271f2de73f3e",
       "help_caption": "About RayNmeaSimulator shows the version, publisher, license and acknowledgments."
     },
     {

@@ -2,39 +2,35 @@ RayNmeaSimulator — RF StateSide LLC
 Public Engineering Reference — AS-IS
 
 Application license
-Existing RayNmeaSimulator source notices specify GNU Affero General Public
-License version 3 or later (AGPL-3.0-or-later), copyright 2024 RF Stateside LLC.
+Copyright © 2024–2026 RF StateSide LLC.
+Original RayNmeaSimulator software is licensed under the GNU Affero General
+Public License, version 3 or later (AGPL-3.0-or-later).
 https://www.gnu.org/licenses/agpl-3.0.html
-The engineering-reference description does not replace this software license.
-A release-package review must include the complete applicable license texts,
-corresponding-source obligations and notices for everything actually distributed.
+The AS-IS designation does not replace this software license. The application
+is provided without warranty and is not a certified navigation system.
 
 Technical credits
 NMEA2000 and NMEA0183: Timo Lappalainen, Kave Oy — MIT.
 NMEA2000_socketCAN: Al Thomason and fork contributors — MIT.
-Qt: The Qt Company and Qt Project contributors. Modules are subject to their
-respective commercial or open-source terms; do not assume every linked module
-is LGPL. This application links Qt Charts and other Qt modules. Distribution
-license selection and module-specific notices must be reviewed before shipping.
+Qt: The Qt Company and Qt Project contributors. Qt Charts has GPLv3/commercial
+terms; other Qt modules retain their applicable open-source or commercial terms.
 https://www.qt.io/licensing/
 SDL2: Sam Lantinga and SDL contributors — zlib license.
 CANboat diagnostic data: Kees Verruijt and CANboat contributors — Apache-2.0.
 The retained CANboat NOTICE and complete Apache license are bundled separately.
 Compatibility icons: DevSec Studio — MIT; original notice retained.
-Historical Icons8/unknown bitmap assets were removed from active resources.
-An independently drawn Setup controls glyph and Qt Exit/Refresh icons provide those functions. Historical Git rights remain subject
-to separate owner review; no uncertain bitmap was used to design replacements.
-Current transparent application icon is owner-directed ChatGPT-generated artwork.
-Owner-attested RF StateSide BrickSuite UI/logging/credential adaptations retain
-their origin credit and use this application AGPL-3.0-or-later license.
-BrickSuite itself retains its existing LGPL license.
-See root THIRD_PARTY_NOTICES.md and LICENSES for retained component notices.
+The application logo is owner-directed ChatGPT-generated artwork. The Setup
+controls glyph is independently drawn; Exit/Refresh icons are supplied by Qt.
+Some UI, logging and credential-storage components are adapted from RF StateSide
+BrickSuite. These adaptations use AGPL-3.0-or-later; BrickSuite retains its own LGPL license.
+See THIRD_PARTY_NOTICES.md and LICENSES for component notices.
 
-Pinned revisions
+Dependency revisions
 NMEA2000: 5b7b9fc3ccc18e30ebfba92da6486cffc6251595
-NMEA0183: b2fee7dd878682030e344d3abd86f6fba2aab658 (approved Windows patch)
+NMEA0183: b2fee7dd878682030e344d3abd86f6fba2aab658 with the compatibility patch.
 NMEA2000_socketCAN: 224375e0e0c73a1fdf5256df73a4bcbd3b4db6f1
-SDL2: 2.30.9
+Managed SDL2 SDK: 2.30.9. Native Linux builds may use system SDL2; the package
+notices identify the versions supplied with a particular installation.
 
 Upstream permission notices (from the verified pinned source headers)
 

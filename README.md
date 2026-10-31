@@ -1,62 +1,176 @@
 # RayNmeaSimulator
 
-RF StateSide's Qt desktop NMEA2000/NMEA0183 engineering simulator and Viewer.
+**Inspect marine data. Build a virtual vessel.**
 
-Start with [current capabilities, platform support and qualification evidence](docs/capabilities-and-support.md).
-This is the maintained status reference; historical reports retain their original scope.
+RayNmeaSimulator is a desktop application for receiving, displaying and generating
+supported **NMEA2000 and NMEA0183** data. Use it to explore instrument values,
+create repeatable vessel simulations, follow routes and test how compatible
+marine software and equipment respond.
 
-## Build and develop
+**v0.1.0 preview:** public downloads and the online manual are not published yet.
+The complete User Guide is included in the application and works offline.
 
-CMake/CTest is the supported project build system. The CMake-only migration and
-disposable Linux credential-test isolation are committed and owner accepted.
-Start with
-[fresh-clone provisioning and CMake](docs/build-cmake.md), then the
-[Windows](docs/build-windows.md), [Ubuntu](docs/build-linux.md) or
-[Raspberry Pi ARM64](docs/build-raspberry-pi.md) guide.
-[Pinned dependency setup](docs/DEPENDENCIES.txt) is explicit; normal configure/build
-verifies existing installations without downloading dependencies.
-[Focused tests and isolated helpers](tests/README.md) use existing CMake targets;
-discovery does not mean every suite has been built or qualified.
+![RayNmeaSimulator's Darkeum workspace, with navigation instruments, Property Editor and Object Tree](resources/help/images/main-window/workspace-overview.png)
 
-## Build installation packages
+## Two ways to work
 
-Start with [deployment/README.md](deployment/README.md), then the practical
-[Windows](deployment/windows/README.md) or [Linux/ARM64](deployment/linux/README.md)
-instructions. In Qt Creator select **MinGW Release**, refresh CMake, select the
-**Deploy** build target and build it. The selected build directory contains
-`deploy/RayNmeaSimulator/` for inspection and `deploy/installer/` for the private
-installer/archive and SHA-256 sidecar. Packages remain private development
-candidates; public-release gates are still open.
+- **Viewer RX** receives supported messages and creates or updates instruments.
+  Inspect source identities, values and units in the instruments, Property Editor,
+  Object Tree and Diagnostics. Receiving does not authorize instrument Sending.
+- **Generate** builds a virtual vessel from instruments and optional generators.
+  Set values manually or bind compatible dynamic sources, then deliberately
+  authorize output when your test connection is ready.
 
-Normal external instrument transmission requires explicit **Enable Sending**;
-Stop/F12, mode and transport safeguards remain. Layout/Template loading never
-authorizes Sending. Generator sources are optional for manual-property TX.
-Transport restrictions, separately authorized protocol services and tested hardware
-boundaries are described in the capability reference.
+NMEA2000 coverage includes navigation, propulsion, transmission, environment,
+tanks, electrical measurements and selected communication/control data.
+NMEA0183 has its own serial path and sentence instruments. The manual lists
+[48 supported PGNs](https://rfstateside.github.io/RayNmeaSimulator/nmea2000-pgns.html) and
+[18 sentence formatters](https://rfstateside.github.io/RayNmeaSimulator/nmea0183-sentences.html), with direction
+and field limitations; these are specific implementations, not universal protocol support.
 
-Required assets and curated Templates are embedded in Qt resources. No manual
-Data/stylesheets copy is needed for development. See
-[runtime resources](docs/RUNTIME-RESOURCES.txt) and
-[development validation](docs/development-validation.md).
-Historical reports retain their original findings; superseded build instructions
-are preserved under [docs/history](https://github.com/RFStateSide/RayNmeaSimulator-Archive/blob/c8f2b5c822050ac875368a02b517e38a14a108b4/docs/history/README.md).
+![Viewer RX displaying received instrument values in Darkeum](resources/help/images/viewer-generate/viewer-received.png)
 
-## License, provenance and security
+## Explore a virtual vessel
 
-The repository maintains one authoritative [public-release audit](PUBLIC_RELEASE_AUDIT.md).
-Its publication gates remain open. Follow the [repository audit policy](AGENTS.md):
-keep detailed milestone evidence under ignored `build/`, while maintaining normal
-technical, deployment, Help, licensing/provenance, security and test documentation.
+- **Movement and Autopilot:** steer manually, use a compatible SDL-mapped game
+  controller, or follow a selected route with the VesselMovement Autopilot.
+- **Routes and chartplotters:** import/export GPX or KML, inspect route snapshots,
+  and retrieve supported Axiom routes through compatible configured connections.
+  Route selection, route requests, motion and external Sending are separate actions.
+- **Marine software:** feed compatible receivers such as OpenCPN using a suitable
+  transport. The owner has observed simulated route-following vessel movement in
+  OpenCPN; this is interoperability in that setup, not a promise about every receiver.
+- **Instruments and generators:** combine navigation, engine, transmission,
+  environmental, AIS and other supported instruments. Generators provide optional
+  dynamic values; manual-value transmission does not require one.
+- **Reusable workspaces:** save Layouts, manage your own editable Templates, and
+  choose a theme, including the Darkeum theme shown here.
+- **Diagnostics and logs:** inspect supported device identities and messages,
+  view application logs, and optionally record NMEA traffic separately.
 
-Original RayNmeaSimulator software is licensed under **AGPL-3.0-or-later**;
-see [LICENSE](LICENSE). “Public Engineering Reference — AS-IS” is a project
-classification, not a replacement license. Separately licensed components and
-reference-derived material retain their notices; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+![Autopilot controls and route-following options in Darkeum](resources/help/images/autopilot/autopilot-controls.png)
 
-See [PROVENANCE.md](PROVENANCE.md), the [file inventory](docs/provenance-inventory.csv)
-and [SECURITY.md](SECURITY.md) before preparing a distribution. Repository publication
-and packaged-binary distribution require separate reviews. This documentation does
-not announce a public release or certify that historical rights/privacy review is complete.
+### Start with a bundled Template or Default Layout
 
-Historical evidence links target the private RayNmeaSimulator-Archive repository;
-they are not required to follow the current build and test instructions.
+Six read-only Templates ship with the application: **Default**, **Environment /
+Weather**, **Navigation / Autopilot**, **Single Engine**, **Synthetic AIS
+Demonstration** and **Twin Engine**. Duplicate a bundled Template to customize
+an independent user Template.
+
+**Layout → Load Default Layout** opens the supplied eight-group, 35-widget
+workspace. Your saved Layouts and user Templates remain separate. Loading either
+a Template or Default Layout never grants permission to send externally.
+
+## Connections and platforms
+
+| Connection | Use and important limits |
+| --- | --- |
+| Network NMEA2000 / RayNetworkBridge | Supported PGN receive/send and compatible authenticated route services. |
+| Native SocketCAN | Linux CAN interfaces; configure the interface and physical network separately. |
+| CANable SLCAN / Waveshare USB-CAN-A | Supported serial CAN adapters on Windows/Linux, with compatible firmware and wiring. |
+| Actisense NGT-1 | Receive supported; Release transmission is disabled. Debug transmission is experimental. |
+| NMEA0183 serial | Receive/send supported sentences using the correct port, baud rate and electrical interface. |
+| Signal K | Publish supported mapped measurements; raw CAN transport and Viewer subscription are not implemented. |
+
+Windows x64, Ubuntu x86_64 and native Linux ARM64/Raspberry Pi development and
+private package workflows have been exercised. **Debian 12 ARM64 requires its
+specific compatibility package**; a package built on newer Linux is not
+interchangeable. macOS build support is present, with native acceptance still
+pending. Choose a package for your actual OS, processor and runtime requirements.
+See [platform details and limits](docs/capabilities-and-support.md).
+
+## Installation
+
+Use a package supplied for your platform; public downloads are not available yet.
+Application packages include the required Qt runtime, so a Qt development SDK is
+not needed to run them. Recorded system prerequisites still apply.
+
+- **Windows x64:** close the application, run the supplied installer and follow its
+  prompts. Keep the application's installed runtime files together.
+- **Linux:** verify the supplied SHA-256 sidecar, extract the matching archive,
+  enter its `RayNmeaSimulator` directory and run `./install.sh`. The per-user
+  installer defaults to `~/.local/opt/RayNmeaSimulator`; it does not upgrade your
+  OS or replace system Qt/glibc. Keep user data outside the program prefix.
+- **Debian 12 ARM64:** use the archive explicitly marked **Debian12**, following
+  the [Debian 12 instructions](deployment/linux/README-Debian12-ARM64.md).
+
+Updates and uninstall preserve application data outside the managed program
+prefix. Back up important Layouts and Templates before making your own changes.
+See [Windows](deployment/windows/README.md) and
+[Linux installation/package details](deployment/linux/README.md).
+
+## Quick Start
+
+1. Start the application and keep **Sending stopped**. F12 invokes emergency Stop.
+2. Choose **Mode → Generate (Tx)**. Load the Default Layout or create a Layout
+   from one of the six bundled Templates.
+3. Select an instrument and inspect its values, units and identity in Property
+   Editor and Object Tree. Change a manual value and commit it with Enter.
+4. Add or enable a compatible generator only when dynamic values are useful.
+   For movement, deliberately select Manual, Game Pad or Autopilot and its inputs.
+5. Save your workspace as a new Layout. You can explore locally without authorizing output.
+6. For an external test, configure the intended interface in Setup, confirm its
+   status, review each instrument's Enable/interval, then explicitly choose
+   **Enable Sending**. Inspect an independent receiver and stop deliberately.
+
+For reception, choose **Viewer RX**, configure a supported input and inspect
+incoming data. Viewer is not a guarantee of electrical silence: CAN signaling
+and protocol management may still occur. Use an appropriate isolated test network.
+
+## Help
+
+Open **Help → RayNmeaSimulator Help**, or press **F1**, for the complete
+**51-topic offline User Guide**. Search covers article text and captions;
+contextual F1 opens related guidance. Select screenshots to enlarge them.
+
+The matching online edition is prepared for
+[rfstateside.github.io/RayNmeaSimulator](https://rfstateside.github.io/RayNmeaSimulator/).
+**That site has not been published yet.** Both editions use the same manual
+sources. [Local preview instructions](docs/online-help/README.md) are available
+for reviewing the website before publication.
+
+## Known limitations
+
+- This is a **Public Engineering Reference — AS-IS**, not a certified navigation
+  system, collision-avoidance tool or substitute for vessel instrumentation.
+- Supported PGNs, sentences, fields and directions are bounded by the message
+  references. A Diagnostics entry or successful connection does not establish
+  complete receive/transmit support or delivery on the wire.
+- Release Actisense output is disabled; arbitrary adapter-to-adapter Bridge Mode
+  and Signal K Viewer subscription are not available.
+- Additional automatic APB/RMB navigation mappings remain limited. Selecting a
+  route alone does not start movement, issue a route request or authorize Sending.
+- Controller mappings, receiver behavior and physical transports depend on the
+  actual device/setup. Do not treat one working demonstration as universal compatibility.
+
+Read [Known Limitations](https://rfstateside.github.io/RayNmeaSimulator/known-limitations.html) and the
+[connection guidance](https://rfstateside.github.io/RayNmeaSimulator/connection-troubleshooting.html) for details.
+
+## Build from source
+
+The supported build is **C++17, Qt 6, CMake/CTest and Ninja**, with verified pinned
+marine dependencies and SDL2. Start with the [fresh-clone CMake guide](docs/build-cmake.md),
+then [Windows](docs/build-windows.md), [Ubuntu](docs/build-linux.md) or
+[Raspberry Pi ARM64](docs/build-raspberry-pi.md). Dependency acquisition is explicit;
+normal configure/build verifies an existing stage. See [tests](tests/README.md)
+and the [Deploy workflow](deployment/README.md) for development and packaging.
+
+## License, credits and Support
+
+Copyright © 2024–2026 **RF StateSide LLC**. Original RayNmeaSimulator software is
+licensed under **GNU AGPL-3.0-or-later**; see [LICENSE](LICENSE).
+The AS-IS designation does not replace that license or its terms.
+
+Thanks to the NMEA2000/NMEA0183 contributors, including Timo Lappalainen,
+Al Thomason and other credited authors; Qt, SDL2 and other components retain
+their own licenses. Qt Charts has GPLv3/commercial terms. See
+[third-party notices](THIRD_PARTY_NOTICES.md), [provenance](PROVENANCE.md) and
+**Help → About → Licenses and Acknowledgments** for credits and applicable terms.
+
+[Voluntary Support through PayPal](https://www.paypal.com/ncp/payment/4SEDB7WY59T84)
+helps development, testing and documentation. Contributions do not unlock
+features, technical support, warranties or services. Payments are handled by PayPal.
+
+Visit [RF StateSide](https://www.rfstateside.com/) or report a reproducible problem
+in the repository with your version and a small, sanitized example. Keep credentials,
+private routes and vessel information out of reports; see [SECURITY.md](SECURITY.md).

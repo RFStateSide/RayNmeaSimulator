@@ -114,3 +114,15 @@ Screenshots depict the application's existing Qt/third-party UI and retained
 assets; their existing notices remain applicable. They do not establish physical
 hardware qualification or resolve historical artwork/public-history publication
 and final distribution-notice gates.
+
+## Shared online manual and presentation
+
+The README/About presentation and static online User Guide use the owner's
+current BrickSuite README, About and shared-help Pages architecture as primary
+references at `1e2b8f870200b634806ac37dc3629049162a7915`. The new static generator,
+responsive CSS and browser search/image viewer are original RayNmeaSimulator
+implementation under AGPL-3.0-or-later; BrickSuite source/license is unchanged.
+The accepted 51 HTML articles, topic inventory and Qt image resource aliases are
+shared with offline Help. Generated pages are not separately maintained source.
+The revised About illustration is an actual native Darkeum QWidget capture from
+the isolated About regression, recorded in the screenshot provenance manifest.

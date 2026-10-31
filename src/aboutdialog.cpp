@@ -96,11 +96,12 @@ AboutDialog::AboutDialog(QWidget *parent) : QDialog(parent) {
     auto *name = new QLabel(QStringLiteral(APP_NAME),this);
     auto font = name->font(); font.setPointSize(font.pointSize()+7);font.setBold(true);name->setFont(font);
     titles->addWidget(name);
-    auto *status = wrapped(tr("Public Engineering Reference — AS-IS"),this);
+    auto *status = wrapped(tr("NMEA2000 / NMEA0183 simulation and monitoring"),this);
+    status->setObjectName("aboutTagline");
     font=status->font();font.setItalic(true);status->setFont(font);titles->addWidget(status);
     titles->addSpacing(8);
 #ifdef QT_DEBUG
-    const QString configuration=tr("Debug development build");
+    const QString configuration=tr("Debug build");
 #else
     const QString configuration=tr("Release build");
 #endif
@@ -116,7 +117,12 @@ AboutDialog::AboutDialog(QWidget *parent) : QDialog(parent) {
     bodyLayout->setContentsMargins(0,0,0,0);bodyLayout->setSpacing(14);
     bodyLayout->setSizeConstraint(QLayout::SetMinAndMaxSize);bodyLayout->setAlignment(Qt::AlignTop);
     textArea->setWidget(body);layout->addWidget(textArea,1);
-    bodyLayout->addWidget(wrapped(tr("NMEA2000/NMEA0183 marine simulation, instrument monitoring and engineering/test workflows."),this));
+    auto *summary=wrapped(tr("Inspect supported marine data in Viewer RX, or build a virtual vessel in Generate. Combine instruments, optional generators, route-following Autopilot and game controller movement."),this);
+    summary->setObjectName("aboutSummary");bodyLayout->addWidget(summary);
+    auto *guide=wrapped(tr("<b>User Guide</b><br>Open Help → RayNmeaSimulator Help, or press F1, for the complete offline manual. Search topics and select screenshots to enlarge them."),this);
+    guide->setObjectName("aboutGuide");bodyLayout->addWidget(guide);
+    auto *designation=wrapped(tr("<b>Public Engineering Reference — AS-IS</b><br>Provided without warranty. Use on an appropriate test network; this is not a certified navigation system. External instrument Sending requires explicit authorization."),this);
+    designation->setObjectName("aboutDesignation");bodyLayout->addWidget(designation);
     bodyLayout->addWidget(wrapped(tr("<b>Support RayNmeaSimulator</b><br>Voluntary contributions help with development, testing, documentation and maintenance."),this));
     auto *support=wrapped(tr(R"html(<a href="%1">Support RayNmeaSimulator with PayPal</a>)html").arg(QString::fromLatin1(AboutLinks::SupportUrl)),this);support->setObjectName("aboutSupport");
     support->setAccessibleName(tr("Support RayNmeaSimulator"));support->setFocusPolicy(Qt::StrongFocus);
@@ -129,7 +135,7 @@ AboutDialog::AboutDialog(QWidget *parent) : QDialog(parent) {
     bodyLayout->addWidget(wrapped(tr("Support is entirely voluntary. Contributions do not unlock features, technical support, warranties or other services."),this));
 
     bodyLayout->addWidget(wrapped(tr(R"html(<b>Software license:</b> GNU Affero General Public License, version 3 or later (AGPL-3.0-or-later).<br><a href="https://www.gnu.org/licenses/agpl-3.0.html">View the GNU AGPL</a>)html"),this));
-    bodyLayout->addWidget(wrapped(tr(R"html(<b>RF StateSide LLC:</b> <a href="https://www.rfstateside.com/">www.rfstateside.com</a><br><b>Repository (currently private):</b> <a href="https://github.com/RFStateSide/RayNmeaSimulator">RFStateSide/RayNmeaSimulator</a>)html"),this));
+    bodyLayout->addWidget(wrapped(tr(R"html(<b>RF StateSide LLC:</b> <a href="https://www.rfstateside.com/">www.rfstateside.com</a><br><b>Source code:</b> <a href="https://github.com/RFStateSide/RayNmeaSimulator">RFStateSide/RayNmeaSimulator</a>)html"),this));
     auto *details=wrapped(tr("Qt %1 (compiled with %3) · %2").arg(QString::fromLatin1(qVersion()),QSysInfo::buildCpuArchitecture(),QString::fromLatin1(QT_VERSION_STR)),this);
     details->setToolTip(tr("Runtime Qt version, build architecture and compile-time Qt version."));bodyLayout->addWidget(details);
     auto *credits=new QPushButton(tr("Licenses and Acknowledgments…"),this);credits->setObjectName("aboutCredits");bodyLayout->addWidget(credits,0,Qt::AlignLeft);
