@@ -66,7 +66,7 @@ complete notices. `manifest.json` must match staged content. Require the latest
 with `Get-FileHash` against the sidecar. Previous managed outputs are retained
 internally, not left at current paths after an adapter/build/package failure.
 
-Test the private installer on a separate Windows x64 machine. It remains per-user,
+Test the installer on a separate Windows x64 machine. It remains per-user,
 keeps its established AppId and upgrade directory, offers an unchecked desktop
 shortcut and does not launch the app automatically. Uninstall removes managed
 application files, not settings, credentials or owner documents. Do not overwrite

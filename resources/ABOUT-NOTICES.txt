@@ -12,7 +12,8 @@ is provided without warranty and is not a certified navigation system.
 Technical credits
 NMEA2000 and NMEA0183: Timo Lappalainen, Kave Oy — MIT.
 NMEA2000_socketCAN: Al Thomason and fork contributors — MIT.
-Qt: The Qt Company and Qt Project contributors. Qt Charts has GPLv3/commercial
+Qt: The Qt Company and Qt Project contributors. Qt Virtual Keyboard, when bundled, has GPLv3/commercial terms.
+Qt Charts has GPLv3/commercial
 terms; other Qt modules retain their applicable open-source or commercial terms.
 https://www.qt.io/licensing/
 SDL2: Sam Lantinga and SDL contributors — zlib license.

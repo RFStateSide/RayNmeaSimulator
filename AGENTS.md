@@ -11,7 +11,6 @@ documentation remains valid. Preserve historical implementation evidence and
 third-party notices; retirement of redundant audits must preserve useful findings
 and their original evidence. Do not rewrite Git history.
 
-The repository remains private. Source synchronization and private engineering
-qualification do not authorize public releases, tags, artifact uploads or visibility
-changes. Keep historical artwork/source-history review and applicable source/license
+Source preparation and engineering qualification do not authorize publication,
+release tags, artifact uploads or visibility changes. Keep historical artwork/source-history review and applicable source/license
 delivery gates open until separately resolved and owner approved.

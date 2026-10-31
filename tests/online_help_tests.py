@@ -87,7 +87,8 @@ class OnlineHelpTests(unittest.TestCase):
             u=urlsplit(link)
             if u.scheme or u.netloc:continue
             self.assertTrue((ROOT/unquote(u.path)).is_file(),link)
-        self.assertIn('not published yet',text)
+        self.assertIn('https://github.com/RFStateSide/RayNmeaSimulator/releases',text)
+        self.assertNotIn('not published yet',text)
         self.assertNotIn('GitHub Releases](https://github.com/',text)
     def test_ci_has_no_pages_deployment(self):
         text=(ROOT/'.github/workflows/check-help.yml').read_text()

@@ -1,8 +1,8 @@
 # Native Ubuntu x86_64 and Linux ARM64 packages
 
-These commands build a **private native-host package**. Current qualified native
+These commands build a **native-host package**. Current qualified native
 development environments are Ubuntu 26.04 x86_64 / Qt 6.10.3 and Debian 13 ARM64 /
-Qt 6.10.2. Qt Creator, a compiler and an SDK are not required on the eventual test
+Qt 6.10.2. Qt Creator, a compiler and an SDK are not required on the target
 machine, but compatible system libraries and Python >=3.11 for installation are.
 Measured requirements are recorded in each package; newer-host builds do not
 automatically support older distributions. For Debian 12 ARM64 use the
@@ -16,7 +16,7 @@ pkg-config and SDL2 development files. Packaging additionally needs binutils,
 patchelf, ldd (libc-bin) and dpkg-query. Native Debian/Ubuntu package metadata is
 used for system-library versions and notices. No Deploy command installs packages,
 uses sudo, changes services or upgrades the OS. Install missing build prerequisites
-separately under owner control; do not alter a clean target machine for a candidate.
+separately under owner control; do not alter a clean target machine for an incompatible package.
 
 ## Build
 
@@ -31,12 +31,9 @@ cmake --preset dev-release -DCMAKE_PREFIX_PATH="$QT_PREFIX" -DDEPS_ROOT="$DEPS_R
 cmake --build build/cmake/dev-release --target Deploy
 ```
 
-On the retained Rpi5_ssd environment, `patchelf` is a private tool rather than a
-system installation. From that development checkout's root, also export
-`PATH="$PWD/build/m252/tools/prefix/usr/bin:$PATH"` before Deploy. This uses the
-existing tool; no OS package installation is needed. An isolated source snapshot
-must use the original checkout's absolute dependency/tool paths instead of paths
-relative to the snapshot.
+If `patchelf` is installed in a local tools prefix, add its `bin` directory to
+`PATH` before configuring CMake. The Deploy build uses that resolved tool path;
+it does not install tools or modify system libraries.
 
 If Qt Sources are not the SDK's sibling `Src`, add
 `-DRAYNMEA_QT_SOURCES=/absolute/matching/qt-source-tree` to configure. Compiler,

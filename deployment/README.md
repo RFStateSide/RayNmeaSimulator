@@ -1,4 +1,4 @@
-# Build private installation packages
+# Build installation packages
 
 **Qt Creator: select MinGW Release → refresh CMake → select the `Deploy` build
 target → build.** No extra deployment cache option or script editing is needed.
@@ -6,17 +6,10 @@ See the complete [Windows instructions](windows/README.md),
 [native Linux instructions](linux/README.md), and
 [Debian 12 ARM64 instructions](linux/README-Debian12-ARM64.md).
 
-These are **private development candidates**, not public releases. Owner-reported
-Windows, compatible Ubuntu and Debian 12 Boat installation acceptance is recorded
-in [the engineering deployment notes](../docs/deployment.md). A new candidate
-requires its own inspection/testing; previous acceptance is not transferable.
-
-M2.53A exercised both ARM64 workflows on Rpi5_ssd: native Debian 13 / Qt 6.10.2,
-and the retained Debian 12 userspace / baseline-built Qt 6.10.2. Both produced
-the documented outputs and passed isolated offscreen/X11 startup, offline Help,
-normal exit and installer lifecycle checks with the development SDK hidden.
-Boat's earlier owner acceptance was retained; Boat was not contacted or changed.
-These engineering checks do not constitute new owner or public-release acceptance.
+Deploy builds platform-specific installation packages in fresh internal generations.
+Validate each artifact on the supported target environment, retain its matching
+source and notices, and verify hashes before distribution. See
+[source delivery](../docs/source-delivery.md) and the platform instructions below.
 
 ## Where the files go
 
@@ -124,9 +117,9 @@ Run the build-independent workflow regressions with
 tests against a freshly extracted package in a disposable environment.
 
 There is no signing, upload, GitHub Release, tag or publication step in Deploy.
-Source remains private. Historical artwork/history review, corresponding-source
-delivery, licensing and owner approval remain open publication gates. Templates,
-Default Layout, final Help review and release polish are separate owner decisions.
+Supply complete matching source and notices through the [source delivery workflow](../docs/source-delivery.md).
+Release authorization and any outstanding compliance decisions are maintained in
+PUBLIC_RELEASE_AUDIT.md.
 
 ## BrickSuite comparison
 

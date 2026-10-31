@@ -1,14 +1,15 @@
 # Debian 12-compatible ARM64 package
 
-Use a **Linux ARM64 development host**, a private Debian 12 userspace, and Qt
+Use a **Linux ARM64 development host**, an isolated Debian 12 userspace, and Qt
 **6.10.2 built against that userspace**. A Qt SDK/application built on Debian 13
 does not become Debian 12 compatible by renaming its archive or changing one
 compiler flag. Windows/x86_64 cross-building is not provided by this workflow.
-Do not upgrade Boat's OS, install Qt on it, or replace its system libraries.
+Use the matching baseline package; do not replace a target system's glibc or Qt
+to make a newer-host build run.
 
 ## Qualified inputs (one-time preparation)
 
-The retained M2.52 environment on the ARM64 development host contains:
+The ARM64 development baseline contains:
 
 ```text
 <baseline>/rootfs/                 Debian 12 ARM64 userspace + build tools
@@ -26,7 +27,7 @@ package/tool inventories and qualification evidence are described in
 silently downloads/rebuilds Qt or installs a baseline.
 
 The host needs Python >=3.11 and Bubblewrap with working unprivileged namespaces.
-The private baseline supplies GCC 12/build-essential, Git, Python >=3.11, Ninja,
+The isolated baseline supplies GCC 12/build-essential, Git, Python >=3.11, Ninja,
 pkg-config, SDL2 development files, binutils, patchelf, dpkg-query and the Qt
 graphics/font/desktop development prerequisites from the qualified inventory.
 If provisioning an equivalent private rootfs, create its empty mount directories
@@ -57,11 +58,9 @@ explicit output directory is writable. It configures Release, then invokes the
 same `Deploy` adapter inside the baseline. It neither launches the application
 nor accesses owner profiles, marine interfaces or services.
 
-M2.53A exercised this wrapper against the retained baseline on Rpi5_ssd, using
-`build/m253a/debian12-release` as the host output directory. The archive met the
-ABI ceilings below and passed manifest/ELF/permission checks, installer lifecycle
-and offscreen/X11 offline Help/normal-exit tests with the SDK absent. The existing
-Boat installation acceptance was retained without contacting Boat.
+Qualify each archive against the ABI ceilings below, full manifest/ELF and permission
+checks, disposable installer lifecycle tests and offscreen/X11 startup with the SDK
+absent. Verify offline Help and normal exit without physical transmission.
 
 For a shell already inside a prepared Debian 12 ARM64 environment, the equivalent is:
 

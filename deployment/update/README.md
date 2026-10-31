@@ -5,7 +5,7 @@ for `RFStateSide/RayNmeaSimulator`, then retrieves only the release asset named
 `RayNmeaSimulator-update.json`. No credentials, cookies, installer retrieval,
 background schedule, installation or restart is involved. Opening the modeless
 Help → Check for Updates... window starts one check. Retry is explicit.
-Private/no-release HTTP 404 is an expected unavailable result, not “up to date”.
+HTTP 404 reports unavailable stable release information, not “up to date”.
 HTTP errors/rate limits and the 15-second overall deadline have distinct messages.
 Responses are bounded (512 KiB release, 128 KiB metadata), parsed as untrusted JSON,
 and release notes are plain text. Only official HTTPS repository release pages
@@ -16,8 +16,8 @@ can be opened. Metadata redirects are limited to three official GitHub/CDN hops.
 BrickSuite's Updater, Help menu, `deployment/update/update.json`, packaging and
 UpdaterTest are the primary references. Retain its explicit check/browser action
 and exact platform keys. This implementation discovers published Releases instead
-of fetching a mutable master-branch manifest: private development must not advertise
-unreleased build versions. It adds strict identity/URL checks, SemVer prerelease
+of fetching a mutable master-branch manifest: unreleased source changes must not advertise
+new release versions. It adds strict identity/URL checks, SemVer prerelease
 ordering, size/time bounds and Linux ABI matching. This is original RF StateSide
 implementation; BrickSuite product text/code was not copied or relicensed.
 
@@ -39,7 +39,7 @@ review the release notes. Unsupported platforms can read official release inform
 but receive no matching-package recommendation. Matching version alone never implies
 that a compatible installer exists. Only a newer stable version is offered.
 
-## Private packaging and future release procedure
+## Packaging and release procedure
 
 Normal builds do not generate or publish release metadata. The existing explicit
 Deploy/package step additionally emits `update-package.json` alongside the installer,
@@ -61,7 +61,7 @@ Use one receipt per available platform; do not invent URLs/hashes or include pac
 that were not qualified. The output must be a fresh physical child of `build/`.
 It contains `schema: 1`, `repository`, `version` and `downloads` mapping the exact keys
 to `{name, url, bytes, sha256, required_abi}` (`required_abi` is Linux-only).
-When separately authorized to publish, create stable tag `v<version>` and attach the
+For publication, use stable tag `v<version>` and attach the
 actual packages/checksums plus this metadata file to that **same** GitHub Release.
 The checker cross-checks every selected entry against that Release's uploaded asset
 identity, size, URL and GitHub SHA-256 digest when present. It does not download/hash

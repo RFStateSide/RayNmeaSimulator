@@ -53,11 +53,10 @@ Run `python -B tests/online_help_tests.py`, or the normal focused CTest
 `.github/workflows/check-help.yml` builds/tests only: no Pages environment,
 write permission, site artifact upload or deployment action is included.
 
-## Publication boundary
+## Hosting
 
-The intended address is <https://rfstateside.github.io/RayNmeaSimulator/>.
-**It is not published.** Pages configuration and deployment require separate owner
-approval. After that approval, GitHub's Pages job can consume the generator's
-output using the same configure/upload/deploy pattern as BrickSuite. No separate
-copy of the manual should be added. Review distribution readiness in
-[the maintained audit](../../PUBLIC_RELEASE_AUDIT.md) before publication.
+User Guide address: <https://rfstateside.github.io/RayNmeaSimulator/>.
+Publish the generator's output as a static GitHub Pages site under this project
+URL prefix. Keep the manual in `resources/help/`; do not maintain a second copy.
+The validation workflow builds/tests locally and does not deploy. Website deployment
+is a separate operation; see [distribution requirements](../source-delivery.md).

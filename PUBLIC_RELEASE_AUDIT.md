@@ -1,9 +1,11 @@
 # Public-release audit
 
-**2026-10-30 — PRIVATE; public release NO-GO.** The owner accepted the six
-bundled Templates, Default Layout (eight groups, 35 widgets), existing Template/
-Layout behavior, deployment workflow qualification and catalog validator correction.
-That acceptance authorizes private source closeout/synchronization, not publication.
+**2026-10-31 — M2.59 engineering preparation accepted for private source
+closeout. Public release remains NO-GO pending final clean-revision package/source
+qualification and separate publication authorization.**
+Public-facing wording is prepared for v0.1.0; current engineering gates belong
+here rather than in product Help. The six Templates, eight-group/35-widget Default
+Layout and explicit Sending safeguards remain protected.
 
 ## Authoritative audit policy
 
@@ -18,10 +20,11 @@ reports are dated evidence, not competing current audits or blanket acceptance.
 
 | Gate | Current disposition and required closure |
 | --- | --- |
-| Historical artwork, rights and source-history screening | **PUBLIC APPROVAL OPEN.** The independent private repository begins with the reviewed 699-file candidate; excluded historical artwork and engineering material remain in the private Archive and verified backups, outside the new history. The owner-authorized privacy-safe route screenshot is included; its original is preserved privately. Complete final public source/artwork/privacy and license review before publication. Private migration is not blanket rights certification or public approval. |
-| Applicable source/license delivery | **OPEN.** Retain AGPL-3.0-or-later project notices and each dependency's terms. Qt Charts uses GPLv3/commercial terms, not LGPL. Before external distribution establish recipient access to the matching corresponding-source, dependency revisions/local patches, build/installation information and applicable notices under the relevant licenses. A private repository URL or license summary alone does not provide that delivery. Check exact shipped/transitive versions against package manifests/SBOMs. |
-| Final distribution decision | **OPEN.** Select a clean reviewed source/candidate, review its content/notices and recipient source-delivery method, then obtain explicit owner publication approval. Private candidates and source push are not a public release. No release tags, GitHub Releases, installer/archive uploads or visibility changes are authorized by this closeout. |
-| Qualification scope | Publish only the scoped support/compatibility actually established. Do not turn software fixtures, optional/skipped checks, private X11 tests or owner acceptance on one device into universal transport, OS, desktop, hardware or endurance qualification. |
+| Historical artwork, rights and source-history screening | **ENGINEERING REVIEW COMPLETE at `0b2801587ddc737faaa78d102f9d1f7945a8c0c8`.** All five reachable commits, 747 distinct blobs and 714 paths were checked against the 679 excluded paths and historical artwork hashes: no excluded content was found. High-confidence private-key/token patterns were absent; this is a scoped screen, not a guarantee against every possible secret. All 101 physical Help screenshots were visually reviewed; the owner approved Ray usernames in paths on 2026-10-31. Approved generic routes, Default and artwork/provenance remain intact. Owner-directed AI artwork use is attested; no exclusive copyright or trademark clearance is invented. The private Archive is unchanged. |
+| Applicable source/license delivery | **IMPLEMENTED; FINAL ARTIFACT QUALIFICATION REQUIRED.** Package-derived Qt module coverage now includes GPLv3 Qt Virtual Keyboard when shipped, alongside Qt Charts. Complete source acquisition (including native/Debian12 ARM64 runtime inputs) and per-platform source sealing bind application files/modes, dependency pins/patches, exact Qt source identities, distro source descriptors/patches, notices, actual installer hashes and update receipts. GPL/AGPL 6(d) same-release source delivery is documented; no unimplemented written offer is used. GCC exception/system-library scope is explicit. Qualification results and any unavailable exact source inputs must be resolved before releasing the affected platform. |
+| Final distribution decision | **OPEN FOR PUBLICATION.** The owner accepted M2.59, including the unchanged Ray-path screenshots/provenance, and authorized private commit/fast-forward synchronization in M2.59A. Construct final platform packages/source kits and matching update metadata separately from the resulting clean approved commit; the earlier working-tree qualification artifacts are not final release sets. The source sealer refuses a modified tree by default; its local qualification override records modified state. Separate explicit authorization is required for visibility, Pages, public releases/assets and announcements. |
+| Recipient access | **EXTERNAL PUBLICATION DEPENDENCY.** Verify anonymous binary, full matching source, notices, update-metadata and online Help access after the separately authorized publication operations; private/local previews cannot prove public delivery. Retain equivalent source access while conveying the binaries and meet the chosen distribution method's duration requirements. |
+| Qualification scope | Retain scoped Windows/Linux/native ARM64/Debian12 evidence and measured ABI requirements. Final ARM64 source/package receipts must be produced from the accepted release revision and actual matching build environments; old accepted runtime packages are dependency/ABI evidence, not regenerated v0.1.0 release artifacts. Do not turn representative fixtures or one device's owner acceptance into universal transport/OS/hardware/endurance certification. |
 
 See [provenance](PROVENANCE.md), [third-party notices](THIRD_PARTY_NOTICES.md),
 [security](SECURITY.md), [capabilities/support](docs/capabilities-and-support.md)
@@ -141,7 +144,8 @@ The user-facing README and About presentation are prepared for v0.1.0. The
 article prose, anchors and registered images remain shared. Local output is
 ignored and the validation workflow has no Pages permissions or deployment.
 The intended URL is https://rfstateside.github.io/RayNmeaSimulator/; it has not
-been published. Owner acceptance, final rights/privacy/source-delivery review
+been published. The owner accepted the M2.59 preparation and scoped
+rights/privacy/source-delivery review. Final clean-revision release qualification
 and separate publication authorization remain required under the gates above.
 
 ## Manual release checking
@@ -154,3 +158,28 @@ publication must attach measured per-platform packages and the explicitly assemb
 does not replace platform qualification, corresponding-source delivery or owner
 publication approval. No release, tag, upload or Pages publication is authorized
 by private updater qualification.
+
+## Release source preparation
+
+Release wording uses the official repository/release and Online Help URLs without
+inventing a publication event. Conditional runtime no-release/unavailable responses
+remain valid results of the actual endpoint. The shared 52-topic Help source, six
+bundled Templates and approved Default remain authoritative.
+
+Private source-kit qualification uses exact dependency inputs and records a modified
+source fingerprint; it cannot stand in for a final approved clean commit. The Linux
+Qt Declarative supplier identifies commit `3a714efe0672ae1ba06f09864f64957560c69b91`,
+whereas the standard 6.10.3 archive identifies `490e85145b57254624cbcbfd9ca6d1c846a2a474`.
+The exact supplier commit and pinned public test-suite submodule were acquired.
+Deployed notices matched that source; source sealing verifies every deployed Qt
+notice against matching source, allowing only LF/CRLF equivalence. Never substitute
+an archive merely because its release version is the same. Windows installer
+engine/version/hashes/license and matching Inno Setup/Pascal Script source are
+also included in the inventory and source-delivery gate.
+
+Detailed source/artifact inventories, checksums, upstream acquisition identities,
+source-restore checks, history/privacy screening and preservation evidence remain
+under ignored `build/m259/`. M2.59A authorizes private source commit/push and fast-forward synchronization.
+No visibility, publication, tag, release or artifact upload is authorized. A later hosted service, hardware/User Product,
+proprietary dependency or materially different toolchain requires a scoped license/
+installation-information review; this assessment covers the documented desktop packages.

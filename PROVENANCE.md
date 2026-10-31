@@ -53,9 +53,9 @@ Historical Icons8-named and unverified engine bitmap assets are removed from the
 current source/resource set. Setup now uses an independently drawn Qt controls glyph; Exit and Refresh use Qt standard icons, with
 Qt's applicable licensing; no uncertain bitmap was traced or used as the basis of
 a derivative. Retained compatibility controls have their original MIT notice.
-Git history still contains retired artwork: removing current files does not clear
-historical publication rights. Separate owner-approved history/publication
-remediation or verified historical permissions are required.
+The independent Active repository excludes the retired artwork from its reachable
+history. Those files remain only in the private historical Archive. The source
+inventory retains references to their historical disposition, not the assets.
 
 ## Examples and historical evidence
 
@@ -100,7 +100,7 @@ HTML, search, history, theme formatting, geometry and responsive-image patterns
 retain origin credit in source. Owner authorization covers this internal reuse;
 RayNmeaSimulator adaptations use AGPL-3.0-or-later. Resource allowlisting and the
 image zoom window are application-specific additions. BrickSuite is unchanged.
-Phase 1 articles are RF StateSide placeholder content, not a completed manual.
+The original framework has been extended into the shared 52-topic User Guide.
 ## Illustrated Help manual (M2.51B)
 
 The 49 Help articles are RF StateSide instructions authored against the current
@@ -139,3 +139,14 @@ product content or separately licensed implementation was copied or relicensed.
 The new Check for Updates instructions extend the shared offline/online manual to
 52 topics while retaining the accepted 51 original articles and screenshots.
 Original project additions retain AGPL-3.0-or-later notices.
+
+## Release source and privacy preparation
+
+The source-capture, dependency-source acquisition and release-set verification
+tools are original RF StateSide AGPL-3.0-or-later implementation. Source kits
+retain upstream archives/notices and explicitly recorded source identities;
+they do not relicense dependencies or include the private application history.
+All 101 physical Help screenshots were visually reviewed. The owner approved
+the Ray username in demonstration paths on 2026-10-31; existing approved
+screenshots and capture provenance are unchanged. Historical uncertain artwork
+and excluded engineering material remain outside the independent Active history.

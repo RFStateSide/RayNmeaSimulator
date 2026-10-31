@@ -99,7 +99,7 @@ class Attempt:
         final = self.root / 'installer' / artifact.name
         self.record('succeeded', artifact=str(final), sha256=package.digest(final),
                     bytes=final.stat().st_size, stage=str(self.root / 'RayNmeaSimulator'))
-        print('\nPRIVATE DEVELOPMENT PACKAGE - PUBLIC RELEASE NO-GO', flush=True)
+        print('\nDeployment complete', flush=True)
         print('Staged application:', self.root / 'RayNmeaSimulator', flush=True)
         print('Package output:', final, flush=True)
         print('SHA-256:', package.digest(final), flush=True)

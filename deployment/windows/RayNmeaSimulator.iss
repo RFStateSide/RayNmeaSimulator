@@ -30,7 +30,7 @@ CloseApplicationsFilter=RayNmeaSimulator.exe
 RestartApplications=no
 VersionInfoVersion={#AppVersion}
 VersionInfoCompany=RF StateSide LLC
-VersionInfoDescription=RayNmeaSimulator Private Acceptance Installer
+VersionInfoDescription=RayNmeaSimulator
 [Tasks]
 Name: desktopicon; Description: "Create a &desktop shortcut"; Flags: unchecked
 [Files]

@@ -1,30 +1,24 @@
-RayNmeaSimulator 0.1.0 - PRIVATE ACCEPTANCE CANDIDATE - PUBLIC RELEASE NO-GO
-Copyright RF StateSide LLC. Application: AGPL-3.0-or-later (LICENSE).
-Public Engineering Reference - AS-IS is a designation, not a license exception.
+RayNmeaSimulator - Public Engineering Reference - AS-IS
+Copyright (C) 2024-2026 RF StateSide LLC
+Application source: AGPL-3.0-or-later; see LICENSE.
 
-This package uses Qt, including Qt Charts (GPL-3.0-only or commercial;
-the open-source option is used here). Other Qt modules have individual
-LGPL/GPL options. Full module license texts and third-party attributions are
-under licenses/Qt. Qt and its third-party code are not relicensed by this app.
-Qt source: https://download.qt.io/official_releases/qt/
-Qt source module versions must match build-metadata.json. Do not substitute
-an LGPL-only summary for Charts' GPL terms. AGPLv3 section 13 permits a GPLv3
-combination; both licenses retain their respective requirements.
+This software is provided without warranty and is not a certified navigation or
+safety system. Read the operating limitations in Help and the release notes.
 
-SDL2: zlib; NMEA2000, NMEA0183 and SocketCAN: MIT; CANboat data: Apache-2.0.
-See THIRD_PARTY_NOTICES.md and licenses/ for copyright and permission notices.
-MinGW GCC runtime uses GPL with the GCC Runtime Library Exception; mingw-w64
-and winpthreads have separate permissive notices. Linux system prerequisites
-are recorded separately from the private runtime in system-runtime.json.
+Qt modules, including Qt Charts and Qt Virtual Keyboard when included, retain
+their own GPL/LGPL and third-party terms. This distribution uses the open-source
+licensing option. Full notices and supplier SPDX records are under licenses/.
+SDL2, marine libraries, CANboat-derived data and compiler runtimes retain their
+respective terms; see THIRD_PARTY_NOTICES.md and redistribution.json.
 
-Recipients must receive complete corresponding source and build/installation
-information through a license-compliant distribution method before any external
-distribution. Repository privacy is not an exception. This installer is not a
-source offer and a link to a private repository is not sufficient. The current
-private review does not resolve historic artwork/source-history publication
-rights, complete transitive-source delivery, or final distribution obligations.
-Do not forward this candidate outside authorized RF StateSide acceptance.
-
-Deployment architecture adapted from RF StateSide BrickSuite (read-only reference
-1e2b8f870200b634806ac37dc3629049162a7915). Internal reuse authorized by owner.
-No BrickSuite product identity, application settings or application code is shipped.
+Obtain the matching Source archive beside the installer/archive at:
+https://github.com/RFStateSide/RayNmeaSimulator/releases
+Match its platform, application version and release-set.json SHA-256 receipt.
+The Source archive contains the application, build/install scripts, pinned marine
+sources/patches, matching Qt sources/configuration and bundled dependency sources.
+Source may be studied, modified, rebuilt and redistributed under its licenses.
+Dynamic libraries may be replaced by compatible modified builds; no application
+activation key or update service is required to run a modified application.
+For network distribution, provide equivalent access to matching source alongside
+object code, at no additional charge, for as long as the license requires.
+A repository link alone does not replace the complete matching source materials.

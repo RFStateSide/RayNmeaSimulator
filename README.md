@@ -7,7 +7,9 @@ supported **NMEA2000 and NMEA0183** data. Use it to explore instrument values,
 create repeatable vessel simulations, follow routes and test how compatible
 marine software and equipment respond.
 
-**v0.1.0 preview:** public downloads and the online manual are not published yet.
+**v0.1.0 · Public Engineering Reference — AS-IS.**
+[Official releases](https://github.com/RFStateSide/RayNmeaSimulator/releases) ·
+[Online User Guide](https://rfstateside.github.io/RayNmeaSimulator/)
 The complete User Guide is included in the application and works offline.
 
 ![RayNmeaSimulator's Darkeum workspace, with navigation instruments, Property Editor and Object Tree](resources/help/images/main-window/workspace-overview.png)
@@ -72,16 +74,15 @@ a Template or Default Layout never grants permission to send externally.
 | NMEA0183 serial | Receive/send supported sentences using the correct port, baud rate and electrical interface. |
 | Signal K | Publish supported mapped measurements; raw CAN transport and Viewer subscription are not implemented. |
 
-Windows x64, Ubuntu x86_64 and native Linux ARM64/Raspberry Pi development and
-private package workflows have been exercised. **Debian 12 ARM64 requires its
+Windows x64, Ubuntu x86_64 and native Linux ARM64/Raspberry Pi packages use platform-specific runtime requirements. **Debian 12 ARM64 requires its
 specific compatibility package**; a package built on newer Linux is not
-interchangeable. macOS build support is present, with native acceptance still
-pending. Choose a package for your actual OS, processor and runtime requirements.
+interchangeable. macOS source build support is present; macOS binaries are not a supported
+v0.1.0 distribution. Choose a package for your actual OS, processor and runtime requirements.
 See [platform details and limits](docs/capabilities-and-support.md).
 
 ## Installation
 
-Use a package supplied for your platform; public downloads are not available yet.
+Choose the matching package from the [official releases](https://github.com/RFStateSide/RayNmeaSimulator/releases).
 Application packages include the required Qt runtime, so a Qt development SDK is
 not needed to run them. Recorded system prerequisites still apply.
 
@@ -123,13 +124,13 @@ Open **Help → RayNmeaSimulator Help**, or press **F1**, for the complete
 **52-topic offline User Guide**. Search covers article text and captions;
 contextual F1 opens related guidance. Select screenshots to enlarge them.
 
-The matching online edition is prepared for
+Read the same manual online at
 [rfstateside.github.io/RayNmeaSimulator](https://rfstateside.github.io/RayNmeaSimulator/).
-**That site has not been published yet.** Both editions use the same manual
-sources. [Local preview instructions](docs/online-help/README.md) are available
-for reviewing the website before publication.
+Both editions use the same manual sources. For offline use, open Help in the
+application. [Website build instructions](docs/online-help/README.md) describe
+local generation and preview.
 
-Use **Help → Check for Updates...** to check official stable release information without installing anything. Package selection follows your platform and runtime; private/no-release availability is reported clearly.
+Use **Help → Check for Updates...** to check official stable release information without installing anything. Package selection follows your platform and runtime; unavailable release information is reported clearly.
 
 ## Known limitations
 

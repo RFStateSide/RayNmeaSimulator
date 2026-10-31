@@ -1,5 +1,5 @@
 # Copyright (C) 2026 RF StateSide LLC; SPDX-License-Identifier: AGPL-3.0-or-later
-"""Private native Release packages; RF StateSide BrickSuite architecture adaptation.
+"""Native Release packages; RF StateSide BrickSuite architecture adaptation.
 
 Fresh build-tree staging, matching Qt tools/notices, explicit ELF closure/RPATH,
 Inno Setup on Windows and relocatable archives on Linux. Never installs or publishes.
@@ -18,9 +18,6 @@ import time
 import urllib.request
 
 ROOT = Path(__file__).resolve().parents[1]
-MODULES = ['qtbase', 'qtcharts', 'qtlocation', 'qtpositioning', 'qtserialport',
-           'qtwebsockets', 'qtmultimedia', 'qtdeclarative', 'qtsvg', 'qtimageformats',
-           'qtshadertools', 'qtwayland', 'qt5compat']
 PRIVATE = ('libQt6', 'libicu', 'libSDL2', 'libssl.so', 'libcrypto.so', 'libz.so',
            'libzstd.so', 'libbrotli', 'libpcre2-16')
 ICU_LICENSE = ('https://raw.githubusercontent.com/unicode-org/icu/release-73-2/icu4c/LICENSE',
@@ -107,15 +104,44 @@ def qt_inventory(qt):
     return result
 
 
+def build_configuration(build):
+    keys={'CMAKE_BUILD_TYPE','CMAKE_CXX_COMPILER','CMAKE_CXX_FLAGS','CMAKE_CXX_FLAGS_RELEASE',
+          'CMAKE_EXE_LINKER_FLAGS','CMAKE_EXE_LINKER_FLAGS_RELEASE','CMAKE_MAKE_PROGRAM',
+          'RAYNMEA_DEPLOYMENT','RAYNMEA_PACKAGE_VARIANT','BUILD_TESTING'}
+    values={}
+    for line in (build/'CMakeCache.txt').read_text().splitlines():
+        if '=' in line and ':' in line.split('=',1)[0]:
+            name=line.split(':',1)[0]
+            if name in keys:values[name]=line.split('=',1)[1]
+    return values
+
+def installer_components(args):
+    if os.name != 'nt':return []
+    probe=args.build/'installer-version-only.iss'
+    probe.write_bytes(b'#pragma message "RAY_INNO_VERSION=" + Str(Ver)\n#error Intentional version-only diagnostic; no installer output\n')
+    result=subprocess.run([str(args.iscc),str(probe)],capture_output=True,text=True)
+    match=re.search(r'Compiler engine version: Inno Setup ([0-9.]+)',result.stdout+result.stderr)
+    if not match:raise RuntimeError('Cannot identify Inno Setup engine version')
+    return [{'name':'Inno Setup','version':match[1],'origin':'https://jrsoftware.org/',
+             'license':'Inno Setup License; upstream component notices remain applicable',
+             'license_file':'licenses/Installer/InnoSetup-License.txt',
+             'producer_sha256':digest(args.iscc),
+             'engine_files':{n:digest(args.iscc.parent/n) for n in ['Setup.e32','SetupLdr.e32']}}]
+
 def notices(stage, args, config):
+    from importlib.util import spec_from_file_location, module_from_spec
+    spec=spec_from_file_location('source_delivery', ROOT/'deployment/source_delivery.py')
+    delivery=module_from_spec(spec);spec.loader.exec_module(delivery)
+    modules=sorted(delivery.qt_modules(stage,args.qt))
     licenses = stage / 'licenses'
+    if os.name=='nt':copy(args.iscc.parent/'License.txt',licenses/'Installer/InnoSetup-License.txt')
     for name in ['LICENSE', 'THIRD_PARTY_NOTICES.md']:
         copy(ROOT / name, stage / name)
     for folder in ['LICENSES', 'resources/nmea2000', 'icons/controls']:
         for src in (ROOT / folder).rglob('*'):
             if src.is_file() and any(s in src.name.lower() for s in ['license', 'notice']):
                 copy(src, licenses / 'Application' / src.relative_to(ROOT))
-    for module in MODULES:
+    for module in modules:
         source = args.qt_sources / module
         if not source.exists():
             if module == 'qtwayland' and os.name == 'nt':
@@ -147,7 +173,7 @@ def notices(stage, args, config):
     for src in (args.qt_sources / 'LICENSES').glob('*'):
         if src.is_file():
             copy(src, licenses / 'Qt/LICENSES' / src.name)
-    for module in MODULES:
+    for module in modules:
         for src in (args.qt / 'sbom').glob(module + '-*.spdx.json'):
             copy(src, licenses / 'Qt/sbom' / src.name)
     if list(stage.glob('lib/libicu*.so.73')):
@@ -311,10 +337,8 @@ def main():
     else:
         raise RuntimeError('Supported package platforms: Windows x64, Linux x86_64/aarch64')
     notices(stage, args, config)
-    snapshot = ROOT / '.raynmea-source.json'
-    source_record = json.loads(snapshot.read_text()) if snapshot.exists() else {
-        'source_sha': run('git', '-C', ROOT, 'rev-parse', 'HEAD').strip(),
-        'source_diff_sha256': hashlib.sha256(subprocess.check_output(['git', '-C', str(ROOT), 'diff', 'HEAD'])).hexdigest()}
+    compiled_source=json.loads((args.build/'source-snapshot.json').read_text())
+    source_record={'source_sha':compiled_source['base_commit'],'source_tree_sha256':compiled_source['source_tree_sha256'],'source_clean_commit':compiled_source['clean_commit']}
     linux_metadata = {}
     if platform.system() == 'Linux':
         symbols = ''.join(run('objdump', '-T', p) for p in stage.rglob('*')
@@ -330,16 +354,22 @@ def main():
     elif args.variant != 'native':
         raise RuntimeError('Debian12 variant is only available in a Debian 12 ARM64 build environment')
     write(stage / 'build-metadata.json', {'version': version, 'qt': config['Qt6Core_VERSION'],
-          'architecture': platform.machine(), 'os': platform.platform(), 'private_candidate': True,
+          'architecture': platform.machine(), 'os': platform.platform(),
+          'source_snapshot_sha256': digest(args.build / 'source-snapshot.json'),
+          'build_configuration':build_configuration(args.build),
           'package_variant': args.variant, 'deployment_workflow': 'stable-build-local-v1',
-          'clean_machine_acceptance': 'pending', 'public_distribution': 'NO-GO',
           **source_record,
           **linux_metadata,
           'packaging_tools': {str(p.relative_to(ROOT)): digest(p) for p in
               [Path(__file__).resolve(), ROOT / 'scripts/bundled-content-probe.cpp', ROOT / 'deployment/deploy.py', ROOT / 'deployment/linux/package_debian12.py', ROOT / 'deployment/windows/RayNmeaSimulator.iss', *(ROOT / 'packaging').rglob('*')] if p.is_file()},
           'compiler': run(config['CMAKE_CXX_COMPILER'], '--version').splitlines()[0],
-          'template_catalog': 'six owner-approved v0.1.0 Templates',
+          'installer_components': installer_components(args),
+          'template_catalog': 'six compiled read-only Templates',
           'bundled_content': bundled_content})
+    copy(args.build / 'source-snapshot.json', stage / 'source-snapshot.json')
+    from importlib.util import spec_from_file_location, module_from_spec
+    spec=spec_from_file_location('source_delivery', ROOT/'deployment/source_delivery.py');delivery=module_from_spec(spec);spec.loader.exec_module(delivery)
+    delivery.verify_snapshot(json.loads((stage/'source-snapshot.json').read_text()),ROOT)
     manifest = []
     qt_files = qt_inventory(args.qt)
     for path in sorted(stage.rglob('*')):
@@ -387,6 +417,9 @@ def main():
                              'version': component_version,
                              **({'input_sha256': digest(original)} if original else {})})
     write(stage / 'manifest.json', manifest)
+    write(stage / 'redistribution.json',delivery.inventory(stage,args.qt))
+    manifest.append({'path':'redistribution.json','sha256':digest(stage/'redistribution.json'),'bytes':(stage/'redistribution.json').stat().st_size,'origin':'package component inventory','source':'RFStateSide/RayNmeaSimulator','license':'AGPL-3.0-or-later','version':version})
+    write(stage / 'manifest.json',manifest)
     if os.name == 'nt':
         generated = output / 'RayNmeaSimulator.iss'
         generated.write_text(inno_configuration(version, stage, output), encoding='utf-8')
@@ -404,7 +437,7 @@ def main():
     spec = importlib.util.spec_from_file_location('ray_update_metadata', ROOT / 'deployment/update/metadata.py')
     update_metadata = importlib.util.module_from_spec(spec); spec.loader.exec_module(update_metadata)
     write(output / 'update-package.json', update_metadata.record(json.loads((stage / 'build-metadata.json').read_text()), artifact))
-    print('Private candidate:', artifact, '\nSHA256:', digest(artifact))
+    print('Package:', artifact, '\nSHA256:', digest(artifact))
 
 
 if __name__ == '__main__':

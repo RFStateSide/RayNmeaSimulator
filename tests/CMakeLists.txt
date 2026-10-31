@@ -291,3 +291,6 @@ add_dependencies(ray_tests_themes theme_catalog_tests)
 
 add_test(NAME update_metadata_tests COMMAND "${Python3_EXECUTABLE}" -B "${PROJECT_SOURCE_DIR}/tests/update_metadata_tests.py")
 set_tests_properties(update_metadata_tests PROPERTIES LABELS "deployment;updates" TIMEOUT 60)
+
+add_test(NAME source_delivery_tests COMMAND "${Python3_EXECUTABLE}" -B "${PROJECT_SOURCE_DIR}/tests/source_delivery_tests.py")
+set_tests_properties(source_delivery_tests PROPERTIES LABELS "deployment;licensing" TIMEOUT 120)
