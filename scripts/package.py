@@ -16,6 +16,7 @@ import subprocess
 import tarfile
 import time
 import urllib.request
+import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 PRIVATE = ('libQt6', 'libicu', 'libSDL2', 'libssl.so', 'libcrypto.so', 'libz.so',
@@ -26,6 +27,29 @@ ICU_LICENSE = ('https://raw.githubusercontent.com/unicode-org/icu/release-73-2/i
 
 def run(*args, **kwargs):
     return subprocess.check_output(list(map(str, args)), text=True, **kwargs)
+
+
+def windows_zip(installer, output, version):
+    """Wrap the completed installer unchanged; receipts hash the outer ZIP."""
+    installer = Path(installer)
+    expected = f'RayNmeaSimulator-{version}-Windows-x64-Setup.exe'
+    if installer.name != expected or not installer.is_file() or installer.is_symlink():
+        raise ValueError('Unexpected Windows installer input')
+    original = installer.read_bytes()
+    artifact = Path(output) / f'RayNmeaSimulator-{version}-Windows-x64.zip'
+    info = zipfile.ZipInfo(expected, date_time=(1980, 1, 1, 0, 0, 0))
+    info.compress_type = zipfile.ZIP_DEFLATED
+    info.external_attr = 0o100644 << 16
+    with zipfile.ZipFile(artifact, 'x', compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
+        archive.writestr(info, original)
+    with zipfile.ZipFile(artifact) as archive:
+        if archive.namelist() != [expected] or archive.testzip() is not None or archive.read(expected) != original:
+            raise ValueError('Windows ZIP verification failed')
+    write(artifact.with_name(artifact.name + '.contents.json'), {
+        'schema': 1,
+        'archive': {'name': artifact.name, 'bytes': artifact.stat().st_size, 'sha256': digest(artifact)},
+        'files': [{'name': expected, 'bytes': len(original), 'sha256': hashlib.sha256(original).hexdigest()}]})
+    return artifact
 
 
 def digest(path):
@@ -424,7 +448,7 @@ def main():
         generated = output / 'RayNmeaSimulator.iss'
         generated.write_text(inno_configuration(version, stage, output), encoding='utf-8')
         print(run(args.iscc, generated))
-        artifact = next(output.glob('*Setup.exe'))
+        artifact = windows_zip(next(output.glob('*Setup.exe')), output, version)
     else:
         variant = '-Debian12' if args.variant == 'Debian12' else ''
         artifact = output / f'RayNmeaSimulator-{version}-Linux-{platform.machine()}{variant}.tar.gz'

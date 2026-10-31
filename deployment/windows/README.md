@@ -1,5 +1,7 @@
 # Windows: Qt Creator Release → Deploy → installer
 
+Extract the Windows ZIP, then run the enclosed `RayNmeaSimulator-0.1.0-Windows-x64-Setup.exe`. The ZIP contains the installer unchanged; its receipt records both the ZIP and embedded installer checksums.
+
 ## Prerequisites (once)
 
 Use the accepted **Desktop Qt 6.10.3 MinGW 64-bit** kit (GCC 13.1), CMake/Ninja,
@@ -24,7 +26,7 @@ LLVM and MSVC are not qualified deployment kits for this application.
 5. Build the project (Ctrl+B). Read **Compile Output** and require success.
 6. Locate the directory shown in **Build directory** on this same settings page.
    Inspect `<that-directory>/deploy/RayNmeaSimulator/`.
-7. Retrieve `<that-directory>/deploy/installer/RayNmeaSimulator-0.1.0-Windows-x64-Setup.exe`
+7. Retrieve `<that-directory>/deploy/installer/RayNmeaSimulator-0.1.0-Windows-x64.zip`
    and its `.sha256` sidecar. The generated Inno configuration is at
    `<that-directory>/deployment/windows/RayNmeaSimulator.iss`.
 

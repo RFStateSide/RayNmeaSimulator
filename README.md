@@ -86,7 +86,7 @@ Choose the matching package from the [official releases](https://github.com/RFSt
 Application packages include the required Qt runtime, so a Qt development SDK is
 not needed to run them. Recorded system prerequisites still apply.
 
-- **Windows x64:** close the application, run the supplied installer and follow its
+- **Windows x64:** close the application, extract the Windows ZIP, run the enclosed installer and follow its
   prompts. Keep the application's installed runtime files together.
 - **Linux:** verify the supplied SHA-256 sidecar, extract the matching archive,
   enter its `RayNmeaSimulator` directory and run `./install.sh`. The per-user

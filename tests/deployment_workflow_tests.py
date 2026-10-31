@@ -2,6 +2,8 @@
 """Build-independent regressions for current-result publication and ABI policy."""
 import importlib.util
 import json
+import zipfile
+import hashlib
 from pathlib import Path
 import sys
 import tempfile
@@ -26,7 +28,7 @@ class WorkflowTests(unittest.TestCase):
         stage.mkdir(parents=True)
         (stage / 'build-metadata.json').write_text('{"version":"0.1.0"}')
         (stage / 'application').write_text('synthetic application')
-        artifact = output / ('test-Setup.exe' if sys.platform == 'win32' else 'test.tar.gz')
+        artifact = output / ('test-Windows-x64.zip' if sys.platform == 'win32' else 'test.tar.gz')
         artifact.write_bytes(b'synthetic private package')
         Path(str(artifact) + '.sha256').write_text(deploy.package.digest(artifact) + '  ' + artifact.name)
         (output / 'update-package.json').write_text('{"schema":1,"private_fixture":true}')
@@ -118,6 +120,34 @@ class WorkflowTests(unittest.TestCase):
             with self.subTest(architecture=architecture, release=os_release, ceilings=ceilings):
                 with self.assertRaises(RuntimeError): deploy.package.check_variant('Debian12', architecture, os_release, ceilings)
         deploy.package.check_variant('native', 'x86_64', 'ID=ubuntu', {'GLIBC': '2.38'})
+
+    def test_windows_zip_preserves_installer_and_only_publishes_container(self):
+        installer = self.build / 'RayNmeaSimulator-0.1.0-Windows-x64-Setup.exe'
+        original = b'MZ synthetic installer bytes with no installation side effects'
+        installer.write_bytes(original)
+        artifact = deploy.package.windows_zip(installer, self.build, '0.1.0')
+        self.assertEqual(installer.read_bytes(), original)
+        with zipfile.ZipFile(artifact) as archive:
+            self.assertEqual(archive.namelist(), [installer.name])
+            self.assertIsNone(archive.testzip())
+            self.assertEqual(archive.read(installer.name), original)
+        receipt = json.loads(artifact.with_name(artifact.name + '.contents.json').read_text())
+        self.assertEqual(receipt['files'][0]['sha256'], hashlib.sha256(original).hexdigest())
+        self.assertEqual(receipt['archive']['sha256'], deploy.package.digest(artifact))
+        # Exercise actual stable-output publication with both EXE and ZIP present.
+        attempt = deploy.Attempt(self.build)
+        output = attempt.generation / 'package'; output.mkdir()
+        stage = output / 'RayNmeaSimulator'; stage.mkdir()
+        (stage / 'build-metadata.json').write_text('{"version":"0.1.0"}')
+        (output / installer.name).write_bytes(original)
+        packaged = deploy.package.windows_zip(output / installer.name, output, '0.1.0')
+        packaged.with_name(packaged.name + '.sha256').write_text(deploy.package.digest(packaged))
+        (output / 'update-package.json').write_text('{}')
+        attempt.publish(output, packaged)
+        selected = self.build / 'deploy/installer'
+        self.assertTrue((selected / packaged.name).is_file())
+        self.assertTrue((selected / (packaged.name + '.contents.json')).is_file())
+        self.assertFalse((selected / installer.name).exists())
 
     def test_generated_inno_retains_installer_policy(self):
         text = deploy.package.inno_configuration('0.1.0', self.build / 'stage with spaces', self.build / 'installer')

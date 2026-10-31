@@ -5,6 +5,7 @@ import hashlib
 import json
 from pathlib import Path
 import re
+import zipfile
 ROOT=Path(__file__).resolve().parents[2]
 REPOSITORY='RFStateSide/RayNmeaSimulator'
 NAME='RayNmeaSimulator-update.json'
@@ -17,7 +18,7 @@ def record(metadata,artifact):
     if metadata['version']!=version():raise ValueError('Package/application version mismatch')
     arch=metadata['architecture'].lower()
     if str(metadata['os']).lower().startswith('windows') and arch in ('amd64','x86_64'):
-        key='windows-x86_64';expected=f'RayNmeaSimulator-{version()}-Windows-x64-Setup.exe'
+        key='windows-x86_64';expected=f'RayNmeaSimulator-{version()}-Windows-x64.zip'
     elif 'required_abi' in metadata and arch in ('x86_64','aarch64','arm64'):
         key='linux-x86_64' if arch=='x86_64' else 'linux-arm64'
         variant=metadata['package_variant']
@@ -28,6 +29,12 @@ def record(metadata,artifact):
         expected=f'RayNmeaSimulator-{version()}-Linux-{"x86_64" if arch=="x86_64" else "aarch64"}{"-Debian12" if variant=="Debian12" else ""}.tar.gz'
     else:raise ValueError('Unsupported package OS/architecture')
     if artifact.name!=expected or not artifact.is_file() or artifact.is_symlink():raise ValueError('Unexpected package identity')
+    if key=='windows-x86_64':
+        installer=f'RayNmeaSimulator-{version()}-Windows-x64-Setup.exe'
+        try:
+            with zipfile.ZipFile(artifact) as archive:
+                if archive.namelist()!=[installer] or archive.testzip() is not None or not archive.getinfo(installer).file_size:raise ValueError('Unexpected Windows ZIP contents')
+        except zipfile.BadZipFile as exc:raise ValueError('Invalid Windows ZIP') from exc
     with artifact.open('rb') as stream: checksum=hashlib.file_digest(stream,'sha256').hexdigest()
     entry={'name':artifact.name,'url':f'https://github.com/{REPOSITORY}/releases/download/v{version()}/{artifact.name}','bytes':artifact.stat().st_size,'sha256':checksum}
     if key.startswith('linux'):
@@ -44,7 +51,7 @@ def merge(records):
             if key not in KEYS or key in output['downloads']:raise ValueError('Unknown or duplicate platform')
             expected_url=f'https://github.com/{REPOSITORY}/releases/download/v{version()}/{entry["name"]}'
             if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._-]*',entry['name']) or entry['url']!=expected_url or not re.fullmatch('[a-f0-9]{64}',entry['sha256']) or type(entry['bytes']) is not int or entry['bytes']<=0:raise ValueError('Invalid package receipt')
-            suffix={'windows-x86_64':'Windows-x64-Setup.exe','linux-x86_64':'Linux-x86_64.tar.gz','linux-arm64':'Linux-aarch64.tar.gz','linux-arm64-debian12':'Linux-aarch64-Debian12.tar.gz'}[key]
+            suffix={'windows-x86_64':'Windows-x64.zip','linux-x86_64':'Linux-x86_64.tar.gz','linux-arm64':'Linux-aarch64.tar.gz','linux-arm64-debian12':'Linux-aarch64-Debian12.tar.gz'}[key]
             if entry['name']!=f'RayNmeaSimulator-{version()}-{suffix}':raise ValueError('Platform/package identity mismatch')
             if key.startswith('linux'):
                 abi=entry.get('required_abi',{})

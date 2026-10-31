@@ -52,7 +52,7 @@ void addAsset(QJsonObject &r,const QString &name,int size=100,const QString &sha
  auto a=r["assets"].toArray();a.append(QJsonObject{{"name",name},{"state","uploaded"},{"size",size},{"digest","sha256:"+sha},{"browser_download_url",base+"download/"+r["tag_name"].toString()+"/"+name}});r["assets"]=a;
 }
 QJsonObject manifest(QJsonObject &r,QString key="windows-x86_64",QString glibc="2.36"){
- const QMap<QString,QString> names{{"windows-x86_64","Windows-x64-Setup.exe"},{"linux-x86_64","Linux-x86_64.tar.gz"},{"linux-arm64","Linux-aarch64.tar.gz"},{"linux-arm64-debian12","Linux-aarch64-Debian12.tar.gz"}};const QString name="RayNmeaSimulator-0.2.0-"+names.value(key);addAsset(r,name);
+ const QMap<QString,QString> names{{"windows-x86_64","Windows-x64.zip"},{"linux-x86_64","Linux-x86_64.tar.gz"},{"linux-arm64","Linux-aarch64.tar.gz"},{"linux-arm64-debian12","Linux-aarch64-Debian12.tar.gz"}};const QString name="RayNmeaSimulator-0.2.0-"+names.value(key);addAsset(r,name);
  QJsonObject p{{"name",name},{"url",base+"download/v0.2.0/"+name},{"bytes",100},{"sha256",QString(64,'a')},{"required_abi",QJsonObject{{"GLIBC",glibc},{"GLIBCXX","3.4.30"},{"CXXABI","1.3.13"}}}};
  return {{"schema",1},{"repository","RFStateSide/RayNmeaSimulator"},{"version","0.2.0"},{"downloads",QJsonObject{{key,p}}}};
 }
@@ -90,6 +90,13 @@ private slots:
  void semver(){QFETCH(QString,a);QFETCH(QString,b);QFETCH(int,sign);auto c=UpdateChecker::compareVersions(a,b);QVERIFY(c);QCOMPARE(*c==0?0:(*c>0?1:-1),sign);}
  void invalidVersions(){for(const auto &v:{"","0.1","0.1.0junk","01.1.0","0.1.0-beta.01","0.1.0-","0.1.0<script>"})QVERIFY(!UpdateChecker::compareVersions(v,"0.1.0"));}
  void releaseStates(){auto r=release("0.1.0");QCOMPARE(UpdateChecker::parseRelease(json(r),APP_VERSION).state,UpdateResult::Current);r=release("0.0.9");QCOMPARE(UpdateChecker::parseRelease(json(r),APP_VERSION).state,UpdateResult::Older);r=release();QCOMPARE(UpdateChecker::parseRelease(json(r),APP_VERSION).state,UpdateResult::Newer);r["prerelease"]=true;QCOMPARE(UpdateChecker::parseRelease(json(r),APP_VERSION).state,UpdateResult::Unavailable);r=release();r["draft"]=true;QCOMPARE(UpdateChecker::parseRelease(json(r),APP_VERSION).state,UpdateResult::Unavailable);r=release();r["html_url"]="https://github.com/RFStateSide/RayNmeaSimulator-Archive/releases/tag/v0.2.0";QCOMPARE(UpdateChecker::parseRelease(json(r),APP_VERSION).state,UpdateResult::Error);for(const auto &bad:{QByteArray("garbage"),QByteArray("[]"),QByteArray("{}")})QCOMPARE(UpdateChecker::parseRelease(bad,APP_VERSION).state,UpdateResult::Error);}
+ void windowsZipSelectionAndIdentityGuards(){
+  UpdateHost host{"windows","x86_64",{}, {}, {}};auto r=release();auto m=manifest(r);auto parsed=UpdateChecker::parseRelease(json(r),APP_VERSION);auto selected=UpdateChecker::selectPackage(parsed,json(m),host);
+  QCOMPARE(selected.state,UpdateResult::Newer);QCOMPARE(selected.packageName,QString("RayNmeaSimulator-0.2.0-Windows-x64.zip"));QCOMPARE(selected.checksum,QString(64,'a'));
+  auto entries=m["downloads"].toObject();auto p=entries["windows-x86_64"].toObject();p["sha256"]=QString(64,'b');entries["windows-x86_64"]=p;auto bad=m;bad["downloads"]=entries;QCOMPARE(UpdateChecker::selectPackage(parsed,json(bad),host).state,UpdateResult::Incompatible);
+  p=entries["windows-x86_64"].toObject();p["name"]="RayNmeaSimulator-0.2.0-Windows-x64-Setup.exe";p["url"]=base+"download/v0.2.0/"+p["name"].toString();entries["windows-x86_64"]=p;bad["downloads"]=entries;QCOMPARE(UpdateChecker::selectPackage(parsed,json(bad),host).state,UpdateResult::Incompatible);
+  auto other=r;auto assets=other["assets"].toArray();auto asset=assets[0].toObject();asset["browser_download_url"]=base+"download/v9.0.0/"+asset["name"].toString();assets[0]=asset;other["assets"]=assets;auto wrong=UpdateChecker::parseRelease(json(other),APP_VERSION);QCOMPARE(UpdateChecker::selectPackage(wrong,json(m),host).state,UpdateResult::Incompatible);
+ }
  void platformMatching(){
   UpdateHost host{"windows","x86_64",{}, {}, {}};auto r=release();auto m=manifest(r);auto parsed=UpdateChecker::parseRelease(json(r),APP_VERSION);QCOMPARE(UpdateChecker::selectPackage(parsed,json(m),host).state,UpdateResult::Newer);
   host.architecture="arm64";QVERIFY(host.platformKey().isEmpty());QCOMPARE(UpdateChecker::selectPackage(parsed,json(m),host).state,UpdateResult::Incompatible);

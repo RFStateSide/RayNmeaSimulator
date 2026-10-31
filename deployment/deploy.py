@@ -87,6 +87,8 @@ class Attempt:
         installer.mkdir()
         for p in (artifact, Path(str(artifact) + '.sha256'), output / 'RayNmeaSimulator/build-metadata.json', output / 'update-package.json'):
             shutil.copy2(p, installer / p.name)
+        contents = artifact.with_name(artifact.name + '.contents.json')
+        if contents.exists(): shutil.copy2(contents, installer / contents.name)
         audit = output / 'loader-audit.json'
         if audit.exists(): shutil.copy2(audit, installer / audit.name)
         checked(output / 'RayNmeaSimulator', self.build).rename(checked(self.root / 'RayNmeaSimulator', self.build))
@@ -153,7 +155,7 @@ def deploy(build, cmake):
                 command([sys.executable, '-B', ROOT / 'scripts/package.py', '--build', runtime,
                          '--qt', qt, '--qt-sources', qt_sources, '--iscc', iscc,
                          '--output', output, '--variant', variant], log)
-            suffix = '*Setup.exe' if os.name == 'nt' else '*.tar.gz'
+            suffix = '*Windows-x64.zip' if os.name == 'nt' else '*.tar.gz'
             artifacts = list(output.glob(suffix))
             if len(artifacts) != 1: raise RuntimeError('Expected exactly one completed package')
             attempt.publish(output, artifacts[0])

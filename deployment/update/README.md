@@ -11,6 +11,8 @@ Responses are bounded (512 KiB release, 128 KiB metadata), parsed as untrusted J
 and release notes are plain text. Only official HTTPS repository release pages
 can be opened. Metadata redirects are limited to three official GitHub/CDN hops.
 
+Windows packages use `RayNmeaSimulator-<version>-Windows-x64.zip`. Extract the ZIP and run its enclosed installer. Metadata sizes and SHA-256 identify the outer ZIP; the container receipt identifies the embedded installer. Checking never downloads or installs the package.
+
 ## BrickSuite reference and adaptation
 
 BrickSuite's Updater, Help menu, `deployment/update/update.json`, packaging and

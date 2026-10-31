@@ -71,7 +71,7 @@ source archive, allowing only LF/CRLF line-ending equivalence.
 ```sh
 python -B deployment/source_delivery.py assemble \
   --stage build/release/deploy/RayNmeaSimulator \
-  --artifact build/release/deploy/installer/RayNmeaSimulator-0.1.0-Windows-x64-Setup.exe \
+  --artifact build/release/deploy/installer/RayNmeaSimulator-0.1.0-Windows-x64.zip \
   --qt /absolute/matching/Qt/prefix --sources build/source-inputs.json \
   --output build/release-source
 ```

@@ -11,6 +11,7 @@ from pathlib import Path, PurePosixPath
 import re
 import subprocess
 import tarfile
+import zipfile
 import tempfile
 import importlib.util
 ROOT=Path(__file__).resolve().parents[1]
@@ -157,6 +158,15 @@ def assemble(stage,artifact,qt,sources,output,allow_dirty=False):
     if actual!={r['path']:r['sha256'] for r in listed}:raise ValueError('Staged manifest mismatch')
     receipt=json.loads((artifact.parent/'update-package.json').read_text());entry=next(iter(receipt['downloads'].values()))
     if entry['name']!=artifact.name or entry['sha256']!=digest(artifact) or receipt['version']!=meta['version']:raise ValueError('Artifact/update receipt mismatch')
+    container=None
+    if artifact.suffix=='.zip':
+        container=json.loads(artifact.with_name(artifact.name+'.contents.json').read_text())
+        expected=f'RayNmeaSimulator-{meta["version"]}-Windows-x64-Setup.exe'
+        with zipfile.ZipFile(artifact) as archive:
+            if archive.namelist()!=[expected] or archive.testzip() is not None:raise ValueError('Unexpected Windows ZIP contents')
+            embedded=archive.read(expected)
+        measured={'schema':1,'archive':{'name':artifact.name,'bytes':artifact.stat().st_size,'sha256':digest(artifact)},'files':[{'name':expected,'bytes':len(embedded),'sha256':hashlib.sha256(embedded).hexdigest()}]}
+        if container!=measured:raise ValueError('Windows ZIP/installer receipt mismatch')
     inv=inventory(stage,qt)
     if canonical(inv)!=canonical(json.loads((stage/'redistribution.json').read_text())):raise ValueError('Supplier/runtime inventory changed since packaging')
     if meta.get('source_snapshot_sha256') and meta['source_snapshot_sha256']!=digest(stage/'source-snapshot.json'):raise ValueError('Build/source receipt mismatch')
@@ -203,6 +213,7 @@ def assemble(stage,artifact,qt,sources,output,allow_dirty=False):
         add_bytes(tar,'build-metadata.json',(stage/'build-metadata.json').read_bytes())
         add_bytes(tar,'package-manifest.json',(stage/'manifest.json').read_bytes())
         add_bytes(tar,'update-package.json',(artifact.parent/'update-package.json').read_bytes())
+        if container:add_bytes(tar,'container-contents.json',canonical(container))
         if (stage/'system-runtime.json').exists():add_bytes(tar,'system-runtime.json',(stage/'system-runtime.json').read_bytes())
         add_bytes(tar,'source-snapshot.json',canonical(record));add_bytes(tar,'source-index.json',canonical(source_index));add_bytes(tar,'redistribution.json',canonical(inv))
         add_bytes(tar,'REBUILD.md',(ROOT/'docs/source-delivery.md').read_bytes())
@@ -212,6 +223,7 @@ def assemble(stage,artifact,qt,sources,output,allow_dirty=False):
         for p in sorted((Path(qt)/'mkspecs').glob('q*.pri')):add_bytes(tar,'supplier-configuration/'+p.name,p.read_bytes())
     (output/(name+'.sha256')).write_text(digest(bundle)+'  '+name+'\n')
     sealed={'schema':1,'version':meta['version'],'platform':platform,'base_commit':record['base_commit'],'clean_commit':record['clean_commit'],'source_tree_sha256':record['source_tree_sha256'],'installer':entry,'corresponding_source':{'name':name,'sha256':digest(bundle),'bytes':bundle.stat().st_size},'staged_manifest_sha256':digest(stage/'manifest.json'),'redistribution_sha256':digest(stage/'redistribution.json')}
+    if container:sealed['container_contents']=container
     write(output/f'RayNmeaSimulator-{meta["version"]}-{platform}-release-set.json',sealed);return sealed
 
 def main():

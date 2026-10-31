@@ -9,7 +9,7 @@ not a supported v0.1.0 distribution.
 
 ## Windows x64
 
-Close RayNmeaSimulator before upgrading. Run the x64 installer; it installs per
+Close RayNmeaSimulator before upgrading. Extract the Windows ZIP and run its enclosed x64 installer; it installs per
 user under `%LOCALAPPDATA%/Programs/RayNmeaSimulator`, retains a chosen install
 directory, registers an application-menu entry and offers an optional desktop
 shortcut. Uninstall removes program files and registrations, not user data.

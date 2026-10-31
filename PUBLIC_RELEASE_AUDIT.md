@@ -1,11 +1,10 @@
 # Public-release audit
 
-**2026-10-31 — M2.59 engineering preparation accepted for private source
-closeout. Public release remains NO-GO pending final clean-revision package/source
-qualification and separate publication authorization.**
-Public-facing wording is prepared for v0.1.0; current engineering gates belong
-here rather than in product Help. The six Templates, eight-group/35-widget Default
-Layout and explicit Sending safeguards remain protected.
+**2026-10-31 — Owner accepted all four M2.60 packages after installing and running
+Windows x64, Linux x86_64, native ARM64 and Debian12 ARM64. M2.61 authorizes
+private ZIP compatibility corrections, source closeout, the exact v0.1.0 tag
+and a GitHub DRAFT with matching assets. Public visibility, release publication,
+Pages and announcements remain unauthorized.**
 
 ## Authoritative audit policy
 
@@ -183,3 +182,25 @@ under ignored `build/m259/`. M2.59A authorizes private source commit/push and fa
 No visibility, publication, tag, release or artifact upload is authorized. A later hosted service, hardware/User Product,
 proprietary dependency or materially different toolchain requires a scoped license/
 installation-information review; this assessment covers the documented desktop packages.
+
+## Private v0.1.0 draft preparation
+
+The official Windows delivery container is `RayNmeaSimulator-0.1.0-Windows-x64.zip`.
+It holds one root-level installer EXE without changing its bytes. Deploy, package
+receipts, runtime filename matching and source sealing identify the outer ZIP;
+a measured container receipt separately binds the embedded EXE. Existing official
+URL, same-release asset/digest/size, platform and Linux ABI checks remain required.
+The original accepted M2.60 EXE and all prior evidence remain preserved. Because
+runtime ZIP selection required a source correction, final draft assets must be
+rebuilt/sealed from the resulting clean source commit; no M2.60 binary is silently
+relabeled. The tag must target that exact commit. The owner authorizes a private
+draft and its assets, not a published Release or an immutable/public release state.
+
+Owner-specified repository description, website and 15 relevant Topics may be
+updated while preserving the private repository ID. The existing official project
+page is a website link, not authorization to publish an announcement or edit it.
+Current artifact hashes, clean source/restore checks, test results and actual
+GitHub draft/asset verification belong under ignored `build/m261/`. Verify all
+public binary/source/metadata/Help recipient access only after separate publication
+authorization. No unconditional legal, interoperability or hardware certification
+is introduced by this private preparation.

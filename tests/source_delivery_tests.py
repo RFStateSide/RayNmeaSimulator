@@ -1,5 +1,5 @@
 # Copyright (C) 2026 RF StateSide LLC; SPDX-License-Identifier: AGPL-3.0-or-later
-import hashlib,importlib.util,json,sys,tarfile,tempfile,unittest,io
+import hashlib,importlib.util,json,sys,tarfile,tempfile,unittest,io,zipfile
 from unittest import mock
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
@@ -70,6 +70,14 @@ class DeliveryTests(unittest.TestCase):
     sd.write(catalog,{'Qt/qtvirtualkeyboard':{'path':str(archive),'sha256':sd.digest(archive),'origin':'https://download.qt.io/fixture','version':'6.10.3'}})
     a=sd.assemble(stage,artifact,qt,catalog,root/'build/a',True);b=sd.assemble(stage,artifact,qt,catalog,root/'build/b',True);self.assertEqual(a['corresponding_source']['sha256'],b['corresponding_source']['sha256'])
     with tarfile.open(root/'build/a'/a['corresponding_source']['name']) as t:self.assertIn('application/.raynmea-source.json',t.getnames());self.assertNotIn('application/.git/config',t.getnames())
+    wrapped=root/'build/RayNmeaSimulator-0.1.0-Windows-x64.zip';embedded=b'preserved installer bytes';exe='RayNmeaSimulator-0.1.0-Windows-x64-Setup.exe'
+    with zipfile.ZipFile(wrapped,'w') as archive:archive.writestr(exe,embedded)
+    contents={'schema':1,'archive':{'name':wrapped.name,'bytes':wrapped.stat().st_size,'sha256':sd.digest(wrapped)},'files':[{'name':exe,'bytes':len(embedded),'sha256':hashlib.sha256(embedded).hexdigest()}]};sidecar=wrapped.with_name(wrapped.name+'.contents.json');sd.write(sidecar,contents);sd.write(wrapped.parent/'update-package.json',{'version':'0.1.0','downloads':{'windows-x86_64':{'name':wrapped.name,'sha256':sd.digest(wrapped)}}})
+    sealed=sd.assemble(stage,wrapped,qt,catalog,root/'build/zip-source',True);self.assertEqual(sealed['container_contents'],contents)
+    with tarfile.open(root/'build/zip-source'/sealed['corresponding_source']['name']) as t:self.assertEqual(json.load(t.extractfile('container-contents.json')),contents)
+    contents['files'][0]['sha256']='0'*64;sd.write(sidecar,contents)
+    with self.assertRaisesRegex(ValueError,'ZIP/installer receipt mismatch'):sd.assemble(stage,wrapped,qt,catalog,root/'build/tampered-zip',True)
+    sd.write(artifact.parent/'update-package.json',{'version':'0.1.0','downloads':{'windows-x86_64':{'name':artifact.name,'sha256':sd.digest(artifact)}}})
     data=json.loads(catalog.read_text());data['Qt/qtvirtualkeyboard']['sha256']='0'*64;sd.write(catalog,data)
     with self.assertRaisesRegex(ValueError,'Source hash mismatch'):sd.assemble(stage,artifact,qt,catalog,root/'build/wrong',True)
    finally:sd.ROOT=previous

@@ -145,7 +145,7 @@ UpdateResult UpdateChecker::selectPackage(UpdateResult r,const QByteArray &data,
     const auto obj=doc.object();
     if(obj.value("schema")!=QJsonValue(1)||obj.value("repository").toString()!=repository||obj.value("version").toString()!=r.latest||!obj.value("downloads").isObject()||host.platformKey().isEmpty())return r;
     const auto p=obj.value("downloads").toObject().value(host.platformKey()).toObject();const auto name=p.value("name").toString();const auto a=asset(r.release,name);const auto sha=p.value("sha256").toString();const auto url=QUrl(p.value("url").toString(),QUrl::StrictMode);
-    const QMap<QString,QString> names{{"windows-x86_64","Windows-x64-Setup.exe"},{"linux-x86_64","Linux-x86_64.tar.gz"},{"linux-arm64","Linux-aarch64.tar.gz"},{"linux-arm64-debian12","Linux-aarch64-Debian12.tar.gz"}};
+    const QMap<QString,QString> names{{"windows-x86_64","Windows-x64.zip"},{"linux-x86_64","Linux-x86_64.tar.gz"},{"linux-arm64","Linux-aarch64.tar.gz"},{"linux-arm64-debian12","Linux-aarch64-Debian12.tar.gz"}};
     if(name!="RayNmeaSimulator-"+r.latest+"-"+names.value(host.platformKey()))return r;
 
     if(a.isEmpty()||a.value("state").toString()!="uploaded"||!officialAsset(url,r.tag,name)||a.value("browser_download_url").toString()!=url.toString()||p.value("bytes").toDouble()<=0||p.value("bytes")!=a.value("size")||!QRegularExpression("^[a-f0-9]{64}$").match(sha).hasMatch())return r;

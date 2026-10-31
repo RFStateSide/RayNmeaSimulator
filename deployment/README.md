@@ -29,7 +29,7 @@ deploy/
   .runs/<unique-generation>/     # private intermediates and retained previous output
 ```
 
-Windows installer: `deploy/installer/RayNmeaSimulator-0.1.0-Windows-x64-Setup.exe`.
+Windows installer: `deploy/installer/RayNmeaSimulator-0.1.0-Windows-x64.zip`.
 Native Linux: `deploy/installer/RayNmeaSimulator-0.1.0-Linux-x86_64.tar.gz` or
 `RayNmeaSimulator-0.1.0-Linux-aarch64.tar.gz`.
 Debian 12 ARM64: `deploy/installer/RayNmeaSimulator-0.1.0-Linux-aarch64-Debian12.tar.gz`.
@@ -71,8 +71,8 @@ The manifest enumerates staged files (the manifest itself is intentionally exclu
 PowerShell:
 
 ```powershell
-Get-FileHash "<Release-build>/deploy/installer/RayNmeaSimulator-0.1.0-Windows-x64-Setup.exe" -Algorithm SHA256
-Get-Content "<Release-build>/deploy/installer/RayNmeaSimulator-0.1.0-Windows-x64-Setup.exe.sha256"
+Get-FileHash "<Release-build>/deploy/installer/RayNmeaSimulator-0.1.0-Windows-x64.zip" -Algorithm SHA256
+Get-Content "<Release-build>/deploy/installer/RayNmeaSimulator-0.1.0-Windows-x64.zip.sha256"
 ```
 
 Linux, from `deploy/installer/`:
