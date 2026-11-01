@@ -278,3 +278,41 @@ approved v0.1.0 distribution. Continuing source availability, documented operati
 limitations and future scoped qualification remain obligations, not promises of
 navigation, safety, hardware or legal certification. Detailed evidence remains
 under ignored `build/m262/`; this remains the sole maintained tracked audit.
+
+## Pending corrected v0.1.0 packages and repository manifest (M2.64)
+
+The Linux installer checks the actual XCB/SVG/TLS runtime closure, OpenSSL 3 and
+Python 3.11. Missing verified distro packages require explicit consent. Removal,
+installed-library upgrades and glibc/system-Qt replacement are refused. Earlier
+private Mint 22.3, Ubuntu 24.04, native ARM64 and Debian 12 ARM64 qualification is
+retained under ignored build/m264. Refined corrected updater builds passed installed
+Mint XCB, disposable Ubuntu 24.04 XCB, native ARM64 and read-only Debian 12 runtime
+checks, normal upgrade/uninstall and synthetic user-data preservation. Eleven focused
+CTest suites passed. Four complete source kits were independently restored: 727
+application files each, with 14/21/21/17 matching Windows/x86_64/native ARM64/Debian12
+source inputs verified. All compiled resource hashes matched across Linux tests.
+
+Owner decisions retain version 0.1.0 and the original annotated tag at
+87cd0912b3e10777e610a82a78156484f66a2c12. Corrected updater binaries need a new normal
+source commit, exact source-tree receipts and complete matching source kits. They
+must never be attributed entirely to the old tag. The final mutable distribution
+manifest is generated after package construction, separately from build-source
+identity, at deployment/update/update.json on master.
+
+The proposal is five uploaded assets: four rebuilt installation packages and one
+complete Source-and-Verification ZIP. All original 26 artifacts remain privately
+preserved and inside the companion. GitHub automatic source links still refer to
+the old tag. Removing the Release-attached RayNmeaSimulator-update.json does not
+update old executables; the owner accepts their future package-discovery limitation.
+The new checker uses the repository manifest, cross-checks the manifest against the latest official
+stable Release and preserves HTTPS/checksum/ABI/request/browser safeguards.
+
+**M2.64B EXECUTION AUTHORIZED.** The owner accepted the 23-file correction and
+authorized clean code/manifest commits, rebuilds, synchronization and controlled
+replacement on the existing Release. Final artifact identity and anonymous source
+access must be verified before support retirement. No tag
+move, new version, new Release or visibility change is authorized. The original
+public 26-asset inventory remains current until those operations are approved.
+Positive live retrieval of the new master manifest and replaced asset verification
+remain publication gates. Detailed source/artifact identities and qualification
+belong under ignored build/m264, not additional tracked audit documents.

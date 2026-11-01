@@ -8,7 +8,7 @@ import re
 import zipfile
 ROOT=Path(__file__).resolve().parents[2]
 REPOSITORY='RFStateSide/RayNmeaSimulator'
-NAME='RayNmeaSimulator-update.json'
+NAME='update.json'
 KEYS={'windows-x86_64','linux-x86_64','linux-arm64','linux-arm64-debian12'}
 def version():
     return re.search(r'project\(RayNmeaSimulator VERSION ([0-9]+\.[0-9]+\.[0-9]+)',(ROOT/'CMakeLists.txt').read_text())[1]
@@ -46,16 +46,18 @@ def record(metadata,artifact):
 def merge(records):
     output={'schema':1,'repository':REPOSITORY,'version':version(),'downloads':{}}
     for item in records:
+        if type(item.get('schema')) is not int:raise ValueError('Invalid metadata schema')
         if (item.get('schema'),item.get('repository'),item.get('version'))!=(1,REPOSITORY,version()):raise ValueError('Release identity mismatch')
         for key,entry in item['downloads'].items():
             if key not in KEYS or key in output['downloads']:raise ValueError('Unknown or duplicate platform')
             expected_url=f'https://github.com/{REPOSITORY}/releases/download/v{version()}/{entry["name"]}'
-            if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._-]*',entry['name']) or entry['url']!=expected_url or not re.fullmatch('[a-f0-9]{64}',entry['sha256']) or type(entry['bytes']) is not int or entry['bytes']<=0:raise ValueError('Invalid package receipt')
+            if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._-]*',entry['name']) or entry['url']!=expected_url or not re.fullmatch('[a-f0-9]{64}',entry['sha256']) or type(entry['bytes']) is not int or not 0<entry['bytes']<=2*1024**3:raise ValueError('Invalid package receipt')
             suffix={'windows-x86_64':'Windows-x64.zip','linux-x86_64':'Linux-x86_64.tar.gz','linux-arm64':'Linux-aarch64.tar.gz','linux-arm64-debian12':'Linux-aarch64-Debian12.tar.gz'}[key]
             if entry['name']!=f'RayNmeaSimulator-{version()}-{suffix}':raise ValueError('Platform/package identity mismatch')
             if key.startswith('linux'):
                 abi=entry.get('required_abi',{})
                 if set(abi)!={'GLIBC','GLIBCXX','CXXABI'} or any(not isinstance(v,str) or not re.fullmatch(r'\d+(?:\.\d+){1,3}',v) for v in abi.values()):raise ValueError('Missing Linux ABI receipt')
+                if key.endswith('debian12') and any(tuple(map(int,abi[k].split('.')))>tuple(map(int,ceiling.split('.'))) for k,ceiling in {'GLIBC':'2.36','GLIBCXX':'3.4.30','CXXABI':'1.3.13'}.items()):raise ValueError('Not Debian12 compatible')
             output['downloads'][key]=entry
     if not output['downloads']:raise ValueError('No packages')
     return output
@@ -63,8 +65,8 @@ def main():
     parser=argparse.ArgumentParser(description='Assemble release information locally; does not publish anything')
     parser.add_argument('--receipt',type=Path,action='append',required=True);parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
     output=args.output.absolute()
-    if output.resolve()!=output or not output.is_relative_to(ROOT/'build') or output.name!=NAME:raise ValueError('Use a physical build/ output named '+NAME)
-    data=merge([json.loads(p.read_text()) for p in args.receipt]);output.parent.mkdir(parents=True,exist_ok=True)
+    if output.resolve()!=output or not (output.is_relative_to(ROOT/'build') or output==ROOT/'deployment/update/update.json') or output.name!=NAME:raise ValueError('Use a physical build/ output named '+NAME)
+    data=merge([json.loads(p.read_text()) for p in args.receipt]);data['release_url']=f'https://github.com/{REPOSITORY}/releases/tag/v{version()}';output.parent.mkdir(parents=True,exist_ok=True)
     if output.exists():raise ValueError('Preserve prior metadata; choose a fresh output location')
     output.write_text(json.dumps(data,indent=2)+'\n');print('Local metadata only:',output)
 if __name__=='__main__':main()

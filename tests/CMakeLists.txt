@@ -294,3 +294,12 @@ set_tests_properties(update_metadata_tests PROPERTIES LABELS "deployment;updates
 
 add_test(NAME source_delivery_tests COMMAND "${Python3_EXECUTABLE}" -B "${PROJECT_SOURCE_DIR}/tests/source_delivery_tests.py")
 set_tests_properties(source_delivery_tests PROPERTIES LABELS "deployment;licensing" TIMEOUT 120)
+
+add_test(NAME linux_prerequisite_tests COMMAND "${Python3_EXECUTABLE}" -B "${PROJECT_SOURCE_DIR}/tests/linux_prerequisite_tests.py")
+set_tests_properties(linux_prerequisite_tests PROPERTIES LABELS "deployment;synthetic" TIMEOUT 60)
+
+add_test(NAME repackaging_tests COMMAND "${Python3_EXECUTABLE}" -B "${PROJECT_SOURCE_DIR}/tests/repackaging_tests.py")
+set_tests_properties(repackaging_tests PROPERTIES LABELS "deployment;licensing" TIMEOUT 180)
+
+add_test(NAME release_support_tests COMMAND "${Python3_EXECUTABLE}" -B "${PROJECT_SOURCE_DIR}/tests/release_support_tests.py")
+set_tests_properties(release_support_tests PROPERTIES LABELS "deployment;licensing" TIMEOUT 240)

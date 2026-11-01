@@ -20,7 +20,10 @@ Keep bundled DLLs/plugins together. See [Windows details](../deployment/windows/
 Verify the sidecar checksum, extract the archive into a new directory and run
 `./install.sh`. The default program prefix is `~/.local/opt/RayNmeaSimulator`;
 `--prefix <absolute-directory>` selects another location. Installation requires
-Python >=3.11 and compatible system libraries, not sudo or a developer SDK.
+Python >=3.11 and compatible system libraries; a developer SDK is not required.
+A provisioned host installs per-user without sudo. Missing verified runtime packages
+can be installed through the distribution package manager after explicit consent;
+see [runtime checks and noninteractive options](packaging-corrections.md).
 Launch the installed `RayNmeaSimulator` wrapper. Linux desktop libraries and the
 OpenSSL 3 TLS runtime are system prerequisites; the exact recorded external baseline
 is in `system-runtime.json`. A package is not universally portable across Linux.

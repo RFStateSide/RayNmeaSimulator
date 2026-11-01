@@ -3,7 +3,8 @@
 """Per-user atomic install/upgrade; uninstall never accesses application user data.
 
 Adapted from RF StateSide BrickSuite's managed-prefix/desktop/rollback architecture.
-No sudo, apt, service management or application launch. Python3 is a runtime prerequisite.
+System runtime dependency installation requires explicit consent; the application remains per-user.
+No service changes or application launch. Python 3.11 or newer is a prerequisite.
 """
 import argparse
 import fcntl
@@ -15,6 +16,12 @@ import shutil
 import tempfile
 import platform
 import subprocess
+import sys
+# Checking or uninstalling a verified package must not create unlisted bytecode files.
+sys.dont_write_bytecode = True
+if sys.version_info < (3, 11):
+    raise SystemExit('Installer requires Python 3.11 or newer; no application or system packages changed.')
+import runtime_prerequisites
 
 IDENTITY = 'com.rfstateside.RayNmeaSimulator'
 RECEIPT = '.raynmea-install.json'
@@ -64,6 +71,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('action', choices=['install', 'uninstall'])
     parser.add_argument('--prefix', type=Path, default=Path.home() / '.local/opt/RayNmeaSimulator')
+    parser.add_argument('--dependencies', choices=['ask', 'check', 'install'], default='ask',
+                        help='ask interactively (default), check only, or explicitly consent to installing missing runtime packages')
+    parser.add_argument('--non-interactive', action='store_true', help='never prompt; missing dependencies fail unless explicitly opted in')
     args = parser.parse_args()
     prefix = checked_prefix(args.prefix)
     prefix.parent.mkdir(parents=True, exist_ok=True)
@@ -102,10 +112,7 @@ def main():
         required = metadata.get('required_abi', {}).get('GLIBC')
         if required and tuple(map(int, os.confstr('CS_GNU_LIBC_VERSION').split()[-1].split('.'))) < tuple(map(int, required.split('.'))):
             raise RuntimeError('Package requires glibc ' + required + ' or newer')
-        loader = subprocess.check_output(['ldd', str(source / 'bin/RayNmeaSimulator')], text=True,
-                                         env={**os.environ, 'LD_LIBRARY_PATH': ''})
-        if 'not found' in loader:
-            raise RuntimeError('Missing system runtime libraries:\n' + loader)
+        runtime_prerequisites.ensure(source, args.dependencies, args.non_interactive)
         if not existing and desktop.exists():
             raise RuntimeError('Existing desktop registration; preserving it')
         desktop.parent.mkdir(parents=True, exist_ok=True)
@@ -151,4 +158,8 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except (RuntimeError, OSError, ValueError) as error:
+        print('Installation stopped: ' + str(error), file=sys.stderr)
+        raise SystemExit(1)

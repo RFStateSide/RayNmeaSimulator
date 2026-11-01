@@ -53,6 +53,8 @@ public:
     void cancel();
     bool busy() const { return !reply.isNull(); }
     static QUrl endpoint();
+    static QUrl releaseEndpoint();
+    static UpdateResult parseManifest(const QByteArray &,const QString &installed);
     static std::optional<int> compareVersions(const QString &a,const QString &b);
     static UpdateResult parseRelease(const QByteArray &,const QString &installed);
     static UpdateResult selectPackage(UpdateResult,const QByteArray &,const UpdateHost &);
@@ -68,7 +70,8 @@ private:
     QTimer deadline;
     int timeoutMs;
     int redirects=0;
-    bool metadata=false;
+    bool fetchingRelease=false;
+    QByteArray manifestData;
     QByteArray buffer;
     UpdateResult result;
 };

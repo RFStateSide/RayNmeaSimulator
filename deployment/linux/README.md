@@ -76,3 +76,14 @@ Do not store owner data inside the managed program prefix. Modified/unmanaged
 installations are preserved/refused. Settings, layouts, QSS, credentials, routes
 and logs are outside installer ownership. See [the overview](../README.md) for
 safe profile probes, failure handling, retained generations and release gates.
+
+## Target runtime checks
+
+The Linux installer verifies the shipped XCB/SVG/TLS plugin closure as well as the
+executable; `libxcb-cursor0` is an X11 runtime requirement on all three Linux builds.
+On supported Debian/Ubuntu/Mint systems missing runtime packages can be installed
+only after explicit consent. Provisioned hosts still install per-user without sudo.
+Use `--dependencies check` or `--non-interactive` for checks without prompts;
+`--dependencies install --non-interactive` explicitly opts into missing packages
+with noninteractive sudo authorization. No automatic OS upgrade or system Qt/glibc
+replacement is performed. See [packaging corrections and full source](../../docs/packaging-corrections.md).

@@ -30,6 +30,15 @@ class MetadataTests(unittest.TestCase):
    receipt=module.record(meta,p);entry=receipt['downloads']['windows-x86_64'];self.assertEqual(entry['sha256'],hashlib.sha256(p.read_bytes()).hexdigest());self.assertEqual(entry['name'],name)
    wrong=folder/exe;wrong.write_bytes(b'installer fixture')
    with self.assertRaises(ValueError):module.record(meta,wrong)
+ def test_actual_repository_manifest(self):
+  value=json.loads((ROOT/'deployment/update/update.json').read_text());merged=module.merge([value]);self.assertEqual(set(merged['downloads']),module.KEYS);self.assertEqual(merged['downloads'],value['downloads'])
+ def test_hostile_repository_manifest_receipts(self):
+  original=json.loads((ROOT/'deployment/update/update.json').read_text())
+  for field,bad in [('schema',True),('repository','RFStateSide/RayNmeaSimulator-Archive')]:
+   value=json.loads(json.dumps(original));value[field]=bad
+   with self.assertRaises(ValueError):module.merge([value])
+  value=json.loads(json.dumps(original));value['downloads']['linux-arm64-debian12']['required_abi']['GLIBC']='2.38'
+  with self.assertRaises(ValueError):module.merge([value])
  def test_no_placeholder_receipts(self):
   with self.assertRaises(ValueError):module.merge([])
   with self.assertRaises(ValueError):module.merge([{'schema':1,'repository':'RFStateSide/RayNmeaSimulator-Archive','version':module.version(),'downloads':{}}])

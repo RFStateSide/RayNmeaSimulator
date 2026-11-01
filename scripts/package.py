@@ -281,7 +281,7 @@ def linux(stage, args, config, origins):
     (stage / 'bin/qt.conf').write_text('[Paths]\nPrefix=..\nPlugins=plugins\nLibraries=lib\n')
     (stage / 'RayNmeaSimulator').write_text('#!/bin/sh\nset -eu\nroot=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)\nexec "$root/bin/RayNmeaSimulator" "$@"\n')
     (stage / 'RayNmeaSimulator').chmod(0o755)
-    for name in ['install.sh', 'uninstall.sh', 'installer.py']:
+    for name in ['install.sh', 'uninstall.sh', 'installer.py', 'runtime_prerequisites.py']:
         copy(ROOT / 'packaging/linux' / name, stage / name)
         (stage / name).chmod(0o755)
     copy(ROOT / 'images/RayNmeaSimulator_1024.png', stage / 'RayNmeaSimulator.png')
@@ -455,8 +455,8 @@ def main():
         with tarfile.open(artifact, 'w:gz') as archive:
             archive.add(stage, arcname='RayNmeaSimulator')
     (output / (artifact.name + '.sha256')).write_text(digest(artifact) + '  ' + artifact.name + '\n')
-    # Packaging-only receipt; never fetched by clients until a separately approved
-    # release publishes the explicitly assembled metadata asset.
+    # Local platform receipt. Assemble repository-hosted update.json only after all
+    # actual distribution artifacts are verified; never upload it as a Release asset.
     import importlib.util
     spec = importlib.util.spec_from_file_location('ray_update_metadata', ROOT / 'deployment/update/metadata.py')
     update_metadata = importlib.util.module_from_spec(spec); spec.loader.exec_module(update_metadata)
