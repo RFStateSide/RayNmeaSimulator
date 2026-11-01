@@ -279,40 +279,80 @@ limitations and future scoped qualification remain obligations, not promises of
 navigation, safety, hardware or legal certification. Detailed evidence remains
 under ignored `build/m262/`; this remains the sole maintained tracked audit.
 
-## Pending corrected v0.1.0 packages and repository manifest (M2.64)
+## Published v0.1.0 correction and five-asset closeout (M2.64B, 2026-11-01)
 
-The Linux installer checks the actual XCB/SVG/TLS runtime closure, OpenSSL 3 and
-Python 3.11. Missing verified distro packages require explicit consent. Removal,
-installed-library upgrades and glibc/system-Qt replacement are refused. Earlier
-private Mint 22.3, Ubuntu 24.04, native ARM64 and Debian 12 ARM64 qualification is
-retained under ignored build/m264. Refined corrected updater builds passed installed
-Mint XCB, disposable Ubuntu 24.04 XCB, native ARM64 and read-only Debian 12 runtime
-checks, normal upgrade/uninstall and synthetic user-data preservation. Eleven focused
-CTest suites passed. Four complete source kits were independently restored: 727
-application files each, with 14/21/21/17 matching Windows/x86_64/native ARM64/Debian12
-source inputs verified. All compiled resource hashes matched across Linux tests.
+The owner authorized source closeout, clean builds, synchronization and controlled
+replacement on the existing Release. Corrected application/packaging source is
+`bf212fc3389314153911ed5f4b759b9f56e2723f`; its clean 727-file build snapshot has
+SHA-256 `6cbcfd0cfa34b732c9fd8a7fb2803f38c2a489267b2640ef9ff4a52cc2abd118`.
+Version stays **0.1.0**. The original annotated tag object
+`daab0924a934c976a1145da2a9e557465e4a1356` remains on
+`87cd0912b3e10777e610a82a78156484f66a2c12`. Corrected binaries were not built
+entirely from that old tag. No new Release/version/tag or history rewrite occurred.
 
-Owner decisions retain version 0.1.0 and the original annotated tag at
-87cd0912b3e10777e610a82a78156484f66a2c12. Corrected updater binaries need a new normal
-source commit, exact source-tree receipts and complete matching source kits. They
-must never be attributed entirely to the old tag. The final mutable distribution
-manifest is generated after package construction, separately from build-source
-identity, at deployment/update/update.json on master.
+The post-build manifest commit is
+`e0209be074069836998c9cc6bb9438b17ce4b89a`. The exact anonymous HTTPS resource is
+https://raw.githubusercontent.com/RFStateSide/RayNmeaSimulator/master/deployment/update/update.json
+and its SHA-256 is
+`5e13695d6c0a1962ccfd254139727bbf78f380ef0946924a4f416ba0b7289e88`.
+Actual names, URLs, bytes, checksums and measured ABI requirements match the latest
+official stable Release. The checker treats remote data as untrusted, cross-checks
+the latest Release, and retains HTTPS/size/time/checksum/ABI/browser safeguards.
+No Release-attached update metadata is required or retained.
 
-The proposal is five uploaded assets: four rebuilt installation packages and one
-complete Source-and-Verification ZIP. All original 26 artifacts remain privately
-preserved and inside the companion. GitHub automatic source links still refer to
-the old tag. Removing the Release-attached RayNmeaSimulator-update.json does not
-update old executables; the owner accepts their future package-discovery limitation.
-The new checker uses the repository manifest, cross-checks the manifest against the latest official
-stable Release and preserves HTTPS/checksum/ABI/request/browser safeguards.
+The existing Release (ID 430092960) now has exactly these five uploaded assets:
 
-**M2.64B EXECUTION AUTHORIZED.** The owner accepted the 23-file correction and
-authorized clean code/manifest commits, rebuilds, synchronization and controlled
-replacement on the existing Release. Final artifact identity and anonymous source
-access must be verified before support retirement. No tag
-move, new version, new Release or visibility change is authorized. The original
-public 26-asset inventory remains current until those operations are approved.
-Positive live retrieval of the new master manifest and replaced asset verification
-remain publication gates. Detailed source/artifact identities and qualification
-belong under ignored build/m264, not additional tracked audit documents.
+| Asset | Bytes | SHA-256 |
+|---|---:|---|
+| `RayNmeaSimulator-0.1.0-Linux-aarch64-Debian12.tar.gz` | 37228991 | `17c2f4664538a74be1e637c0dec7a0f04e5b97cd3c1b069ef291af26c8b2e680` |
+| `RayNmeaSimulator-0.1.0-Linux-aarch64.tar.gz` | 44469040 | `2598fde02a49f793c3a1011eba1e9918fd9cdd91ac9c75f05c634a71f9b5704a` |
+| `RayNmeaSimulator-0.1.0-Linux-x86_64.tar.gz` | 45087972 | `6fa2aa52b070be9cd6257ec7dbcf026376c0fc8e70a17e241579b97f298c37cc` |
+| `RayNmeaSimulator-0.1.0-Windows-x64.zip` | 18668202 | `6206d244f18fa198c8420bf1968412482c6f4ee3eed8161ac288cb36f8a9f490` |
+| `RayNmeaSimulator-0.1.0-Corrected-Source-and-Verification.zip` | 1250485430 | `94b2da53ee41f24879c341ff8f9093df64f82b9d0ca825f3e9e0f4bf3f8bdd9e` |
+
+All five were anonymously downloaded and hashed. The complete companion was
+verified in full (52 members; all 26 original published artifacts byte-for-byte)
+BEFORE any source/support retirement. Its `current/` includes all four complete
+matching platform Source kits, notices, receipts, checksums and final manifest
+snapshot; `original-v0.1.0/` preserves all historical published bytes. Independent
+scratch restores verified 727 application files/modes per kit and 14/21/21/17
+Windows/x86_64/native ARM64/Debian12 source inputs. GitHub automatic source links
+still identify the original tag, not the corrected binaries' complete sources.
+
+Four original canonical installers were replaced only after source preservation
+passed. The 22 explicitly inventoried superseded support attachments were then
+retired; original IDs, URLs and hashes remain in ignored `build/m264b/` evidence
+and original bytes remain public in the companion. Individual retired URLs are
+not promised to redirect to ZIP members. Release notes present four direct
+installation links, practical prerequisite guidance, complete source access,
+checksums, truthful source/tag identity and old-client compatibility.
+
+The Linux prerequisite correction verifies executable/XCB/SVG/TLS closure,
+OpenSSL 3 and Python 3.11+. Missing verified distro packages require consent;
+removal, installed-library upgrades and glibc/system-Qt replacement are refused.
+Accepted missing-cursor, check/decline/offline/failure evidence and guards remain
+valid. Final clean packages passed installed Mint 22.3 XCB, disposable Ubuntu
+24.04 XCB, native ARM64 and read-only/SDK-free Debian12 runtime checks, normal
+upgrade/uninstall and synthetic user-data preservation. Mint system packages
+were unchanged; no host OS/library upgrade was performed. Windows Release Deploy,
+ZIP/container integrity, focused UI/Sending tests and real public Windows ZIP
+selection passed; the owner's installed Windows application was not replaced.
+Eleven focused CTest suites passed. Actual production-checker live tests verified
+current/older-version behavior, all four platform selections, Debian12 ABI refusal
+and no native fallback, with metadata-only requests and no automatic installation.
+
+All six approved Templates, 8-group/35-widget Default Layout, 52-topic Help and
+Sending safeguards remain intact; installed compiled resource hashes match.
+Owner profiles/settings, Qt Creator configurations, existing binaries/builds,
+previous evidence, credentials and active marine sessions were preserved.
+No physical marine transmission, prohibited machine contact, RF StateSide website
+edit or historical Archive modification occurred.
+
+Original 0.1.0 executables do not gain new code when the old JSON is removed.
+They may still report Current at 0.1.0 but cannot validate future newer packages
+without legacy metadata. The owner accepted that consequence. A manual corrected
+0.1.0 install is required; same-version corrections are not newer SemVer updates.
+Remaining limitations are the established documented platform/transport/AS-IS
+limitations and future release maintenance; there is no pending packaging/source
+publication gate from this correction. Detailed recoverability and final active
+checkout/hash/mode synchronization receipts remain under ignored `build/m264b/`.
