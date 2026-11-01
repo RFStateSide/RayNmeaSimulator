@@ -41,6 +41,37 @@ class OnlineHelpTests(unittest.TestCase):
             body=re.search(r'<article>(.*?)</article>',text,re.S)[1]
             self.assertEqual(site.Article(body).plain(),self.articles[t['id']][1].plain(),t['id'])
             self.assertIn('aria-current="page"',text)
+    def test_owner_approved_safety_in_actual_shared_sources(self):
+        # Digests pin the exact owner wording, list order and bold ranges without
+        # maintaining a second manual for the online edition.
+        source=(ROOT/'resources/help/engineering-reference.html').read_text(encoding='utf-8')
+        block=re.search(r'<h2 id="safety">Safety</h2>(.*?)(?=<h2)',source,re.S)[0]
+        class Words(HTMLParser):
+            def __init__(self,text):
+                super().__init__(convert_charrefs=True);self.bits=[];self.feed(text)
+            def handle_data(self,text):self.bits.append(text)
+            def handle_endtag(self,tag):
+                if tag in ('h2','p','li'):self.bits.append(' ')
+            def plain(self):return re.sub(r'\s+',' ',''.join(self.bits)).strip()
+        plain=Words(block).plain()
+        self.assertEqual(hashlib.sha256(plain.encode()).hexdigest(),'17b5639c0d597ed54a47d45555ef7b82d94def904beb3d7ffce955a98f41c70b')
+        self.assertEqual(block.count('<li>'),6)
+        spans=[Words(x).plain() for x in re.findall(r'<strong>(.*?)</strong>',block,re.S)]
+        self.assertEqual(len(spans),3)
+        self.assertEqual(hashlib.sha256(json.dumps(spans,ensure_ascii=False,separators=(',',':')).encode()).hexdigest(),'3c756691e627b23ef8ede2c5ca336bcc18ac732828f9d76548b22f0493548dfd')
+        readme=(ROOT/'README.md').read_text(encoding='utf-8')
+        body=re.search(r'^## Safety\n\n(.*?)(?=^!\[|^## |\Z)',readme,re.S|re.M)[1].strip()
+        self.assertEqual(hashlib.sha256(('Safety\n\n'+body).encode()).hexdigest(),'6df3423f0bfb9c657bf5bdc3f68992eda0c0b40e62cce28a401311404122dd85')
+        self.assertLess(readme.index('## Safety'),readme.index('## Two ways to work'))
+        generated=(self.output/'engineering-reference.html').read_text(encoding='utf-8')
+        self.assertIn(block,generated)
+        self.assertIn('id="limits"',source);self.assertIn('id="engineering-method"',source)
+        topic=next(t for t in self.topics if t['id']=='engineering-reference')
+        self.assertEqual(topic['file'],'engineering-reference.html')
+        index=json.loads((self.output/'search-index.js').read_text().removeprefix('window.RAYNMEA_HELP_INDEX = ').strip().removesuffix(';'))
+        entry=next(t for t in index if t['id']=='engineering-reference')
+        for text in ['collision-avoidance','Already queued or transmitted data','F12 / Stop']:
+            self.assertIn(text,entry['text'])
     def test_every_local_link_asset_and_anchor_resolves(self):
         pages={p.name:Links(p.read_text(encoding='utf-8')) for p in self.output.glob('*.html')}
         self.assertEqual(len(pages),53)

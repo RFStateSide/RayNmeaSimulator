@@ -12,6 +12,25 @@ marine software and equipment respond.
 [Online User Guide](https://rfstateside.github.io/RayNmeaSimulator/)
 The complete User Guide is included in the application and works offline.
 
+## Safety
+
+RayNmeaSimulator is intended for software development, bench testing, simulation, training, and controlled equipment evaluation.
+
+**Do not use RayNmeaSimulator as a source of navigation, collision-avoidance, vessel-control, engine-control, or other safety-critical information on an operating vessel.**
+
+Generated or simulated NMEA 2000, NMEA 0183, AIS, position, heading, speed, depth, engine, route, and other data may appear valid to connected equipment. A chartplotter, display, gateway, logging system, or other receiver may not be able to distinguish simulated data from actual vessel data.
+
+When transmitting generated data:
+
+- Use an isolated or otherwise controlled test network whenever practical.
+- Verify the selected connection and connected equipment before enabling Sending.
+- Do not connect simulated data to an operational vessel network while underway unless the entire test environment has been specifically isolated from navigation, steering, propulsion, alarm, and other safety-critical systems.
+- Do not rely on RayNmeaSimulator, its Autopilot mode, simulated AIS, routes, or generated sensor values for real-world navigation or vessel operation.
+- Loading a Layout, Template, route, or received data does not authorize external Sending. Transmission requires explicit user authorization.
+- **F12 / Stop is an application control, not an emergency-stop or safety system.** Already queued or transmitted data cannot be recalled.
+
+RayNmeaSimulator is provided as a **Public Engineering Reference — AS-IS**. Users are responsible for the configuration, isolation, wiring, network topology, connected equipment, and safe operation of their test environment.
+
 ![RayNmeaSimulator's Darkeum workspace, with navigation instruments, Property Editor and Object Tree](resources/help/images/main-window/workspace-overview.png)
 
 ## Two ways to work
@@ -102,7 +121,7 @@ See [Windows](deployment/windows/README.md) and
 
 ## Quick Start
 
-1. Start the application and keep **Sending stopped**. F12 invokes emergency Stop.
+1. Start the application and keep **Sending stopped**. F12 invokes Stop.
 2. Choose **Mode → Generate (Tx)**. Load the Default Layout or create a Layout
    from one of the six bundled Templates.
 3. Select an instrument and inspect its values, units and identity in Property

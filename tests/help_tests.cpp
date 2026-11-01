@@ -29,6 +29,8 @@
 #include <QDialogButtonBox>
 #include <QFile>
 #include <QLabel>
+#include <QCryptographicHash>
+#include <QTextList>
 #include <QListWidget>
 #include <QComboBox>
 #include <QScopeGuard>
@@ -97,6 +99,26 @@ private slots:
         QCOMPARE(groups.size(),7);QVERIFY(!HelpCatalog::topic("bridge-mode"));
         QVERIFY(HelpCatalog::article("known-limitations").contains("Bridge Mode is not available"));
         QFile file(":/help/topics.json");QVERIFY(file.open(QIODevice::ReadOnly));
+    }
+    void ownerSafetyTextRenderingAndSearch() {
+        const auto html=HelpCatalog::article("engineering-reference");
+        const auto begin=html.indexOf("<h2 id=\"safety\">");QVERIFY(begin>=0);
+        const auto end=html.indexOf("<h2",begin+4);QVERIFY(end>begin);
+        const auto section=html.mid(begin,end-begin);QCOMPARE(section.count("<li>"),6);
+        QTextDocument document;document.setHtml(section);
+        QCOMPARE(QCryptographicHash::hash(document.toPlainText().simplified().toUtf8(),QCryptographicHash::Sha256).toHex(),QByteArray("17b5639c0d597ed54a47d45555ef7b82d94def904beb3d7ffce955a98f41c70b"));
+        QSet<QTextList*> lists;for(auto block=document.begin();block.isValid();block=block.next())if(block.textList())lists.insert(block.textList());
+        QCOMPARE(lists.size(),1);QCOMPARE((*lists.begin())->count(),6);
+        for(const auto &phrase:QStringList{
+            "Do not use RayNmeaSimulator as a source of navigation, collision-avoidance, vessel-control, engine-control, or other safety-critical information on an operating vessel.",
+            "F12 / Stop is an application control, not an emergency-stop or safety system.",
+            QString::fromUtf8("Public Engineering Reference — AS-IS")}){
+            auto cursor=document.find(phrase);QVERIFY(!cursor.isNull());QVERIFY(cursor.charFormat().fontWeight()>=QFont::Bold);
+        }
+        for(const auto &term:QStringList{"collision-avoidance","Already queued or transmitted data","F12 / Stop"})QVERIFY(HelpCatalog::search(term).contains("engineering-reference"));
+        HelpDialog dialog;dialog.resize(1150,950);dialog.showTopic("engineering-reference","safety");dialog.show();QVERIFY(QTest::qWaitForWindowExposed(&dialog));
+        QCOMPARE(dialog.currentTopic(),QString("engineering-reference"));auto *browser=dialog.findChild<HelpBrowser*>();QVERIFY(browser);QVERIFY(browser->toPlainText().contains("Already queued or transmitted data cannot be recalled."));
+        const auto capture=qEnvironmentVariable("RAY_SAFETY_CAPTURE");if(!capture.isEmpty())QVERIFY(dialog.grab().save(capture));
     }
     void protocolReferenceMatchesRegisteredInstruments() {
         MainWindow window;auto *controller=window.findChild<MainController*>();QVERIFY(controller);

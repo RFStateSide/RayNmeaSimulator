@@ -4,13 +4,26 @@ M2.51B original RayNmeaSimulator instructions; actual application source/UI auth
 BrickSuite internal Help is the instructional presentation reference, not copied product instructions. -->
 <html><head><meta charset="utf-8" /><title>Using RayNmeaSimulator Safely</title></head><body>
 <h1 id="top">Using RayNmeaSimulator Safely</h1>
-<p>RayNmeaSimulator provides NMEA2000/NMEA0183 reception, instrument simulation and route following for controlled, isolated work. It is not a certified navigation or vessel-control system.</p>
+<h2 id="safety">Safety</h2>
+<p>RayNmeaSimulator is intended for software development, bench testing, simulation, training, and controlled equipment evaluation.</p>
+<p><strong>Do not use RayNmeaSimulator as a source of navigation, collision-avoidance, vessel-control, engine-control, or other safety-critical information on an operating vessel.</strong></p>
+<p>Generated or simulated NMEA 2000, NMEA 0183, AIS, position, heading, speed, depth, engine, route, and other data may appear valid to connected equipment. A chartplotter, display, gateway, logging system, or other receiver may not be able to distinguish simulated data from actual vessel data.</p>
+<p>When transmitting generated data:</p>
+<ul>
+<li>Use an isolated or otherwise controlled test network whenever practical.</li>
+<li>Verify the selected connection and connected equipment before enabling Sending.</li>
+<li>Do not connect simulated data to an operational vessel network while underway unless the entire test environment has been specifically isolated from navigation, steering, propulsion, alarm, and other safety-critical systems.</li>
+<li>Do not rely on RayNmeaSimulator, its Autopilot mode, simulated AIS, routes, or generated sensor values for real-world navigation or vessel operation.</li>
+<li>Loading a Layout, Template, route, or received data does not authorize external Sending. Transmission requires explicit user authorization.</li>
+<li><strong>F12 / Stop is an application control, not an emergency-stop or safety system.</strong> Already queued or transmitted data cannot be recalled.</li>
+</ul>
+<p>RayNmeaSimulator is provided as a <strong>Public Engineering Reference — AS-IS</strong>. Users are responsible for the configuration, isolation, wiring, network topology, connected equipment, and safe operation of their test environment.</p>
 <h2 id="engineering-method">Prepare a session</h2>
-<ol><li>Choose Viewer to inspect incoming data or Generate to configure outgoing instrument values.</li><li>Confirm source/instance identity, units and valid or unavailable fields.</li><li>Start with manual values; add generators when you need changing data.</li><li>Check the interface and receiving equipment before explicitly enabling Sending.</li><li>Keep an independent copy of important Layouts, Templates and routes.</li></ol><p>Loading a Layout, choosing a route, fetching weather or changing modes does not enable external Sending. Generator Enable and Dispatch control local operation and instrument updates; global Sending authorizes external output separately.</p>
+<ol><li>Choose Viewer to inspect incoming data or Generate to configure outgoing instrument values.</li><li>Confirm source/instance identity, units and valid or unavailable fields.</li><li>Start with manual values; add generators when you need changing data.</li><li>Check the interface and receiving equipment before explicitly enabling Sending.</li><li>Keep an independent copy of important Layouts, Templates and routes.</li></ol><p>Fetching weather or changing modes does not enable external Sending. Generator Enable and Dispatch control local operation and instrument updates; global Sending authorizes external output separately.</p>
 <h2 id="manual-evidence">Find instructions and application details</h2>
 <p>Use Contents or Search Help to find a task or message number. Press F1 for context-sensitive Help. Select an illustration to enlarge it and use Fit or 100% to read detailed controls.</p><p>Help → About RayNmeaSimulator provides the version, publisher and license notices. Include the version, platform, connection type and status in a support request. Review shared screenshots and logs for private vessel information.</p>
 <h2 id="limits">Operational judgment</h2>
-<p>Keep a known-good copy of important data, isolate tests from production navigation and stop unexpected output with Stop/F12. Already transmitted frames cannot be recalled. Follow the connected device's safety procedures; simulator output, routes and environmental effects do not constitute navigation advice or a model of all real vessel dynamics.</p>
+<p>Follow the connected device's safety procedures. Environmental effects are not a model of all real vessel dynamics.</p>
 <h2 id="illustrated-controls">Illustrated controls</h2><p><a href="images/engineering-reference/about-status.png"><img src="images/engineering-reference/about-status.png" alt="About RayNmeaSimulator shows the version, publisher, license and acknowledgments." /></a><br /><i>Figure 108. About RayNmeaSimulator shows the version, publisher, license and acknowledgments. Click to enlarge.</i></p>
 <h2 id="related-topics">Related topics</h2><p><a href="units.html">Engineering Units</a> · <a href="messages.html">NMEA PGNs and Sentences</a> · <a href="security-privacy.html">Security and Privacy</a> · <a href="licensing.html">Licensing and Credits</a> · <a href="connection-troubleshooting.html">Connection Troubleshooting</a> · <a href="enable-dispatch-sending.html">Enable, Dispatch and Sending</a> · <a href="route-overview.html">Route Overview</a></p>
 <p><a href="introduction.html">Help Home</a> · <a href="#top">Back to top</a></p>
