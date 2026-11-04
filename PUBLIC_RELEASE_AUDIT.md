@@ -16,24 +16,74 @@ CANable serial permission guidance, and rebuilt offline Help that includes the
 previously accepted Safety notice with its wording preserved. See the proposed
 [release notes and four-platform plan](docs/release-notes-0.1.1.md).
 
-Historical artwork/source-history review and applicable source/license and
-corresponding-source delivery gates remain **OPEN for this candidate** until
-separately resolved and owner approved; prior scoped acceptance is retained below.
-Require current installed-package qualification on Windows x64, Ubuntu/Mint
-x86_64, native ARM64 and separate Debian 12 ARM64, including displayed offline
-Safety content. Earlier binaries and source-only tests do not satisfy that gate.
-Preserve original v0.1.0 tags/assets and update metadata. Generate final source
-companions, integrity receipts and update metadata only for approved final assets.
-Current private qualification passed installed offline Safety rendering on Windows,
-Ubuntu 24.04, native ARM64 and Debian 12 ARM64. Support/browser lifecycle tests
-passed on Windows, Linux x86_64 and ARM64. Missing `secret-tool`, check-only,
-offline failure and explicitly consented installation were exercised in copied
-Ubuntu/Debian root filesystems with no existing-package upgrades. Mint 22.3's
-provider policy is covered by fixtures and its Ubuntu 24.04 base by installed
-checks; a current Mint desktop session is not claimed. Owner acceptance and final
-clean-commit corresponding-source/integrity delivery remain outstanding.
-Detailed current build, test, endpoint and package evidence belongs in ignored
-`build/v0.1.1/` (with focused CTest evidence under `build/m264/focused-ctest/`).
+Private clean-commit engineering qualification is **PASS** for source commit
+`c429deba63f5888baa7741a0616424ff45d51af4`. The preceding workflow-only commit
+`e3996051e17eacffe05f0d2e9f4b22c92092793d` makes Online Help publication manual
+only, preventing a normal source push from publishing the candidate Help.
+All three Active development checkouts were fast-forward synchronized. Later
+closeout changes to this audit and its provenance hash are documentation metadata;
+the exact binary/source build identity remains the clean commit above.
+
+Four final Deploy packages were rebuilt from that clean commit, then paired with
+complete platform corresponding-source kits and sealed release-set receipts.
+All four independent restores verified 732 application files, executable modes,
+source hashes and pinned dependency inputs (Windows 14, Linux x86_64 21, native
+ARM64 21, Debian12 ARM64 17). Fresh restored-source CMake configurations and
+compiled bundled-resource probes passed on all four platforms using matching
+SDKs. Supplier Qt sources/commits, marine pins/patches, runtime/distro sources,
+compiler/installer materials and license/notices were verified by the existing
+source-delivery sealer. Binary/source hashes, staged-manifest and redistribution
+receipt bindings passed. Source tree SHA-256 is
+`1f9288163651c2eab2693b18a2401b3282dd1ba3d73a72896daacf8b14c3bea6`.
+
+Installed final-package acceptance passed on Windows x64, disposable Ubuntu 24.04,
+actual Linux Mint 22.3 XCB desktop, native Debian 13 ARM64 and isolated Debian 12
+ARM64. Mint used its existing authorized desktop and installed `/usr/bin/secret-tool`;
+no unnecessary package installation occurred. Namespace-controlled missing-tool
+checks and 14 consent/refusal/offline/failure fixtures passed on Mint. Real missing
+libsecret-tools installation passed after explicit consent in copied Ubuntu and
+Debian12 filesystems, without upgrading existing packages. Host packages and groups
+were unchanged. Installation/upgrade/uninstall, preserved isolated user data,
+normal startup/shutdown, six Templates, 8-group/35-widget Default Layout, Linux
+serial-permission Help and stopped Sending passed. No operational CAN interface,
+serial membership or owner profile was modified; CANable diagnostics used fixtures.
+
+The previously accepted Safety notice was displayed from installed compiled offline
+Help on Windows and all Linux baselines. Its six list items and three bold ranges
+are retained. README and authoritative Safety Help bytes match the starting
+baseline; this is packaging integration of M2.65, not a new Safety implementation.
+Private generated Online Help validates 52 topics and 102 image resources. No Help
+publication occurred. Eleven targeted Windows CTest suites passed. Controlled
+Support tests passed on Windows, Linux x86_64, native ARM64 and Debian12 ARM64:
+exact HTTP 200/body success, timeout, unreachable host, invalid/oversized/redirect
+responses, Help/About parity, overlap/lifecycle and exactly one browser handoff.
+Availability failure selects the existing direct PayPal fallback; no automatic
+second checkout follows browser handoff. No real payments were initiated.
+
+Current reachable-history review scanned 873 blobs, found no excluded registered
+paths/artwork hashes or high-confidence credential signatures, and found no artwork
+changes since v0.1.0. Existing owner-attested boat/logo/screenshot and BrickSuite
+reuse evidence and the original historical screening remain applicable. This
+resolves the technical continuation review; it is scoped evidence, not a blanket
+rights or legal certification. Historical Archive content/history was untouched.
+Corresponding-source/license engineering delivery gates are satisfied for these
+exact private candidate bytes. Owner approval of the reviewed rights/source delivery
+and exact publication set remains required before declaring public-release readiness.
+
+Read-only final verification confirmed the v0.1.0 tag target, existing five Release
+asset identities/bytes/digests and Release text unchanged. Published update metadata
+is byte-identical to the starting baseline. No v0.1.1 tag, Release or public asset
+was created, and no website, visibility or public manifest was changed.
+
+**Remaining publication blockers:** separate owner approval of this exact private
+candidate set and its scoped artwork/provenance/source-delivery disposition; then
+explicit authorization for tag/Release/assets, update metadata and manual Online
+Help publication. No outstanding engineering failure is identified within this
+qualification scope. Preserve established platform/transport limitations and source
+availability obligations when distributing. Detailed evidence, final packages,
+complete Source kits, checksums, delivery inventory and engineering report remain
+ignored under `build/v0.1.1-final/`; prior implementation evidence is retained under
+`build/v0.1.1/` and `build/m264/focused-ctest/`.
 
 
 **2026-10-31 — PUBLIC RELEASE PASS: RayNmeaSimulator v0.1.0.** The owner authorized
