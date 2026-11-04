@@ -2,14 +2,7 @@
 name: Publish User Guide
 on:
   workflow_dispatch:
-  push:
-    branches: [master]
-    paths:
-      - resources/help/**
-      - docs/online-help/**
-      - scripts/build-online-help.py
-      - tests/online_help_tests.py
-      - .github/workflows/publish-help.yml
+# Publication requires separate owner approval and an explicit manual dispatch.
 permissions:
   contents: read
 concurrency:
