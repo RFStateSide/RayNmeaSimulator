@@ -1,5 +1,41 @@
 # Public-release audit
 
+## Current private v0.1.1 maintenance candidate — 2026-11-04
+
+**PRIVATE preparation; release NO-GO pending owner review.** The current owner
+instructions govern this work. The dated publication records below remain
+historical evidence. The owner now authorizes normal source commits and fast-forward
+pushes to master, Active-checkout synchronization and private clean-commit builds.
+New tags, public uploads, visibility changes, website changes and Online Help
+publication remain unauthorized. Publication requires a separate manual dispatch.
+
+The designated Active checkout began clean at
+`846e5b27c1c3cd61f16a8bfcf4b6bd6d358e94a9` (`v0.1.0-8-g846e5b2`). Candidate
+version 0.1.1 covers Support checkout selection, Linux `secret-tool` prerequisites,
+CANable serial permission guidance, and rebuilt offline Help that includes the
+previously accepted Safety notice with its wording preserved. See the proposed
+[release notes and four-platform plan](docs/release-notes-0.1.1.md).
+
+Historical artwork/source-history review and applicable source/license and
+corresponding-source delivery gates remain **OPEN for this candidate** until
+separately resolved and owner approved; prior scoped acceptance is retained below.
+Require current installed-package qualification on Windows x64, Ubuntu/Mint
+x86_64, native ARM64 and separate Debian 12 ARM64, including displayed offline
+Safety content. Earlier binaries and source-only tests do not satisfy that gate.
+Preserve original v0.1.0 tags/assets and update metadata. Generate final source
+companions, integrity receipts and update metadata only for approved final assets.
+Current private qualification passed installed offline Safety rendering on Windows,
+Ubuntu 24.04, native ARM64 and Debian 12 ARM64. Support/browser lifecycle tests
+passed on Windows, Linux x86_64 and ARM64. Missing `secret-tool`, check-only,
+offline failure and explicitly consented installation were exercised in copied
+Ubuntu/Debian root filesystems with no existing-package upgrades. Mint 22.3's
+provider policy is covered by fixtures and its Ubuntu 24.04 base by installed
+checks; a current Mint desktop session is not claimed. Owner acceptance and final
+clean-commit corresponding-source/integrity delivery remain outstanding.
+Detailed current build, test, endpoint and package evidence belongs in ignored
+`build/v0.1.1/` (with focused CTest evidence under `build/m264/focused-ctest/`).
+
+
 **2026-10-31 — PUBLIC RELEASE PASS: RayNmeaSimulator v0.1.0.** The owner authorized
 public publication in M2.62. The active repository is PUBLIC, the approved stable
 Release is published, and the common-source Online Help is live. Anonymous source,

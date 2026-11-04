@@ -100,6 +100,17 @@ private slots:
         QVERIFY(HelpCatalog::article("known-limitations").contains("Bridge Mode is not available"));
         QFile file(":/help/topics.json");QVERIFY(file.open(QIODevice::ReadOnly));
     }
+    void linuxMaintenanceHelp() {
+        QVERIFY(HelpCatalog::search("Linux Serial Port Permissions").contains("troubleshooting"));
+        HelpDialog dialog;dialog.showTopic("troubleshooting","linux-serial-port-permissions");
+        auto *browser=dialog.findChild<HelpBrowser*>();QVERIFY(browser);
+        for (auto phrase : {"dialout","ls -l /dev/ttyACM0","id -nG","sudo usermod -aG dialout","Log out completely","reconnect explicitly"})
+            QVERIFY2(browser->toPlainText().contains(phrase),phrase);
+        QCOMPARE(browser->source().fragment(),QString("linux-serial-port-permissions"));
+        const auto installation=HelpCatalog::article("first-launch");
+        QVERIFY(installation.contains("libsecret-tools"));QVERIFY(installation.contains("secret-tool"));
+        QCOMPARE(HelpCatalog::topics().size(),52);
+    }
     void ownerSafetyTextRenderingAndSearch() {
         const auto html=HelpCatalog::article("engineering-reference");
         const auto begin=html.indexOf("<h2 id=\"safety\">");QVERIFY(begin>=0);

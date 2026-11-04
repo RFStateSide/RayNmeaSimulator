@@ -62,7 +62,7 @@ bool run(const QString& operation, const QString& name, const QByteArray& input,
         return false;
     };
     if (tool.isEmpty())
-        return fail("Secure storage unavailable: install the Secret Service client secret-tool and unlock a desktop keyring.");
+        return fail("Secure storage unavailable: secret-tool is missing. Install libsecret-tools on Debian, Ubuntu or Linux Mint. This is separate from a locked or unavailable desktop keyring.");
     QProcess process;
     QStringList args { operation };
     if (operation == "store")

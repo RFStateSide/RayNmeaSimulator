@@ -79,6 +79,21 @@ private slots:
         QVERIFY(!missing.open(QIODevice::ReadWrite));
         QVERIFY(serialPortDiagnostic(missing.portName(), missing.error(), missing.errorString()).contains("missing"));
     }
+    void canablePermissionAdvice() {
+        const auto text=canableSerialDiagnostic("ttyACM0",QSerialPort::PermissionError,"Permission denied.",true);
+        QVERIFY(text.contains("/dev/ttyACM0"));QVERIFY(text.contains("dialout"));QVERIFY(text.contains("logging out and back in"));
+        QVERIFY(text.contains("Help > Troubleshooting > Linux Serial Port Permissions"));
+        QVERIFY(text.contains("Reconnect explicitly"));QVERIFY(!text.contains(".."));QCOMPARE(text.count("permission denied"),1);
+        QVERIFY(text.contains("device busy")); // Qt does not reliably distinguish EACCES from a device lock.
+        for (auto path : {"/dev/ttyUSB7","ttyUSB7"})
+            QVERIFY(canableSerialDiagnostic(path,QSerialPort::PermissionError,"denied",true).contains("/dev/ttyUSB7"));
+        const auto windows=canableSerialDiagnostic("COM7",QSerialPort::PermissionError,"denied",false);
+        QVERIFY(windows.contains("COM7"));QVERIFY(!windows.contains("dialout"));
+        QVERIFY(canableSerialDiagnostic("ttyACM0",QSerialPort::DeviceNotFoundError,"detail",true).contains("device missing"));
+        QVERIFY(canableSerialDiagnostic("ttyACM0",QSerialPort::OpenError,"detail",true).contains("already open"));
+        QVERIFY(canableSerialDiagnostic("ttyACM0",QSerialPort::ResourceError,"detail",true).contains("disconnected"));
+        QVERIFY(!canableSerialDiagnostic("ttyACM0",QSerialPort::UnknownError,"native detail..",true).contains(".."));
+    }
     void hostDiscovery() {
         const auto found = SerialPortDiscovery::available();
         int usb = 0;

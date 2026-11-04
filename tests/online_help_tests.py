@@ -36,11 +36,21 @@ class OnlineHelpTests(unittest.TestCase):
         assert cls.base.is_relative_to(ROOT/'build');cls.temp.cleanup()
     def test_actual_inventory_and_shared_article_text(self):
         self.assertEqual(len(self.topics),52);self.assertEqual(len(self.catalog['groups']),7)
+        self.assertIn('USER GUIDE · v0.1.1',(self.output/'index.html').read_text(encoding='utf-8'))
         for t in self.topics:
             text=(self.output/t['file']).read_text(encoding='utf-8')
             body=re.search(r'<article>(.*?)</article>',text,re.S)[1]
             self.assertEqual(site.Article(body).plain(),self.articles[t['id']][1].plain(),t['id'])
             self.assertIn('aria-current="page"',text)
+    def test_linux_maintenance_in_generated_manual(self):
+        text=(self.output/'troubleshooting.html').read_text(encoding='utf-8')
+        self.assertIn('id="linux-serial-port-permissions"',text)
+        for phrase in ['dialout','ls -l /dev/ttyACM0','id -nG','sudo usermod -aG dialout','Log out completely','reconnect explicitly']:
+            self.assertIn(phrase,text)
+        self.assertIn('libsecret-tools',(self.output/'first-launch.html').read_text(encoding='utf-8'))
+        for name in ['canable','connection-troubleshooting','first-launch']:
+            self.assertIn('troubleshooting.html#linux-serial-port-permissions',(self.output/(name+'.html')).read_text(encoding='utf-8'))
+
     def test_owner_approved_safety_in_actual_shared_sources(self):
         # Digests pin the exact owner wording, list order and bold ranges without
         # maintaining a second manual for the online edition.
@@ -122,6 +132,9 @@ class OnlineHelpTests(unittest.TestCase):
         self.assertNotIn('not published yet',text)
         self.assertNotIn('GitHub Releases](https://github.com/',text)
     def test_ci_has_no_pages_deployment(self):
+        publish=(ROOT/'.github/workflows/publish-help.yml').read_text()
+        self.assertIn('workflow_dispatch:',publish)
+        self.assertNotIn('  push:',publish)
         text=(ROOT/'.github/workflows/check-help.yml').read_text()
         for token in ['pages: write','id-token: write','uses: actions/deploy-pages','uses: actions/upload-pages-artifact','uses: actions/configure-pages']:
             self.assertNotIn(token,text)

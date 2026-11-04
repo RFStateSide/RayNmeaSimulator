@@ -26,6 +26,7 @@
 #include "updatedialog.h"
 #include "helpdialog.h"
 #include "aboutlinks.h"
+#include "supportcheckout.h"
 #include "applicationlog.h"
 #include "logviewer.h"
 #include "nmea2000diagnosticsdialog.h"
@@ -198,7 +199,7 @@ MainWindow::MainWindow(QWidget *parent, QSerialPort *actisensePort, QSerialPort 
     supportAction->setStatusTip(tr("Open the voluntary PayPal support page in your web browser."));
     supportAction->setToolTip(tr("Voluntary support does not unlock features, technical support, warranties or other services."));
     connect(supportAction, &QAction::triggered, this, [this] {
-        AboutLinks::open(this, QUrl(QString::fromLatin1(AboutLinks::SupportUrl)));
+        SupportCheckout::instance()->start(this);
     });
     dialogSetup = new DialogSetup(this);
     dialogSetup->setProperty("rayHelpTopic", "connection-troubleshooting");

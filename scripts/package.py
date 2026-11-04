@@ -279,7 +279,7 @@ def linux(stage, args, config, origins):
         relative = os.path.relpath(stage / 'lib', binary.parent)
         run('patchelf', '--set-rpath', '$ORIGIN/' + relative, binary)
     (stage / 'bin/qt.conf').write_text('[Paths]\nPrefix=..\nPlugins=plugins\nLibraries=lib\n')
-    (stage / 'RayNmeaSimulator').write_text('#!/bin/sh\nset -eu\nroot=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)\nexec "$root/bin/RayNmeaSimulator" "$@"\n')
+    (stage / 'RayNmeaSimulator').write_text('#!/bin/sh\nset -eu\nroot=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)\nPATH="${PATH:-/usr/local/bin:/usr/bin:/bin}:/usr/bin:/bin"\nexport PATH\nexec "$root/bin/RayNmeaSimulator" "$@"\n')
     (stage / 'RayNmeaSimulator').chmod(0o755)
     for name in ['install.sh', 'uninstall.sh', 'installer.py', 'runtime_prerequisites.py']:
         copy(ROOT / 'packaging/linux' / name, stage / name)

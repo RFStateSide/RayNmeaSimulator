@@ -1,6 +1,7 @@
 # Copyright (C) 2026 RF StateSide LLC; SPDX-License-Identifier: AGPL-3.0-or-later
 # Explicit application source/header/form inventory.
 set(RAYNMEA_SOURCES
+    "${PROJECT_SOURCE_DIR}/src/supportcheckout.cpp"
     "${PROJECT_SOURCE_DIR}/src/updatechecker.cpp"
     "${PROJECT_SOURCE_DIR}/src/updatedialog.cpp"
     "${PROJECT_SOURCE_DIR}/src/helpcatalog.cpp"
@@ -113,6 +114,7 @@ set(RAYNMEA_SOURCES
     "${PROJECT_SOURCE_DIR}/src/proprietarydiagnostics.cpp"
 )
 set(RAYNMEA_HEADERS
+    "${PROJECT_SOURCE_DIR}/src/supportcheckout.h"
     "${PROJECT_SOURCE_DIR}/src/updatechecker.h"
     "${PROJECT_SOURCE_DIR}/src/updatedialog.h"
     "${PROJECT_SOURCE_DIR}/src/helpcatalog.h"

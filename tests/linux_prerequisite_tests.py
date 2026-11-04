@@ -64,7 +64,7 @@ class PrerequisiteTests(unittest.TestCase):
 
     def fixture(self, missing=None):
         stack=contextlib.ExitStack()
-        stack.enter_context(mock.patch.object(p,'missing_libraries',side_effect=missing or [[CURSOR],[]]))
+        stack.enter_context(mock.patch.object(p,'missing_requirements',side_effect=missing or [[CURSOR],[]]))
         stack.enter_context(mock.patch.object(p,'os_info',return_value=self.info()))
         stack.enter_context(mock.patch.object(p.shutil,'which',side_effect=lambda name,**kw:'/usr/bin/'+name))
         stack.enter_context(contextlib.redirect_stdout(io.StringIO()))
@@ -109,6 +109,31 @@ class PrerequisiteTests(unittest.TestCase):
             result=subprocess.run([sys.executable,str(root/'installer.py'),'--help'],env=env,capture_output=True,text=True)
             self.assertEqual(result.returncode,0,result.stderr)
             self.assertEqual({x.name for x in root.iterdir()},{'installer.py','runtime_prerequisites.py'})
+
+    def test_secret_tool_executable_detection_and_provider(self):
+        for distro,version in [('ubuntu','24.04'),('linuxmint','22.3'),('debian','12')]:
+            self.assertEqual(p.provider('secret-tool',self.info(distro,version)),'libsecret-tools')
+        for available in [None,'/usr/bin/secret-tool']:
+            with mock.patch.object(p,'missing_libraries',return_value=[]),mock.patch.object(p.shutil,'which',return_value=available) as lookup:
+                self.assertEqual(p.missing_requirements(Path('/fixture')),[] if available else ['secret-tool'])
+                lookup.assert_called_once_with('secret-tool',path=p.PATH)
+
+    def test_secret_tool_missing_consent_noop_refusal_and_failure(self):
+        for policy,rc,remaining,pattern in [('check',0,[], 'No packages installed'),('install',100,[], 'failed'),('install',0,['secret-tool'],'remain unavailable'),('install',0,[],None)]:
+            with self.fixture([['secret-tool'],remaining]),mock.patch.object(p,'checked_plan',return_value=['libsecret-tools']),mock.patch.object(p.os,'geteuid',return_value=0,create=True),mock.patch.object(p,'run',return_value=subprocess.CompletedProcess([],rc)) as runner:
+                if pattern:
+                    with self.assertRaisesRegex(RuntimeError,pattern):p.ensure(Path('/fixture'),policy,True)
+                else:p.ensure(Path('/fixture'),policy,True)
+                if policy=='check':runner.assert_not_called()
+                else:
+                    cmd=runner.call_args.args[0]
+                    self.assertEqual(cmd[-1],'libsecret-tools');self.assertIn('--no-upgrade',cmd)
+                    self.assertNotIn('upgrade',cmd);self.assertNotIn('usermod',cmd)
+        with self.fixture([[]]),mock.patch.object(p,'run') as runner:
+            p.ensure(Path('/fixture'),'install',True);runner.assert_not_called()
+        with self.fixture([['secret-tool']]),mock.patch.object(p,'checked_plan',return_value=['libsecret-tools']),mock.patch.object(p.sys.stdin,'isatty',return_value=True),mock.patch.object(p.sys.stdout,'isatty',return_value=True),mock.patch('builtins.input',return_value='no'),mock.patch.object(p,'run') as runner:
+            with self.assertRaisesRegex(RuntimeError,'declined'):p.ensure(Path('/fixture'))
+            runner.assert_not_called()
 
     def test_sanitized_environment(self):
         with mock.patch.dict(p.os.environ,{'LD_LIBRARY_PATH':'/developer','QT_PLUGIN_PATH':'/sdk','APT_CONFIG':'/owner/config'}):

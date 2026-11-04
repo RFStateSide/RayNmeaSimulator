@@ -60,8 +60,8 @@ Publish the generator's output as a static GitHub Pages site under this project
 URL prefix. Keep the manual in `resources/help/`; do not maintain a second copy.
 The validation workflow builds/tests only and does not deploy. The separate
 `Publish User Guide` workflow (`.github/workflows/publish-help.yml`) generates the
-same static output and deploys it through GitHub Pages. It runs on relevant
-`master` pushes or manual dispatch. Only its deploy job receives `pages: write`
+same static output and deploys it through GitHub Pages. It requires an explicit manual dispatch after separate owner publication approval.
+Source pushes only validate the manual; they do not publish it. Only its deploy job receives `pages: write`
 and `id-token: write`; other jobs retain read-only repository access. Official
 actions are pinned to release commit SHAs. Changes to the shared manual therefore
 remain the single documentation source. See [distribution requirements](../source-delivery.md).

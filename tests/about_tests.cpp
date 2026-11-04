@@ -35,6 +35,8 @@
 #include <QScrollBar>
 #include "aboutdialog.h"
 #include "aboutlinks.h"
+#include "supportcheckout.h"
+#include "support_fixture.h"
 #include "themes.h"
 #include "mainwindow.h"
 #include <QAction>
@@ -44,13 +46,21 @@
 class AboutTests : public QObject {
     Q_OBJECT
     QUrl opened;
+    SupportTransport network;
+    SupportCheckout *checkout=nullptr;
 public slots:
     void captureUrl(const QUrl &url) { opened=url; }
 private slots:
+    void init() {
+        opened.clear(); network.body="rfss-checkout-v1"; network.delay=1;
+        checkout=new SupportCheckout(nullptr,&network,100,[](QWidget *parent,const QUrl &url){AboutLinks::open(parent,url);});
+        SupportCheckout::setTestInstance(checkout);
+    }
+    void cleanup() { SupportCheckout::setTestInstance(nullptr); delete checkout; checkout=nullptr; }
     void metadataAndResources() {
         AboutDialog d;
         QCOMPARE(QApplication::applicationVersion(),QStringLiteral(APP_VERSION));
-        QCOMPARE(QStringLiteral(APP_VERSION),QString("0.1.0"));
+        QCOMPARE(QStringLiteral(APP_VERSION),QString("0.1.1"));
         QVERIFY(!d.windowIcon().isNull());
         QVERIFY(d.findChild<QLabel*>("aboutIcon")->pixmap().width()>=112);
         QVERIFY(d.findChild<QLabel*>("aboutVersion")->text().contains(APP_VERSION));
@@ -86,7 +96,17 @@ private slots:
         auto *support=d.findChild<QLabel*>("aboutSupport");QVERIFY(support);
         QVERIFY(support->text().contains(AboutLinks::SupportUrl));
         QVERIFY(QMetaObject::invokeMethod(support,"linkActivated",Q_ARG(QString,QString("https://unrelated.invalid/"))));
-        QCOMPARE(opened,QUrl(QString::fromLatin1(AboutLinks::SupportUrl)));opened.clear();
+        QTRY_COMPARE(opened,SupportCheckout::checkoutUrl());opened.clear();
+        QDesktopServices::unsetUrlHandler("https");
+    }
+    void overlappingEntryPointsAndFallback() {
+        network.body="unavailable";network.delay=30;
+        MainWindow window; AboutDialog dialog(&window);
+        QDesktopServices::setUrlHandler("https",this,"captureUrl");
+        const int before=network.calls;
+        window.findChild<QAction*>("actionSupportRayNmeaSimulator")->trigger();
+        QMetaObject::invokeMethod(dialog.findChild<QLabel*>("aboutSupport"),"linkActivated",Q_ARG(QString,QString("ignored")));
+        QTRY_COMPARE(opened,QUrl(AboutLinks::SupportUrl)); QCOMPARE(network.calls,before+1);
         QDesktopServices::unsetUrlHandler("https");
     }
     void failedBrowserAndSupport() {
@@ -126,7 +146,7 @@ private slots:
         auto *support=window.findChild<QAction*>("actionSupportRayNmeaSimulator");QVERIFY(support);
         QCOMPARE(support->text(),QString::fromUtf8("Support…"));
         QDesktopServices::setUrlHandler("https",this,"captureUrl");
-        support->trigger();QCOMPARE(this->opened,QUrl(QString::fromLatin1(AboutLinks::SupportUrl)));this->opened.clear();
+        support->trigger();QTRY_COMPARE(this->opened,SupportCheckout::checkoutUrl());this->opened.clear();
         QDesktopServices::unsetUrlHandler("https");QVERIFY(!start->isChecked());
     }
     void credits() {

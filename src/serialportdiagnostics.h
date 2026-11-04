@@ -44,4 +44,38 @@ inline QString serialPortDiagnostic(const QString &path, QSerialPort::SerialPort
     }
     return QString("%1: %2 %3").arg(path, detail, advice).trimmed();
 }
+// Qt PermissionError can also mean a device lock; do not guess from translated OS text.
+inline QString canableSerialDiagnostic(QString path, QSerialPort::SerialPortError error,
+                                       QString detail, bool linuxHost =
+#ifdef Q_OS_LINUX
+                                       true
+#else
+                                       false
+#endif
+                                       )
+{
+    if (linuxHost && !path.startsWith('/') && (path.startsWith("ttyACM") || path.startsWith("ttyUSB")))
+        path.prepend("/dev/");
+    QString reason;
+    switch (error) {
+    case QSerialPort::PermissionError:
+        reason = QCoreApplication::translate("SerialPort", "permission denied or device busy.");
+        if (linuxHost)
+            reason += QCoreApplication::translate("SerialPort", " On Linux, check whether your user has access to the serial device (typically through the dialout group), or whether another application is using the port. Group membership changes require logging out and back in. See Help > Troubleshooting > Linux Serial Port Permissions.");
+        else
+            reason += QCoreApplication::translate("SerialPort", " Check serial-port permissions and whether another application is using the port.");
+        break;
+    case QSerialPort::DeviceNotFoundError:
+        reason = QCoreApplication::translate("SerialPort", "device missing or disconnected. Check the cable, Refresh ports and select the attached device."); break;
+    case QSerialPort::OpenError:
+        reason = QCoreApplication::translate("SerialPort", "device already open or unavailable. Check whether another application is using the port and verify access permissions."); break;
+    case QSerialPort::ResourceError:
+        reason = QCoreApplication::translate("SerialPort", "device disconnected or unavailable. Check the cable and Refresh ports."); break;
+    default:
+        detail = detail.trimmed();
+        while (detail.endsWith('.') || detail.endsWith('!')) detail.chop(1);
+        reason = detail.isEmpty() ? QCoreApplication::translate("SerialPort", "serial device error.") : detail + '.';
+    }
+    return QCoreApplication::translate("SerialPort", "CANable SLCAN: Cannot open %1 — %2 Reconnect explicitly after resolving the issue.").arg(path, reason);
+}
 #endif

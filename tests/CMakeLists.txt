@@ -52,6 +52,7 @@ add_test(NAME online_help_tests COMMAND "${Python3_EXECUTABLE}" -B
 set_tests_properties(online_help_tests PROPERTIES LABELS "documentation;help" TIMEOUT 90)
 ray_test(update_tests widgets)
 ray_test(about_tests widgets)
+ray_test(support_checkout_tests widgets)
 ray_test(help_tests help)
 ray_test(cmake_parity_tests cmake APPLICATION_RESOURCES)
 ray_test(bundled_content_tests templates APPLICATION_RESOURCES)

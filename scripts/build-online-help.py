@@ -139,7 +139,7 @@ def build(root, output):
 <link rel="canonical" href="{PUBLIC_URL}{name}"><link rel="icon" type="image/png" href="images/boat.png"><link rel="stylesheet" href="assets/site.css">
 <script src="search-index.js" defer></script><script src="assets/site.js" defer></script></head>
 <body><a class="skip" href="#main">Skip to content</a>
-<header class="site-header"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><img src="images/boat.png" alt=""></span><span>RayNmeaSimulator<small>USER GUIDE · v0.1.0</small></span></a>
+<header class="site-header"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><img src="images/boat.png" alt=""></span><span>RayNmeaSimulator<small>USER GUIDE · v0.1.1</small></span></a>
 <nav aria-label="Project"><a href="https://www.rfstateside.com/">RF StateSide</a><a href="https://github.com/RFStateSide/RayNmeaSimulator">Source code</a></nav>
 <button id="contents-toggle" aria-controls="site-contents" aria-expanded="false" hidden>Contents</button></header>
 <div class="shell"><aside id="site-contents" aria-label="User Guide contents"><a class="guide-home" href="index.html">Guide home</a>

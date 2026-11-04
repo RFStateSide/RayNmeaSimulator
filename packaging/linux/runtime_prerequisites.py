@@ -100,7 +100,8 @@ PROVIDERS = {'libEGL.so.1': 'libegl1',
  'libxcb.so.1': 'libxcb1',
  'libxkbcommon-x11.so.0': 'libxkbcommon-x11-0',
  'libxkbcommon.so.0': 'libxkbcommon0'}
-PROVIDERS.update({'libssl.so.3': 'libssl3', 'libcrypto.so.3': 'libssl3'})
+PROVIDERS.update({'libssl.so.3': 'libssl3', 'libcrypto.so.3': 'libssl3',
+                  'secret-tool': 'libsecret-tools'})
 TARGETS = ['bin/RayNmeaSimulator', 'plugins/platforms/libqxcb.so',
            'plugins/tls/libqopensslbackend.so', 'plugins/imageformats/libqsvg.so',
            'plugins/iconengines/libqsvgicon.so']
@@ -171,6 +172,15 @@ def missing_libraries(root):
     return sorted(missing)
 
 
+def missing_requirements(root):
+    missing = missing_libraries(root)
+    # The installed wrapper includes /usr/bin and /bin, also checked here.
+    # Verify the executable, not just a package database entry.
+    if not shutil.which('secret-tool', path=PATH):
+        missing.append('secret-tool')
+    return sorted(set(missing))
+
+
 def install_command(packages):
     apt = shutil.which('apt-get', path=PATH)
     if not apt:
@@ -203,12 +213,12 @@ def checked_plan(command):
 
 
 def ensure(root, policy='ask', non_interactive=False):
-    missing = missing_libraries(root)
+    missing = missing_requirements(root)
     if not missing:
-        print('Required GUI/X11 and OpenSSL runtime libraries are available.')
+        print('Required GUI/X11, OpenSSL and secret-tool runtime requirements are available.')
         return
     info = os_info()
-    print('Missing system runtime libraries: ' + ', '.join(missing), flush=True)
+    print('Missing system runtime requirements: ' + ', '.join(missing), flush=True)
     packages = sorted({provider(name, info) for name in missing if provider(name, info)})
     unknown = [name for name in missing if provider(name, info) is None]
     if unknown or not supported(info):
@@ -249,7 +259,7 @@ def ensure(root, policy='ask', non_interactive=False):
         raise RuntimeError('Dependency installation failed (network/package-manager/authorization error). '
                            'Application installation unchanged. Some system dependencies may have been installed; '
                            'review package-manager output, then retry. Manual command: ' + manual)
-    remaining = missing_libraries(root)
+    remaining = missing_requirements(root)
     if remaining:
         raise RuntimeError('Runtime dependencies remain unavailable after package installation: ' + ', '.join(remaining)
                            + '. Application installation unchanged.')

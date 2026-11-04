@@ -146,10 +146,14 @@ bool WaveshareSession::open(const QString &name, bool transmit, const WaveshareC
     }
     connect(p, &QSerialPort::errorOccurred, this, [this, epoch](QSerialPort::SerialPortError error) {
         if (epoch == generation && port && error != QSerialPort::NoError)
-            fail(tr("Waveshare serial error: %1. Reconnect explicitly.").arg(serialPortDiagnostic(port->portName(), error, port->errorString())));
+            fail(wireProtocol == CanableSlcan
+                 ? canableSerialDiagnostic(port->portName(), error, port->errorString())
+                 : tr("Waveshare serial error: %1. Reconnect explicitly.").arg(serialPortDiagnostic(port->portName(), error, port->errorString())));
     });
     if (!p->open(QIODevice::ReadWrite)) {
-        if (epoch == generation) fail(tr("Waveshare open failed: %1").arg(serialPortDiagnostic(p->portName(), p->error(), p->errorString())));
+        if (epoch == generation) fail(wireProtocol == CanableSlcan
+            ? canableSerialDiagnostic(p->portName(), p->error(), p->errorString())
+            : tr("Waveshare open failed: %1").arg(serialPortDiagnostic(p->portName(), p->error(), p->errorString())));
         return false;
     }
     if (epoch != generation || !port) return false;

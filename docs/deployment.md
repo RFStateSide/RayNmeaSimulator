@@ -28,6 +28,14 @@ Launch the installed `RayNmeaSimulator` wrapper. Linux desktop libraries and the
 OpenSSL 3 TLS runtime are system prerequisites; the exact recorded external baseline
 is in `system-runtime.json`. A package is not universally portable across Linux.
 
+Linux credential storage also requires `secret-tool`, supplied by `libsecret-tools`
+on Debian, Ubuntu and Linux Mint for x86_64 and ARM64 (including Debian 12 ARM64).
+The installer checks executable availability and rechecks after any consented
+package installation. A missing client differs from an unavailable or locked
+Secret Service: the application still needs a running, unlocked desktop keyring.
+Use the installed launcher with `/usr/bin` in your desktop PATH. For serial access,
+see offline Help > Troubleshooting > Linux Serial Port Permissions.
+
 For upgrade, close the app and run the newly extracted package's installer with
 the same prefix/XDG environment. A prepared replacement and rollback protect the
 managed program tree. Changed/extra program files, redirected prefixes, modified

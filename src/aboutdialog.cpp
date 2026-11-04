@@ -27,6 +27,7 @@
 #include "aboutdialog.h"
 #include "desktopicons.h"
 #include "aboutlinks.h"
+#include "supportcheckout.h"
 #include <QApplication>
 #include <QDesktopServices>
 #include <QDialogButtonBox>
@@ -128,7 +129,7 @@ AboutDialog::AboutDialog(QWidget *parent) : QDialog(parent) {
     support->setAccessibleName(tr("Support RayNmeaSimulator"));support->setFocusPolicy(Qt::StrongFocus);
     disconnect(support,&QLabel::linkActivated,this,nullptr);
     connect(support,&QLabel::linkActivated,this,[this](const QString &){
-        AboutLinks::open(this,QUrl(QString::fromLatin1(AboutLinks::SupportUrl)));
+        SupportCheckout::instance()->start(this);
     });
     support->setToolTip(tr("Open the voluntary PayPal support page in your web browser. Contributions do not unlock features or services."));
     bodyLayout->addWidget(support);
