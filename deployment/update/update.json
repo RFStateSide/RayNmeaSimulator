@@ -1,47 +1,47 @@
 {
   "schema": 1,
   "repository": "RFStateSide/RayNmeaSimulator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "downloads": {
+    "windows-x86_64": {
+      "name": "RayNmeaSimulator-0.1.1-Windows-x64.zip",
+      "url": "https://github.com/RFStateSide/RayNmeaSimulator/releases/download/v0.1.1/RayNmeaSimulator-0.1.1-Windows-x64.zip",
+      "bytes": 18805042,
+      "sha256": "6876dd23602caaf5e5261e0f79a902590f7315325507721bbc1dc01612df573e"
+    },
+    "linux-x86_64": {
+      "name": "RayNmeaSimulator-0.1.1-Linux-x86_64.tar.gz",
+      "url": "https://github.com/RFStateSide/RayNmeaSimulator/releases/download/v0.1.1/RayNmeaSimulator-0.1.1-Linux-x86_64.tar.gz",
+      "bytes": 45099602,
+      "sha256": "df384e69e7e1cd764055b35c537fe6c6dec7ee0020326086b14bc7e93bb69aca",
+      "required_abi": {
+        "GLIBC": "2.38",
+        "GLIBCXX": "3.4.32",
+        "CXXABI": "1.3.15"
+      }
+    },
+    "linux-arm64": {
+      "name": "RayNmeaSimulator-0.1.1-Linux-aarch64.tar.gz",
+      "url": "https://github.com/RFStateSide/RayNmeaSimulator/releases/download/v0.1.1/RayNmeaSimulator-0.1.1-Linux-aarch64.tar.gz",
+      "bytes": 44495708,
+      "sha256": "56253a30676870f5c4d5bd38dc4c435a1338082ea210dc258fd0c780efbb36e7",
+      "required_abi": {
+        "GLIBC": "2.38",
+        "GLIBCXX": "3.4.32",
+        "CXXABI": "1.3.15"
+      }
+    },
     "linux-arm64-debian12": {
-      "name": "RayNmeaSimulator-0.1.0-Linux-aarch64-Debian12.tar.gz",
-      "url": "https://github.com/RFStateSide/RayNmeaSimulator/releases/download/v0.1.0/RayNmeaSimulator-0.1.0-Linux-aarch64-Debian12.tar.gz",
-      "bytes": 37228991,
-      "sha256": "17c2f4664538a74be1e637c0dec7a0f04e5b97cd3c1b069ef291af26c8b2e680",
+      "name": "RayNmeaSimulator-0.1.1-Linux-aarch64-Debian12.tar.gz",
+      "url": "https://github.com/RFStateSide/RayNmeaSimulator/releases/download/v0.1.1/RayNmeaSimulator-0.1.1-Linux-aarch64-Debian12.tar.gz",
+      "bytes": 37255759,
+      "sha256": "c1b426a525661160c1ca52450ccaa176df694cc50d7e166fedf4723cbdf3d047",
       "required_abi": {
         "GLIBC": "2.35",
         "GLIBCXX": "3.4.30",
         "CXXABI": "1.3.13"
       }
-    },
-    "linux-arm64": {
-      "name": "RayNmeaSimulator-0.1.0-Linux-aarch64.tar.gz",
-      "url": "https://github.com/RFStateSide/RayNmeaSimulator/releases/download/v0.1.0/RayNmeaSimulator-0.1.0-Linux-aarch64.tar.gz",
-      "bytes": 44469040,
-      "sha256": "2598fde02a49f793c3a1011eba1e9918fd9cdd91ac9c75f05c634a71f9b5704a",
-      "required_abi": {
-        "GLIBC": "2.38",
-        "GLIBCXX": "3.4.32",
-        "CXXABI": "1.3.15"
-      }
-    },
-    "linux-x86_64": {
-      "name": "RayNmeaSimulator-0.1.0-Linux-x86_64.tar.gz",
-      "url": "https://github.com/RFStateSide/RayNmeaSimulator/releases/download/v0.1.0/RayNmeaSimulator-0.1.0-Linux-x86_64.tar.gz",
-      "bytes": 45087972,
-      "sha256": "6fa2aa52b070be9cd6257ec7dbcf026376c0fc8e70a17e241579b97f298c37cc",
-      "required_abi": {
-        "GLIBC": "2.38",
-        "GLIBCXX": "3.4.32",
-        "CXXABI": "1.3.15"
-      }
-    },
-    "windows-x86_64": {
-      "name": "RayNmeaSimulator-0.1.0-Windows-x64.zip",
-      "url": "https://github.com/RFStateSide/RayNmeaSimulator/releases/download/v0.1.0/RayNmeaSimulator-0.1.0-Windows-x64.zip",
-      "bytes": 18668202,
-      "sha256": "6206d244f18fa198c8420bf1968412482c6f4ee3eed8161ac288cb36f8a9f490"
     }
   },
-  "release_url": "https://github.com/RFStateSide/RayNmeaSimulator/releases/tag/v0.1.0"
+  "release_url": "https://github.com/RFStateSide/RayNmeaSimulator/releases/tag/v0.1.1"
 }
