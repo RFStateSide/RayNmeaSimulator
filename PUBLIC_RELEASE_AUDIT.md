@@ -1,6 +1,113 @@
 # Public-release audit
 
-## Current private v0.1.1 maintenance candidate — 2026-11-04
+## v0.1.1 controlled public release — 2026-11-05
+
+**PUBLIC RELEASE PASS for the exact owner-approved distribution.** Engineering
+qualification and owner installation acceptance are both PASS. The owner personally
+installed all four final packages, checked their About versions and accepted the
+Linux launcher upgrade fixes. That explicit acceptance supersedes the dated private
+preparation/NO-GO records preserved below. Public tag/Release, exact five assets,
+repository update metadata, manual Online Help deployment and this audit closeout
+were separately authorized. No RF StateSide website or historical Archive change
+was authorized or performed.
+
+The actual clean binary build commit is
+`bb6b11f45ec99ef3c9cbe6f70f1fcf0951fefe61`; common source-tree SHA-256 is
+`b433b11f9fcd9b66a3c87459c1f79b9d52eff1cd52301cfac7217a6aad539d6f`.
+Annotated tag `v0.1.1`, object `dd02057ce47f6a56576d650ab7389622bd20ffe9`,
+points exactly to that build commit, not a later metadata/audit commit. Normal tag
+push and fast-forward master operations were used; no history or existing tag was
+rewritten. GitHub Release **435224868** is the latest stable, non-prerelease release:
+https://github.com/RFStateSide/RayNmeaSimulator/releases/tag/v0.1.1.
+
+The Release has exactly these five manually uploaded assets; automatic GitHub
+source links are additional source views, not substitutes for the complete companion.
+
+| Asset | GitHub asset ID | Bytes | SHA-256 |
+|---|---:|---:|---|
+| `RayNmeaSimulator-0.1.1-Linux-aarch64-Debian12.tar.gz` | 713488342 | 37255759 | `c1b426a525661160c1ca52450ccaa176df694cc50d7e166fedf4723cbdf3d047` |
+| `RayNmeaSimulator-0.1.1-Linux-aarch64.tar.gz` | 713490388 | 44495708 | `56253a30676870f5c4d5bd38dc4c435a1338082ea210dc258fd0c780efbb36e7` |
+| `RayNmeaSimulator-0.1.1-Linux-x86_64.tar.gz` | 713489266 | 45099602 | `df384e69e7e1cd764055b35c537fe6c6dec7ee0020326086b14bc7e93bb69aca` |
+| `RayNmeaSimulator-0.1.1-Source-and-Verification.zip` | 713474745 | 550702976 | `9371579c6f5d5db4befd5d0e1990b3d4835f66ac9f709d8cc49b5e9b96b11113` |
+| `RayNmeaSimulator-0.1.1-Windows-x64.zip` | 713491732 | 18805042 | `6876dd23602caaf5e5261e0f79a902590f7315325507721bbc1dc01612df573e` |
+
+All five were independently retrieved without authentication and matched the exact
+approved byte counts and hashes. Complete source ZIP CRC and all 32 member hashes
+passed. All four publicly downloaded matching Source kits were independently
+restored: 733 application files and executable modes per kit, all source input
+hashes, pinned dependency restoration, no private application Git directory, and
+binary/source receipt bindings passed. Platform source-input counts remain
+14/21/21/17 for Windows/x86_64/native ARM64/Debian12 ARM64. The companion provides
+application and exact upstream sources, licenses/notices, build/install instructions,
+supplier configuration, receipts, platform/ABI data and checksums. Prior scoped
+artwork/history and source/license findings remain applicable; no new artwork or
+dependency was introduced. Continuing source availability and chosen delivery
+obligations remain obligations, not a blanket legal or ownership certification.
+
+Final packages include the accepted bounded Support preflight/PayPal fallback and
+one browser handoff, Linux secret-tool handling, CANable permission guidance,
+consented development/verified edited v0.1.0 launcher migration with recoverable
+backups and rollback, six Templates, 8-group/35-widget Default Layout and strict
+explicit Sending authorization. Approved Safety wording remains unchanged and is
+compiled into installed offline Help. Scope includes the exact original Mint
+441-file legacy receipt/edited-launcher reproduction in an isolated copy, 37 launcher
+regressions, targeted installed platform checks and owner acceptance. It does not
+claim new physical marine or navigation/safety-system certification.
+
+After public binary/source verification, the v0.1.1 manifest was finalized from
+publicly downloaded platform receipts and pushed normally. Metadata commit
+`2ac99c3` was followed by forward-only LF normalization commit
+`de4b454ced9f7e0cd018ba08df4bccb2e6ee6c3a`; JSON/package identities did not change.
+Neither commit changes approved archive bytes or the annotated build tag. The
+anonymous canonical resource is
+https://raw.githubusercontent.com/RFStateSide/RayNmeaSimulator/master/deployment/update/update.json
+and its final SHA-256 is
+`9cf808f190c35c2f665e44dfd50ac5c96ab72ffe87555c91a0441fd8829d7111`.
+It returns HTTP 200 directly and matches the official latest stable Release.
+
+Live probes compiled from the actual corrected v0.1.0 updater source and approved
+v0.1.1 updater source both passed against anonymous canonical endpoints. Corrected
+0.1.0 discovers 0.1.1; 0.1.1 reports the latest published stable version. All four
+platform selections match actual public names/URLs/bytes/digests. Insufficient
+Debian12 ABI and missing Debian12 entry are rejected without native fallback; a
+newer local version is not downgraded. Only metadata GET requests occurred, without
+credentials/cookies, installer downloads or automatic installation. Original
+uncorrected v0.1.0 attachment-based checkers may still require manual download, as
+already documented; no additional owner desktop matrix was required for metadata.
+
+Manual **Publish User Guide** run **42035940718** succeeded on master. The public
+52-topic/102-image guide matches the accepted generated site manifest and all
+served resources. Its 159 manifest entries include one build-only `.nojekyll`
+marker intentionally not served by Pages. Browser checks opened the exact Safety
+notice through navigation and searched `dialout`, reaching the Linux serial-port
+permission instructions. Links/search/navigation passed; Safety wording was not
+rewritten. Workflow publication remains explicit manual dispatch, not push-triggered.
+Public guide: https://rfstateside.github.io/RayNmeaSimulator/.
+
+Original v0.1.0 Release **430092960**, its five asset IDs/names/bytes/digests and
+Release description, and annotated tag object
+`daab0924a934c976a1145da2a9e557465e4a1356` on
+`87cd0912b3e10777e610a82a78156484f66a2c12` remain unchanged. The historical
+Archive remains private with its captured branch head unchanged. Only the authorized
+public update manifest and GitHub Pages guide advanced to v0.1.1. No RF StateSide
+website deployment, payment transaction, installer execution, user-settings/credential/
+Template/Layout change or marine service/interface operation was performed during
+publication. Existing owner installations and environments were preserved; Active
+checkouts receive only normal fast-forward source synchronization.
+
+Only maintained metadata/audit/provenance files are committed after the build.
+Engineering reports, logs, screenshots, qualification receipts, private inventories,
+anonymous downloads and restore evidence remain ignored under
+`build/v0.1.1-publication/`; no generated evidence is tracked or pushed. This remains
+the sole maintained tracked release audit. Source/asset immutability, platform and
+transport limits, Safety/AS-IS terms and ongoing matching-source availability remain
+continuing release obligations. No unresolved publication blocker remains for this
+exact owner-approved release. Website follow-up remains a separate assignment.
+
+## Private v0.1.1 preparation history — 2026-11-04–05
+
+The dated preparation statuses below are historical snapshots. The authorized
+owner acceptance and verified public-release disposition above supersede them.
 
 **Private Mint v0.1.0 upgrade finding (2026-11-05):** all 441 operational program
 files match the original published v0.1.0 receipt. Its launcher has a different
