@@ -2,6 +2,24 @@
 
 ## Current private v0.1.1 maintenance candidate — 2026-11-04
 
+**Private Mint v0.1.0 upgrade finding (2026-11-05):** all 441 operational program
+files match the original published v0.1.0 receipt. Its launcher has a different
+hash: `Terminal=true` and localized desktop-properties fields were added while the
+managed executable/icon targets stayed the same. The recorded original launcher
+hash matches the exact official generator. Thus `49140a9` correctly refuses a
+changed managed launcher; intact legacy entries already upgrade. A later private
+correction offers a narrowly verified, explicit-consent backup/replacement path
+for this edited legacy case, retaining strict refusal for other modified or unsafe
+registrations. All 37 launcher regression tests and an exact-path isolated Mint
+copy passed, including original failure reproduction, decline/approval, menu/runtime,
+old receipt compatibility, rollback, repeat and uninstall preservation. Operational
+v0.1.0 files, receipt and launcher were verified unchanged afterward. Details remain
+ignored under `build/v0.1.1-mint-upgrade/`. No cause is assigned to the unrelated GNOME
+grid observation. This uncommitted correction requires owner review, a new clean
+source commit and refreshed final packages/source kits/receipts before release;
+all existing qualified candidates remain preserved as prior evidence. No commit,
+push, public artifact, tag, manifest, website or Help publication is authorized yet.
+
 **Private launcher correction under review (2026-11-04):** the qualified `c429deb`
 binaries remain unchanged historical candidates. A later uncommitted Linux
 installer correction adds explicit consent, identification, a preserved backup,

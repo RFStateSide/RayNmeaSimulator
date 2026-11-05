@@ -10,6 +10,10 @@ publication or Online Help publication is authorized by this preparation.
   identified earlier RayNmeaSimulator development launcher. Declined, ambiguous
   or unsafe entries are preserved; backups survive uninstall. This private
   correction requires newly qualified packages before publication.
+- Verified published v0.1.0 launcher property edits can be backed up and replaced
+  after explicit consent. Intact old registrations still upgrade without cleanup;
+  unrelated or more extensively modified entries remain protected. Approval resets
+  launcher properties to the new defaults while preserving the original backup.
 - Linux installation detects the `secret-tool` executable and offers the missing
   `libsecret-tools` package on supported Debian, Ubuntu and Mint systems through
   the existing explicit-consent dependency policy. A locked or unavailable Secret

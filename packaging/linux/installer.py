@@ -10,6 +10,7 @@ import argparse
 import configparser
 import grp
 import pwd
+import re
 import shlex
 import stat
 import uuid
@@ -31,6 +32,11 @@ import runtime_prerequisites
 
 IDENTITY = 'com.rfstateside.RayNmeaSimulator'
 RECEIPT = '.raynmea-install.json'
+# Original public v0.1.0 and its accepted corrected desktop distribution.
+LEGACY_RELEASE_SOURCES = {
+    '87cd0912b3e10777e610a82a78156484f66a2c12',
+    'bf212fc3389314153911ed5f4b759b9f56e2723f',
+}
 
 
 def digest(path):
@@ -227,10 +233,62 @@ class DesktopRegistration:
         except (OSError, ValueError, KeyError, configparser.Error, RuntimeError):
             return False
 
-    def consent(self, policy, non_interactive):
-        if not self.recognized_unmanaged():
+    def recognized_modified_legacy(self, receipt, prefix):
+        """Narrow exception for a verified published v0.1.0 receipt, never a new
+        identity heuristic for arbitrary modified managed registrations.
+        Prefix inventory validation remains mandatory before calling this method.
+        """
+        try:
+            metadata = json.loads((prefix / 'build-metadata.json').read_text())
+            if (metadata.get('version') != '0.1.0' or metadata.get('source_clean_commit') is not True
+                    or metadata.get('source_sha') not in LEGACY_RELEASE_SOURCES):
+                return False
+            baseline = legacy_launcher_content(prefix)
+            if receipt.get('desktop_sha256') != hashlib.sha256(baseline).hexdigest():
+                return False
+            parser = configparser.ConfigParser(interpolation=None, strict=True)
+            parser.optionxform = str
+            parser.read_string(self.original[0].decode('utf-8'))
+            if parser.defaults() or parser.sections() != ['Desktop Entry']:
+                return False
+            entry = parser['Desktop Entry']
+            target = str(prefix / 'RayNmeaSimulator')
+            required = {'Type': 'Application', 'Name': 'RayNmeaSimulator',
+                        'Exec': '"' + target + '"', 'Icon': str(prefix / 'RayNmeaSimulator.png'),
+                        'Categories': 'Utility;'}
+            if any(entry.get(key) != value for key, value in required.items()):
+                return False
+            if entry.get('Terminal') not in ('true', 'false'):
+                return False
+            optional = {'Comment': '', 'PrefersNonDefaultGPU': 'false',
+                        'TryExec': target, 'StartupWMClass': 'RayNmeaSimulator'}
+            localized = {**required, 'Comment': ''}
+            for key, value in entry.items():
+                if key in required or key == 'Terminal':
+                    continue
+                match = re.fullmatch(r'(Name|Exec|Icon|Type|Comment)\[([A-Za-z0-9_@.-]+)\]', key)
+                if match:
+                    if value != localized[match[1]]:
+                        return False
+                elif key not in optional or value != optional[key]:
+                    return False
+            info = (prefix / 'RayNmeaSimulator').lstat()
+            return (stat.S_ISREG(info.st_mode) and info.st_uid == os.geteuid()
+                    and info.st_nlink == 1 and info.st_mode & 0o100 and private_writable(info))
+        except (OSError, ValueError, KeyError, configparser.Error, RuntimeError):
+            return False
+
+    def consent(self, policy, non_interactive, legacy=None):
+        if legacy is not None:
+            if not self.recognized_modified_legacy(*legacy):
+                raise RuntimeError('Desktop registration changed; preserving it')
+            print('Changed verified v0.1.0 launcher:', self.path, flush=True)
+            print('Approval replaces launcher edits (including Terminal=true) with the new defaults; '
+                  'the original contents and permissions will be backed up.', flush=True)
+        elif not self.recognized_unmanaged():
             raise RuntimeError('Unmanaged desktop entry is unrelated or cannot be safely identified as RayNmeaSimulator; preserving it')
-        print('Unmanaged RayNmeaSimulator launcher:', self.path, flush=True)
+        if legacy is None:
+            print('Unmanaged RayNmeaSimulator launcher:', self.path, flush=True)
         interactive = not non_interactive and sys.stdin.isatty() and sys.stdout.isatty()
         approved = policy == 'replace'
         if policy == 'ask' and interactive:
@@ -239,7 +297,7 @@ class DesktopRegistration:
             except EOFError:
                 approved = False
         if not approved:
-            raise RuntimeError('Unmanaged launcher replacement not approved; no application installation changed. '
+            raise RuntimeError('Launcher replacement not approved; no application installation changed. '
                                'Use --desktop-replacement replace to explicitly approve backup and replacement.')
 
     def save_backup(self):
@@ -308,6 +366,20 @@ class DesktopRegistration:
         os.fsync(self.fd)
 
 
+def legacy_launcher_content(prefix):
+    """Exact original v0.1.0 recipe, restricted to simple unambiguous paths.
+
+    Its hash proves the receipt describes the published generator. A mismatch
+    never becomes an accepted legacy baseline just because the Name looks right.
+    """
+    path = str(prefix)
+    if any(ord(c) < 32 for c in path) or any(c in path for c in '\\"`$%=' ):
+        raise RuntimeError('Legacy launcher path requires manual review')
+    return ('[Desktop Entry]\nType=Application\nName=RayNmeaSimulator\n'
+            f'Exec="{prefix}/RayNmeaSimulator"\nIcon={prefix}/RayNmeaSimulator.png\n'
+            'Terminal=false\nCategories=Utility;\n').encode()
+
+
 def launcher_content(prefix):
     path = str(prefix / 'RayNmeaSimulator')
     if any(ord(c) < 32 for c in path) or any(c in path for c in '=%'):
@@ -330,7 +402,7 @@ def main():
                         help='ask interactively (default), check only, or explicitly consent to installing missing runtime packages')
     parser.add_argument('--non-interactive', action='store_true', help='never prompt; missing dependencies or unmanaged launcher conflicts fail unless explicitly opted in')
     parser.add_argument('--desktop-replacement', choices=['ask', 'replace', 'preserve'], default='ask',
-                        help='ask before replacing an identified unmanaged launcher; replace explicitly consents to backup/replacement, including noninteractive use; preserve refuses replacement')
+                        help='ask before replacing an identified unmanaged or verified edited v0.1.0 launcher; replace explicitly consents to backup/replacement, including noninteractive use; preserve refuses replacement')
     args = parser.parse_args()
     prefix = checked_prefix(args.prefix)
     prefix.parent.mkdir(parents=True, exist_ok=True)
@@ -349,9 +421,14 @@ def main():
 
 
 def perform(args, prefix, existing, desktop, registration):
-    if existing and (str(desktop) != existing['desktop'] or registration.original is None
-                     or hashlib.sha256(registration.original[0]).hexdigest() != existing['desktop_sha256']):
-        raise RuntimeError('Desktop registration changed; preserving it')
+    modified_legacy = False
+    if existing:
+        if str(desktop) != existing['desktop'] or registration.original is None:
+            raise RuntimeError('Desktop registration changed; preserving it')
+        if hashlib.sha256(registration.original[0]).hexdigest() != existing['desktop_sha256']:
+            if args.action != 'install' or not registration.recognized_modified_legacy(existing, prefix):
+                raise RuntimeError('Desktop registration changed; preserving it')
+            modified_legacy = True
     if args.action == 'uninstall':
         if not existing:
             raise RuntimeError('No managed installation at prefix')
@@ -377,10 +454,12 @@ def perform(args, prefix, existing, desktop, registration):
         raise RuntimeError('Package requires glibc ' + required + ' or newer')
     content = launcher_content(prefix)
     unmanaged = not existing and registration.original is not None
-    if unmanaged:
+    if modified_legacy:
+        registration.consent(args.desktop_replacement, args.non_interactive, (existing, prefix))
+    elif unmanaged:
         registration.consent(args.desktop_replacement, args.non_interactive)
     runtime_prerequisites.ensure(source, args.dependencies, args.non_interactive)
-    if unmanaged:
+    if unmanaged or modified_legacy:
         registration.save_backup()
     temporary = Path(tempfile.mkdtemp(prefix='.raynmea-new-', dir=prefix.parent))
     backup = None

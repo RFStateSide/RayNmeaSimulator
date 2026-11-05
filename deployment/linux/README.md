@@ -116,6 +116,30 @@ otherwise resolving the managed registration. No old executable, settings,
 credentials, Templates, Layouts, unrelated launcher or GNOME configuration/cache is
 removed by this migration.
 
+### Published v0.1.0 launcher property edits
+
+An intact official v0.1.0 receipt and launcher upgrade normally without a new
+replacement prompt. A desktop-properties edit can change the launcher hash while
+leaving its executable and icon correctly aimed at the managed program prefix.
+That is a real launcher modification, not evidence of a broken receipt format.
+
+For the original public v0.1.0 build and its accepted corrected distribution, the
+installer can offer backup and replacement only after validating the entire old
+program inventory, published clean-build identity, exact original launcher-recipe
+hash in the receipt, and a narrow set of safe property edits. Primary and localized
+executable/icon/type/name values must still identify the managed application;
+unknown fields, actions, redirects or unrelated targets remain protected.
+
+This path uses the same `--desktop-replacement ask|replace|preserve` consent policy.
+Approval explicitly replaces launcher edits, including `Terminal=true`, with the
+new defaults; it preserves the original bytes and Unix permissions in the reported
+backup. The prompt explains that distinction. Decline, EOF, or noninteractive use
+without explicit opt-in preserves both the launcher and old application. Changed
+managed launchers still cannot be uninstalled through this exception. More extensive
+edits, unknown build provenance, changed program files and unsafe filesystem state
+continue to require manual owner review. No old-format receipt is rewritten before
+successful application/launcher publication; normal rollback restores it exactly.
+
 ## Target runtime checks
 
 The Linux installer verifies the shipped XCB/SVG/TLS plugin closure as well as the

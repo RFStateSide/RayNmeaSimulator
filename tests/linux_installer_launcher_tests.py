@@ -99,6 +99,132 @@ class LauncherTests(unittest.TestCase):
         self.assertIn('TryExec=', self.desktop.read_text())
         self.assertFalse(list(self.desktop.parent.glob('*.bak')))
 
+    def managed_v010(self, edited=True, source='87cd0912b3e10777e610a82a78156484f66a2c12'):
+        self.run_install()
+        metadata = {'architecture': platform.machine(), 'version': '0.1.0',
+                    'source_sha': source, 'source_clean_commit': True}
+        (self.prefix / 'build-metadata.json').write_text(json.dumps(metadata))
+        (self.prefix / 'RayNmeaSimulator').chmod(0o755)
+        baseline = ('[Desktop Entry]\nType=Application\nName=RayNmeaSimulator\n'
+                    f'Exec="{self.prefix}/RayNmeaSimulator"\nIcon={self.prefix}/RayNmeaSimulator.png\n'
+                    'Terminal=false\nCategories=Utility;\n').encode()
+        text = baseline
+        if edited:
+            text = baseline.replace(b'Terminal=false', b'Terminal=true') + (
+                'Name[en_US]=RayNmeaSimulator\n'
+                f'Exec[en_US]="{self.prefix}/RayNmeaSimulator"\n'
+                'Comment=\nComment[en_US]=\nPrefersNonDefaultGPU=false\n'
+                f'Icon[en_US]={self.prefix}/RayNmeaSimulator.png\nType[en_US]=Application\n').encode()
+        self.desktop.write_bytes(text); self.desktop.chmod(0o664)
+        receipt_path = self.prefix / installer.RECEIPT
+        receipt = json.loads(receipt_path.read_text()); receipt['files'] = installer.inventory(self.prefix)
+        receipt['desktop_sha256'] = hashlib.sha256(baseline).hexdigest()
+        receipt_path.write_text(json.dumps(receipt))
+        return text
+
+    def test_official_v010_intact_registration_needs_no_consent(self):
+        for source in sorted(installer.LEGACY_RELEASE_SOURCES):
+            with self.subTest(source=source):
+                self.managed_v010(edited=False, source=source)
+                with patch('builtins.input', side_effect=AssertionError('Intact legacy launcher must not prompt')):
+                    self.run_install('--non-interactive')
+                self.assertFalse(list(self.desktop.parent.glob('*.bak')))
+                self.run_install(action='uninstall')
+
+    def test_mint_edited_legacy_default_decline_and_noninteractive_preserve(self):
+        original = self.managed_v010()
+        receipt = (self.prefix / installer.RECEIPT).read_bytes()
+        for options in [(), ('--non-interactive',), ('--desktop-replacement', 'preserve')]:
+            with self.subTest(options=options), self.assertRaisesRegex(RuntimeError, 'not approved'):
+                self.run_install(*options)
+            self.assertEqual(self.desktop.read_bytes(), original)
+            self.assertEqual((self.prefix / installer.RECEIPT).read_bytes(), receipt)
+            self.assertFalse(list(self.desktop.parent.glob('*.bak')))
+            self.last_ensure.assert_not_called()
+
+    def test_mint_edited_legacy_consent_backup_repeat_and_uninstall(self):
+        original = self.managed_v010()
+        self.run_install('--desktop-replacement', 'replace', '--non-interactive')
+        backup, = self.desktop.parent.glob('*.bak')
+        self.assertEqual(backup.read_bytes(), original)
+        self.assertEqual(stat.S_IMODE(backup.stat().st_mode), 0o664)
+        self.assertIn('Terminal=false', self.desktop.read_text())
+        self.assertNotIn('Exec[en_US]', self.desktop.read_text())
+        self.run_install('--non-interactive')
+        self.assertEqual(list(self.desktop.parent.glob('*.bak')), [backup])
+        self.run_install(action='uninstall')
+        self.assertEqual(backup.read_bytes(), original)
+        self.preserved()
+
+    def test_mint_edited_legacy_interactive_yes_no_and_eof(self):
+        self.managed_v010(); receipt = installer.check_installed(self.prefix)
+        with installer_context(self.desktop) as reg:
+            for answer in ['no', '', EOFError(), 'yes']:
+                with self.subTest(answer=repr(answer)), patch.object(sys.stdin, 'isatty', return_value=True), patch.object(sys.stdout, 'isatty', return_value=True), patch('builtins.input', side_effect=answer if isinstance(answer, Exception) else None, return_value=answer):
+                    if answer == 'yes':
+                        reg.consent('ask', False, (receipt, self.prefix))
+                    else:
+                        with self.assertRaisesRegex(RuntimeError, 'not approved'):
+                            reg.consent('ask', False, (receipt, self.prefix))
+
+    def test_mint_edited_legacy_wrong_identity_or_unsafe_fields_refused(self):
+        original = self.managed_v010()
+        for changed in [original.replace(b'Name=RayNmeaSimulator', b'Name=Other'),
+                        original.replace(b'Exec[en_US]=', b'Exec[en_US]=/bin/sh '),
+                        original.replace(b'Type[en_US]=Application', b'Type[en_US]=Link'),
+                        original.replace(b'Icon[en_US]=', b'Icon[en_US]=/other/'),
+                        original + b'Hidden=true\n', original + b'Actions=Other;\n',
+                        original + b'X-Unknown=unreviewed\n', original + b'Exec=/bin/sh\n']:
+            self.desktop.write_bytes(changed)
+            with self.subTest(changed=changed), self.assertRaisesRegex(RuntimeError, 'Desktop registration changed'):
+                self.run_install('--desktop-replacement', 'replace')
+            self.assertEqual(self.desktop.read_bytes(), changed)
+            self.assertFalse(list(self.desktop.parent.glob('*.bak')))
+
+    def test_modified_legacy_wrong_receipt_or_release_provenance_refused(self):
+        self.managed_v010(); metadata = self.prefix / 'build-metadata.json'; receipt_path = self.prefix / installer.RECEIPT
+        saved_meta = json.loads(metadata.read_text()); saved_receipt = json.loads(receipt_path.read_text())
+        for field,value in [('version','0.1.1'),('source_sha','0'*40),('source_clean_commit',False)]:
+            meta = dict(saved_meta); meta[field] = value; metadata.write_text(json.dumps(meta))
+            receipt = dict(saved_receipt); receipt['files'] = installer.inventory(self.prefix); receipt_path.write_text(json.dumps(receipt))
+            with self.subTest(field=field), self.assertRaisesRegex(RuntimeError, 'Desktop registration changed'):
+                self.run_install('--desktop-replacement', 'replace')
+        metadata.write_text(json.dumps(saved_meta)); receipt = dict(saved_receipt);receipt['files'] = installer.inventory(self.prefix);receipt['desktop_sha256'] = '0'*64;receipt_path.write_text(json.dumps(receipt))
+        with self.assertRaisesRegex(RuntimeError, 'Desktop registration changed'):
+            self.run_install('--desktop-replacement', 'replace')
+
+    def test_corrected_public_v010_edited_registration_recognized(self):
+        original = self.managed_v010(source='bf212fc3389314153911ed5f4b759b9f56e2723f')
+        self.run_install('--desktop-replacement', 'replace', '--non-interactive')
+        self.assertEqual(next(self.desktop.parent.glob('*.bak')).read_bytes(), original)
+        self.run_install(action='uninstall')
+
+    def test_modified_legacy_uninstall_still_refuses(self):
+        original = self.managed_v010()
+        with self.assertRaisesRegex(RuntimeError, 'Desktop registration changed'):
+            self.run_install('--desktop-replacement', 'replace', action='uninstall')
+        self.assertEqual(self.desktop.read_bytes(), original)
+        self.assertTrue(self.prefix.exists())
+
+    def test_modified_legacy_rollback_restores_original_receipt_and_mode(self):
+        original = self.managed_v010(); receipt = (self.prefix / installer.RECEIPT).read_bytes(); inventory = installer.inventory(self.prefix)
+        with patch.object(installer.os, 'replace', side_effect=OSError('injected atomic replacement failure')):
+            with self.assertRaisesRegex(RuntimeError, 'state restored'):
+                self.run_install('--desktop-replacement', 'replace')
+        self.assertEqual(self.desktop.read_bytes(), original)
+        self.assertEqual(stat.S_IMODE(self.desktop.stat().st_mode), 0o664)
+        self.assertEqual((self.prefix / installer.RECEIPT).read_bytes(), receipt)
+        self.assertEqual(installer.inventory(self.prefix), inventory)
+        self.assertEqual(next(self.desktop.parent.glob('*.bak')).read_bytes(), original)
+
+    def test_modified_legacy_program_edit_or_launcher_symlink_refused(self):
+        original = self.managed_v010(); file = self.prefix / 'owner-change';file.write_text('preserve modified program prefix')
+        with self.assertRaisesRegex(RuntimeError, 'Installed files changed'):
+            self.run_install('--desktop-replacement', 'replace')
+        file.unlink(); self.desktop.unlink(); target=self.root/'protected.desktop';target.write_bytes(original);self.desktop.symlink_to(target)
+        with self.assertRaises(OSError):self.run_install('--desktop-replacement', 'replace')
+        self.assertEqual(target.read_bytes(), original)
+
     def test_explicit_approval_backup_mode_and_uninstall_preservation(self):
         self.legacy()
         unrelated = self.desktop.with_name('other.desktop'); unrelated.write_text('unrelated')
