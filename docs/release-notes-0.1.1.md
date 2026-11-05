@@ -6,6 +6,10 @@ publication or Online Help publication is authorized by this preparation.
 - Help and About Support actions prefer the RF StateSide checkout after a short
   availability check. Any failed or invalid check selects the existing direct
   PayPal link. One browser handoff is made; checkout success is not guaranteed.
+- Linux upgrades can offer an explicitly approved backup and replacement of an
+  identified earlier RayNmeaSimulator development launcher. Declined, ambiguous
+  or unsafe entries are preserved; backups survive uninstall. This private
+  correction requires newly qualified packages before publication.
 - Linux installation detects the `secret-tool` executable and offers the missing
   `libsecret-tools` package on supported Debian, Ubuntu and Mint systems through
   the existing explicit-consent dependency policy. A locked or unavailable Secret

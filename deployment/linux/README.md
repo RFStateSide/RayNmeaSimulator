@@ -77,13 +77,53 @@ installations are preserved/refused. Settings, layouts, QSS, credentials, routes
 and logs are outside installer ownership. See [the overview](../README.md) for
 safe profile probes, failure handling, retained generations and release gates.
 
+## Upgrading an earlier development launcher
+
+An earlier Qt Creator registration can use the same application-menu ID as the
+archive installer. When there is no managed installation receipt, the installer
+accepts replacement only if the existing entry unambiguously identifies
+RayNmeaSimulator and directly references an existing executable owned by the user.
+It never runs or changes that historical executable or its source tree.
+
+The default `--desktop-replacement ask` prompts on an interactive terminal, with
+**No** as the default. Approval creates a unique
+`com.rfstateside.RayNmeaSimulator.desktop.<random-id>.bak` alongside the launcher,
+preserving the original contents and Unix permission bits before replacement.
+The backup ends in `.bak`, so it is not a second application-menu entry.
+`--desktop-replacement preserve` declines replacement. Without an interactive
+terminal, including `--non-interactive`, the default refuses the conflict; explicit
+`--desktop-replacement replace` consents to backup and replacement. This option
+does not bypass identity or filesystem safety checks. A declined or unsafe conflict
+stops before dependency installation or application replacement.
+
+Only the fixed user application-menu entry is replaced. Symlinks, hard links,
+nonregular files, parent traversal, unresolved ownership, shared-write conditions
+and extended access/default ACLs are refused. Normal Ubuntu private-user-group permissions
+are supported. Shell wrappers, arguments, stale/missing executable targets and
+complex or ambiguous unmanaged entries require manual owner review. Entries
+already bound to an intact managed receipt retain normal upgrade handling;
+modified managed registrations remain protected from overwrite.
+
+The launcher is published by atomic rename from a new file in the checked
+registration directory. If installation fails, the application transaction rolls
+back and the original launcher bytes and permission bits are restored. If rollback
+itself is blocked, the installer reports that failure and the preserved backup
+path rather than claiming success. Backups are outside the application prefix and
+survive subsequent upgrades and uninstall. Uninstall removes only the verified
+managed launcher; it does not reactivate the old development launcher. To restore
+one, inspect the reported backup and choose explicitly after uninstalling or
+otherwise resolving the managed registration. No old executable, settings,
+credentials, Templates, Layouts, unrelated launcher or GNOME configuration/cache is
+removed by this migration.
+
 ## Target runtime checks
 
 The Linux installer verifies the shipped XCB/SVG/TLS plugin closure as well as the
 executable; `libxcb-cursor0` is an X11 runtime requirement on all three Linux builds.
 On supported Debian/Ubuntu/Mint systems missing runtime packages can be installed
 only after explicit consent. Provisioned hosts still install per-user without sudo.
-Use `--dependencies check` or `--non-interactive` for checks without prompts;
+Use `--dependencies check` to refuse system-package installation and
+`--non-interactive` to suppress all prompts;
 `--dependencies install --non-interactive` explicitly opts into missing packages
 with noninteractive sudo authorization. No automatic OS upgrade or system Qt/glibc
 replacement is performed. See [packaging corrections and full source](../../docs/packaging-corrections.md).

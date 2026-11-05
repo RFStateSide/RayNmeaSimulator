@@ -2,6 +2,20 @@
 
 ## Current private v0.1.1 maintenance candidate — 2026-11-04
 
+**Private launcher correction under review (2026-11-04):** the qualified `c429deb`
+binaries remain unchanged historical candidates. A later uncommitted Linux
+installer correction adds explicit consent, identification, a preserved backup,
+atomic desktop replacement and failure rollback for earlier development launchers.
+It is not incorporated into those sealed candidates. All 27 focused launcher regression tests and controlled Ubuntu desktop acceptance
+passed. Fixture and desktop acceptance evidence is under ignored `build/v0.1.1-launcher/`.
+The reproduced conflict uses a copy of the owner's preserved Qt Creator launcher
+and an isolated XDG directory; no historical development installation or live
+launcher is changed. No cause is assigned to the separately observed GNOME grid
+failure. Before final release, owner review/commit authorization and new clean
+builds with matching complete source/receipts/hashes and corresponding platform
+acceptance are required. No commit, push, tag, asset upload, manifest change or
+Online Help publication is authorized for this correction yet.
+
 **PRIVATE preparation; release NO-GO pending owner review.** The current owner
 instructions govern this work. The dated publication records below remain
 historical evidence. The owner now authorizes normal source commits and fast-forward

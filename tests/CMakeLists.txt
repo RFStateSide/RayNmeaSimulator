@@ -304,3 +304,6 @@ set_tests_properties(repackaging_tests PROPERTIES LABELS "deployment;licensing" 
 
 add_test(NAME release_support_tests COMMAND "${Python3_EXECUTABLE}" -B "${PROJECT_SOURCE_DIR}/tests/release_support_tests.py")
 set_tests_properties(release_support_tests PROPERTIES LABELS "deployment;licensing" TIMEOUT 240)
+
+add_test(NAME linux_installer_launcher_tests COMMAND "${Python3_EXECUTABLE}" -B "${PROJECT_SOURCE_DIR}/tests/linux_installer_launcher_tests.py")
+set_tests_properties(linux_installer_launcher_tests PROPERTIES LABELS "deployment;synthetic" TIMEOUT 60)
